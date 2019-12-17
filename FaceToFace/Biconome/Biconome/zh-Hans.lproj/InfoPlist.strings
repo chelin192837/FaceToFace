@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  Biconome
+
+  Created by a on 2019/10/16.
+  Copyright © 2019 qsm. All rights reserved.
+*/
+"NSCameraUsageDescription"="如果不允许，您将无法使用Biconomy中拍摄照片和相册，也无法使用扫一扫等功能";
+"NSPhotoLibraryAddUsageDescription"="如果不允许，您将无法使用Biconomy中拍摄照片和相册，也无法使用扫一扫等功能";
+"NSPhotoLibraryUsageDescription"="如果不允许，您将无法使用Biconomy中拍摄照片和相册，也无法使用扫一扫等功能";
