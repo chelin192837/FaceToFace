@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Biconome.xcodeproj">
+      location = "group:/Users/mac/Documents/FaceToFace-master/FaceToFace/FaceToFace/Biconome/Antelope.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

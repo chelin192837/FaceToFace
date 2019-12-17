@@ -140,6 +140,11 @@
 		04253306237C07A600384E0B /* JinnLockIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 04253300237C07A600384E0B /* JinnLockIndicator.m */; };
 		04253307237C07A600384E0B /* JinnLockPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 04253301237C07A600384E0B /* JinnLockPassword.m */; };
 		04253308237C07A600384E0B /* JinnLockCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 04253303237C07A600384E0B /* JinnLockCircle.m */; };
+		0434CA9D23A9399200FD85D8 /* ANTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0434CA9C23A9399200FD85D8 /* ANTHomeViewController.m */; };
+		0434CAA023A939A500FD85D8 /* ANTMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0434CA9F23A939A500FD85D8 /* ANTMessageViewController.m */; };
+		0434CAA323A939B600FD85D8 /* ANTMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0434CAA223A939B600FD85D8 /* ANTMineViewController.m */; };
+		0434CAA623A939C700FD85D8 /* ANTWalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0434CAA523A939C700FD85D8 /* ANTWalletViewController.m */; };
+		0434CAA923A939D300FD85D8 /* ANTFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0434CAA823A939D300FD85D8 /* ANTFindViewController.m */; };
 		0470993B2359DE2E007FBBF5 /* UIView+shadowPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 0470993A2359DE2E007FBBF5 /* UIView+shadowPath.m */; };
 		048E198323756BE1003896DA /* BICMineDouCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 048E198023756BE0003896DA /* BICMineDouCell.m */; };
 		048E198423756BE1003896DA /* BICMineDouCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048E198223756BE1003896DA /* BICMineDouCell.xib */; };
@@ -953,6 +958,16 @@
 		04253301237C07A600384E0B /* JinnLockPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JinnLockPassword.m; sourceTree = "<group>"; };
 		04253302237C07A600384E0B /* JinnLockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JinnLockViewController.h; sourceTree = "<group>"; };
 		04253303237C07A600384E0B /* JinnLockCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JinnLockCircle.m; sourceTree = "<group>"; };
+		0434CA9B23A9399200FD85D8 /* ANTHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTHomeViewController.h; sourceTree = "<group>"; };
+		0434CA9C23A9399200FD85D8 /* ANTHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTHomeViewController.m; sourceTree = "<group>"; };
+		0434CA9E23A939A500FD85D8 /* ANTMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTMessageViewController.h; sourceTree = "<group>"; };
+		0434CA9F23A939A500FD85D8 /* ANTMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTMessageViewController.m; sourceTree = "<group>"; };
+		0434CAA123A939B600FD85D8 /* ANTMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTMineViewController.h; sourceTree = "<group>"; };
+		0434CAA223A939B600FD85D8 /* ANTMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTMineViewController.m; sourceTree = "<group>"; };
+		0434CAA423A939C700FD85D8 /* ANTWalletViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTWalletViewController.h; sourceTree = "<group>"; };
+		0434CAA523A939C700FD85D8 /* ANTWalletViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTWalletViewController.m; sourceTree = "<group>"; };
+		0434CAA723A939D300FD85D8 /* ANTFindViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTFindViewController.h; sourceTree = "<group>"; };
+		0434CAA823A939D300FD85D8 /* ANTFindViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTFindViewController.m; sourceTree = "<group>"; };
 		047099392359DE2E007FBBF5 /* UIView+shadowPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+shadowPath.h"; sourceTree = "<group>"; };
 		0470993A2359DE2E007FBBF5 /* UIView+shadowPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+shadowPath.m"; sourceTree = "<group>"; };
 		048E198023756BE0003896DA /* BICMineDouCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BICMineDouCell.m; sourceTree = "<group>"; };
@@ -1592,7 +1607,7 @@
 		62EC59DF234CBA7400E71CCE /* BICInviteRecordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BICInviteRecordVC.h; sourceTree = "<group>"; };
 		62EC59E0234CBA7400E71CCE /* BICInviteTopVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BICInviteTopVC.h; sourceTree = "<group>"; };
 		62EC59E1234CBA7500E71CCE /* BICInviteTopVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BICInviteTopVC.m; sourceTree = "<group>"; };
-		62F675A622F5280900826835 /* Biconome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Biconome.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		62F675A622F5280900826835 /* Antelope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Antelope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F675A922F5280A00826835 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		62F675AA22F5280A00826835 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		62F675AC22F5280A00826835 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -1601,10 +1616,10 @@
 		62F675B222F5280A00826835 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62F675B722F5280A00826835 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62F675B822F5280B00826835 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		62F675BE22F5280B00826835 /* BiconomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BiconomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		62F675BE22F5280B00826835 /* AntelopeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AntelopeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F675C222F5280B00826835 /* BiconomeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BiconomeTests.m; sourceTree = "<group>"; };
 		62F675C422F5280B00826835 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		62F675C922F5280B00826835 /* BiconomeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BiconomeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		62F675C922F5280B00826835 /* AntelopeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AntelopeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F675CD22F5280B00826835 /* BiconomeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BiconomeUITests.m; sourceTree = "<group>"; };
 		62F675CF22F5280B00826835 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62F675E322F534A400826835 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -2572,6 +2587,64 @@
 				04253303237C07A600384E0B /* JinnLockCircle.m */,
 			);
 			path = JinnLock;
+			sourceTree = "<group>";
+		};
+		0434CA9523A9398400FD85D8 /* Antelope */ = {
+			isa = PBXGroup;
+			children = (
+				0434CA9623A9398400FD85D8 /* Home */,
+				0434CA9723A9398400FD85D8 /* Message */,
+				0434CA9823A9398400FD85D8 /* Mine */,
+				0434CA9923A9398400FD85D8 /* Wallet */,
+				0434CA9A23A9398400FD85D8 /* Find */,
+			);
+			name = Antelope;
+			path = Biconome/Antelope;
+			sourceTree = "<group>";
+		};
+		0434CA9623A9398400FD85D8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0434CA9B23A9399200FD85D8 /* ANTHomeViewController.h */,
+				0434CA9C23A9399200FD85D8 /* ANTHomeViewController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0434CA9723A9398400FD85D8 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				0434CA9E23A939A500FD85D8 /* ANTMessageViewController.h */,
+				0434CA9F23A939A500FD85D8 /* ANTMessageViewController.m */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		0434CA9823A9398400FD85D8 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				0434CAA123A939B600FD85D8 /* ANTMineViewController.h */,
+				0434CAA223A939B600FD85D8 /* ANTMineViewController.m */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		0434CA9923A9398400FD85D8 /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				0434CAA423A939C700FD85D8 /* ANTWalletViewController.h */,
+				0434CAA523A939C700FD85D8 /* ANTWalletViewController.m */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
+		0434CA9A23A9398400FD85D8 /* Find */ = {
+			isa = PBXGroup;
+			children = (
+				0434CAA723A939D300FD85D8 /* ANTFindViewController.h */,
+				0434CAA823A939D300FD85D8 /* ANTFindViewController.m */,
+			);
+			path = Find;
 			sourceTree = "<group>";
 		};
 		04B074942359627200D5E704 /* UICollectionDelegate */ = {
@@ -3948,6 +4021,7 @@
 		62F6759D22F5280900826835 = {
 			isa = PBXGroup;
 			children = (
+				0434CA9523A9398400FD85D8 /* Antelope */,
 				62F675DC22F5336900826835 /* HKCK */,
 				62F6793122F5688A00826835 /* Service */,
 				62F675E222F5336900826835 /* Commons */,
@@ -3969,9 +4043,9 @@
 		62F675A722F5280900826835 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				62F675A622F5280900826835 /* Biconome.app */,
-				62F675BE22F5280B00826835 /* BiconomeTests.xctest */,
-				62F675C922F5280B00826835 /* BiconomeUITests.xctest */,
+				62F675A622F5280900826835 /* Antelope.app */,
+				62F675BE22F5280B00826835 /* AntelopeTests.xctest */,
+				62F675C922F5280B00826835 /* AntelopeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -5011,9 +5085,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		62F675A522F5280900826835 /* Biconome */ = {
+		62F675A522F5280900826835 /* Antelope */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 62F675D222F5280B00826835 /* Build configuration list for PBXNativeTarget "Biconome" */;
+			buildConfigurationList = 62F675D222F5280B00826835 /* Build configuration list for PBXNativeTarget "Antelope" */;
 			buildPhases = (
 				46659C51F4F21779E87C12B4 /* [CP] Check Pods Manifest.lock */,
 				62F675A222F5280900826835 /* Sources */,
@@ -5025,14 +5099,14 @@
 			);
 			dependencies = (
 			);
-			name = Biconome;
+			name = Antelope;
 			productName = Biconome;
-			productReference = 62F675A622F5280900826835 /* Biconome.app */;
+			productReference = 62F675A622F5280900826835 /* Antelope.app */;
 			productType = "com.apple.product-type.application";
 		};
-		62F675BD22F5280B00826835 /* BiconomeTests */ = {
+		62F675BD22F5280B00826835 /* AntelopeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 62F675D522F5280B00826835 /* Build configuration list for PBXNativeTarget "BiconomeTests" */;
+			buildConfigurationList = 62F675D522F5280B00826835 /* Build configuration list for PBXNativeTarget "AntelopeTests" */;
 			buildPhases = (
 				62F675BA22F5280B00826835 /* Sources */,
 				62F675BB22F5280B00826835 /* Frameworks */,
@@ -5043,14 +5117,14 @@
 			dependencies = (
 				62F675C022F5280B00826835 /* PBXTargetDependency */,
 			);
-			name = BiconomeTests;
+			name = AntelopeTests;
 			productName = BiconomeTests;
-			productReference = 62F675BE22F5280B00826835 /* BiconomeTests.xctest */;
+			productReference = 62F675BE22F5280B00826835 /* AntelopeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		62F675C822F5280B00826835 /* BiconomeUITests */ = {
+		62F675C822F5280B00826835 /* AntelopeUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 62F675D822F5280B00826835 /* Build configuration list for PBXNativeTarget "BiconomeUITests" */;
+			buildConfigurationList = 62F675D822F5280B00826835 /* Build configuration list for PBXNativeTarget "AntelopeUITests" */;
 			buildPhases = (
 				62F675C522F5280B00826835 /* Sources */,
 				62F675C622F5280B00826835 /* Frameworks */,
@@ -5061,9 +5135,9 @@
 			dependencies = (
 				62F675CB22F5280B00826835 /* PBXTargetDependency */,
 			);
-			name = BiconomeUITests;
+			name = AntelopeUITests;
 			productName = BiconomeUITests;
-			productReference = 62F675C922F5280B00826835 /* BiconomeUITests.xctest */;
+			productReference = 62F675C922F5280B00826835 /* AntelopeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -5088,7 +5162,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 62F675A122F5280900826835 /* Build configuration list for PBXProject "Biconome" */;
+			buildConfigurationList = 62F675A122F5280900826835 /* Build configuration list for PBXProject "Antelope" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -5104,9 +5178,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				62F675A522F5280900826835 /* Biconome */,
-				62F675BD22F5280B00826835 /* BiconomeTests */,
-				62F675C822F5280B00826835 /* BiconomeUITests */,
+				62F675A522F5280900826835 /* Antelope */,
+				62F675BD22F5280B00826835 /* AntelopeTests */,
+				62F675C822F5280B00826835 /* AntelopeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -5456,6 +5530,7 @@
 				04253305237C07A600384E0B /* JinnLockViewController.m in Sources */,
 				04253306237C07A600384E0B /* JinnLockIndicator.m in Sources */,
 				004E4EB62387E117001AD1EE /* CoreArchive.m in Sources */,
+				0434CA9D23A9399200FD85D8 /* ANTHomeViewController.m in Sources */,
 				62F6765322F5386900826835 /* APAddressBookRefWrapper.m in Sources */,
 				62F6764A22F5386900826835 /* APPhone.m in Sources */,
 				62CA45CB2313A86B00B2CCFC /* ODZXYDropView.m in Sources */,
@@ -5627,6 +5702,7 @@
 				62F678E922F5570F00826835 /* NSArray+Log.m in Sources */,
 				00DF3AD22382980E0003DA90 /* BICTipOnly2View.m in Sources */,
 				62ACADE3231931DC0048E636 /* BICGetWalletsRequest.m in Sources */,
+				0434CAA023A939A500FD85D8 /* ANTMessageViewController.m in Sources */,
 				62BC0D922306A9E2004BB897 /* NSDate+YQCategory.m in Sources */,
 				6291C5662311669000C2C6A9 /* BICEXCHorLine.m in Sources */,
 				004E4EE92387E39C001AD1EE /* NSBundle+YBImageBrowser.m in Sources */,
@@ -5702,6 +5778,7 @@
 				04B074972359627300D5E704 /* RSDLeftJustifyingFlowLayout.m in Sources */,
 				62BC0D872306A9E2004BB897 /* UILabel+YQCategory.m in Sources */,
 				62D9E8CF2317BA6100E9A7E5 /* BICHisDeDetailVC.m in Sources */,
+				0434CAA323A939B600FD85D8 /* ANTMineViewController.m in Sources */,
 				62D624C923079CDD007A28EB /* BICResetPwdDoneVC.m in Sources */,
 				004E4EE22387E39C001AD1EE /* YBImageBrowserToolBar.m in Sources */,
 				62F678EB22F5570F00826835 /* NSString+Hash.m in Sources */,
@@ -5768,6 +5845,7 @@
 				004EFAB22348847A005F2A0E /* BICVerificationHeaderView.m in Sources */,
 				62C28EC7230FE0BF00E13EA7 /* BICChangeSocketView.m in Sources */,
 				62BC0DD52306AA6A004BB897 /* YQMarginView.m in Sources */,
+				0434CAA623A939C700FD85D8 /* ANTWalletViewController.m in Sources */,
 				00DF3AD82383A83D0003DA90 /* BICChangeCoinPairTVC.m in Sources */,
 				004E4EA42387E117001AD1EE /* UIImage+Water.m in Sources */,
 				04E834F2235EA81500F12FCC /* IQUIScrollView+Additions.m in Sources */,
@@ -5794,6 +5872,7 @@
 				62CADD82231F6628006E03B4 /* BICGoogleCodeCell.m in Sources */,
 				62ACADF0231A0F7B0048E636 /* BICWalletHistoryCell.m in Sources */,
 				62BB387D23150FE800734F63 /* MDRadialProgressLabel.m in Sources */,
+				0434CAA923A939D300FD85D8 /* ANTFindViewController.m in Sources */,
 				62F67A3C22FC2D0F00826835 /* Y_StockChartRightYView.m in Sources */,
 				04FC675F234F6B7100CD3E4F /* BICAppStoreResponse.m in Sources */,
 				62B788F72303AB63003AE806 /* BICGetTopListResponse.m in Sources */,
@@ -5852,12 +5931,12 @@
 /* Begin PBXTargetDependency section */
 		62F675C022F5280B00826835 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 62F675A522F5280900826835 /* Biconome */;
+			target = 62F675A522F5280900826835 /* Antelope */;
 			targetProxy = 62F675BF22F5280B00826835 /* PBXContainerItemProxy */;
 		};
 		62F675CB22F5280B00826835 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 62F675A522F5280900826835 /* Biconome */;
+			target = 62F675A522F5280900826835 /* Antelope */;
 			targetProxy = 62F675CA22F5280B00826835 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -6048,9 +6127,9 @@
 					"$(SRCROOT)/Biconome/Vender/jetfire",
 					"$(SRCROOT)/Biconome/Vender/WebsocketStompKit",
 				);
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Antelope.ly;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Antelope;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s arm64 arm64e";
@@ -6089,9 +6168,9 @@
 					"$(PROJECT_DIR)/Biconome/Commons/Pingpp/Dependencies/WebView",
 					"$(PROJECT_DIR)/Biconome/Commons/Pingpp/Channels/Alipay",
 				);
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.biconomy.Innovation;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Antelope;
 				PROVISIONING_PROFILE_SPECIFIER = biconomyAppstoreDis;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s arm64 arm64e";
@@ -6111,7 +6190,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = linying.BiconomeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Biconome.app/Biconome";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Antelope.app/Antelope";
 			};
 			name = Debug;
 		};
@@ -6128,7 +6207,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = linying.BiconomeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Biconome.app/Biconome";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Antelope.app/Antelope";
 			};
 			name = Release;
 		};
@@ -6173,7 +6252,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		62F675A122F5280900826835 /* Build configuration list for PBXProject "Biconome" */ = {
+		62F675A122F5280900826835 /* Build configuration list for PBXProject "Antelope" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				62F675D022F5280B00826835 /* Debug */,
@@ -6182,7 +6261,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		62F675D222F5280B00826835 /* Build configuration list for PBXNativeTarget "Biconome" */ = {
+		62F675D222F5280B00826835 /* Build configuration list for PBXNativeTarget "Antelope" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				62F675D322F5280B00826835 /* Debug */,
@@ -6191,7 +6270,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		62F675D522F5280B00826835 /* Build configuration list for PBXNativeTarget "BiconomeTests" */ = {
+		62F675D522F5280B00826835 /* Build configuration list for PBXNativeTarget "AntelopeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				62F675D622F5280B00826835 /* Debug */,
@@ -6200,7 +6279,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		62F675D822F5280B00826835 /* Build configuration list for PBXNativeTarget "BiconomeUITests" */ = {
+		62F675D822F5280B00826835 /* Build configuration list for PBXNativeTarget "AntelopeUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				62F675D922F5280B00826835 /* Debug */,

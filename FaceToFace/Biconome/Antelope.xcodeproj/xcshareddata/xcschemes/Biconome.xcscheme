@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "62F675A522F5280900826835"
-               BuildableName = "Biconome.app"
-               BlueprintName = "Biconome"
-               ReferencedContainer = "container:Biconome.xcodeproj">
+               BuildableName = "Antelope.app"
+               BlueprintName = "Antelope"
+               ReferencedContainer = "container:Antelope.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -31,9 +31,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "62F675A522F5280900826835"
-            BuildableName = "Biconome.app"
-            BlueprintName = "Biconome"
-            ReferencedContainer = "container:Biconome.xcodeproj">
+            BuildableName = "Antelope.app"
+            BlueprintName = "Antelope"
+            ReferencedContainer = "container:Antelope.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -42,9 +42,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "62F675BD22F5280B00826835"
-               BuildableName = "BiconomeTests.xctest"
-               BlueprintName = "BiconomeTests"
-               ReferencedContainer = "container:Biconome.xcodeproj">
+               BuildableName = "AntelopeTests.xctest"
+               BlueprintName = "AntelopeTests"
+               ReferencedContainer = "container:Antelope.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -52,9 +52,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "62F675C822F5280B00826835"
-               BuildableName = "BiconomeUITests.xctest"
-               BlueprintName = "BiconomeUITests"
-               ReferencedContainer = "container:Biconome.xcodeproj">
+               BuildableName = "AntelopeUITests.xctest"
+               BlueprintName = "AntelopeUITests"
+               ReferencedContainer = "container:Antelope.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -74,9 +74,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "62F675A522F5280900826835"
-            BuildableName = "Biconome.app"
-            BlueprintName = "Biconome"
-            ReferencedContainer = "container:Biconome.xcodeproj">
+            BuildableName = "Antelope.app"
+            BlueprintName = "Antelope"
+            ReferencedContainer = "container:Antelope.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -91,9 +91,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "62F675A522F5280900826835"
-            BuildableName = "Biconome.app"
-            BlueprintName = "Biconome"
-            ReferencedContainer = "container:Biconome.xcodeproj">
+            BuildableName = "Antelope.app"
+            BlueprintName = "Antelope"
+            ReferencedContainer = "container:Antelope.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
