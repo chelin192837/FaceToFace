@@ -430,56 +430,58 @@
 
 + (double)depthPriceWithPrice:(CGFloat)price Count:(NSInteger)count
 {
-    switch (count) {
-        case 1:
-            return [NSStringFormat(@"%.1f",price) doubleValue];
-            break;
-        case 2:
-            return [NSStringFormat(@"%.2f",price) doubleValue];
-            break;
-        case 3:
-            return [NSStringFormat(@"%.3f",price) doubleValue];
-            break;
-        case 4:
-            return [NSStringFormat(@"%.4f",price) doubleValue];
-            break;
-        case 5:
-            return [NSStringFormat(@"%.5f",price) doubleValue];
-            break;
-        case 6:
-            return [NSStringFormat(@"%.6f",price) doubleValue];
-            break;
-        default:
-            return [NSStringFormat(@"%.f",price) doubleValue];
-            break;
-    }
+//    switch (count) {
+//        case 1:
+//            return [NSStringFormat(@"%.1f",price) doubleValue];
+//            break;
+//        case 2:
+//            return [NSStringFormat(@"%.2f",price) doubleValue];
+//            break;
+//        case 3:
+//            return [NSStringFormat(@"%.3f",price) doubleValue];
+//            break;
+//        case 4:
+//            return [NSStringFormat(@"%.4f",price) doubleValue];
+//            break;
+//        case 5:
+//            return [NSStringFormat(@"%.5f",price) doubleValue];
+//            break;
+//        case 6:
+//            return [NSStringFormat(@"%.6f",price) doubleValue];
+//            break;
+//        default:
+//            return [NSStringFormat(@"%.f",price) doubleValue];
+//            break;
+//    }
+    return 0.f;
 }
 
 + (NSString *)depthStrPriceWithPrice:(CGFloat)price Count:(NSInteger)count
 {
-    switch (count) {
-        case 1:
-            return NSStringFormat(@"%.1f",price);
-            break;
-        case 2:
-            return NSStringFormat(@"%.2f",price);
-            break;
-        case 3:
-            return NSStringFormat(@"%.3f",price);
-            break;
-        case 4:
-            return NSStringFormat(@"%.4f",price);
-            break;
-        case 5:
-            return NSStringFormat(@"%.5f",price);
-            break;
-        case 6:
-            return NSStringFormat(@"%.6f",price);
-            break;
-        default:
-            return NSStringFormat(@"%.f",price);
-            break;
-    }
+//    switch (count) {
+//        case 1:
+//            return NSStringFormat(@"%.1f",price);
+//            break;
+//        case 2:
+//            return NSStringFormat(@"%.2f",price);
+//            break;
+//        case 3:
+//            return NSStringFormat(@"%.3f",price);
+//            break;
+//        case 4:
+//            return NSStringFormat(@"%.4f",price);
+//            break;
+//        case 5:
+//            return NSStringFormat(@"%.5f",price);
+//            break;
+//        case 6:
+//            return NSStringFormat(@"%.6f",price);
+//            break;
+//        default:
+//            return NSStringFormat(@"%.f",price);
+//            break;
+//    }
+    return @"";
 }
 
 @end

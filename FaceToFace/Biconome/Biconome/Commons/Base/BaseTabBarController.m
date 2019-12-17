@@ -8,23 +8,23 @@
 
 #import "BaseTabBarController.h"
 
-#import "HKCKViewController.h"
-
-#import "BICHomeViewController.h"
 
 #import "BaseTabBar.h"
 
 #import "SDDeviceManager.h"
 
-#import "BICMarketMainVC.h"
 
-#import "BICExchangeVC.h"
 
-#import "BICMainWalletVC.h"
 
-#import "BICMineVC.h"
 
 #import "UIView+shadowPath.h"
+
+#import "ANTHomeViewController.h"
+#import "ANTFindViewController.h"
+#import "ANTMessageViewController.h"
+#import "ANTWalletViewController.h"
+#import "ANTMineViewController.h"
+
 #define TopMarign 20.f
 #define ImageMarign 6.f
 #define topItemMarign 10.f
@@ -67,15 +67,15 @@
     
     self.titleArr = @[LAN(@"Biconomy"),LAN(@"市场"),LAN(@"交易"),LAN(@"钱包"),LAN(@"我的")];
     
-    [self setUpChildVc:[[BICHomeViewController alloc] init] title:[self.titleArr objectAtIndex:0] image:@"tab_home_default" selectImage:@"tab_home_selected"];
+    [self setUpChildVc:[[ANTHomeViewController alloc] init] title:[self.titleArr objectAtIndex:0] image:@"tab_home_default" selectImage:@"tab_home_selected"];
   
-    [self setUpChildVc:[[BICMarketMainVC alloc] init] title:[self.titleArr objectAtIndex:1] image:@"tab_market_default" selectImage:@"tab_market_selected"];
+    [self setUpChildVc:[[ANTFindViewController alloc] init] title:[self.titleArr objectAtIndex:1] image:@"tab_market_default" selectImage:@"tab_market_selected"];
     
-    [self setUpChildVc:[[BICExchangeVC alloc] init] title:[self.titleArr objectAtIndex:2] image:@"tab_trade_default" selectImage:@"tab_trade_selected"];
+    [self setUpChildVc:[[ANTMessageViewController alloc] init] title:[self.titleArr objectAtIndex:2] image:@"tab_trade_default" selectImage:@"tab_trade_selected"];
     
-    [self setUpChildVc:[[BICMainWalletVC alloc] init] title:[self.titleArr objectAtIndex:3] image:@"tab_wallet_default" selectImage:@"tab_wallet_selected"];
+    [self setUpChildVc:[[ANTWalletViewController alloc] init] title:[self.titleArr objectAtIndex:3] image:@"tab_wallet_default" selectImage:@"tab_wallet_selected"];
   
-    [self setUpChildVc:[[BICMineVC alloc] init] title:[self.titleArr objectAtIndex:4] image:@"tab_profile_default" selectImage:@"tab_profile_selected"];
+    [self setUpChildVc:[[ANTMineViewController alloc] init] title:[self.titleArr objectAtIndex:4] image:@"tab_profile_default" selectImage:@"tab_profile_selected"];
 
     [self setupBottomBtn];
     

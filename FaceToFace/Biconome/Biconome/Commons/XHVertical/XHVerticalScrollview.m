@@ -7,12 +7,12 @@
 //
 
 #import "XHVerticalScrollview.h"
-#import "RSDHomeListWebVC.h"
+//#import "RSDHomeListWebVC.h"
 @interface XHVerticalScrollview()<UIScrollViewDelegate>
 @property (strong, nonatomic) UIScrollView * verticalScroll;
 @property (strong, nonatomic) NSMutableArray * mutableArray;
 
-@property (strong, nonatomic)RowsResponse * row;
+//@property (strong, nonatomic)RowsResponse * row;
 
 @end
 @implementation XHVerticalScrollview
@@ -43,19 +43,19 @@
 
 -(void)tap:(UITapGestureRecognizer*)tap
 {
-    UIView * view = tap.view;
-    
-    NSInteger index = view.tag-100;
-    
-    RowsResponse * row = self.mutableArray[index];
-    
-    RSDHomeListWebVC * webVC = [[RSDHomeListWebVC alloc] init];
-    
-    webVC.navigationShow = YES;
-
-    webVC.listWebStr = row.jumpUrl;
-    
-    [self.superview.yq_viewController.navigationController pushViewController:webVC animated:YES];
+//    UIView * view = tap.view;
+//
+//    NSInteger index = view.tag-100;
+//
+//    RowsResponse * row = self.mutableArray[index];
+//
+//    RSDHomeListWebVC * webVC = [[RSDHomeListWebVC alloc] init];
+//
+//    webVC.navigationShow = YES;
+//
+//    webVC.listWebStr = row.jumpUrl;
+//
+//    [self.superview.yq_viewController.navigationController pushViewController:webVC animated:YES];
 }
 
 - (void)setUpTimer{
@@ -113,8 +113,8 @@
         UILabel * label = [[UILabel alloc]init];
         label.frame = CGRectMake(0, 0, self.verticalScroll.frame.size.width, view.frame.size.height);
         label.textAlignment = NSTextAlignmentCenter;
-        RowsResponse * row = self.mutableArray[i];
-        label.text = [NSString stringWithFormat:@"%@",row.title];
+//        RowsResponse * row = self.mutableArray[i];
+//        label.text = [NSString stringWithFormat:@"%@",row.title];
         label.textColor = KThemeTextColor;
         label.font = [UIFont systemFontOfSize:15.f];
         label.userInteractionEnabled = YES;

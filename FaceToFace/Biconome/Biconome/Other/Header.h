@@ -28,7 +28,7 @@
 #define kNoteSreeningViewMaxHeight 63.0f
 
 #define kNewsVideoSize 220 *Kscale
-
+#define KScreenWidth ([[UIScreen mainScreen] bounds].size.width)
 /// 轮播图的高
 #define kCarouselViewHeight  268 *kScaleHeight
 

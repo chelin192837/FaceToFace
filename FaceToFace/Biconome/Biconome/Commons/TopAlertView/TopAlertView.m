@@ -50,6 +50,7 @@
             return;
         }
     }
+    
     //计算width
     CGFloat width = 66 + [SDDeviceManager getTextWidth:titleStr FontSize:15.f];
     if(width>KScreenWidth){

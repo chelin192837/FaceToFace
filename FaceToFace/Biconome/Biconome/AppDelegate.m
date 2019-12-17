@@ -8,8 +8,8 @@
 
 #import "AppDelegate.h"
 #import "YYFPSLabel.h"
-#import "BICSockJSRouter.h"
-#import "BICDataToUserDefault.h"
+//#import "BICSockJSRouter.h"
+//#import "BICDataToUserDefault.h"
 #import "FLAnimatedImage.h"
 #import "FLAnimatedImageView+WebCache.h"
 @import Firebase;
@@ -28,10 +28,10 @@
     
     [FIRApp configure];
     
-    BICDataToUserDefault * userDefult = [[BICDataToUserDefault alloc] init];
-    
-    [userDefult setupData];
-    
+//    BICDataToUserDefault * userDefult = [[BICDataToUserDefault alloc] init];
+//
+//    [userDefult setupData];
+//
     //开启IQKeyBoard
     // 开始第三方键盘
     [[IQKeyboardManager sharedManager] setEnable:YES];
@@ -188,7 +188,7 @@
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
     WEAK_SELF
     [[NSNotificationCenter defaultCenter] postNotificationName:AppdelegateEnterForeground object:nil];
-    [[BICSockJSRouter shareInstance] SockJSGlobeReStart];
+//    [[BICSockJSRouter shareInstance] SockJSGlobeReStart];
     [weakSelf.myTimer invalidate];// 停止定时器
     weakSelf.myTimer=nil;
     //超过时限进行安全认证

@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ANTWalletViewController : UIViewController
+@interface ANTWalletViewController : BaseViewController
 
 @end
 

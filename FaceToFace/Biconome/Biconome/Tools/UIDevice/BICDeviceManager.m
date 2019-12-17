@@ -8,8 +8,8 @@
 
 #import "BICDeviceManager.h"
 #import "TopAlertView.h"
-#import "BICSendRegCodeRequest.h"
-#import "BICLoginVC.h"
+//#import "BICSendRegCodeRequest.h"
+//#import "BICLoginVC.h"
 #import "SDArchiverTools.h"
 #import <LocalAuthentication/LocalAuthentication.h>
 
@@ -491,11 +491,11 @@
 }
 +(void)PushToLoginView
 {
-        BICLoginVC * loginVC = [[BICLoginVC alloc] initWithNibName:@"BICLoginVC" bundle:nil];
-        UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
-        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:nav animated:YES completion:^{
-            
-        }];
+//        BICLoginVC * loginVC = [[BICLoginVC alloc] initWithNibName:@"BICLoginVC" bundle:nil];
+//        UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+//        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:nav animated:YES completion:^{
+//            
+//        }];
 }
 +(void)setButtonStyle:(CPButtonStyle)style imageTitlePadding:(CGFloat)padding button:(UIButton *)button{
     CGRect imageFrame = button.imageView.frame;

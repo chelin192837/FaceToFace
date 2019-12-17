@@ -7,7 +7,8 @@
 //
 
 #import "BICSearchNavigation.h"
-#import "BICHistoryView.h"
+//#import "BICHistoryView.h"
+
 
 @interface BICSearchNavigation()<UISearchBarDelegate>
 
@@ -21,7 +22,7 @@
 
 @property (nonatomic,assign) SEARCHNAVTYPE type ;
 
-@property(nonatomic,strong) BICHistoryView * historyView;
+//@property(nonatomic,strong) BICHistoryView * historyView;
 
 @property(nonatomic,strong) UIViewController * superView;
 
@@ -249,14 +250,14 @@
         make.height.equalTo(@30);
     }];
 
-    self.historyView = [[BICHistoryView alloc] initWithFrame:CGRectMake(0,kNavBar_Height, SCREEN_WIDTH, SCREEN_HEIGHT-kNavBar_Height)];
-   WEAK_SELF
-    self.historyView.clearBlock = ^{
-        [weakSelf clearBtnClick];
-        weakSelf.historyView.hidden = YES;
-    };
-    
-    [self.superView.view addSubview:self.historyView];
+//    self.historyView = [[BICHistoryView alloc] initWithFrame:CGRectMake(0,kNavBar_Height, SCREEN_WIDTH, SCREEN_HEIGHT-kNavBar_Height)];
+//   WEAK_SELF
+//    self.historyView.clearBlock = ^{
+//        [weakSelf clearBtnClick];
+//        weakSelf.historyView.hidden = YES;
+//    };
+//
+//    [self.superView.view addSubview:self.historyView];
     
     [textField becomeFirstResponder] ;
     
@@ -279,7 +280,7 @@
         
     }
     
-    self.historyView.historyDataArray = [self historyDataArray];
+//    self.historyView.historyDataArray = [self historyDataArray];
     self.backgroundColor=KThemeBGColor;
 }
 // 替代方案 2，遍历获取指定类型的属性
@@ -384,7 +385,7 @@
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     if (self.searchBlock) {
         
-        self.historyView.hidden = YES;
+//        self.historyView.hidden = YES;
         
         self.searchBlock(searchText);
     }
