@@ -87,7 +87,9 @@
 		00BF41782349E00300FD9D93 /* FileTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BF41772349E00300FD9D93 /* FileTools.m */; };
 		00E687D6233A387400ADDADF /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 00E687D5233A387400ADDADF /* libc++.tbd */; };
 		00E687DC233B6C5700ADDADF /* Foundation+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E687DB233B6C5700ADDADF /* Foundation+Extension.m */; };
-		0434CA9D23A9399200FD85D8 /* ANTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0434CA9C23A9399200FD85D8 /* ANTHomeViewController.m */; };
+		042907F823AA966100BAC9BB /* ANTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042907F723AA966100BAC9BB /* ANTHomeViewController.m */; };
+		042907FC23AA968F00BAC9BB /* ANTHomeHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 042907FA23AA968F00BAC9BB /* ANTHomeHeadCell.m */; };
+		042907FD23AA968F00BAC9BB /* ANTHomeHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042907FB23AA968F00BAC9BB /* ANTHomeHeadCell.xib */; };
 		0434CAA023A939A500FD85D8 /* ANTMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0434CA9F23A939A500FD85D8 /* ANTMessageViewController.m */; };
 		0434CAA323A939B600FD85D8 /* ANTMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0434CAA223A939B600FD85D8 /* ANTMineViewController.m */; };
 		0434CAA623A939C700FD85D8 /* ANTWalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0434CAA523A939C700FD85D8 /* ANTWalletViewController.m */; };
@@ -518,8 +520,11 @@
 		00BF41772349E00300FD9D93 /* FileTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileTools.m; sourceTree = "<group>"; };
 		00E687D5233A387400ADDADF /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		00E687DB233B6C5700ADDADF /* Foundation+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Extension.m"; sourceTree = "<group>"; };
-		0434CA9B23A9399200FD85D8 /* ANTHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTHomeViewController.h; sourceTree = "<group>"; };
-		0434CA9C23A9399200FD85D8 /* ANTHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTHomeViewController.m; sourceTree = "<group>"; };
+		042907F623AA966100BAC9BB /* ANTHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANTHomeViewController.h; sourceTree = "<group>"; };
+		042907F723AA966100BAC9BB /* ANTHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANTHomeViewController.m; sourceTree = "<group>"; };
+		042907F923AA968F00BAC9BB /* ANTHomeHeadCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTHomeHeadCell.h; sourceTree = "<group>"; };
+		042907FA23AA968F00BAC9BB /* ANTHomeHeadCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTHomeHeadCell.m; sourceTree = "<group>"; };
+		042907FB23AA968F00BAC9BB /* ANTHomeHeadCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ANTHomeHeadCell.xib; sourceTree = "<group>"; };
 		0434CA9E23A939A500FD85D8 /* ANTMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTMessageViewController.h; sourceTree = "<group>"; };
 		0434CA9F23A939A500FD85D8 /* ANTMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTMessageViewController.m; sourceTree = "<group>"; };
 		0434CAA123A939B600FD85D8 /* ANTMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTMineViewController.h; sourceTree = "<group>"; };
@@ -1557,6 +1562,42 @@
 			path = FoundationExtension;
 			sourceTree = "<group>";
 		};
+		042907F223AA961A00BAC9BB /* home */ = {
+			isa = PBXGroup;
+			children = (
+				042907F323AA961A00BAC9BB /* Controller */,
+				042907F423AA961A00BAC9BB /* Model */,
+				042907F523AA961A00BAC9BB /* View */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		042907F323AA961A00BAC9BB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				042907F623AA966100BAC9BB /* ANTHomeViewController.h */,
+				042907F723AA966100BAC9BB /* ANTHomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		042907F423AA961A00BAC9BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		042907F523AA961A00BAC9BB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				042907F923AA968F00BAC9BB /* ANTHomeHeadCell.h */,
+				042907FA23AA968F00BAC9BB /* ANTHomeHeadCell.m */,
+				042907FB23AA968F00BAC9BB /* ANTHomeHeadCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		0434CA9523A9398400FD85D8 /* Antelope */ = {
 			isa = PBXGroup;
 			children = (
@@ -1573,8 +1614,7 @@
 		0434CA9623A9398400FD85D8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				0434CA9B23A9399200FD85D8 /* ANTHomeViewController.h */,
-				0434CA9C23A9399200FD85D8 /* ANTHomeViewController.m */,
+				042907F223AA961A00BAC9BB /* home */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -3039,6 +3079,7 @@
 				62F675B122F5280A00826835 /* Main.storyboard in Resources */,
 				62CA0E0B23224FE4003F1B48 /* 17.png in Resources */,
 				62CA0E0723224FE4003F1B48 /* 12.png in Resources */,
+				042907FD23AA968F00BAC9BB /* ANTHomeHeadCell.xib in Resources */,
 				62CA0E0523224FE4003F1B48 /* 7.png in Resources */,
 				04E834F8235EAFB300F12FCC /* GoogleService-Info.plist in Resources */,
 				004E4EA32387E117001AD1EE /* CoreSVP.bundle in Resources */,
@@ -3181,10 +3222,10 @@
 				62F677B322F540EB00826835 /* UIButton+RSDCount.m in Sources */,
 				62BC0D862306A9E2004BB897 /* UIScrollView+YQCategory.m in Sources */,
 				004E4EB62387E117001AD1EE /* CoreArchive.m in Sources */,
-				0434CA9D23A9399200FD85D8 /* ANTHomeViewController.m in Sources */,
 				62F6765322F5386900826835 /* APAddressBookRefWrapper.m in Sources */,
 				62F6764A22F5386900826835 /* APPhone.m in Sources */,
 				004E4EA02387E117001AD1EE /* SVProgressHUD.m in Sources */,
+				042907FC23AA968F00BAC9BB /* ANTHomeHeadCell.m in Sources */,
 				62F678E222F5570F00826835 /* UIImage+Addtions.m in Sources */,
 				004E4EDF2387E39C001AD1EE /* YBImageBrowserAnimatedTransitioning.m in Sources */,
 				00BF41752349DFBB00FD9D93 /* NSString+LW.m in Sources */,
@@ -3300,6 +3341,7 @@
 				004E4EB52387E117001AD1EE /* NSDate+Extend.m in Sources */,
 				04E834EC235EA81500F12FCC /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				6291C549231110AF00C2C6A9 /* KDGoalBarPercentLayer.m in Sources */,
+				042907F823AA966100BAC9BB /* ANTHomeViewController.m in Sources */,
 				62F677AC22F540EB00826835 /* UIImage+Addtions.m in Sources */,
 				62F6792422F55A7000826835 /* RSDBaseService.m in Sources */,
 				04E834F5235EA81500F12FCC /* IQUIViewController+Additions.m in Sources */,
