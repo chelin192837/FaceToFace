@@ -18,7 +18,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self initNavigationTitleViewLabelWithTitle:@"Biconomy" titleColor:[UIColor redColor] IfBelongTabbar:NO];
+    [self initNavigationTitleViewLabelWithTitle:@"清北面对面" titleColor:SDColorGray333333 IfBelongTabbar:NO];
 
     [self setupUI];
 
@@ -26,7 +26,8 @@
 
 -(void)setupUI
 {
-    self.title = @"清北面对面";
+    
+    
 }
 
 

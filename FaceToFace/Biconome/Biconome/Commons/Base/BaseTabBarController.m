@@ -64,9 +64,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.titleArr = @[LAN(@"Biconomy"),LAN(@"市场"),LAN(@"交易"),LAN(@"钱包"),LAN(@"我的")];
-    
+        
+    self.titleArr = @[@"首页",@"发现",@"消息",@"钱包",@"个人中心"];
+
     [self setUpChildVc:[[ANTHomeViewController alloc] init] title:[self.titleArr objectAtIndex:0] image:@"tab_home_default" selectImage:@"tab_home_selected"];
   
     [self setUpChildVc:[[ANTFindViewController alloc] init] title:[self.titleArr objectAtIndex:1] image:@"tab_market_default" selectImage:@"tab_market_selected"];

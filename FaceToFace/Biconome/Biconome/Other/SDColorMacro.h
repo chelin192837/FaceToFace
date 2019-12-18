@@ -10,6 +10,8 @@
 #define SDColorMacro_h
 // app 基础绿色
 #define SDColorOfGreen00AF36    [UIColor colorFromHexRGB:@"00AF36"]
+
+
 // 深灰
 #define SDColorGrayAAAAAA       [UIColor colorFromHexRGB:@"AAAAAA"]
 // 按钮置灰

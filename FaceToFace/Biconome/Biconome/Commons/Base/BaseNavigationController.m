@@ -27,7 +27,8 @@ static CGFloat kNavigationBackgroundAlpha = 0.8f;
             [bar setBackgroundImage:[UIImage imageFromContextWithColor:kNVABICSYSTEMBGColor] forBarMetrics:UIBarMetricsDefault];
         [bar setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"PingFangSC-Medium" size:18],NSForegroundColorAttributeName:SDColorWhiteFFFFFF}];
     
-    [bar setShadowImage:[UIImage imageFromContextWithColor:[UIColor clearColor]]];
+    
+    [bar setShadowImage:[UIImage imageFromContextWithColor:SDColorLineGrayEDEDED]];
     
     // 设置item
     UIBarButtonItem *item = [UIBarButtonItem appearance];
