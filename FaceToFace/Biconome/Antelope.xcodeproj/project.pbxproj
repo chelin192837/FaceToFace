@@ -90,10 +90,35 @@
 		042907F823AA966100BAC9BB /* ANTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042907F723AA966100BAC9BB /* ANTHomeViewController.m */; };
 		042907FC23AA968F00BAC9BB /* ANTHomeHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 042907FA23AA968F00BAC9BB /* ANTHomeHeadCell.m */; };
 		042907FD23AA968F00BAC9BB /* ANTHomeHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042907FB23AA968F00BAC9BB /* ANTHomeHeadCell.xib */; };
+		0429080123ABB84400BAC9BB /* ANTHomeCollectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 042907FF23ABB84400BAC9BB /* ANTHomeCollectCell.m */; };
+		0429080223ABB84400BAC9BB /* ANTHomeCollectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0429080023ABB84400BAC9BB /* ANTHomeCollectCell.xib */; };
+		0429080523ACA22400BAC9BB /* ANTCollectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0429080423ACA22400BAC9BB /* ANTCollectModel.m */; };
+		0429080F23ACE8F100BAC9BB /* qingbei5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0429080923ACE8F100BAC9BB /* qingbei5.jpg */; };
+		0429081123ACE8F100BAC9BB /* qingbei3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0429080B23ACE8F100BAC9BB /* qingbei3.jpg */; };
+		0429081723ACEC6000BAC9BB /* qingbei1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0429081323ACEC6000BAC9BB /* qingbei1.jpg */; };
+		0429081823ACEC6000BAC9BB /* qingbei6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0429081423ACEC6000BAC9BB /* qingbei6.jpg */; };
+		0429081923ACEC6000BAC9BB /* qingbei4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0429081523ACEC6000BAC9BB /* qingbei4.jpg */; };
+		0429081A23ACEC6000BAC9BB /* qingbei2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0429081623ACEC6000BAC9BB /* qingbei2.jpg */; };
+		0429081E23ACECFC00BAC9BB /* ANTHomeMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0429081C23ACECFC00BAC9BB /* ANTHomeMainCell.m */; };
+		0429081F23ACECFC00BAC9BB /* ANTHomeMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0429081D23ACECFC00BAC9BB /* ANTHomeMainCell.xib */; };
+		0429082323ACF20200BAC9BB /* RSDHomeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0429082023ACF20100BAC9BB /* RSDHomeTableCell.xib */; };
+		0429082423ACF20200BAC9BB /* RSDHomeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0429082123ACF20100BAC9BB /* RSDHomeTableCell.m */; };
+		0429082823AE10EC00BAC9BB /* ANTFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0429082723AE10EC00BAC9BB /* ANTFindViewController.m */; };
+		0429082E23AE112800BAC9BB /* ANTFindCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0429082C23AE112800BAC9BB /* ANTFindCollectionViewCell.m */; };
+		0429082F23AE112800BAC9BB /* ANTFindCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0429082D23AE112800BAC9BB /* ANTFindCollectionViewCell.xib */; };
+		0429088C23AE2B0D00BAC9BB /* HcdPopMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0429086C23AE2B0D00BAC9BB /* HcdPopMenuView.m */; };
+		0429088D23AE2B0D00BAC9BB /* HcdPopMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0429086E23AE2B0D00BAC9BB /* HcdPopMenuItem.m */; };
+		0429088E23AE2B0D00BAC9BB /* toudan_icon_hailiangtoudan.png in Resources */ = {isa = PBXBuildFile; fileRef = 0429087023AE2B0D00BAC9BB /* toudan_icon_hailiangtoudan.png */; };
+		0429088F23AE2B0D00BAC9BB /* toudan_icon_hailiangtoudan@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0429087123AE2B0D00BAC9BB /* toudan_icon_hailiangtoudan@3x.png */; };
+		0429089023AE2B0D00BAC9BB /* center_exit@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0429087223AE2B0D00BAC9BB /* center_exit@3x.png */; };
+		0429089123AE2B0D00BAC9BB /* center_exit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0429087323AE2B0D00BAC9BB /* center_exit@2x.png */; };
+		0429089223AE2B0D00BAC9BB /* toudan_icon_hailiangtoudan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0429087423AE2B0D00BAC9BB /* toudan_icon_hailiangtoudan@2x.png */; };
+		0429089323AE2B0D00BAC9BB /* toudan_icon_dingxiangtoudan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0429087523AE2B0D00BAC9BB /* toudan_icon_dingxiangtoudan@2x.png */; };
+		0429089423AE2B0D00BAC9BB /* toudan_icon_dingxiangtoudan@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0429087623AE2B0D00BAC9BB /* toudan_icon_dingxiangtoudan@3x.png */; };
+		0429089523AE2B0D00BAC9BB /* toudan_icon_dingxiangtoudan.png in Resources */ = {isa = PBXBuildFile; fileRef = 0429087723AE2B0D00BAC9BB /* toudan_icon_dingxiangtoudan.png */; };
+		0429089F23AE398500BAC9BB /* ANTPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0429089C23AE398500BAC9BB /* ANTPublishViewController.m */; };
 		0434CAA023A939A500FD85D8 /* ANTMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0434CA9F23A939A500FD85D8 /* ANTMessageViewController.m */; };
 		0434CAA323A939B600FD85D8 /* ANTMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0434CAA223A939B600FD85D8 /* ANTMineViewController.m */; };
-		0434CAA623A939C700FD85D8 /* ANTWalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0434CAA523A939C700FD85D8 /* ANTWalletViewController.m */; };
-		0434CAA923A939D300FD85D8 /* ANTFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0434CAA823A939D300FD85D8 /* ANTFindViewController.m */; };
 		0470993B2359DE2E007FBBF5 /* UIView+shadowPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 0470993A2359DE2E007FBBF5 /* UIView+shadowPath.m */; };
 		04B074972359627300D5E704 /* RSDLeftJustifyingFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B074962359627200D5E704 /* RSDLeftJustifyingFlowLayout.m */; };
 		04E834E6235EA81400F12FCC /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 04E834BF235EA81400F12FCC /* LICENSE.md */; };
@@ -525,14 +550,47 @@
 		042907F923AA968F00BAC9BB /* ANTHomeHeadCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTHomeHeadCell.h; sourceTree = "<group>"; };
 		042907FA23AA968F00BAC9BB /* ANTHomeHeadCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTHomeHeadCell.m; sourceTree = "<group>"; };
 		042907FB23AA968F00BAC9BB /* ANTHomeHeadCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ANTHomeHeadCell.xib; sourceTree = "<group>"; };
+		042907FE23ABB84400BAC9BB /* ANTHomeCollectCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTHomeCollectCell.h; sourceTree = "<group>"; };
+		042907FF23ABB84400BAC9BB /* ANTHomeCollectCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTHomeCollectCell.m; sourceTree = "<group>"; };
+		0429080023ABB84400BAC9BB /* ANTHomeCollectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ANTHomeCollectCell.xib; sourceTree = "<group>"; };
+		0429080323ACA22400BAC9BB /* ANTCollectModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTCollectModel.h; sourceTree = "<group>"; };
+		0429080423ACA22400BAC9BB /* ANTCollectModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTCollectModel.m; sourceTree = "<group>"; };
+		0429080923ACE8F100BAC9BB /* qingbei5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = qingbei5.jpg; sourceTree = "<group>"; };
+		0429080B23ACE8F100BAC9BB /* qingbei3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = qingbei3.jpg; sourceTree = "<group>"; };
+		0429081323ACEC6000BAC9BB /* qingbei1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = qingbei1.jpg; sourceTree = "<group>"; };
+		0429081423ACEC6000BAC9BB /* qingbei6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = qingbei6.jpg; sourceTree = "<group>"; };
+		0429081523ACEC6000BAC9BB /* qingbei4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = qingbei4.jpg; sourceTree = "<group>"; };
+		0429081623ACEC6000BAC9BB /* qingbei2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = qingbei2.jpg; sourceTree = "<group>"; };
+		0429081B23ACECFC00BAC9BB /* ANTHomeMainCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTHomeMainCell.h; sourceTree = "<group>"; };
+		0429081C23ACECFC00BAC9BB /* ANTHomeMainCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTHomeMainCell.m; sourceTree = "<group>"; };
+		0429081D23ACECFC00BAC9BB /* ANTHomeMainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ANTHomeMainCell.xib; sourceTree = "<group>"; };
+		0429082023ACF20100BAC9BB /* RSDHomeTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RSDHomeTableCell.xib; sourceTree = "<group>"; };
+		0429082123ACF20100BAC9BB /* RSDHomeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDHomeTableCell.m; sourceTree = "<group>"; };
+		0429082223ACF20100BAC9BB /* RSDHomeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDHomeTableCell.h; sourceTree = "<group>"; };
+		0429082623AE10EC00BAC9BB /* ANTFindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANTFindViewController.h; sourceTree = "<group>"; };
+		0429082723AE10EC00BAC9BB /* ANTFindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANTFindViewController.m; sourceTree = "<group>"; };
+		0429082B23AE112800BAC9BB /* ANTFindCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTFindCollectionViewCell.h; sourceTree = "<group>"; };
+		0429082C23AE112800BAC9BB /* ANTFindCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTFindCollectionViewCell.m; sourceTree = "<group>"; };
+		0429082D23AE112800BAC9BB /* ANTFindCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ANTFindCollectionViewCell.xib; sourceTree = "<group>"; };
+		0429086A23AE2B0D00BAC9BB /* HcdPopMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HcdPopMenuView.h; sourceTree = "<group>"; };
+		0429086B23AE2B0D00BAC9BB /* HcdPopMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HcdPopMenuItem.h; sourceTree = "<group>"; };
+		0429086C23AE2B0D00BAC9BB /* HcdPopMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HcdPopMenuView.m; sourceTree = "<group>"; };
+		0429086D23AE2B0D00BAC9BB /* HcdPopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HcdPopMenu.h; sourceTree = "<group>"; };
+		0429086E23AE2B0D00BAC9BB /* HcdPopMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HcdPopMenuItem.m; sourceTree = "<group>"; };
+		0429087023AE2B0D00BAC9BB /* toudan_icon_hailiangtoudan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toudan_icon_hailiangtoudan.png; sourceTree = "<group>"; };
+		0429087123AE2B0D00BAC9BB /* toudan_icon_hailiangtoudan@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toudan_icon_hailiangtoudan@3x.png"; sourceTree = "<group>"; };
+		0429087223AE2B0D00BAC9BB /* center_exit@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "center_exit@3x.png"; sourceTree = "<group>"; };
+		0429087323AE2B0D00BAC9BB /* center_exit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "center_exit@2x.png"; sourceTree = "<group>"; };
+		0429087423AE2B0D00BAC9BB /* toudan_icon_hailiangtoudan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toudan_icon_hailiangtoudan@2x.png"; sourceTree = "<group>"; };
+		0429087523AE2B0D00BAC9BB /* toudan_icon_dingxiangtoudan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toudan_icon_dingxiangtoudan@2x.png"; sourceTree = "<group>"; };
+		0429087623AE2B0D00BAC9BB /* toudan_icon_dingxiangtoudan@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toudan_icon_dingxiangtoudan@3x.png"; sourceTree = "<group>"; };
+		0429087723AE2B0D00BAC9BB /* toudan_icon_dingxiangtoudan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toudan_icon_dingxiangtoudan.png; sourceTree = "<group>"; };
+		0429089A23AE398500BAC9BB /* ANTPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANTPublishViewController.h; sourceTree = "<group>"; };
+		0429089C23AE398500BAC9BB /* ANTPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANTPublishViewController.m; sourceTree = "<group>"; };
 		0434CA9E23A939A500FD85D8 /* ANTMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTMessageViewController.h; sourceTree = "<group>"; };
 		0434CA9F23A939A500FD85D8 /* ANTMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTMessageViewController.m; sourceTree = "<group>"; };
 		0434CAA123A939B600FD85D8 /* ANTMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTMineViewController.h; sourceTree = "<group>"; };
 		0434CAA223A939B600FD85D8 /* ANTMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTMineViewController.m; sourceTree = "<group>"; };
-		0434CAA423A939C700FD85D8 /* ANTWalletViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTWalletViewController.h; sourceTree = "<group>"; };
-		0434CAA523A939C700FD85D8 /* ANTWalletViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTWalletViewController.m; sourceTree = "<group>"; };
-		0434CAA723A939D300FD85D8 /* ANTFindViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTFindViewController.h; sourceTree = "<group>"; };
-		0434CAA823A939D300FD85D8 /* ANTFindViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTFindViewController.m; sourceTree = "<group>"; };
 		047099392359DE2E007FBBF5 /* UIView+shadowPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+shadowPath.h"; sourceTree = "<group>"; };
 		0470993A2359DE2E007FBBF5 /* UIView+shadowPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+shadowPath.m"; sourceTree = "<group>"; };
 		04B074952359627200D5E704 /* RSDLeftJustifyingFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDLeftJustifyingFlowLayout.h; sourceTree = "<group>"; };
@@ -1584,6 +1642,8 @@
 		042907F423AA961A00BAC9BB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0429080323ACA22400BAC9BB /* ANTCollectModel.h */,
+				0429080423ACA22400BAC9BB /* ANTCollectModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1594,6 +1654,123 @@
 				042907F923AA968F00BAC9BB /* ANTHomeHeadCell.h */,
 				042907FA23AA968F00BAC9BB /* ANTHomeHeadCell.m */,
 				042907FB23AA968F00BAC9BB /* ANTHomeHeadCell.xib */,
+				042907FE23ABB84400BAC9BB /* ANTHomeCollectCell.h */,
+				042907FF23ABB84400BAC9BB /* ANTHomeCollectCell.m */,
+				0429080023ABB84400BAC9BB /* ANTHomeCollectCell.xib */,
+				0429081B23ACECFC00BAC9BB /* ANTHomeMainCell.h */,
+				0429081C23ACECFC00BAC9BB /* ANTHomeMainCell.m */,
+				0429081D23ACECFC00BAC9BB /* ANTHomeMainCell.xib */,
+				0429082223ACF20100BAC9BB /* RSDHomeTableCell.h */,
+				0429082123ACF20100BAC9BB /* RSDHomeTableCell.m */,
+				0429082023ACF20100BAC9BB /* RSDHomeTableCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0429080623ACE8F100BAC9BB /* qingbei */ = {
+			isa = PBXGroup;
+			children = (
+				0429081323ACEC6000BAC9BB /* qingbei1.jpg */,
+				0429081623ACEC6000BAC9BB /* qingbei2.jpg */,
+				0429081523ACEC6000BAC9BB /* qingbei4.jpg */,
+				0429081423ACEC6000BAC9BB /* qingbei6.jpg */,
+				0429080923ACE8F100BAC9BB /* qingbei5.jpg */,
+				0429080B23ACE8F100BAC9BB /* qingbei3.jpg */,
+			);
+			path = qingbei;
+			sourceTree = "<group>";
+		};
+		0429082523AE10EC00BAC9BB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0429082623AE10EC00BAC9BB /* ANTFindViewController.h */,
+				0429082723AE10EC00BAC9BB /* ANTFindViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0429082923AE110E00BAC9BB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0429082B23AE112800BAC9BB /* ANTFindCollectionViewCell.h */,
+				0429082C23AE112800BAC9BB /* ANTFindCollectionViewCell.m */,
+				0429082D23AE112800BAC9BB /* ANTFindCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0429082A23AE110F00BAC9BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0429083023AE2B0D00BAC9BB /* pop */ = {
+			isa = PBXGroup;
+			children = (
+				0429086923AE2B0D00BAC9BB /* HcdPopMenu */,
+				0429086F23AE2B0D00BAC9BB /* popresource */,
+			);
+			path = pop;
+			sourceTree = "<group>";
+		};
+		0429086923AE2B0D00BAC9BB /* HcdPopMenu */ = {
+			isa = PBXGroup;
+			children = (
+				0429086A23AE2B0D00BAC9BB /* HcdPopMenuView.h */,
+				0429086B23AE2B0D00BAC9BB /* HcdPopMenuItem.h */,
+				0429086C23AE2B0D00BAC9BB /* HcdPopMenuView.m */,
+				0429086D23AE2B0D00BAC9BB /* HcdPopMenu.h */,
+				0429086E23AE2B0D00BAC9BB /* HcdPopMenuItem.m */,
+			);
+			path = HcdPopMenu;
+			sourceTree = "<group>";
+		};
+		0429086F23AE2B0D00BAC9BB /* popresource */ = {
+			isa = PBXGroup;
+			children = (
+				0429087023AE2B0D00BAC9BB /* toudan_icon_hailiangtoudan.png */,
+				0429087123AE2B0D00BAC9BB /* toudan_icon_hailiangtoudan@3x.png */,
+				0429087223AE2B0D00BAC9BB /* center_exit@3x.png */,
+				0429087323AE2B0D00BAC9BB /* center_exit@2x.png */,
+				0429087423AE2B0D00BAC9BB /* toudan_icon_hailiangtoudan@2x.png */,
+				0429087523AE2B0D00BAC9BB /* toudan_icon_dingxiangtoudan@2x.png */,
+				0429087623AE2B0D00BAC9BB /* toudan_icon_dingxiangtoudan@3x.png */,
+				0429087723AE2B0D00BAC9BB /* toudan_icon_dingxiangtoudan.png */,
+			);
+			path = popresource;
+			sourceTree = "<group>";
+		};
+		0429089923AE398500BAC9BB /* Publish */ = {
+			isa = PBXGroup;
+			children = (
+				0429089A23AE398500BAC9BB /* ANTPublishViewController.h */,
+				0429089C23AE398500BAC9BB /* ANTPublishViewController.m */,
+				0429089B23AE398500BAC9BB /* Controller */,
+				0429089D23AE398500BAC9BB /* Model */,
+				0429089E23AE398500BAC9BB /* View */,
+			);
+			path = Publish;
+			sourceTree = "<group>";
+		};
+		0429089B23AE398500BAC9BB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0429089D23AE398500BAC9BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0429089E23AE398500BAC9BB /* View */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1601,10 +1778,10 @@
 		0434CA9523A9398400FD85D8 /* Antelope */ = {
 			isa = PBXGroup;
 			children = (
+				0429089923AE398500BAC9BB /* Publish */,
 				0434CA9623A9398400FD85D8 /* Home */,
 				0434CA9723A9398400FD85D8 /* Message */,
 				0434CA9823A9398400FD85D8 /* Mine */,
-				0434CA9923A9398400FD85D8 /* Wallet */,
 				0434CA9A23A9398400FD85D8 /* Find */,
 			);
 			name = Antelope;
@@ -1637,20 +1814,12 @@
 			path = Mine;
 			sourceTree = "<group>";
 		};
-		0434CA9923A9398400FD85D8 /* Wallet */ = {
-			isa = PBXGroup;
-			children = (
-				0434CAA423A939C700FD85D8 /* ANTWalletViewController.h */,
-				0434CAA523A939C700FD85D8 /* ANTWalletViewController.m */,
-			);
-			path = Wallet;
-			sourceTree = "<group>";
-		};
 		0434CA9A23A9398400FD85D8 /* Find */ = {
 			isa = PBXGroup;
 			children = (
-				0434CAA723A939D300FD85D8 /* ANTFindViewController.h */,
-				0434CAA823A939D300FD85D8 /* ANTFindViewController.m */,
+				0429082A23AE110F00BAC9BB /* Model */,
+				0429082923AE110E00BAC9BB /* View */,
+				0429082523AE10EC00BAC9BB /* Controller */,
 			);
 			path = Find;
 			sourceTree = "<group>";
@@ -2237,6 +2406,7 @@
 		62F675DD22F5336900826835 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0429083023AE2B0D00BAC9BB /* pop */,
 				62F677FA22F5422400826835 /* UITools */,
 				62F677F622F541BF00826835 /* UIDevice */,
 				62F6760522F5386900826835 /* Core */,
@@ -2287,6 +2457,7 @@
 		62F675E022F5336900826835 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				0429080623ACE8F100BAC9BB /* qingbei */,
 				00088415238F6FE600C9605E /* Gif */,
 				62B789022305532B003AE806 /* BTCLocalizable.strings */,
 			);
@@ -3022,28 +3193,38 @@
 			files = (
 				62CA0DFC23224FE4003F1B48 /* 22.png in Resources */,
 				62F6792F22F5666400826835 /* LICENCE.txt in Resources */,
+				0429081F23ACECFC00BAC9BB /* ANTHomeMainCell.xib in Resources */,
 				004E4EEE2387E39C001AD1EE /* YBImageBrowser.bundle in Resources */,
 				62CA0DFD23224FE4003F1B48 /* 8.png in Resources */,
+				0429089123AE2B0D00BAC9BB /* center_exit@2x.png in Resources */,
+				0429089223AE2B0D00BAC9BB /* toudan_icon_hailiangtoudan@2x.png in Resources */,
 				62CA0DF723224FE4003F1B48 /* 24.png in Resources */,
 				62CA0DF523224FE4003F1B48 /* 19.png in Resources */,
 				62F678FC22F5573400826835 /* Pingpp.bundle in Resources */,
 				62CA0E0E23224FE4003F1B48 /* 15.png in Resources */,
 				62CA0DF823224FE4003F1B48 /* 30.png in Resources */,
 				6250AB4C234DCBE7009186AA /* shake_sound_male.wav in Resources */,
+				0429081823ACEC6000BAC9BB /* qingbei6.jpg in Resources */,
 				62CA0E0023224FE4003F1B48 /* 9.png in Resources */,
 				62F678FF22F5573400826835 /* AlipaySDK.bundle in Resources */,
 				00088423238F700A00C9605E /* 1242x2208.gif in Resources */,
+				0429081923ACEC6000BAC9BB /* qingbei4.jpg in Resources */,
 				62F678C122F554AC00826835 /* SDRuleView.xib in Resources */,
 				62BC0D932306A9E2004BB897 /* README3.md in Resources */,
+				0429081723ACEC6000BAC9BB /* qingbei1.jpg in Resources */,
 				04E834E7235EA81400F12FCC /* README.md in Resources */,
 				004E4E982387E117001AD1EE /* PhotoBroswerVC.xib in Resources */,
+				0429089323AE2B0D00BAC9BB /* toudan_icon_dingxiangtoudan@2x.png in Resources */,
 				62B789002305532B003AE806 /* BTCLocalizable.strings in Resources */,
 				62BC0DDE2306AA6A004BB897 /* README2.md in Resources */,
+				0429089423AE2B0D00BAC9BB /* toudan_icon_dingxiangtoudan@3x.png in Resources */,
 				0008841F238F700A00C9605E /* 1125x2436.gif in Resources */,
 				62CA0E0223224FE4003F1B48 /* 4.png in Resources */,
+				0429081123ACE8F100BAC9BB /* qingbei3.jpg in Resources */,
 				62CA0E0D23224FE4003F1B48 /* 29.png in Resources */,
 				62BC0DDD2306AA6A004BB897 /* README.md in Resources */,
 				004E4EA22387E117001AD1EE /* SVProgressHUD.bundle in Resources */,
+				0429088F23AE2B0D00BAC9BB /* toudan_icon_hailiangtoudan@3x.png in Resources */,
 				62CA0DFB23224FE4003F1B48 /* 23.png in Resources */,
 				62CA0E0623224FE4003F1B48 /* 13.png in Resources */,
 				62CA0DF623224FE4003F1B48 /* 18.png in Resources */,
@@ -3054,6 +3235,7 @@
 				62CA0DFE23224FE4003F1B48 /* 20.png in Resources */,
 				62CA0E0923224FE4003F1B48 /* 2.png in Resources */,
 				62CA0E0A23224FE4003F1B48 /* 16.png in Resources */,
+				0429089023AE2B0D00BAC9BB /* center_exit@3x.png in Resources */,
 				62CA0DF923224FE4003F1B48 /* 26.png in Resources */,
 				62CA0E1223224FE4003F1B48 /* 28.png in Resources */,
 				004E4E972387E117001AD1EE /* PB.bundle in Resources */,
@@ -3064,7 +3246,10 @@
 				62CA0E0123224FE4003F1B48 /* 10.png in Resources */,
 				62CA0E0323224FE4003F1B48 /* 5.png in Resources */,
 				62CA0E1123224FE4003F1B48 /* 14.png in Resources */,
+				0429082323ACF20200BAC9BB /* RSDHomeTableCell.xib in Resources */,
 				62CA0E1023224FE4003F1B48 /* 0.png in Resources */,
+				0429080F23ACE8F100BAC9BB /* qingbei5.jpg in Resources */,
+				0429080223ABB84400BAC9BB /* ANTHomeCollectCell.xib in Resources */,
 				62CA0E0423224FE4003F1B48 /* 11.png in Resources */,
 				62CA0DFF23224FE4003F1B48 /* 21.png in Resources */,
 				00088425238F700A00C9605E /* 640x1136.gif in Resources */,
@@ -3074,8 +3259,11 @@
 				004E4E9D2387E117001AD1EE /* CoreSDWebImage.bundle in Resources */,
 				62689817231D3F01004341E5 /* resource.bundle in Resources */,
 				62CA0E0C23224FE4003F1B48 /* 3.png in Resources */,
+				0429081A23ACEC6000BAC9BB /* qingbei2.jpg in Resources */,
+				0429089523AE2B0D00BAC9BB /* toudan_icon_dingxiangtoudan.png in Resources */,
 				007AA4252356B99F008F183E /* InfoPlist.strings in Resources */,
 				004E4E962387E117001AD1EE /* PhotoItemView.xib in Resources */,
+				0429088E23AE2B0D00BAC9BB /* toudan_icon_hailiangtoudan.png in Resources */,
 				62F675B122F5280A00826835 /* Main.storyboard in Resources */,
 				62CA0E0B23224FE4003F1B48 /* 17.png in Resources */,
 				62CA0E0723224FE4003F1B48 /* 12.png in Resources */,
@@ -3084,6 +3272,7 @@
 				04E834F8235EAFB300F12FCC /* GoogleService-Info.plist in Resources */,
 				004E4EA32387E117001AD1EE /* CoreSVP.bundle in Resources */,
 				62CA0DF423224FE4003F1B48 /* 25.png in Resources */,
+				0429082F23AE112800BAC9BB /* ANTFindCollectionViewCell.xib in Resources */,
 				04E834EE235EA81500F12FCC /* IQKeyboardManager.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3175,6 +3364,7 @@
 				62F6765522F5386900826835 /* APAddressBookContactsRoutine.m in Sources */,
 				004E4E912387E117001AD1EE /* PBPGView.m in Sources */,
 				62F678E622F5570F00826835 /* NSData+YYURL.m in Sources */,
+				0429082823AE10EC00BAC9BB /* ANTFindViewController.m in Sources */,
 				62B788C422FED721003AE806 /* BICBaseResponse.m in Sources */,
 				62D624E62307DEE8007A28EB /* CQCountDownButton.m in Sources */,
 				007AA4222355EACE008F183E /* UIViewController+LL_Utils.m in Sources */,
@@ -3198,6 +3388,7 @@
 				004E4EB42387E117001AD1EE /* NSObject+Extend.m in Sources */,
 				004EFAC42348B189005F2A0E /* NSObject+Extension.m in Sources */,
 				62BC0D7A2306A9E2004BB897 /* UIView+YQSideline.m in Sources */,
+				0429082423ACF20200BAC9BB /* RSDHomeTableCell.m in Sources */,
 				62F678BC22F5441600826835 /* ODAlertViewFactory.m in Sources */,
 				62BC0D8D2306A9E2004BB897 /* NSString+YQCategory.m in Sources */,
 				004E4EED2387E39C001AD1EE /* YBImageBrowserProgressBar.m in Sources */,
@@ -3212,6 +3403,7 @@
 				62F677B922F540EB00826835 /* UIImageView+BSExtension.m in Sources */,
 				62F675AE22F5280A00826835 /* ViewController.m in Sources */,
 				62F6764522F5386900826835 /* APName.m in Sources */,
+				0429089F23AE398500BAC9BB /* ANTPublishViewController.m in Sources */,
 				62F6791C22F55A1100826835 /* BaseModel.m in Sources */,
 				6291C548231110AF00C2C6A9 /* KDGoalBar.m in Sources */,
 				62F677F422F540EB00826835 /* UIButton+EnlargeTouchArea.m in Sources */,
@@ -3225,13 +3417,16 @@
 				62F6765322F5386900826835 /* APAddressBookRefWrapper.m in Sources */,
 				62F6764A22F5386900826835 /* APPhone.m in Sources */,
 				004E4EA02387E117001AD1EE /* SVProgressHUD.m in Sources */,
+				0429088D23AE2B0D00BAC9BB /* HcdPopMenuItem.m in Sources */,
 				042907FC23AA968F00BAC9BB /* ANTHomeHeadCell.m in Sources */,
 				62F678E222F5570F00826835 /* UIImage+Addtions.m in Sources */,
 				004E4EDF2387E39C001AD1EE /* YBImageBrowserAnimatedTransitioning.m in Sources */,
 				00BF41752349DFBB00FD9D93 /* NSString+LW.m in Sources */,
 				004E4EAE2387E117001AD1EE /* UIDevice+Extend.m in Sources */,
+				0429081E23ACECFC00BAC9BB /* ANTHomeMainCell.m in Sources */,
 				004E4E8C2387E117001AD1EE /* UIView+PBExtend.m in Sources */,
 				62F6791922F55A1100826835 /* RSDBaseResponse.m in Sources */,
+				0429080523ACA22400BAC9BB /* ANTCollectModel.m in Sources */,
 				00BF41722349DF7400FD9D93 /* SelectPhotoManager.m in Sources */,
 				00E687DC233B6C5700ADDADF /* Foundation+Extension.m in Sources */,
 				004E4EE62387E39C001AD1EE /* YBImageBrowserModel.m in Sources */,
@@ -3248,6 +3443,7 @@
 				62F679BD22F91ECC00826835 /* CommonMethod.m in Sources */,
 				004E4EAC2387E117001AD1EE /* UIView+Extend.m in Sources */,
 				62F677EF22F540EB00826835 /* UIButton+SDSize.m in Sources */,
+				0429080123ABB84400BAC9BB /* ANTHomeCollectCell.m in Sources */,
 				62F6765A22F5386900826835 /* APThread.m in Sources */,
 				62F6780822F5422400826835 /* UtilsManager.m in Sources */,
 				04E834F1235EA81500F12FCC /* IQUITextFieldView+Additions.m in Sources */,
@@ -3287,6 +3483,7 @@
 				004E4E992387E117001AD1EE /* PhotoBroswerVC.m in Sources */,
 				62BC0D852306A9E2004BB897 /* UIColor+YQCategory.m in Sources */,
 				626897E5231CE3AB004341E5 /* BICImageManager.m in Sources */,
+				0429082E23AE112800BAC9BB /* ANTFindCollectionViewCell.m in Sources */,
 				04E834EF235EA81500F12FCC /* IQKeyboardManager.m in Sources */,
 				62B78907230554B7003AE806 /* BICDeviceManager.m in Sources */,
 				04E834E9235EA81400F12FCC /* IQToolbar.m in Sources */,
@@ -3337,6 +3534,7 @@
 				004E4E9A2387E117001AD1EE /* LFRoundProgressView.m in Sources */,
 				62F6766322F538FB00826835 /* UIView+SDAutoLayout.m in Sources */,
 				00B03A45237F942F009AB040 /* XHRTouchIDTool.m in Sources */,
+				0429088C23AE2B0D00BAC9BB /* HcdPopMenuView.m in Sources */,
 				62BC0DD32306AA6A004BB897 /* YQImageTextView.m in Sources */,
 				004E4EB52387E117001AD1EE /* NSDate+Extend.m in Sources */,
 				04E834EC235EA81500F12FCC /* IQUIView+IQKeyboardToolbar.m in Sources */,
@@ -3376,7 +3574,6 @@
 				004E4E8E2387E117001AD1EE /* PBConst.m in Sources */,
 				62BB387B23150FE800734F63 /* MDRadialProgressTheme.m in Sources */,
 				62BC0DD52306AA6A004BB897 /* YQMarginView.m in Sources */,
-				0434CAA623A939C700FD85D8 /* ANTWalletViewController.m in Sources */,
 				004E4EA42387E117001AD1EE /* UIImage+Water.m in Sources */,
 				04E834F2235EA81500F12FCC /* IQUIScrollView+Additions.m in Sources */,
 				62F679C022F91ECC00826835 /* UIView+tap.m in Sources */,
@@ -3387,7 +3584,6 @@
 				004E4EB22387E117001AD1EE /* CALayer+Transition.m in Sources */,
 				004E4EA12387E117001AD1EE /* SVIndefiniteAnimatedView.m in Sources */,
 				62BB387D23150FE800734F63 /* MDRadialProgressLabel.m in Sources */,
-				0434CAA923A939D300FD85D8 /* ANTFindViewController.m in Sources */,
 				62F678BA22F5441600826835 /* AKBaseAlertDialog.m in Sources */,
 				004E4EEC2387E39C001AD1EE /* YBImageBrowserPromptBar.m in Sources */,
 				62BC0D8A2306A9E2004BB897 /* NSObject+YQObject.m in Sources */,

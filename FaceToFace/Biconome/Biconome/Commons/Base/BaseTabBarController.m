@@ -22,8 +22,8 @@
 #import "ANTHomeViewController.h"
 #import "ANTFindViewController.h"
 #import "ANTMessageViewController.h"
-#import "ANTWalletViewController.h"
 #import "ANTMineViewController.h"
+#import "ANTPublishViewController.h"
 
 #define TopMarign 20.f
 #define ImageMarign 6.f
@@ -65,15 +65,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
         
-    self.titleArr = @[@"首页",@"发现",@"消息",@"钱包",@"个人中心"];
+    self.titleArr = @[@"首页",@"发现",@"发布",@"消息",@"个人中心"];
 
     [self setUpChildVc:[[ANTHomeViewController alloc] init] title:[self.titleArr objectAtIndex:0] image:@"tab_home_default" selectImage:@"tab_home_selected"];
   
     [self setUpChildVc:[[ANTFindViewController alloc] init] title:[self.titleArr objectAtIndex:1] image:@"tab_market_default" selectImage:@"tab_market_selected"];
     
-    [self setUpChildVc:[[ANTMessageViewController alloc] init] title:[self.titleArr objectAtIndex:2] image:@"tab_trade_default" selectImage:@"tab_trade_selected"];
+    [self setUpChildVc:[[ANTPublishViewController alloc] init] title:[self.titleArr objectAtIndex:2] image:@"tab_trade_default" selectImage:@"tab_trade_selected"];
     
-    [self setUpChildVc:[[ANTWalletViewController alloc] init] title:[self.titleArr objectAtIndex:3] image:@"tab_wallet_default" selectImage:@"tab_wallet_selected"];
+    [self setUpChildVc:[[ANTMessageViewController alloc] init] title:[self.titleArr objectAtIndex:3] image:@"tab_wallet_default" selectImage:@"tab_wallet_selected"];
   
     [self setUpChildVc:[[ANTMineViewController alloc] init] title:[self.titleArr objectAtIndex:4] image:@"tab_profile_default" selectImage:@"tab_profile_selected"];
 
@@ -220,13 +220,17 @@
 }
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
+
     //获取当前页的选中页
     NSInteger index = [tabBarController.viewControllers indexOfObject:viewController];
-    self.currentIndex = index;
     
-//    [UIView animateWithDuration:.3f animations:^{
-//        self.mainBGView.x = (SCREEN_WIDTH/5-kNavBar_Height)/2 + index * (SCREEN_WIDTH/5);
-//    }];
+    if (index==2) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationCenterSelectPublish object:@""];
+
+    }
+    
+    self.currentIndex = index;
+
     CGFloat x=(SCREEN_WIDTH/5-kNavBar_Height)/2;
     if(x<0){
         x=0;
@@ -234,6 +238,7 @@
     self.mainBGView.x = x + index * (SCREEN_WIDTH/5);
     [self transitionWithType:@"rippleEffect" WithSubtype:kCATransitionFromTop ForView:self.mainBGView];
     self.mainBGTitle.text = self.titleArr[index];
+    
     
     return YES;
 }

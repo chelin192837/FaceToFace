@@ -13,7 +13,7 @@
 #define DEFAULTTIME 5
 #define HORMARGIN 10
 //5
-#define VERMARGIN 36
+#define VERMARGIN 6
 #define DES_LABEL_H 20
 
 

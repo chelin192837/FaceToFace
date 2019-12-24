@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ANTFindCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="208" height="155"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="208" height="155"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qYP-iR-Xfm">
+                        <rect key="frame" x="0.0" y="0.0" width="208" height="155"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="girl2" translatesAutoresizingMaskIntoConstraints="NO" id="8hW-Rv-jf4">
+                                <rect key="frame" x="2" y="2" width="204" height="151"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GDP-aR-8Hp">
+                                <rect key="frame" x="2" y="2" width="70" height="36"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tuijian" translatesAutoresizingMaskIntoConstraints="NO" id="ly6-RN-6cY">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="36"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="状元" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49w-MO-TiS">
+                                        <rect key="frame" x="3" y="0.0" width="64" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="49w-MO-TiS" secondAttribute="bottom" id="AX0-uM-CDS"/>
+                                    <constraint firstAttribute="trailing" secondItem="ly6-RN-6cY" secondAttribute="trailing" id="Aob-cd-w5j"/>
+                                    <constraint firstAttribute="trailing" secondItem="49w-MO-TiS" secondAttribute="trailing" constant="3" id="H4W-S3-HI4"/>
+                                    <constraint firstItem="49w-MO-TiS" firstAttribute="leading" secondItem="GDP-aR-8Hp" secondAttribute="leading" constant="3" id="Mmg-0B-33M"/>
+                                    <constraint firstItem="49w-MO-TiS" firstAttribute="top" secondItem="GDP-aR-8Hp" secondAttribute="top" id="jYB-Tr-LoQ"/>
+                                    <constraint firstItem="ly6-RN-6cY" firstAttribute="top" secondItem="GDP-aR-8Hp" secondAttribute="top" id="nlA-bF-cxQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="ly6-RN-6cY" secondAttribute="bottom" id="rwf-TH-Rkx"/>
+                                    <constraint firstItem="ly6-RN-6cY" firstAttribute="leading" secondItem="GDP-aR-8Hp" secondAttribute="leading" id="sgH-ul-4DY"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="findDingweibiaozhiIconCopy7" highlightedImage="findDingweibiaozhiIconCopy7" translatesAutoresizingMaskIntoConstraints="NO" id="CxY-8V-KoV">
+                                <rect key="frame" x="57.5" y="139" width="6" height="8"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="6" id="5Bx-bM-PMo"/>
+                                    <constraint firstAttribute="height" constant="8" id="xM0-WR-ryx"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHo-yj-boq">
+                                <rect key="frame" x="52.5" y="135" width="103" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="Trp-GR-2GC"/>
+                                    <constraint firstAttribute="width" constant="103" id="gJd-tA-qDf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal" title="       江西省九江市" backgroundImage="homeLoupanDingweiBg">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mHo-yj-boq" firstAttribute="bottom" secondItem="8hW-Rv-jf4" secondAttribute="bottom" constant="-2" id="7X4-Dq-yTH"/>
+                            <constraint firstItem="GDP-aR-8Hp" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="8hW-Rv-jf4" secondAttribute="trailing" id="9UD-eF-ttL"/>
+                            <constraint firstAttribute="trailing" secondItem="8hW-Rv-jf4" secondAttribute="trailing" constant="2" id="Ep1-8f-skh"/>
+                            <constraint firstAttribute="bottom" secondItem="8hW-Rv-jf4" secondAttribute="bottom" constant="2" id="I6p-wB-L8o"/>
+                            <constraint firstItem="mHo-yj-boq" firstAttribute="centerX" secondItem="8hW-Rv-jf4" secondAttribute="centerX" id="Ivs-IX-1aQ"/>
+                            <constraint firstItem="GDP-aR-8Hp" firstAttribute="top" secondItem="8hW-Rv-jf4" secondAttribute="top" id="RJA-Gf-Vgj"/>
+                            <constraint firstItem="CxY-8V-KoV" firstAttribute="bottom" secondItem="mHo-yj-boq" secondAttribute="bottom" constant="-4" id="aEb-Cm-5S3"/>
+                            <constraint firstItem="GDP-aR-8Hp" firstAttribute="leading" secondItem="8hW-Rv-jf4" secondAttribute="leading" id="fbB-b7-y0o"/>
+                            <constraint firstItem="8hW-Rv-jf4" firstAttribute="leading" secondItem="qYP-iR-Xfm" secondAttribute="leading" constant="2" id="kXY-jb-oOr"/>
+                            <constraint firstItem="8hW-Rv-jf4" firstAttribute="top" secondItem="qYP-iR-Xfm" secondAttribute="top" constant="2" id="oIa-0r-Di7"/>
+                            <constraint firstItem="CxY-8V-KoV" firstAttribute="leading" secondItem="mHo-yj-boq" secondAttribute="leading" constant="5" id="qcf-ay-ER8"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="qYP-iR-Xfm" secondAttribute="bottom" id="JQ2-8Z-B4M"/>
+                <constraint firstAttribute="trailing" secondItem="qYP-iR-Xfm" secondAttribute="trailing" id="LoX-eA-m9q"/>
+                <constraint firstItem="qYP-iR-Xfm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Yp8-vY-d0P"/>
+                <constraint firstItem="qYP-iR-Xfm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="rcL-Oq-2In"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <size key="customSize" width="280" height="129"/>
+            <connections>
+                <outlet property="iconImage" destination="8hW-Rv-jf4" id="JNC-fc-hCE"/>
+                <outlet property="topView" destination="qYP-iR-Xfm" id="P3I-nc-9Qv"/>
+            </connections>
+            <point key="canvasLocation" x="40.579710144927539" y="53.90625"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="findDingweibiaozhiIconCopy7" width="6" height="8"/>
+        <image name="girl2" width="200" height="200"/>
+        <image name="homeLoupanDingweiBg" width="103" height="16"/>
+        <image name="tuijian" width="35" height="18"/>
+    </resources>
+</document>

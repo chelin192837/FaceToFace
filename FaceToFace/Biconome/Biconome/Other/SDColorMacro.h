@@ -11,6 +11,21 @@
 // app 基础绿色
 #define SDColorOfGreen00AF36    [UIColor colorFromHexRGB:@"00AF36"]
 
+//首页中间接口
+//主黑
+#define kANTSystemColor33353B [UIColor colorFromHexRGB:@"33353B"]
+//较浅
+#define kANTSystemColor64666C [UIColor colorFromHexRGB:@"64666C"]
+//文字选中蓝色
+#define kANTSystemColor6653FF [UIColor colorFromHexRGB:@"6653FF"]
+//按钮选中绿色
+#define kANTSystemColor00CC66 [UIColor colorFromHexRGB:@"00CC66"]
+//取消按钮红色
+#define kANTSystemColorFF3366 [UIColor colorFromHexRGB:@"FF3366"]
+
+#define kANTSystemColor95979D [UIColor colorFromHexRGB:@"95979D"]
+
+
 
 // 深灰
 #define SDColorGrayAAAAAA       [UIColor colorFromHexRGB:@"AAAAAA"]

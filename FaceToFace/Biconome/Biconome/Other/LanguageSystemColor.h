@@ -12,6 +12,10 @@
 //历史记录宏
 #define kHistoryName @"kHistoryName"
 
+//新通知
+#define NSNotificationCenterSelectPublish @"NSNotificationCenterSelectPublish"
+
+
 //首页缓存的设置
 #define kHomePageSystemImage @"kHomePageSystemImage"
 #define kHomePageNoticeList @"kHomePageNoticeList"
