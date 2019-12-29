@@ -136,7 +136,8 @@
 #define kPOSTNSNotificationCenter(key1,key2) [[NSNotificationCenter defaultCenter] postNotificationName:key1 object:key2]
 
 //多语言设置
-#define LAN(key) [BICDeviceManager getLanguage:key]
+//#define LAN(key)  [BICDeviceManager getLanguage:key]
+#define LAN(key) key
 
 //千分位设置
 #define NumFormat(key) [BICDeviceManager changeNumberFormatter:key]

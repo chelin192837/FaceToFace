@@ -147,6 +147,7 @@ static NSString *kDonsultantCellID = @"kDonsultantCellID";
     self.messageNumLabel.superview.layer.masksToBounds = YES;
     
     [self.topView isYY];
+    
     self.topView.layer.cornerRadius = 8.f;
     self.buildingImage.layer.cornerRadius = 8.f;
     self.buildingImage.layer.masksToBounds = YES;

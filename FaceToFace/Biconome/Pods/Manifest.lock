@@ -87,6 +87,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.3.1):
     - GoogleUtilities/Logger
+  - Hyphenate (3.5.5)
   - jetfire (0.1.2)
   - JSONModel (1.8.0)
   - Masonry (1.1.0)
@@ -147,6 +148,7 @@ DEPENDENCIES:
   - Firebase/Analytics
   - FLAnimatedImage (~> 1.0)
   - FMDB
+  - Hyphenate
   - JSONModel
   - Masonry
   - MBProgressHUD
@@ -187,6 +189,7 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
+    - Hyphenate
     - jetfire
     - JSONModel
     - Masonry
@@ -241,6 +244,7 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 166f9b9f82cbf60a204e8fe2daa9db3e3ec1fb15
   GoogleDataTransportCCTSupport: f6ab1962e9dc05ab1fb938b795e5b310209edeec
   GoogleUtilities: f895fde57977df4e0233edda0dbeac490e3703b6
+  Hyphenate: 396b936de5b3d68ec266c4bb9078e3ec95a45f31
   jetfire: 5e823aa9248d3de1fac2b7b6d9c6e31ab7d90f0c
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -262,6 +266,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: e5330d9b4a43b64642b5bb0f5706fe5ca18c0a5a
+PODFILE CHECKSUM: 94c29e087eb9de9d1d99c506d8efdf17abb42106
 
 COCOAPODS: 1.8.4

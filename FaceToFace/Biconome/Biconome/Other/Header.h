@@ -29,6 +29,9 @@
 
 #define kNewsVideoSize 220 *Kscale
 #define KScreenWidth ([[UIScreen mainScreen] bounds].size.width)
+#define KScreenHeight ([[UIScreen mainScreen] bounds].size.height)
+
+
 /// 轮播图的高
 #define kCarouselViewHeight  200 *kScaleHeight
 

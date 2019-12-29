@@ -19,10 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    [self initNavigationTitleViewLabelWithTitle:@"消息" titleColor:SDColorGray333333 IfBelongTabbar:NO];
 
-    // Do any additional setup after loading the view.
-    
 }
 -(void)viewWillAppear:(BOOL)animated
 {

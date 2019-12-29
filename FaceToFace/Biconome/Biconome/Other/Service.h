@@ -11,7 +11,7 @@
 
 //#import "BICMainService.h"
 
-//#import "BICProfileService.h"
+#import "BICProfileService.h"
 //
 //#import "BICMarketService.h"
 //

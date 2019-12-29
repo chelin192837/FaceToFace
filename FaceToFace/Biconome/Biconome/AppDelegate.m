@@ -12,6 +12,11 @@
 //#import "BICDataToUserDefault.h"
 #import "FLAnimatedImage.h"
 #import "FLAnimatedImageView+WebCache.h"
+
+#import "DemoCallManager.h"
+#import "DemoConfManager.h"
+#import "EMDemoHelper.h"
+
 @import Firebase;
 
 @interface AppDelegate ()
@@ -27,29 +32,65 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [FIRApp configure];
+
+     // 初始化SDK
+    EMOptions *options = [EMOptions optionsWithAppkey:@"1102180820146114#antelope"];
+
+    options.enableConsoleLog = YES;
+    options.apnsCertName = nil;
+    [[EMClient sharedClient] initializeSDKWithOptions:options];
     
-//    BICDataToUserDefault * userDefult = [[BICDataToUserDefault alloc] init];
-//
-//    [userDefult setupData];
-//
+    // 建议在初始化SDK成功之后调用
+    // 如果想使用1v1实时通话功能，需要初始化这个单例
+    [DemoCallManager sharedManager];
+    
+    
+    // 如果想使用多人会议实时通话功能，需要初始化这个单例
+    [DemoConfManager sharedManager];
+    
+    // 会话列表中点击会话，好友列表中点击好友以及群组，聊天室点击群组聊天室push到对应的页面都是发的通知，监听这个通知做的跳转，此做法为了降低各个功能模块的耦合度，防止集成添加文件时报找不到头文件的错，监听push到页面的方法统一放到了EMDemoHelper这个单例中，如果想直接使用demo中的会话列表，好友，群组，聊天室的模块，建议添加EMDemoHelper类，如果不添加请自己到didSelectRowAtIndexPath方法中，引入头文件进行push页面的操作
+    // 初始化此单例（此单例中还监听了好友，群组，聊天室相关事件的回调）
+    [EMDemoHelper shareHelper];
+        
+    // 退出登录，在切换账号时要先调用退出登录，在调用登录方法
+    [[EMClient sharedClient] logout:NO];
+    
+    // 登录  测试账号密码: demoid1/123   demoid2/123
+    EMError *aError = [[EMClient sharedClient] loginWithUsername:@"user2" password:@"192837abc"];
+    
+    
+    if (!aError) {
+        [[EMClient sharedClient].options setIsAutoLogin:YES];
+        NSLog(@"登录成功-----");
+    } else {
+        
+        NSLog(@"登录失败----%@", aError.errorDescription);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     //开启IQKeyBoard
     // 开始第三方键盘
     [[IQKeyboardManager sharedManager] setEnable:YES];
     [IQKeyboardManager sharedManager].shouldToolbarUsesTextFieldTintColor = YES;
     // 点击屏幕隐藏键盘
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
-    
 
-//    BaseTabBarController *nmTabBarVC = [[BaseTabBarController alloc] init];
-//    [nmTabBarVC setSelectedIndex:0];
-//    nmTabBarVC.selSelect = 0 ;
-//    self.mainController = nmTabBarVC;
-//    self.window.rootViewController = self.mainController;
     [self.window makeKeyAndVisible];
     // 加载动态图片
     [self setUpLaunchScreen];
-//    [self testFPSLabel];
-    // Override point for customization after application launch.
+    
     return YES;
 }
 

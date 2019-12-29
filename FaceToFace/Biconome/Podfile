@@ -1,5 +1,5 @@
 platform :ios, ‘8.0’
-target 'Biconome' do
+target 'Antelope' do
 
 pod 'AFNetworking'
 pod 'MJRefresh'
@@ -26,6 +26,8 @@ pod 'SWOAuthCode'
 pod 'MJExtension'
 #Full版本(带实时音视频通话功能)
 pod 'Hyphenate'
+#pod 'HyphenateLite'
+pod 'FLAnimatedImage', '~> 1.0'
 # U-Share SDK UI模块（分享面板，建议添加）
 pod 'UMCShare/UI'
 # 集成微信(精简版0.2M)

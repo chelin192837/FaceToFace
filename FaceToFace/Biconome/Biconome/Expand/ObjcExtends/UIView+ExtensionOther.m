@@ -17,9 +17,9 @@
     //shadowOffset阴影偏移,x向右偏移4，y向下偏移4，默认(0, -3),这个跟shadowRadius配合使用
     self.layer.shadowOffset = CGSizeMake(0,0);
     //阴影透明度，默认0
-    self.layer.shadowOpacity = 0.1;
+    self.layer.shadowOpacity = 0.05;
     //阴影半径，默认3
-    self.layer.shadowRadius = 8;
+    self.layer.shadowRadius = 4;
     
 //    self.layer.masksToBounds = YES;
 

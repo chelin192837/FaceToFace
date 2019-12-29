@@ -16,3 +16,4 @@
 // 计算图片的大小
 + (CGFloat) caculateImageSize:(UIImage *) image;
 @end
+
