@@ -1,6 +1,10 @@
+
 <template>
+
   <div style="margin-top: 50px">
+
     <el-form :model="value" ref="productAttrForm" label-width="120px" style="width: 720px" size="small">
+
       <el-form-item label="属性类型：">
         <el-select v-model="value.productAttributeCategoryId"
                    placeholder="请选择属性类型"
@@ -13,40 +17,67 @@
           </el-option>
         </el-select>
       </el-form-item>
+
       <el-form-item label="商品规格：">
+
         <el-card shadow="never" class="cardBg">
+
           <div v-for="(productAttr,idx) in selectProductAttr">
+
             {{productAttr.name}}：
+
             <el-checkbox-group v-if="productAttr.handAddStatus===0" v-model="selectProductAttr[idx].values">
+
               <el-checkbox v-for="item in getInputListArr(productAttr.inputList)" :label="item" :key="item"
-                           class="littleMarginLeft"></el-checkbox>
+                           class="littleMarginLeft">
+
+              </el-checkbox>
+
             </el-checkbox-group>
+
             <div v-else>
+
               <el-checkbox-group v-model="selectProductAttr[idx].values">
+
                 <div v-for="(item,index) in selectProductAttr[idx].options" style="display: inline-block"
                      class="littleMarginLeft">
+
                   <el-checkbox :label="item" :key="item"></el-checkbox>
+
                   <el-button type="text" class="littleMarginLeft" @click="handleRemoveProductAttrValue(idx,index)">删除
                   </el-button>
+
                 </div>
+
               </el-checkbox-group>
+
+
               <el-input v-model="addProductAttrValue" style="width: 160px;margin-left: 10px" clearable></el-input>
+
               <el-button class="littleMarginLeft" @click="handleAddProductAttrValue(idx)">增加</el-button>
+
             </div>
+
           </div>
+
         </el-card>
+
         <el-table style="width: 100%;margin-top: 20px"
                   :data="value.skuStockList"
                   border>
+
           <el-table-column
             v-for="(item,index) in selectProductAttr"
             :label="item.name"
             :key="item.id"
             align="center">
+
             <template slot-scope="scope">
               {{getProductSkuSp(scope.row,index)}}
             </template>
+
           </el-table-column>
+
           <el-table-column
             label="销售价格"
             width="80"
@@ -90,6 +121,8 @@
             </template>
           </el-table-column>
         </el-table>
+
+
         <el-button
           type="primary"
           style="margin-top: 20px"
@@ -100,7 +133,10 @@
           style="margin-top: 20px"
           @click="handleSyncProductSkuPrice">同步价格
         </el-button>
+
+
       </el-form-item>
+
       <el-form-item label="属性图片：" v-if="hasAttrPic">
         <el-card shadow="never" class="cardBg">
           <div v-for="(item,index) in selectProductAttrPics">
@@ -110,6 +146,7 @@
           </div>
         </el-card>
       </el-form-item>
+
       <el-form-item label="商品参数：">
         <el-card shadow="never" class="cardBg">
           <div v-for="(item,index) in selectProductParam" :class="{littleMarginTop:index!==0}">
@@ -126,9 +163,11 @@
           </div>
         </el-card>
       </el-form-item>
+
       <el-form-item label="商品相册：">
         <multi-upload v-model="selectProductPics"></multi-upload>
       </el-form-item>
+
       <el-form-item label="规格参数：">
         <el-tabs v-model="activeHtmlName" type="card">
           <el-tab-pane label="电脑端详情" name="pc">
@@ -139,24 +178,34 @@
           </el-tab-pane>
         </el-tabs>
       </el-form-item>
+
       <el-form-item style="text-align: center">
         <el-button size="medium" @click="handlePrev">上一步，填写商品促销</el-button>
         <el-button type="primary" size="medium" @click="handleNext">下一步，选择商品关联</el-button>
       </el-form-item>
+
     </el-form>
   </div>
 </template>
 
 <script>
+
   import {fetchList as fetchProductAttrCateList} from '@/api/productAttrCate'
+
   import {fetchList as fetchProductAttrList} from '@/api/productAttr'
+
   import SingleUpload from '@/components/Upload/singleUpload'
+
   import MultiUpload from '@/components/Upload/multiUpload'
+
   import Tinymce from '@/components/Tinymce'
 
   export default {
+
     name: "ProductAttrDetail",
+
     components: {SingleUpload, MultiUpload, Tinymce},
+
     props: {
       value: Object,
       isEdit: {
@@ -164,6 +213,7 @@
         default: false
       }
     },
+
     data() {
       return {
         //编辑模式时是否初始化成功
@@ -182,7 +232,9 @@
         activeHtmlName: 'pc'
       }
     },
+
     computed: {
+
       //是否有商品属性图片
       hasAttrPic() {
         if (this.selectProductAttrPics.length < 1) {
@@ -190,28 +242,36 @@
         }
         return true;
       },
+
       //商品的编号
       productId(){
         return this.value.id;
       },
+
       //商品的主图和画册图片
       selectProductPics:{
+
         get:function () {
           let pics=[];
           if(this.value.pic===undefined||this.value.pic==null||this.value.pic===''){
             return pics;
           }
+
           pics.push(this.value.pic);
           if(this.value.albumPics===undefined||this.value.albumPics==null||this.value.albumPics===''){
             return pics;
           }
           let albumPics = this.value.albumPics.split(',');
+
           for(let i=0;i<albumPics.length;i++){
             pics.push(albumPics[i]);
           }
+
           return pics;
         },
+
         set:function (newValue) {
+
           if (newValue == null || newValue.length === 0) {
             this.value.pic = null;
             this.value.albumPics = null;
@@ -228,11 +288,14 @@
             }
           }
         }
+
       }
     },
+
     created() {
       this.getProductAttrCateList();
     },
+
     watch: {
       productId:function (newValue) {
         if(!this.isEdit)return;
@@ -241,7 +304,9 @@
         this.handleEditCreated();
       }
     },
+
     methods: {
+
       handleEditCreated() {
         //根据商品属性分类id获取属性和参数
         if(this.value.productAttributeCategoryId!=null){
@@ -249,8 +314,10 @@
         }
         this.hasEditCreated=true;
       },
+
       getProductAttrCateList() {
         let param = {pageNum: 1, pageSize: 100};
+
         fetchProductAttrCateList(param).then(response => {
           this.productAttributeCategoryOptions = [];
           let list = response.data.list;
@@ -259,36 +326,68 @@
           }
         });
       },
+
       getProductAttrList(type, cid) {
+
         let param = {pageNum: 1, pageSize: 100, type: type};
+
         fetchProductAttrList(cid, param).then(response => {
+
           let list = response.data.list;
+
           if (type === 0) {
+
             this.selectProductAttr = [];
+
             for (let i = 0; i < list.length; i++) {
+
               let options = [];
+
               let values = [];
+
               if (this.isEdit) {
+
                 if (list[i].handAddStatus === 1) {
+
                   //编辑状态下获取手动添加编辑属性
                   options = this.getEditAttrOptions(list[i].id);
+
                 }
+
                 //编辑状态下获取选中属性
                 values = this.getEditAttrValues(i);
+
               }
-              this.selectProductAttr.push({
-                id: list[i].id,
-                name: list[i].name,
-                handAddStatus: list[i].handAddStatus,
-                inputList: list[i].inputList,
-                values: values,
-                options: options
-              });
+
+              this.selectProductAttr.push(
+
+                {
+
+                  id: list[i].id,
+
+                  name: list[i].name,
+
+                  handAddStatus: list[i].handAddStatus,
+
+                  inputList: list[i].inputList,
+
+                  values: values,
+
+                  options: options
+
+                }
+
+              );
+
             }
+
             if(this.isEdit){
+
               //编辑模式下刷新商品属性图片
               this.refreshProductAttrPics();
+
             }
+
           } else {
             this.selectProductParam = [];
             for (let i = 0; i < list.length; i++) {
@@ -308,6 +407,7 @@
           }
         });
       },
+
       //获取设置的可手动添加属性值
       getEditAttrOptions(id) {
         let options = [];
@@ -323,6 +423,7 @@
         }
         return options;
       },
+
       //获取选中的属性值
       getEditAttrValues(index) {
         let values = [];
@@ -350,6 +451,7 @@
         }
         return values;
       },
+
       //获取属性的值
       getEditParamValue(id){
         for(let i=0;i<this.value.productAttributeValueList.length;i++){
@@ -358,13 +460,21 @@
           }
         }
       },
+
+
       handleProductAttrChange(value) {
+
         this.getProductAttrList(0, value);
+
         this.getProductAttrList(1, value);
+
       },
+
+
       getInputListArr(inputList) {
         return inputList.split(',');
       },
+
       handleAddProductAttrValue(idx) {
         let options = this.selectProductAttr[idx].options;
         if (this.addProductAttrValue == null || this.addProductAttrValue == '') {
@@ -386,9 +496,11 @@
         this.selectProductAttr[idx].options.push(this.addProductAttrValue);
         this.addProductAttrValue = null;
       },
+
       handleRemoveProductAttrValue(idx, index) {
         this.selectProductAttr[idx].options.splice(index, 1);
       },
+
       getProductSkuSp(row, index) {
         if (index === 0) {
           return row.sp1;
@@ -398,6 +510,7 @@
           return row.sp3;
         }
       },
+
       handleRefreshProductSkuList() {
         this.$confirm('刷新列表将导致sku信息重新生成，是否要刷新', '提示', {
           confirmButtonText: '确定',
@@ -408,6 +521,7 @@
           this.refreshProductSkuList();
         });
       },
+
       handleSyncProductSkuPrice(){
         this.$confirm('将同步第一个sku的价格到所有sku,是否继续', '提示', {
           confirmButtonText: '确定',
@@ -422,6 +536,7 @@
           }
         });
       },
+
       refreshProductSkuList() {
         this.value.skuStockList = [];
         let skuList = this.value.skuStockList;
@@ -480,6 +595,7 @@
           }
         }
       },
+
       refreshProductAttrPics() {
         this.selectProductAttrPics = [];
         if (this.selectProductAttr.length >= 1) {
@@ -494,6 +610,7 @@
           }
         }
       },
+
       //获取商品相关属性的图片
       getProductSkuPic(name){
         for(let i=0;i<this.value.skuStockList.length;i++){

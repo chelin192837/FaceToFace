@@ -1,10 +1,16 @@
+
 <template>
+
   <div style="margin-top: 50px">
+
     <el-form :model="value"
              ref="productRelationForm"
              label-width="120px"
              style="width: 680px"
              size="small">
+
+
+      <!--穿梭框组件-->
       <el-form-item label="关联专题：">
         <el-transfer
           style="display: inline-block"
@@ -16,6 +22,8 @@
           :data="subjectList">
         </el-transfer>
       </el-form-item>
+
+
       <el-form-item label="关联优选：">
         <el-transfer
           style="display: inline-block"
@@ -27,16 +35,23 @@
           :data="prefrenceAreaList">
         </el-transfer>
       </el-form-item>
+
+
       <el-form-item style="text-align: center">
         <el-button size="medium" @click="handlePrev">上一步，填写商品属性</el-button>
         <el-button type="primary" size="medium" @click="handleFinishCommit">完成，提交商品</el-button>
       </el-form-item>
+
+
     </el-form>
+
   </div>
 </template>
 
 <script>
+
   import {fetchListAll as fetchSubjectList} from '@/api/subject'
+
   import {fetchList as fetchPrefrenceAreaList} from '@/api/prefrenceArea'
 
   export default {

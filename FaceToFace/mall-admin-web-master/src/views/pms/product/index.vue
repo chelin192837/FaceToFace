@@ -410,7 +410,7 @@
 
   // 数据来源
   // 从api接口过来，请求数据 => 赋值给当前类的属性，刷新UI
-  // 
+  //
   import {
     fetchList,
     updateDeleteStatus,
