@@ -5,6 +5,17 @@
     <el-card class="login-form-layout">
 
 
+      <!--
+
+            model 表单数据对象
+
+            rule:表单规则
+
+            ref = loginForm 对指定的表单进行验证
+
+            label-position 属性可以改变表单域标签的位置
+
+      -->
       <el-form autoComplete="on"
                :model="loginForm"
                :rules="loginRules"
@@ -20,12 +31,14 @@
         <!--用户名和密码改变-->
         <el-form-item prop="username">
 
+          <!--输入框  autoComplete:自动补全-->
           <el-input name="username"
                     type="text"
                     v-model="loginForm.username"
                     autoComplete="on"
                     placeholder="请输入用户名">
 
+            <!--//在 前面-->
           <span slot="prefix">
             <svg-icon icon-class="user" class="color-main"></svg-icon>
           </span>
@@ -33,8 +46,7 @@
           </el-input>
         </el-form-item>
 
-
-
+        <!--输入密码  -->
         <el-form-item prop="password">
           <el-input name="password"
                     :type="pwdType"
@@ -42,14 +54,18 @@
                     v-model="loginForm.password"
                     autoComplete="on"
                     placeholder="请输入密码">
+
           <span slot="prefix">
             <svg-icon icon-class="password" class="color-main"></svg-icon>
           </span>
+
             <span slot="suffix" @click="showPwd">
             <svg-icon icon-class="eye" class="color-main"></svg-icon>
-          </span>
+            </span>
+
           </el-input>
         </el-form-item>
+
 
         <el-form-item style="margin-bottom: 60px">
           <el-button style="width: 100%" type="primary" :loading="loading" @click.native.prevent="handleLogin">
@@ -69,26 +85,39 @@
       title="特别赞助"
       :visible.sync="supportDialogVisible"
       width="30%">
+
       <span>mall项目已由CODING特别赞助，点击去支持，页面加载完后点击<span class="color-main font-medium">免费体验</span>按钮即可完成支持，谢谢！</span>
+
       <span slot="footer" class="dialog-footer">
+
     <el-button @click="dialogCancel">残忍拒绝</el-button>
+
     <el-button type="primary" @click="dialogConfirm">去支持</el-button>
+
       </span>
     </el-dialog>
+
+
     <el-dialog
       title="公众号二维码"
       :visible.sync="dialogVisible"
       :show-close="false"
       :center="true"
       width="30%">
+
       <div style="text-align: center">
         <span>mall全套学习教程连载中<span class="color-main font-medium">关注公众号</span>第一时间获取</span>
         <img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/banner/qrcode_for_macrozheng_258.jpg" width="150" height="150" style="margin-top: 10px">
       </div>
+
       <span slot="footer" class="dialog-footer">
+
     <el-button type="primary" @click="dialogConfirm">确定</el-button>
+
       </span>
     </el-dialog>
+
+
   </div>
 </template>
 
@@ -104,7 +133,9 @@
   import login_center_bg from '@/assets/images/login_center_bg.png'
 
   export default {
+
     name: 'login',
+
     data() {
 
       const validateUsername = (rule, value, callback) => {
@@ -122,7 +153,7 @@
           callback()
         }
       };
-
+      // trigger：‘blur’，当失去焦点就进行一次验证。
       return {
         loginForm: {
           username: 'admin',
@@ -139,7 +170,9 @@
         supportDialogVisible:false
       }
     },
+
     methods: {
+
       showPwd() {
         if (this.pwdType === 'password') {
           this.pwdType = ''
@@ -147,18 +180,30 @@
           this.pwdType = 'password'
         }
       },
+
       handleLogin() {
+
+        // 触发登陆方法
         this.$refs.loginForm.validate(valid => {
+
           if (valid) {
+
             let isSupport = getSupport();
+
             if(isSupport===undefined||isSupport==null){
               this.dialogVisible =true;
               return;
             }
+
+            //开始发送请求
             this.loading = true;
+            //
             this.$store.dispatch('Login', this.loginForm).then(() => {
+              //成功的回掉
               this.loading = false;
+              //跳转到指定的路由界面
               this.$router.push({path: '/'})
+
             }).catch(() => {
               this.loading = false
             })
@@ -166,17 +211,21 @@
             console.log('参数验证不合法！');
             return false
           }
+
         })
       },
+
       dialogConfirm(){
         this.dialogVisible =false;
         setSupport(true);
         // window.location.href=SupportUrl;
       },
+
       dialogCancel(){
         this.dialogVisible = false;
         setSupport(false);
       }
+
     }
   }
 </script>

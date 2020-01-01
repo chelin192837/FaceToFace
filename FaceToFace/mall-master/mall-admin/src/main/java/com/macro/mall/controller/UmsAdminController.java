@@ -48,6 +48,8 @@ public class UmsAdminController {
         return CommonResult.success(umsAdmin);
     }
 
+
+
     @ApiOperation(value = "登录以后返回token")
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
@@ -62,6 +64,7 @@ public class UmsAdminController {
         }
 
 
+        //给前端包装数据格式
         Map<String, String> tokenMap = new HashMap<>();
         tokenMap.put("token", token);
         tokenMap.put("tokenHead", tokenHead);
@@ -70,6 +73,8 @@ public class UmsAdminController {
         return CommonResult.success(tokenMap);
 
     }
+
+
 
     @ApiOperation(value = "刷新token")
     @RequestMapping(value = "/token/refresh", method = RequestMethod.GET)

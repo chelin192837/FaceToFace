@@ -1,15 +1,27 @@
 <template>
-  <div class="app-container">
+
+    <div class="app-container">
+
     <div class="address-layout">
+
+      <!--gutter属性指定每一栏之间的间隔-->
       <el-row :gutter="20">
+
         <el-col :span="6">
+
           <div class="out-border">
+
             <div class="layout-title">后台项目</div>
+
             <div class="color-main address-content">
               <a href="https://github.com/macrozheng/mall">mall</a>
             </div>
+
           </div>
+
         </el-col>
+
+
         <el-col :span="6">
           <div class="out-border">
             <div class="layout-title">前端项目</div>
@@ -18,6 +30,8 @@
             </div>
           </div>
         </el-col>
+
+
         <el-col :span="6">
           <div class="out-border">
             <div class="layout-title">学习教程</div>
@@ -26,10 +40,16 @@
             </div>
           </div>
         </el-col>
+
+
       </el-row>
+
     </div>
+
     <div class="total-layout">
+
       <el-row :gutter="20">
+
         <el-col :span="6">
           <div class="total-frame">
             <img :src="img_home_order" class="total-icon">
@@ -37,6 +57,8 @@
             <div class="total-value">200</div>
           </div>
         </el-col>
+
+
         <el-col :span="6">
           <div class="total-frame">
             <img :src="img_home_today_amount" class="total-icon">
@@ -44,6 +66,7 @@
             <div class="total-value">￥5000.00</div>
           </div>
         </el-col>
+
         <el-col :span="6">
           <div class="total-frame">
             <img :src="img_home_yesterday_amount" class="total-icon">
@@ -51,16 +74,11 @@
             <div class="total-value">￥5000.00</div>
           </div>
         </el-col>
-        <!--<el-col :span="6">-->
-          <!--<div class="total-frame">-->
-            <!--<svg-icon icon-class="total-week" class="total-icon">-->
-            <!--</svg-icon>-->
-            <!--<div class="total-title">近7天销售总额</div>-->
-            <!--<div class="total-value">￥50000.00</div>-->
-          <!--</div>-->
-        <!--</el-col>-->
+
       </el-row>
     </div>
+
+      <!--二维码-->
     <el-card class="mine-layout">
       <div style="text-align: center">
         <img width="150px" height="150px" src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/banner/qrcode_for_macrozheng_258.jpg">
@@ -68,29 +86,40 @@
       <div style="text-align: center">mall全套学习教程连载中！</div>
       <div style="text-align: center;margin-top: 5px"><span class="color-main">关注公号</span>，第一时间获取。</div>
     </el-card>
+
+      <!--待处理事务-->
     <div class="un-handle-layout">
+
       <div class="layout-title">待处理事务</div>
+
       <div class="un-handle-content">
+
         <el-row :gutter="20">
+
           <el-col :span="8">
             <div class="un-handle-item">
               <span class="font-medium">待付款订单</span>
+              <!-- 右边对齐 -->
               <span style="float: right" class="color-danger">(10)</span>
             </div>
           </el-col>
+
           <el-col :span="8">
             <div class="un-handle-item">
               <span class="font-medium">已完成订单</span>
               <span style="float: right" class="color-danger">(10)</span>
             </div>
           </el-col>
+
           <el-col :span="8">
             <div class="un-handle-item">
               <span class="font-medium">待确认收货订单</span>
               <span style="float: right" class="color-danger">(10)</span>
             </div>
           </el-col>
+
         </el-row>
+
         <el-row :gutter="20">
           <el-col :span="8">
             <div class="un-handle-item">
@@ -111,6 +140,7 @@
             </div>
           </el-col>
         </el-row>
+
         <el-row :gutter="20">
           <el-col :span="8">
             <div class="un-handle-item">
@@ -131,32 +161,48 @@
             </div>
           </el-col>
         </el-row>
+
       </div>
+
     </div>
+
+      <!--商品总览-->
     <div class="overview-layout">
+
       <el-row :gutter="20">
+
         <el-col :span="12">
           <div class="out-border">
+
             <div class="layout-title">商品总览</div>
+
             <div style="padding: 40px">
+
+              <!--两行  6  代表  24分栏的  四分之一  -->
               <el-row>
                 <el-col :span="6" class="color-danger overview-item-value">100</el-col>
                 <el-col :span="6" class="color-danger overview-item-value">400</el-col>
                 <el-col :span="6" class="color-danger overview-item-value">50</el-col>
                 <el-col :span="6" class="color-danger overview-item-value">500</el-col>
               </el-row>
+
               <el-row class="font-medium">
                 <el-col :span="6" class="overview-item-title">已下架</el-col>
                 <el-col :span="6" class="overview-item-title">已上架</el-col>
                 <el-col :span="6" class="overview-item-title">库存紧张</el-col>
                 <el-col :span="6" class="overview-item-title">全部商品</el-col>
               </el-row>
+
             </div>
+
           </div>
         </el-col>
+
         <el-col :span="12">
           <div class="out-border">
             <div class="layout-title">用户总览</div>
+
+            <!--内边距的设置-->
             <div style="padding: 40px">
               <el-row>
                 <el-col :span="6" class="color-danger overview-item-value">100</el-col>
@@ -171,15 +217,26 @@
                 <el-col :span="6" class="overview-item-title">会员总数</el-col>
               </el-row>
             </div>
+
           </div>
         </el-col>
+
       </el-row>
+
     </div>
+
+
     <div class="statistics-layout">
+
       <div class="layout-title">订单统计</div>
+
       <el-row>
+
         <el-col :span="4">
+
           <div style="padding: 20px">
+
+
             <div>
               <div style="color: #909399;font-size: 14px">本月订单总数</div>
               <div style="color: #606266;font-size: 24px;padding: 10px 0">10000</div>
@@ -188,6 +245,8 @@
                 <span style="color: #C0C4CC;font-size: 14px">同比上月</span>
               </div>
             </div>
+
+
             <div style="margin-top: 20px;">
               <div style="color: #909399;font-size: 14px">本周订单总数</div>
               <div style="color: #606266;font-size: 24px;padding: 10px 0">1000</div>
@@ -196,6 +255,8 @@
                 <span style="color: #C0C4CC;font-size: 14px">同比上周</span>
               </div>
             </div>
+
+
             <div style="margin-top: 20px;">
               <div style="color: #909399;font-size: 14px">本月销售总额</div>
               <div style="color: #606266;font-size: 24px;padding: 10px 0">100000</div>
@@ -204,6 +265,8 @@
                 <span style="color: #C0C4CC;font-size: 14px">同比上月</span>
               </div>
             </div>
+
+
             <div style="margin-top: 20px;">
               <div style="color: #909399;font-size: 14px">本周销售总额</div>
               <div style="color: #606266;font-size: 24px;padding: 10px 0">50000</div>
@@ -212,10 +275,14 @@
                 <span style="color: #C0C4CC;font-size: 14px">同比上周</span>
               </div>
             </div>
+
+
           </div>
         </el-col>
+
         <el-col :span="20">
           <div style="padding: 10px;border-left:1px solid #DCDFE6">
+
             <el-date-picker
               style="float: right;z-index: 1"
               size="small"
@@ -229,6 +296,7 @@
               @change="handleDateChange"
               :picker-options="pickerOptions">
             </el-date-picker>
+
             <div>
               <ve-line
                 :data="chartData"
@@ -237,9 +305,12 @@
                 :data-empty="dataEmpty"
                 :settings="chartSettings"></ve-line>
             </div>
+
           </div>
         </el-col>
+
       </el-row>
+
     </div>
   </div>
 </template>
@@ -249,6 +320,8 @@
   import img_home_order from '@/assets/images/home_order.png';
   import img_home_today_amount from '@/assets/images/home_today_amount.png';
   import img_home_yesterday_amount from '@/assets/images/home_yesterday_amount.png';
+
+  //定义常量json数据格式类来赋值时间选择器
   const DATA_FROM_BACKEND = {
     columns: ['date', 'orderCount','orderAmount'],
     rows: [
@@ -269,6 +342,7 @@
       {date: '2018-11-15', orderCount: 40, orderAmount: 4293}
     ]
   };
+
   export default {
     name: 'home',
     data() {
@@ -304,10 +378,12 @@
           area:true,
           axisSite: { right: ['orderAmount']},
         labelMap: {'orderCount': '订单数量', 'orderAmount': '订单金额'}},
+
         chartData: {
           columns: [],
           rows: []
         },
+
         loading: false,
         dataEmpty: false,
         img_home_order,
@@ -315,14 +391,18 @@
         img_home_yesterday_amount
       }
     },
+
     created(){
       this.initOrderCountDate();
       this.getData();
     },
+
     methods:{
+
       handleDateChange(){
         this.getData();
       },
+
       initOrderCountDate(){
         let start = new Date();
         start.setFullYear(2018);
@@ -332,28 +412,40 @@
         end.setTime(start.getTime() + 1000 * 60 * 60 * 24 * 7);
         this.orderCountDate=[start,end];
       },
+
       getData(){
+
         setTimeout(() => {
+
           this.chartData = {
             columns: ['date', 'orderCount','orderAmount'],
             rows: []
           };
+
           for(let i=0;i<DATA_FROM_BACKEND.rows.length;i++){
+
             let item=DATA_FROM_BACKEND.rows[i];
             let currDate=str2Date(item.date);
             let start=this.orderCountDate[0];
             let end=this.orderCountDate[1];
+
             if(currDate.getTime()>=start.getTime()&&currDate.getTime()<=end.getTime()){
               this.chartData.rows.push(item);
             }
+
           }
+
           this.dataEmpty = false;
+
           this.loading = false
+
         }, 1000)
       }
     }
   }
 </script>
+
+
 
 <style scoped>
   .app-container {
@@ -374,6 +466,37 @@
     padding: 20px;
     height: 100px;
   }
+  .total-frame1 {
+    border: 1px solid #DCDFE6;
+    padding: 20px;
+    height: 150px;
+    text-align: right;
+  }
+
+
+  .total-icon1 {
+    color: #409EFF;
+    width: 60px;
+    height: 60px;
+   }
+
+  .total-title1 {
+    position: relative;
+    font-size: 16px;
+    color: #909399;
+    /*left: 70px;*/
+    /*top: -50px;*/
+    /*right: px;*/
+  }
+
+  .total-value1 {
+    position: relative;
+    font-size: 18px;
+    color: #606266;
+    /*left: 70px;*/
+    /*top: -40px;*/
+  }
+
 
   .total-icon {
     color: #409EFF;
@@ -406,6 +529,14 @@
     color: #606266;
     padding: 15px 20px;
     background: #F2F6FC;
+    font-weight: bold;
+  }
+
+  /*padding 上下，左右 用div + padding 就可以调整块的大小*/
+  .layout-title1 {
+    color: #1e6abc;
+    padding: 15px 50px;
+    background: #9b9b9b;
     font-weight: bold;
   }
 

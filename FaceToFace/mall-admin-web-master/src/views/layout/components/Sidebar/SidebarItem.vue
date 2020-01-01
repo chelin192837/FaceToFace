@@ -1,5 +1,7 @@
 <template>
+
   <div class="menu-wrapper">
+
     <template v-for="item in routes" v-if="!item.hidden&&item.children">
 
       <router-link v-if="hasOneShowingChildren(item.children) && !item.children[0].children&&!item.alwaysShow" :to="item.path+'/'+item.children[0].path"
@@ -11,6 +13,7 @@
       </router-link>
 
       <el-submenu v-else :index="item.name||item.path" :key="item.name">
+
         <template slot="title">
           <svg-icon v-if="item.meta&&item.meta.icon" :icon-class="item.meta.icon"></svg-icon>
           <span v-if="item.meta&&item.meta.title" slot="title">{{item.meta.title}}</span>
@@ -25,7 +28,10 @@
               <span v-if="child.meta&&child.meta.title" slot="title">{{child.meta.title}}</span>
             </el-menu-item>
           </router-link>
+
         </template>
+
+
       </el-submenu>
 
     </template>
@@ -34,7 +40,9 @@
 
 <script>
 export default {
+
   name: 'SidebarItem',
+
   props: {
     routes: {
       type: Array

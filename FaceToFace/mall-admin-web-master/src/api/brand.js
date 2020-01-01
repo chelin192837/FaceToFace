@@ -1,4 +1,8 @@
+
+
 import request from '@/utils/request'
+
+
 export function fetchList(params) {
   return request({
     url:'/brand/list',
@@ -6,6 +10,8 @@ export function fetchList(params) {
     params:params
   })
 }
+
+
 export function createBrand(data) {
   return request({
     url:'/brand/create',
@@ -13,6 +19,8 @@ export function createBrand(data) {
     data:data
   })
 }
+
+
 export function updateShowStatus(data) {
   return request({
     url:'/brand/update/showStatus',
@@ -20,6 +28,7 @@ export function updateShowStatus(data) {
     data:data
   })
 }
+
 
 export function updateFactoryStatus(data) {
   return request({
@@ -29,12 +38,14 @@ export function updateFactoryStatus(data) {
   })
 }
 
+
 export function deleteBrand(id) {
   return request({
     url:'/brand/delete/'+id,
     method:'get',
   })
 }
+
 
 export function getBrand(id) {
   return request({
@@ -43,6 +54,7 @@ export function getBrand(id) {
   })
 }
 
+
 export function updateBrand(id,data) {
   return request({
     url:'/brand/update/'+id,
@@ -50,4 +62,20 @@ export function updateBrand(id,data) {
     data:data
   })
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

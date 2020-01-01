@@ -25,12 +25,14 @@ export const constantRouterMap = [
     path: '',
     component: Layout,
     redirect: '/home',
-    children: [{
+    children: [
+      {
       path: 'home',
       name: 'home',
       component: () => import('@/views/home/index'),
       meta: {title: '首页', icon: 'home'}
-    }]
+      }
+    ]
   },
   {
     path: '/pms',
@@ -38,18 +40,23 @@ export const constantRouterMap = [
     redirect: '/pms/product',
     name: 'pms',
     meta: {title: '商品', icon: 'product'},
-    children: [{
+
+    children: [
+
+      {
       path: 'product',
       name: 'product',
       component: () => import('@/views/pms/product/index'),
       meta: {title: '商品列表', icon: 'product-list'}
-    },
+      },
+
       {
         path: 'addProduct',
         name: 'addProduct',
         component: () => import('@/views/pms/product/add'),
         meta: {title: '添加商品', icon: 'product-add'}
       },
+
       {
         path: 'updateProduct',
         name: 'updateProduct',
@@ -57,6 +64,7 @@ export const constantRouterMap = [
         meta: {title: '修改商品', icon: 'product-add'},
         hidden: true
       },
+
       {
         path: 'productRecycle',
         name: 'productRecycle',
@@ -64,6 +72,7 @@ export const constantRouterMap = [
         meta: {title: '商品回收站', icon: 'product-recycle'},
         hidden: true
       },
+
       {
         path: 'productComment',
         name: 'productComment',
@@ -71,12 +80,14 @@ export const constantRouterMap = [
         meta: {title: '商品评价', icon: 'product-comment'},
         hidden: true
       },
+
       {
         path: 'productCate',
         name: 'productCate',
         component: () => import('@/views/pms/productCate/index'),
         meta: {title: '商品分类', icon: 'product-cate'}
       },
+
       {
         path: 'addProductCate',
         name: 'addProductCate',
@@ -84,6 +95,7 @@ export const constantRouterMap = [
         meta: {title: '添加商品分类'},
         hidden: true
       },
+
       {
         path: 'updateProductCate',
         name: 'updateProductCate',
@@ -91,12 +103,14 @@ export const constantRouterMap = [
         meta: {title: '修改商品分类'},
         hidden: true
       },
+
       {
         path: 'productAttr',
         name: 'productAttr',
         component: () => import('@/views/pms/productAttr/index'),
         meta: {title: '商品类型', icon: 'product-attr'}
       },
+
       {
         path: 'productAttrList',
         name: 'productAttrList',
@@ -104,6 +118,7 @@ export const constantRouterMap = [
         meta: {title: '商品属性列表'},
         hidden: true
       },
+
       {
         path: 'addProductAttr',
         name: 'addProductAttr',
@@ -111,6 +126,7 @@ export const constantRouterMap = [
         meta: {title: '添加商品属性'},
         hidden: true
       },
+
       {
         path: 'updateProductAttr',
         name: 'updateProductAttr',
@@ -118,12 +134,14 @@ export const constantRouterMap = [
         meta: {title: '修改商品属性'},
         hidden: true
       },
+
       {
         path: 'brand',
         name: 'brand',
         component: () => import('@/views/pms/brand/index'),
         meta: {title: '品牌管理', icon: 'product-brand'}
       },
+
       {
         path: 'addBrand',
         name: 'addBrand',
@@ -131,6 +149,7 @@ export const constantRouterMap = [
         meta: {title: '添加品牌'},
         hidden: true
       },
+
       {
         path: 'updateBrand',
         name: 'updateBrand',
@@ -138,6 +157,7 @@ export const constantRouterMap = [
         meta: {title: '编辑品牌'},
         hidden: true
       }
+
     ]
   },
   {

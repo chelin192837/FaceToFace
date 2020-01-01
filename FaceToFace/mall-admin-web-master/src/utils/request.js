@@ -1,7 +1,11 @@
 import axios from 'axios'
+
 import { Message, MessageBox } from 'element-ui'
+
 import store from '../store'
+
 import { getToken } from '@/utils/auth'
+
 
 // 创建axios实例
 const service = axios.create({
@@ -29,6 +33,7 @@ service.interceptors.response.use(
   */
     const res = response.data
     if (res.code !== 200) {
+
       Message({
         message: res.message,
         type: 'error',

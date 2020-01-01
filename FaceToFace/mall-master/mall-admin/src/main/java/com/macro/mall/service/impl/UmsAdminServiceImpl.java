@@ -104,7 +104,9 @@ public class UmsAdminServiceImpl implements UmsAdminService {
 
     @Override
     public String login(String username, String password) {
+
         String token = null;
+
         //密码需要客户端加密后传递
         try {
             UserDetails userDetails = userDetailsService.loadUserByUsername(username);
@@ -116,6 +118,7 @@ public class UmsAdminServiceImpl implements UmsAdminService {
             token = jwtTokenUtil.generateToken(userDetails);
 //            updateLoginTimeByUsername(username);
             insertLoginLog(username);
+
         } catch (AuthenticationException e) {
             LOGGER.warn("登录异常:{}", e.getMessage());
         }
