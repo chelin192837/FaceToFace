@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.macro.mall.mapper.FacStudentRequirementMapper" >
+  <resultMap id="BaseResultMap" type="com.macro.mall.model.FacStudentRequirement" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="student_name" property="student_name" jdbcType="VARCHAR" />
+    <result column="student_iphone" property="student_iphone" jdbcType="VARCHAR" />
+    <result column="teach_flag" property="teach_flag" jdbcType="VARCHAR" />
+    <result column="teach_sex" property="teach_sex" jdbcType="VARCHAR" />
+    <result column="teach_major" property="teach_major" jdbcType="VARCHAR" />
+    <result column="teach_subject" property="teach_subject" jdbcType="VARCHAR" />
+    <result column="teach_advantage" property="teach_advantage" jdbcType="VARCHAR" />
+    <result column="problem" property="problem" jdbcType="VARCHAR" />
+    <result column="other" property="other" jdbcType="VARCHAR" />
+    <result column="other_one" property="other_one" jdbcType="VARCHAR" />
+    <result column="other_two" property="other_two" jdbcType="VARCHAR" />
+    <result column="create_time" property="create_time" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, student_name, student_iphone, teach_flag, teach_sex, teach_major, teach_subject,
+    teach_advantage, problem, other, other_one, other_two, create_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from fac_student_requirement
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from fac_student_requirement
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.macro.mall.model.FacStudentRequirement" >
+    insert into fac_student_requirement (id, student_name, student_iphone,
+      teach_flag, teach_sex, teach_major,
+      teach_subject, teach_advantage, problem,
+      other, other_one, other_two,
+      create_time)
+    values (#{id,jdbcType=BIGINT}, #{student_name,jdbcType=VARCHAR}, #{student_iphone,jdbcType=VARCHAR},
+      #{teach_flag,jdbcType=VARCHAR}, #{teach_sex,jdbcType=VARCHAR}, #{teach_major,jdbcType=VARCHAR},
+      #{teach_subject,jdbcType=VARCHAR}, #{teach_advantage,jdbcType=VARCHAR}, #{problem,jdbcType=VARCHAR},
+      #{other,jdbcType=VARCHAR}, #{other_one,jdbcType=VARCHAR}, #{other_two,jdbcType=VARCHAR},
+      #{create_time,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.macro.mall.model.FacStudentRequirement" >
+    insert into fac_student_requirement
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="student_name != null" >
+        student_name,
+      </if>
+      <if test="student_iphone != null" >
+        student_iphone,
+      </if>
+      <if test="teach_flag != null" >
+        teach_flag,
+      </if>
+      <if test="teach_sex != null" >
+        teach_sex,
+      </if>
+      <if test="teach_major != null" >
+        teach_major,
+      </if>
+      <if test="teach_subject != null" >
+        teach_subject,
+      </if>
+      <if test="teach_advantage != null" >
+        teach_advantage,
+      </if>
+      <if test="problem != null" >
+        problem,
+      </if>
+      <if test="other != null" >
+        other,
+      </if>
+      <if test="other_one != null" >
+        other_one,
+      </if>
+      <if test="other_two != null" >
+        other_two,
+      </if>
+      <if test="create_time != null" >
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="student_name != null" >
+        #{student_name,jdbcType=VARCHAR},
+      </if>
+      <if test="student_iphone != null" >
+        #{student_iphone,jdbcType=VARCHAR},
+      </if>
+      <if test="teach_flag != null" >
+        #{teach_flag,jdbcType=VARCHAR},
+      </if>
+      <if test="teach_sex != null" >
+        #{teach_sex,jdbcType=VARCHAR},
+      </if>
+      <if test="teach_major != null" >
+        #{teach_major,jdbcType=VARCHAR},
+      </if>
+      <if test="teach_subject != null" >
+        #{teach_subject,jdbcType=VARCHAR},
+      </if>
+      <if test="teach_advantage != null" >
+        #{teach_advantage,jdbcType=VARCHAR},
+      </if>
+      <if test="problem != null" >
+        #{problem,jdbcType=VARCHAR},
+      </if>
+      <if test="other != null" >
+        #{other,jdbcType=VARCHAR},
+      </if>
+      <if test="other_one != null" >
+        #{other_one,jdbcType=VARCHAR},
+      </if>
+      <if test="other_two != null" >
+        #{other_two,jdbcType=VARCHAR},
+      </if>
+      <if test="create_time != null" >
+        #{create_time,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.macro.mall.model.FacStudentRequirement" >
+    update fac_student_requirement
+    <set >
+      <if test="student_name != null" >
+        student_name = #{student_name,jdbcType=VARCHAR},
+      </if>
+      <if test="student_iphone != null" >
+        student_iphone = #{student_iphone,jdbcType=VARCHAR},
+      </if>
+      <if test="teach_flag != null" >
+        teach_flag = #{teach_flag,jdbcType=VARCHAR},
+      </if>
+      <if test="teach_sex != null" >
+        teach_sex = #{teach_sex,jdbcType=VARCHAR},
+      </if>
+      <if test="teach_major != null" >
+        teach_major = #{teach_major,jdbcType=VARCHAR},
+      </if>
+      <if test="teach_subject != null" >
+        teach_subject = #{teach_subject,jdbcType=VARCHAR},
+      </if>
+      <if test="teach_advantage != null" >
+        teach_advantage = #{teach_advantage,jdbcType=VARCHAR},
+      </if>
+      <if test="problem != null" >
+        problem = #{problem,jdbcType=VARCHAR},
+      </if>
+      <if test="other != null" >
+        other = #{other,jdbcType=VARCHAR},
+      </if>
+      <if test="other_one != null" >
+        other_one = #{other_one,jdbcType=VARCHAR},
+      </if>
+      <if test="other_two != null" >
+        other_two = #{other_two,jdbcType=VARCHAR},
+      </if>
+      <if test="create_time != null" >
+        create_time = #{create_time,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.macro.mall.model.FacStudentRequirement" >
+    update fac_student_requirement
+    set student_name = #{student_name,jdbcType=VARCHAR},
+      student_iphone = #{student_iphone,jdbcType=VARCHAR},
+      teach_flag = #{teach_flag,jdbcType=VARCHAR},
+      teach_sex = #{teach_sex,jdbcType=VARCHAR},
+      teach_major = #{teach_major,jdbcType=VARCHAR},
+      teach_subject = #{teach_subject,jdbcType=VARCHAR},
+      teach_advantage = #{teach_advantage,jdbcType=VARCHAR},
+      problem = #{problem,jdbcType=VARCHAR},
+      other = #{other,jdbcType=VARCHAR},
+      other_one = #{other_one,jdbcType=VARCHAR},
+      other_two = #{other_two,jdbcType=VARCHAR},
+      create_time = #{create_time,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

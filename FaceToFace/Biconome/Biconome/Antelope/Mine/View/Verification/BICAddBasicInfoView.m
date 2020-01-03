@@ -354,7 +354,7 @@
             [BICDeviceManager AlertShowTip:LAN(@"基本信息提交成功")];
             [self pushNextVC];
         }else{
-            [BICDeviceManager AlertShowTip:responseM.msg];
+            [BICDeviceManager AlertShowTip:responseM.message];
         }
     } failedResultHandler:^(id response) {
      

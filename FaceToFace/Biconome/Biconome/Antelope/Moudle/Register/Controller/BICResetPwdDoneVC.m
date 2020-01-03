@@ -72,7 +72,7 @@
             [self dismissToRootViewController];
  
         }else{
-            [BICDeviceManager AlertShowTip:responseM.msg];
+            [BICDeviceManager AlertShowTip:responseM.message];
             
         }
         

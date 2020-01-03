@@ -178,7 +178,7 @@
 //            [BICDeviceManager AlertShowTip:LAN(@"密码验证成功")];
             [weakSelf getCode];
         }else{
-            [BICDeviceManager AlertShowTip:responseM.msg];
+            [BICDeviceManager AlertShowTip:responseM.message];
         }
     } failedResultHandler:^(id response) {
         [ODAlertViewFactory hideAllHud:weakSelf.view];

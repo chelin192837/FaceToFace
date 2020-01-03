@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 //注册
 - (void)analyticalRegisterData:(BICRegisterRequest*)request serverSuccessResultHandler:(ServerResultSuccessHandler)succHandler failedResultHandler:(ServerResultFailedHandler)failedHandler requestErrorHandler:(RequestFailedBlock)requestError;
+
 //登陆密码接口
 - (void)analyticalPasswordData:(BICRegisterRequest*)request serverSuccessResultHandler:(ServerResultSuccessHandler)succHandler failedResultHandler:(ServerResultFailedHandler)failedHandler requestErrorHandler:(RequestFailedBlock)requestError;
 //忘记密码接口 login/tel

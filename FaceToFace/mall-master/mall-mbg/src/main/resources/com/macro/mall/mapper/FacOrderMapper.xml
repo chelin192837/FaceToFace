@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.macro.mall.mapper.FacOrderMapper" >
+  <resultMap id="BaseResultMap" type="com.macro.mall.model.FacOrder" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="user_id" property="user_id" jdbcType="BIGINT" />
+    <result column="teach_id" property="teach_id" jdbcType="BIGINT" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="other_one" property="other_one" jdbcType="VARCHAR" />
+    <result column="other_two" property="other_two" jdbcType="VARCHAR" />
+    <result column="create_time" property="create_time" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, user_id, teach_id, status, other_one, other_two, create_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from fac_order
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from fac_order
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.macro.mall.model.FacOrder" >
+    insert into fac_order (id, user_id, teach_id,
+      status, other_one, other_two,
+      create_time)
+    values (#{id,jdbcType=BIGINT}, #{user_id,jdbcType=BIGINT}, #{teach_id,jdbcType=BIGINT},
+      #{status,jdbcType=VARCHAR}, #{other_one,jdbcType=VARCHAR}, #{other_two,jdbcType=VARCHAR},
+      #{create_time,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.macro.mall.model.FacOrder" >
+    insert into fac_order
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="user_id != null" >
+        user_id,
+      </if>
+      <if test="teach_id != null" >
+        teach_id,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="other_one != null" >
+        other_one,
+      </if>
+      <if test="other_two != null" >
+        other_two,
+      </if>
+      <if test="create_time != null" >
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="user_id != null" >
+        #{user_id,jdbcType=BIGINT},
+      </if>
+      <if test="teach_id != null" >
+        #{teach_id,jdbcType=BIGINT},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="other_one != null" >
+        #{other_one,jdbcType=VARCHAR},
+      </if>
+      <if test="other_two != null" >
+        #{other_two,jdbcType=VARCHAR},
+      </if>
+      <if test="create_time != null" >
+        #{create_time,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.macro.mall.model.FacOrder" >
+    update fac_order
+    <set >
+      <if test="user_id != null" >
+        user_id = #{user_id,jdbcType=BIGINT},
+      </if>
+      <if test="teach_id != null" >
+        teach_id = #{teach_id,jdbcType=BIGINT},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="other_one != null" >
+        other_one = #{other_one,jdbcType=VARCHAR},
+      </if>
+      <if test="other_two != null" >
+        other_two = #{other_two,jdbcType=VARCHAR},
+      </if>
+      <if test="create_time != null" >
+        create_time = #{create_time,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.macro.mall.model.FacOrder" >
+    update fac_order
+    set user_id = #{user_id,jdbcType=BIGINT},
+      teach_id = #{teach_id,jdbcType=BIGINT},
+      status = #{status,jdbcType=VARCHAR},
+      other_one = #{other_one,jdbcType=VARCHAR},
+      other_two = #{other_two,jdbcType=VARCHAR},
+      create_time = #{create_time,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

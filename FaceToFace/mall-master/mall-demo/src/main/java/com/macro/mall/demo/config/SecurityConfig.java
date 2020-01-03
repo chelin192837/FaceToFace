@@ -29,31 +29,38 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()//配置权限
-//                .antMatchers("/").access("hasRole('TEST')")//该路径需要TEST角色
-                .antMatchers("/").authenticated()//该路径需要登录认证
-//                .antMatchers("/brand/list").hasAuthority("TEST")//该路径需要TEST权限
-                .antMatchers("/**").permitAll()
-                .and()//启用基于http的认证
-                .httpBasic()
-                .realmName("/")
-                .and()//配置登录页面
-                .formLogin()
-                .loginPage("/login")
-                .failureUrl("/login?error=true")
-                .and()//配置退出路径
-                .logout()
-                .logoutSuccessUrl("/")
-//                .and()//记住密码功能
-//                .rememberMe()
-//                .tokenValiditySeconds(60*60*24)
-//                .key("rememberMeKey")
-                .and()//关闭跨域伪造
-                .csrf()
-                .disable()
-                .headers()//去除X-Frame-Options
-                .frameOptions()
-                .disable();
+
+
+        http.authorizeRequests()
+                .anyRequest().permitAll().and().logout().permitAll();//配置不需要登录验证
+
+
+//        http.authorizeRequests()//配置权限
+////                .antMatchers("/").access("hasRole('TEST')")//该路径需要TEST角色
+//                .antMatchers("/").authenticated()//该路径需要登录认证
+////                .antMatchers("/brand/list").hasAuthority("TEST")//该路径需要TEST权限
+//                .antMatchers("/**").permitAll()
+//                .and()//启用基于http的认证
+//                .httpBasic()
+//                .realmName("/")
+//                .and()//配置登录页面
+//                .formLogin()
+//                .loginPage("/login")
+//                .failureUrl("/login?error=true")
+//                .and()//配置退出路径
+//                .logout()
+//                .logoutSuccessUrl("/")
+////                .and()//记住密码功能
+////                .rememberMe()
+////                .tokenValiditySeconds(60*60*24)
+////                .key("rememberMeKey")
+//                .and()//关闭跨域伪造
+//                .csrf()
+//                .disable()
+//                .headers()//去除X-Frame-Options
+//                .frameOptions()
+//                .disable();
+
     }
 
     @Override

@@ -318,10 +318,10 @@
                 failedHandler(responseModel);
             }
             NSString *messageStr = @"";
-            if ([NSString isBlankString:responseModel.msg]) {
+            if ([NSString isBlankString:responseModel.message]) {
                 messageStr = OPERATION_ERROR;
             }else{
-                messageStr = responseModel.msg;
+                messageStr = responseModel.message;
             }
             if (messageStr.length){
                 

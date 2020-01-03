@@ -11,6 +11,7 @@
 @interface RSDBaseResponse : JSONModel
 @property (nonatomic, assign) NSInteger code;
 @property (nonatomic, strong) NSString  *msg;
+@property (nonatomic, strong) NSString  *message;
 @property (nonatomic, assign) NSInteger status;//100000 成功 其他失败
 @property (nonatomic, strong) NSString  *extra;
 @property (nonatomic, strong) NSString  *error;

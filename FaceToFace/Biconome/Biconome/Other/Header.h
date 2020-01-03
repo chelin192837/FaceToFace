@@ -140,12 +140,12 @@
 
 
 #define WKWebUrl @"https://www.biconomy.com/html/app_identity/"
-#define kBaseUrl @"https://www.biconomy.com/"
-#define kBaseWebUrl @"https://www.biconomy.com/"
-#define kBaseUrl_v4 @"https://www.biconomy.com/"
-#define kBICBaseSockJSUrl @"wss://www.biconomy.com/currency/app-websocket/"
-#define kBICCCTBaseSockJSUrl @"wss://www.biconomy.com/cct/ios-cct-websocket/"
 
+#define kBaseUrl @"http://192.168.1.6:8080/"
+#define kBaseWebUrl @"http://192.168.1.6:8080/"
+#define kBaseUrl_v4 @"http://192.168.1.6:8080/"
+
+    #define IOSMAPPING @"api"
 
     #define URL8901 @"bch"
     #define URL8902 @"ltc"
@@ -157,7 +157,7 @@
     #define URL8801 @"files"
     #define URL8701 @"otc"
     #define URL8121 @"sysconf"
-    #define URL8101 @"user"
+    #define URL8101 @"api"
     #define URL8001 @"eureka"
     #define URL8002 @"config"
     #define URL7000 @"tx-manager"
@@ -165,9 +165,11 @@
 #else
 
 #define WKWebUrl @"http://192.168.1.74/html/app_identity/"
-#define kBaseUrl @"http://192.168.1.74/"
-#define kBaseWebUrl @"http://192.168.1.74/"
-#define kBaseUrl_v4 @"http://192.168.1.74/"
+
+#define kBaseUrl @"http://192.168.1.6:8080/"
+#define kBaseWebUrl @"http://192.168.1.6:8080/"
+#define kBaseUrl_v4 @"http://192.168.1.6:8080/"
+
 #define kBICBaseSockJSUrl @"ws://192.168.1.74/currency/app-websocket/"
 #define kBICCCTBaseSockJSUrl @"ws://192.168.1.74/cct/ios-cct-websocket/"
 
@@ -199,10 +201,12 @@
     #define URL8801 @"files"
     #define URL8701 @"otc"
     #define URL8121 @"sysconf"
-    #define URL8101 @"user"
+    #define URL8101 @"api"
     #define URL8001 @"eureka"
     #define URL8002 @"config"
     #define URL7000 @"tx-manager"
+
+    #define IOSMAPPING @"api"
 
 
 

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.mall.mapper.FacTeachMapper">
+  <resultMap id="BaseResultMap" type="com.macro.mall.model.FacTeach">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="iphone" jdbcType="VARCHAR" property="iphone" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="major" jdbcType="VARCHAR" property="major" />
+    <result column="subject" jdbcType="VARCHAR" property="subject" />
+    <result column="flag" jdbcType="VARCHAR" property="flag" />
+    <result column="advantage" jdbcType="VARCHAR" property="advantage" />
+    <result column="active" jdbcType="INTEGER" property="active" />
+    <result column="other_one" jdbcType="VARCHAR" property="other_one" />
+    <result column="other_two" jdbcType="VARCHAR" property="other_two" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="create_time" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, iphone, password, sex, major, subject, flag, advantage, active, other_one,
+    other_two, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from fac_teach
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from fac_teach
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.macro.mall.model.FacTeach">
+    insert into fac_teach (id, name, iphone,
+      password, sex, major,
+      subject, flag, advantage,
+      active, other_one, other_two,
+      create_time)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{iphone,jdbcType=VARCHAR},
+      #{password,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, #{major,jdbcType=VARCHAR},
+      #{subject,jdbcType=VARCHAR}, #{flag,jdbcType=VARCHAR}, #{advantage,jdbcType=VARCHAR},
+      #{active,jdbcType=INTEGER}, #{other_one,jdbcType=VARCHAR}, #{other_two,jdbcType=VARCHAR},
+      #{create_time,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.macro.mall.model.FacTeach">
+    insert into fac_teach
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="iphone != null">
+        iphone,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="major != null">
+        major,
+      </if>
+      <if test="subject != null">
+        subject,
+      </if>
+      <if test="flag != null">
+        flag,
+      </if>
+      <if test="advantage != null">
+        advantage,
+      </if>
+      <if test="active != null">
+        active,
+      </if>
+      <if test="other_one != null">
+        other_one,
+      </if>
+      <if test="other_two != null">
+        other_two,
+      </if>
+      <if test="create_time != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="iphone != null">
+        #{iphone,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="major != null">
+        #{major,jdbcType=VARCHAR},
+      </if>
+      <if test="subject != null">
+        #{subject,jdbcType=VARCHAR},
+      </if>
+      <if test="flag != null">
+        #{flag,jdbcType=VARCHAR},
+      </if>
+      <if test="advantage != null">
+        #{advantage,jdbcType=VARCHAR},
+      </if>
+      <if test="active != null">
+        #{active,jdbcType=INTEGER},
+      </if>
+      <if test="other_one != null">
+        #{other_one,jdbcType=VARCHAR},
+      </if>
+      <if test="other_two != null">
+        #{other_two,jdbcType=VARCHAR},
+      </if>
+      <if test="create_time != null">
+        #{create_time,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.macro.mall.model.FacTeach">
+    update fac_teach
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="iphone != null">
+        iphone = #{iphone,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="major != null">
+        major = #{major,jdbcType=VARCHAR},
+      </if>
+      <if test="subject != null">
+        subject = #{subject,jdbcType=VARCHAR},
+      </if>
+      <if test="flag != null">
+        flag = #{flag,jdbcType=VARCHAR},
+      </if>
+      <if test="advantage != null">
+        advantage = #{advantage,jdbcType=VARCHAR},
+      </if>
+      <if test="active != null">
+        active = #{active,jdbcType=INTEGER},
+      </if>
+      <if test="other_one != null">
+        other_one = #{other_one,jdbcType=VARCHAR},
+      </if>
+      <if test="other_two != null">
+        other_two = #{other_two,jdbcType=VARCHAR},
+      </if>
+      <if test="create_time != null">
+        create_time = #{create_time,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.macro.mall.model.FacTeach">
+    update fac_teach
+    set name = #{name,jdbcType=VARCHAR},
+      iphone = #{iphone,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      major = #{major,jdbcType=VARCHAR},
+      subject = #{subject,jdbcType=VARCHAR},
+      flag = #{flag,jdbcType=VARCHAR},
+      advantage = #{advantage,jdbcType=VARCHAR},
+      active = #{active,jdbcType=INTEGER},
+      other_one = #{other_one,jdbcType=VARCHAR},
+      other_two = #{other_two,jdbcType=VARCHAR},
+      create_time = #{create_time,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+</mapper>

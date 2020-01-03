@@ -217,7 +217,7 @@
             
             [BICDeviceManager PushToLoginView];
         }else{
-            [BICDeviceManager AlertShowTip:responseM.msg];
+            [BICDeviceManager AlertShowTip:responseM.message];
         }
     } failedResultHandler:^(id response) {
         

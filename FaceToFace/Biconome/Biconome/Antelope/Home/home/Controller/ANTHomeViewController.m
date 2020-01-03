@@ -38,8 +38,9 @@
 }
 -(void)analyData
 {
-    NSArray * imageArr = @[@"jiaoyu-_1",@"jiaoyu-_2",@"jiaoyu-_3",@"jiaoyu-_4",@"jiaoyu-_5"];
+    NSArray * imageArr = @[@"face1",@"face2",@"face3",@"face4",@"face5"];
     NSArray * titleArr = @[@"学习方法",@"学习习惯",@"学习心态",@"情感心理",@"择校就业"];
+    
     for (int i=0; i<imageArr.count; i++) {
         ANTCollectModel * model = [[ANTCollectModel alloc] init];
         model.imageName = imageArr[i];
@@ -49,6 +50,7 @@
 
     [self.tableView reloadData];
 }
+
 -(NSMutableArray*)dataArray
 {
     if (!_dataArray) {

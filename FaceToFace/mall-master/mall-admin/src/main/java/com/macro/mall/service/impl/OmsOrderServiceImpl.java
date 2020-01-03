@@ -49,9 +49,7 @@ public class OmsOrderServiceImpl implements OmsOrderService {
         //分页插件怎么和dao联系到一起
         PageHelper.startPage(pageNum, pageSize);
 
-
         return orderDao.getList(queryParam);
-
 
     }
 

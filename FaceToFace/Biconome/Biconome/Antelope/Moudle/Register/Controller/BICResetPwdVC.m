@@ -43,7 +43,7 @@
             
             [weakSelf sendCode];
         }else{
-            [BICDeviceManager AlertShowTip:responseM.msg];
+            [BICDeviceManager AlertShowTip:responseM.message];
         }
     } failedResultHandler:^(id response) {
         

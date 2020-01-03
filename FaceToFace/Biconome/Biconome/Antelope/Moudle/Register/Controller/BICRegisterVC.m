@@ -64,15 +64,9 @@
 }
 
 - (IBAction)selectAreaBtn:(id)sender {
+
     
-//    XWCountryCodeController *CountryCodeVC = [[XWCountryCodeController alloc] init];
-//    CountryCodeVC.type=XWCountry_type_Other;
-//    CountryCodeVC.returnCountryCodeBlock = ^(NSString *countryName, NSString *code) {
-//        [self.selectAreaBtn setTitle:[NSString stringWithFormat:@"%@ +%@",countryName,code] forState:UIControlStateNormal];
-//        self.internationalCode = code;
-//    };
-//
-//    [self.navigationController pushViewController:CountryCodeVC animated:YES];
+    
 }
 
 
@@ -142,24 +136,32 @@
     request.internationalCode = self.internationalCode;
     request.invitationCode = self.inviteCodeTex.text;
     
-//    [[BICProfileService sharedInstance] analyticalRegisterVerifyData:request serverSuccessResultHandler:^(id response) {
-//        BICBaseResponse * responseM = (BICBaseResponse*)response;
-//        if (responseM.code==200) {
-//            [self sendCode];
-//        }else{
-//             [BICDeviceManager AlertShowTip:responseM.msg];
-//        }
-//    } failedResultHandler:^(id response) {
-//
-//    } requestErrorHandler:^(id error) {
-//
-//    }];
+    [[BICProfileService sharedInstance] analyticalRegisterData:request serverSuccessResultHandler:^(id response) {
+        BICBaseResponse * responseM = (BICBaseResponse*)response;
+        
+        if (responseM.code==200) {
+            
+            [self sendCode];
+            
+        }else{
+            
+             [BICDeviceManager AlertShowTip:responseM.message];
+            
+        }
+        
+    } failedResultHandler:^(id response) {
+
+    } requestErrorHandler:^(id error) {
+
+    }];
 
 }
+
+
 -(BOOL)validate
 {
     if (self.userNameTex.text.length==0) {
-        [BICDeviceManager AlertShowTip:LAN(@"请输入账户")];
+        [BICDeviceManager AlertShowTip:LAN(@"请输入手机号")];
         return NO;
     }else if (![BICDeviceManager deptNumInputShouldNumber:self.userNameTex.text])
     {
@@ -167,10 +169,6 @@
         return NO;
     }else if (self.passwordTex.text.length==0){
         [BICDeviceManager AlertShowTip:LAN(@"请输入密码")];
-        return NO;
-    }else if (![BICDeviceManager passwordVertify:self.passwordTex.text])
-    {
-        [BICDeviceManager AlertShowTip:[BICDeviceManager isOrNoPasswordStyle:self.passwordTex.text]];
         return NO;
     }
     return YES;

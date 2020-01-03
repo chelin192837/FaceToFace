@@ -11,8 +11,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BICRegisterVC">
             <connections>
                 <outlet property="accountLab" destination="KR2-ke-r0B" id="Wzp-95-H6f"/>
-                <outlet property="inviteCode" destination="kBo-z7-1v7" id="Nx0-A2-Yq8"/>
-                <outlet property="inviteCodeTex" destination="Af0-vA-aGb" id="Ew5-dl-MM2"/>
                 <outlet property="passwordNameLab" destination="Ijc-zb-aQJ" id="0wn-O5-pvg"/>
                 <outlet property="passwordTex" destination="lha-UC-m38" id="HBv-bN-qIn"/>
                 <outlet property="registerTypeBtn" destination="Veb-ag-GBK" id="f3d-SF-mnI"/>
@@ -43,7 +41,7 @@
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Veb-ag-GBK">
-                    <rect key="frame" x="40" y="392" width="295" height="48"/>
+                    <rect key="frame" x="40" y="307" width="295" height="48"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="TGN-Xn-5NA"/>
@@ -106,38 +104,13 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入邀请码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Af0-vA-aGb">
-                    <rect key="frame" x="40" y="316" width="295" height="44"/>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="KZ3-bm-Mrj"/>
-                    </constraints>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
-                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="邀请码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBo-z7-1v7">
-                    <rect key="frame" x="40" y="291" width="43" height="17"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" red="0.40000000000000002" green="0.32549019610000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="KR2-ke-r0B" firstAttribute="leading" secondItem="Wx1-UL-E2r" secondAttribute="leading" id="0tN-ql-uUD"/>
                 <constraint firstItem="QYf-4a-5Ij" firstAttribute="trailing" secondItem="gXe-7o-yWR" secondAttribute="trailing" constant="40" id="1VH-SS-Hod"/>
-                <constraint firstItem="kBo-z7-1v7" firstAttribute="top" secondItem="lha-UC-m38" secondAttribute="bottom" constant="16" id="5OU-NH-LVF"/>
-                <constraint firstItem="Af0-vA-aGb" firstAttribute="leading" secondItem="kBo-z7-1v7" secondAttribute="leading" id="9PB-Hg-igm"/>
                 <constraint firstItem="lha-UC-m38" firstAttribute="leading" secondItem="Ijc-zb-aQJ" secondAttribute="leading" id="A5O-Jf-gLG"/>
-                <constraint firstItem="Af0-vA-aGb" firstAttribute="top" secondItem="kBo-z7-1v7" secondAttribute="bottom" constant="8" id="Glz-Pm-P3z"/>
                 <constraint firstItem="Cnn-oY-rVs" firstAttribute="leading" secondItem="QYf-4a-5Ij" secondAttribute="leading" constant="40" id="Iun-sQ-8LF"/>
-                <constraint firstItem="Af0-vA-aGb" firstAttribute="trailing" secondItem="lha-UC-m38" secondAttribute="trailing" id="J0I-4E-Km0"/>
                 <constraint firstItem="Ijc-zb-aQJ" firstAttribute="leading" secondItem="gXe-7o-yWR" secondAttribute="leading" id="JWG-Kj-w8u"/>
                 <constraint firstItem="Veb-ag-GBK" firstAttribute="trailing" secondItem="lha-UC-m38" secondAttribute="trailing" id="RTd-qp-ZNR"/>
                 <constraint firstItem="Cnn-oY-rVs" firstAttribute="top" secondItem="QYf-4a-5Ij" secondAttribute="top" constant="40" id="TYI-yi-yei"/>
@@ -147,9 +120,8 @@
                 <constraint firstItem="Ijc-zb-aQJ" firstAttribute="top" secondItem="gXe-7o-yWR" secondAttribute="bottom" constant="16" id="alW-Z8-SaH"/>
                 <constraint firstItem="QYf-4a-5Ij" firstAttribute="trailing" secondItem="lha-UC-m38" secondAttribute="trailing" constant="40" id="cFo-Xo-FVC"/>
                 <constraint firstItem="KR2-ke-r0B" firstAttribute="top" secondItem="Wx1-UL-E2r" secondAttribute="bottom" constant="24" id="d0k-Tw-oRk"/>
+                <constraint firstItem="Veb-ag-GBK" firstAttribute="top" secondItem="lha-UC-m38" secondAttribute="bottom" constant="32" id="fsT-ri-yCw"/>
                 <constraint firstItem="gXe-7o-yWR" firstAttribute="top" secondItem="KR2-ke-r0B" secondAttribute="bottom" constant="8" id="gEP-Ue-yC2"/>
-                <constraint firstItem="kBo-z7-1v7" firstAttribute="leading" secondItem="Ijc-zb-aQJ" secondAttribute="leading" id="jma-lf-ZE7"/>
-                <constraint firstItem="Veb-ag-GBK" firstAttribute="top" secondItem="Af0-vA-aGb" secondAttribute="bottom" constant="32" id="psc-EB-cSh"/>
                 <constraint firstItem="gXe-7o-yWR" firstAttribute="leading" secondItem="KR2-ke-r0B" secondAttribute="leading" id="rIw-5N-rK3"/>
                 <constraint firstItem="lha-UC-m38" firstAttribute="top" secondItem="Ijc-zb-aQJ" secondAttribute="bottom" constant="8" id="wRO-cs-KBu"/>
             </constraints>

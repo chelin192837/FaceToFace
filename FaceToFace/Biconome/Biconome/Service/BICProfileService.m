@@ -23,8 +23,8 @@ static id sharedInstance = nil;
 //注册接口
 - (void)analyticalRegisterData:(BICRegisterRequest*)request serverSuccessResultHandler:(ServerResultSuccessHandler)succHandler failedResultHandler:(ServerResultFailedHandler)failedHandler requestErrorHandler:(RequestFailedBlock)requestError
 {
-    NSString *urlStr = @""kBaseUrl""URL8101"/login/register";
-    [self doServerRequestWithModel:request ResponseName:@"BICRegisterResponse" Url:urlStr requestType:HttpRequestTypePost serverSuccessResultHandler:succHandler failedResultHandler:failedHandler requestErrorHandler:requestError];
+    NSString *urlStr = @""kBaseUrl""IOSMAPPING"/register";
+    [self doServerRequestWithModel:request ResponseName:@"BICRegisterResponse" Url:urlStr requestType:HttpRequestTypeGet serverSuccessResultHandler:succHandler failedResultHandler:failedHandler requestErrorHandler:requestError];
 }
 //登陆密码接口
 - (void)analyticalPasswordData:(BICRegisterRequest*)request serverSuccessResultHandler:(ServerResultSuccessHandler)succHandler failedResultHandler:(ServerResultFailedHandler)failedHandler requestErrorHandler:(RequestFailedBlock)requestError
@@ -91,7 +91,7 @@ NSString *urlStr = @""kBaseUrl""URL8101"/login/resetPassword";
 //注册第一步验证
 - (void)analyticalRegisterVerifyData:(BICRegisterRequest*)request serverSuccessResultHandler:(ServerResultSuccessHandler)succHandler failedResultHandler:(ServerResultFailedHandler)failedHandler requestErrorHandler:(RequestFailedBlock)requestError
 {
-    NSString *urlStr = @""kBaseUrl""URL8101"/login/register/verify";
+    NSString *urlStr = @""kBaseUrl""URL8101"/student";
     [self doServerRequestWithModel:request ResponseName:@"BICBaseResponse" Url:urlStr requestType:HttpRequestTypePost serverSuccessResultHandler:succHandler failedResultHandler:failedHandler requestErrorHandler:requestError];
 }
 

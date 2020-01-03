@@ -29,7 +29,6 @@
     [self openMeu];
 
     
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -42,8 +41,8 @@
 //打开菜单
 - (void)openMeu {
     
-    NSArray *array = @[@{kHcdPopMenuItemAttributeTitle : @"我是高中生", kHcdPopMenuItemAttributeIconImageName : @"gaozhong"},
-                              @{kHcdPopMenuItemAttributeTitle : @"我是清北学生", kHcdPopMenuItemAttributeIconImageName : @"qingbei"}];
+    NSArray *array = @[@{kHcdPopMenuItemAttributeTitle : @"清华大学", kHcdPopMenuItemAttributeIconImageName : @"gaozhong"},
+                              @{kHcdPopMenuItemAttributeTitle : @"北京大学", kHcdPopMenuItemAttributeIconImageName : @"gaozhong"}];
     
     CGFloat x,y,w,h;
     x = CGRectGetWidth(self.view.bounds)/2 - 213/2;
