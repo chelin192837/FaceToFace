@@ -39,7 +39,7 @@
     [[BICProfileService sharedInstance] analyticalLoginTelData:request serverSuccessResultHandler:^(id response) {
         BICRegisterResponse * responseM = (BICRegisterResponse*)response;
         if (responseM.code==200) {
-            self.internationalCode = responseM.data.internationalCode;
+//            self.internationalCode = responseM.data.internationalCode;
             
             [weakSelf sendCode];
         }else{

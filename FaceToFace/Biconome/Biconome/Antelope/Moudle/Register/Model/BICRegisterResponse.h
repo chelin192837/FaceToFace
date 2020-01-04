@@ -30,22 +30,19 @@ NS_ASSUME_NONNULL_BEGIN
 @interface regDetail : BaseModel
 
 @property(nonatomic,strong)NSString* id;
-@property(nonatomic,strong)NSString* mobilePhone;
-@property(nonatomic,strong)NSString* nickName;
-@property(nonatomic,strong)NSString* avatar;
-@property(nonatomic,strong)NSString* email;
-@property(nonatomic,strong)NSString* lowAuth;
-@property(nonatomic,strong)NSString* higthAuth;
-@property(nonatomic,strong)NSString* grade;
-@property(nonatomic,strong)NSString* hasPassword;
+@property(nonatomic,strong)NSString* name;
+@property(nonatomic,strong)NSString* iphone;
+//student  Or teacher
+@property(nonatomic,strong)NSString* type;
 @property(nonatomic,strong)NSString* token;
-@property(nonatomic,strong)NSString* invitationCode;
 
-@property(nonatomic,assign)BOOL bindGoogleAuth;
-@property(nonatomic,strong)NSString* internationalCode;
+@property(nonatomic,strong)NSString* sex;
+@property(nonatomic,strong)NSString* grade;
 
-//谷歌验证KEY
-@property(nonatomic,strong)NSString* googleKey;
+
+
+
+
 
 
 @end

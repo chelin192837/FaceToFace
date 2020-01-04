@@ -29,6 +29,8 @@ typedef NS_ENUM(NSInteger,SelectPage_Type)
 
 @property (nonatomic, assign)SelectPage_Type selectPageType;
 
+@property (nonatomic,strong) NSString * currentStr;
+
 
 @property (assign, nonatomic) NSIndexPath *selIndex;//单选，当前选中的行
 @property (assign, nonatomic) NSInteger editSelIndex;//当前选中的行  编辑时使用

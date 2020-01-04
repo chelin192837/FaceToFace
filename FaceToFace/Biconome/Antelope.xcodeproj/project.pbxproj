@@ -535,7 +535,6 @@
 		040EE04E23B59F2F002C2D23 /* BICResetPwdDoneVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040EE03223B59F2F002C2D23 /* BICResetPwdDoneVC.xib */; };
 		040EE04F23B59F30002C2D23 /* BICResetPwdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 040EE03523B59F2F002C2D23 /* BICResetPwdVC.m */; };
 		040EE05023B59F30002C2D23 /* BICResetPwdVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040EE03623B59F2F002C2D23 /* BICResetPwdVC.xib */; };
-		040EE05123B59F30002C2D23 /* BICRegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040EE03723B59F2F002C2D23 /* BICRegisterVC.xib */; };
 		040EE05223B59F30002C2D23 /* BICRegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 040EE03823B59F2F002C2D23 /* BICRegisterVC.m */; };
 		040EE05323B59F30002C2D23 /* BICResetPwdDoneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 040EE03923B59F2F002C2D23 /* BICResetPwdDoneVC.m */; };
 		040EE05423B59F30002C2D23 /* BICRegisterResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 040EE03B23B59F2F002C2D23 /* BICRegisterResponse.m */; };
@@ -595,6 +594,7 @@
 		0429089F23AE398500BAC9BB /* ANTPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0429089C23AE398500BAC9BB /* ANTPublishViewController.m */; };
 		0434CAA023A939A500FD85D8 /* ANTMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0434CA9F23A939A500FD85D8 /* ANTMessageViewController.m */; };
 		0470993B2359DE2E007FBBF5 /* UIView+shadowPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 0470993A2359DE2E007FBBF5 /* UIView+shadowPath.m */; };
+		04A5B84F23C0367F00E8D92D /* BICRegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A5B84E23C0367E00E8D92D /* BICRegisterVC.xib */; };
 		04B074972359627300D5E704 /* RSDLeftJustifyingFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B074962359627200D5E704 /* RSDLeftJustifyingFlowLayout.m */; };
 		04E834E6235EA81400F12FCC /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 04E834BF235EA81400F12FCC /* LICENSE.md */; };
 		04E834E7235EA81400F12FCC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 04E834C0235EA81400F12FCC /* README.md */; };
@@ -1643,7 +1643,6 @@
 		040EE03423B59F2F002C2D23 /* BICRegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BICRegisterVC.h; sourceTree = "<group>"; };
 		040EE03523B59F2F002C2D23 /* BICResetPwdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BICResetPwdVC.m; sourceTree = "<group>"; };
 		040EE03623B59F2F002C2D23 /* BICResetPwdVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BICResetPwdVC.xib; sourceTree = "<group>"; };
-		040EE03723B59F2F002C2D23 /* BICRegisterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BICRegisterVC.xib; sourceTree = "<group>"; };
 		040EE03823B59F2F002C2D23 /* BICRegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BICRegisterVC.m; sourceTree = "<group>"; };
 		040EE03923B59F2F002C2D23 /* BICResetPwdDoneVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BICResetPwdDoneVC.m; sourceTree = "<group>"; };
 		040EE03B23B59F2F002C2D23 /* BICRegisterResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BICRegisterResponse.m; sourceTree = "<group>"; };
@@ -1740,6 +1739,7 @@
 		0434CA9F23A939A500FD85D8 /* ANTMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTMessageViewController.m; sourceTree = "<group>"; };
 		047099392359DE2E007FBBF5 /* UIView+shadowPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+shadowPath.h"; sourceTree = "<group>"; };
 		0470993A2359DE2E007FBBF5 /* UIView+shadowPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+shadowPath.m"; sourceTree = "<group>"; };
+		04A5B84E23C0367E00E8D92D /* BICRegisterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BICRegisterVC.xib; sourceTree = "<group>"; };
 		04B074952359627200D5E704 /* RSDLeftJustifyingFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDLeftJustifyingFlowLayout.h; sourceTree = "<group>"; };
 		04B074962359627200D5E704 /* RSDLeftJustifyingFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDLeftJustifyingFlowLayout.m; sourceTree = "<group>"; };
 		04E834BF235EA81400F12FCC /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
@@ -3928,7 +3928,7 @@
 			children = (
 				040EE03423B59F2F002C2D23 /* BICRegisterVC.h */,
 				040EE03823B59F2F002C2D23 /* BICRegisterVC.m */,
-				040EE03723B59F2F002C2D23 /* BICRegisterVC.xib */,
+				04A5B84E23C0367E00E8D92D /* BICRegisterVC.xib */,
 				040EE03123B59F2F002C2D23 /* BICResetPwdVC.h */,
 				040EE03223B59F2F002C2D23 /* BICResetPwdDoneVC.xib */,
 				040EE03323B59F2F002C2D23 /* BICResetPwdDoneVC.h */,
@@ -3942,11 +3942,11 @@
 		040EE03A23B59F2F002C2D23 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				040EE03E23B59F2F002C2D23 /* BICRegisterResponse.h */,
 				040EE03B23B59F2F002C2D23 /* BICRegisterResponse.m */,
+				040EE03F23B59F2F002C2D23 /* BICRegisterRequest.h */,
 				040EE03C23B59F2F002C2D23 /* BICRegisterRequest.m */,
 				040EE03D23B59F2F002C2D23 /* BICSendRegCodeRequest.h */,
-				040EE03E23B59F2F002C2D23 /* BICRegisterResponse.h */,
-				040EE03F23B59F2F002C2D23 /* BICRegisterRequest.h */,
 				040EE04023B59F2F002C2D23 /* BICSendRegCodeRequest.m */,
 			);
 			path = Model;
@@ -5907,7 +5907,6 @@
 				040EDE4823B51CF9002C2D23 /* chatbar_audio_blue@2x.png in Resources */,
 				004E4E962387E117001AD1EE /* PhotoItemView.xib in Resources */,
 				040EDEBB23B51CF9002C2D23 /* animate_00027.png in Resources */,
-				040EE05123B59F30002C2D23 /* BICRegisterVC.xib in Resources */,
 				040EDE0823B51CF9002C2D23 /* notification@3x.png in Resources */,
 				040EE05B23B59F30002C2D23 /* BICLoginVC.xib in Resources */,
 				0429088E23AE2B0D00BAC9BB /* toudan_icon_hailiangtoudan.png in Resources */,
@@ -5957,6 +5956,7 @@
 				040EDED423B51CF9002C2D23 /* animate_00056.png in Resources */,
 				040EDEC123B51CF9002C2D23 /* animate_00035.png in Resources */,
 				040EDED623B51CF9002C2D23 /* animate_00080.png in Resources */,
+				04A5B84F23C0367F00E8D92D /* BICRegisterVC.xib in Resources */,
 				040EDF8523B51CFA002C2D23 /* alert_info@2x.png in Resources */,
 				62CA0DF423224FE4003F1B48 /* 25.png in Resources */,
 				040EDE4723B51CF9002C2D23 /* chatbar_extend_blue@2x.png in Resources */,

@@ -30,10 +30,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-
         http.authorizeRequests()
                 .anyRequest().permitAll().and().logout().permitAll();//配置不需要登录验证
-
 
 //        http.authorizeRequests()//配置权限
 ////                .antMatchers("/").access("hasRole('TEST')")//该路径需要TEST角色
@@ -60,6 +58,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .headers()//去除X-Frame-Options
 //                .frameOptions()
 //                .disable();
+
 
     }
 

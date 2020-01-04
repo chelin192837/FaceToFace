@@ -33,5 +33,18 @@ public class FacStudentServiceImpl implements FacStudentService {
         return facStudentMapper.selectByPrimaryKey(id);
     }
 
+    @Override
+    public int insert(FacStudent facStudent)
+    {
+        return facStudentMapper.insert(facStudent);
+    }
+
+    @Override
+    public int getCount()
+    {
+        return facStudentMapper.getcount();
+    }
+
+
 
 }

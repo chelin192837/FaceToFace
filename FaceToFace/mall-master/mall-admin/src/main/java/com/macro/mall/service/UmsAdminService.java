@@ -13,6 +13,7 @@ import java.util.List;
  * Created by macro on 2018/4/26.
  */
 public interface UmsAdminService {
+
     /**
      * 根据用户名获取后台管理员
      */
@@ -22,6 +23,7 @@ public interface UmsAdminService {
      * 注册功能
      */
     UmsAdmin register(UmsAdminParam umsAdminParam);
+
 
     /**
      * 登录功能

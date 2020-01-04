@@ -39,17 +39,6 @@ public class FcStudentController {
         return CommonResult.failed();
     }
 
-    @PostMapping(value = "register")
-    @ResponseBody
-    public CommonResult<FacStudent> register()
-    {
-
-        FacStudent facStudent = facStudentService.selectByKey(Long.valueOf(1));
-
-        return CommonResult.success(facStudent);
-
-    }
-
 
 
 

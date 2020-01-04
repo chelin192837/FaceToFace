@@ -102,6 +102,8 @@ public class UmsAdminServiceImpl implements UmsAdminService {
         return umsAdmin;
     }
 
+
+
     @Override
     public String login(String username, String password) {
 
@@ -113,15 +115,21 @@ public class UmsAdminServiceImpl implements UmsAdminService {
             if (!passwordEncoder.matches(password, userDetails.getPassword())) {
                 throw new BadCredentialsException("密码不正确");
             }
+
             UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+
             SecurityContextHolder.getContext().setAuthentication(authentication);
+
+
             token = jwtTokenUtil.generateToken(userDetails);
 //            updateLoginTimeByUsername(username);
+
             insertLoginLog(username);
 
         } catch (AuthenticationException e) {
             LOGGER.warn("登录异常:{}", e.getMessage());
         }
+
         return token;
     }
 

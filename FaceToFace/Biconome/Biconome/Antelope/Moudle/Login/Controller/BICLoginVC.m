@@ -64,11 +64,11 @@
 
     // 开始第三方键盘
     // 开始第三方键盘
-    [[IQKeyboardManager sharedManager] setEnable:NO];
-    [IQKeyboardManager sharedManager].shouldToolbarUsesTextFieldTintColor = NO;
-    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
-    // 点击屏幕隐藏键盘
-    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = NO;
+//    [[IQKeyboardManager sharedManager] setEnable:NO];
+//    [IQKeyboardManager sharedManager].shouldToolbarUsesTextFieldTintColor = NO;
+//    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
+//    // 点击屏幕隐藏键盘
+//    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = NO;
     
     [self setupUI];
     
@@ -84,12 +84,12 @@
 -(void)backTo
 {
     [self dismissViewControllerAnimated:YES completion:^{
-        // 开始第三方键盘
-        [[IQKeyboardManager sharedManager] setEnable:YES];
-        [IQKeyboardManager sharedManager].shouldToolbarUsesTextFieldTintColor = YES;
-        [IQKeyboardManager sharedManager].enableAutoToolbar = YES;
-        // 点击屏幕隐藏键盘
-        [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
+//        // 开始第三方键盘
+//        [[IQKeyboardManager sharedManager] setEnable:YES];
+//        [IQKeyboardManager sharedManager].shouldToolbarUsesTextFieldTintColor = YES;
+//        [IQKeyboardManager sharedManager].enableAutoToolbar = YES;
+//        // 点击屏幕隐藏键盘
+//        [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
     }];
 }
 -(void)setupUI
@@ -101,7 +101,7 @@
     self.passwordTex.layer.cornerRadius = kBICCornerRadius;
     
     self.userNameTex.layer.borderColor = [UIColor whiteColor].CGColor;
-    [self.userNameTex setPlaceHolder:LAN(@"请输入账户") placeHoldColor:[UIColor colorWithHexColorString:@"FFFFFF" alpha:0.4] off_X:10.f];
+    [self.userNameTex setPlaceHolder:LAN(@"请输入手机号") placeHoldColor:[UIColor colorWithHexColorString:@"FFFFFF" alpha:0.4] off_X:10.f];
     if(self.isShowMobile){
         self.userNameTex.text=[[NSUserDefaults standardUserDefaults] objectForKey:BICMOBILE];
     }
@@ -111,7 +111,7 @@
     [self.loginBtn setTitle:LAN(@"登录") forState:UIControlStateNormal];
     self.titleLab.text = LAN(@"登录 | 清北面对面");
     self.tipLab.text = LAN(@"在下面输入您的帐户信息");
-    self.accountLab.text = LAN(@"账户");
+    self.accountLab.text = LAN(@"手机号");
     self.passwordNameLab.text = LAN(@"密码");
     [self.forgetPwdLab setTitle:LAN(@"忘记密码？") forState:UIControlStateNormal];
     [self.registerBtn setTitle:LAN(@"注册") forState:UIControlStateNormal];
@@ -126,10 +126,10 @@
     
     [self dismissViewControllerAnimated:YES completion:^{
         // 开始第三方键盘
-        [[IQKeyboardManager sharedManager] setEnable:YES];
-        [IQKeyboardManager sharedManager].shouldToolbarUsesTextFieldTintColor = YES;
-        // 点击屏幕隐藏键盘
-        [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
+//        [[IQKeyboardManager sharedManager] setEnable:YES];
+//        [IQKeyboardManager sharedManager].shouldToolbarUsesTextFieldTintColor = YES;
+//        // 点击屏幕隐藏键盘
+//        [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
     }];
     
     if(self.cancelNextItemOperationBlock){
@@ -141,9 +141,9 @@
 -(BOOL)validate
 {
     if (self.userNameTex.text.length==0) {
-        [BICDeviceManager AlertShowTip:LAN(@"请输入账户")];
+        [BICDeviceManager AlertShowTip:LAN(@"请输入手机号")];
         return NO;
-    }else if (![BICDeviceManager deptNumInputShouldNumber:self.userNameTex.text])
+    }else if (![SDDeviceManager isMobileNumber:self.userNameTex.text])
     {
         [BICDeviceManager AlertShowTip:LAN(@"手机号格式错误")];
         return NO;
@@ -167,14 +167,12 @@
     BICRegisterRequest *request = [[BICRegisterRequest alloc] init];
     request.tel = self.userNameTex.text;
     request.password = self.passwordTex.text;
-    request.source = @"APP";
     WEAK_SELF
     [[BICProfileService sharedInstance] analyticalPasswordData:request serverSuccessResultHandler:^(id response) {
         BICRegisterResponse * responseM = (BICRegisterResponse*)response;
         [ODAlertViewFactory hideAllHud:weakSelf.view];
         if (responseM.code==200) {
-            self.internationalCode = responseM.data.internationalCode;
-            self.googleKey = responseM.data.googleKey;
+            
 //            [BICDeviceManager AlertShowTip:LAN(@"密码验证成功")];
             [weakSelf getCode];
         }else{

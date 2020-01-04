@@ -99,17 +99,17 @@
 
 -(void)loginRequest:(NSString *)finalText
 {
-    self.requsestModel.code = finalText;
-    self.requsestModel.verifyType = @"phone";
+//    self.requsestModel.code = finalText;
+//    self.requsestModel.verifyType = @"phone";
     [[BICProfileService sharedInstance] analyticalLoginByCodeData:self.requsestModel serverSuccessResultHandler:^(id response) {
         BICRegisterResponse * responseM =(BICRegisterResponse*)response;
         if (responseM.code == 200) {
             [BICDeviceManager AlertShowTip:LAN(@"登录成功")];
             
             NSUserDefaults *standard = [NSUserDefaults standardUserDefaults];
-            [standard setObject:responseM.data.token forKey:APPID];
-            [standard setObject:responseM.data.mobilePhone forKey:BICMOBILE];
-            
+//            [standard setObject:responseM.data.token forKey:APPID];
+//            [standard setObject:responseM.data.mobilePhone forKey:BICMOBILE];
+//
             //debug--
             [standard setObject:@1001 forKey:[NSString stringWithFormat:@"%@%@",BICCOINMONEY_,@"USDT"]];
 

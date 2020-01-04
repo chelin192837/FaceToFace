@@ -21,6 +21,7 @@ public class AdminUserDetails implements UserDetails {
     public AdminUserDetails(UmsAdmin umsAdmin, List<UmsPermission> permissionList) {
         this.umsAdmin = umsAdmin;
         this.permissionList = permissionList;
+
     }
 
     @Override

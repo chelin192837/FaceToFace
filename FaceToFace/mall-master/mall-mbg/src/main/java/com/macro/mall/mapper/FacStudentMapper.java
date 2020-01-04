@@ -19,4 +19,6 @@ public interface FacStudentMapper {
 
     int updateByPrimaryKey(FacStudent record);
 
+    int getcount();
+
 }

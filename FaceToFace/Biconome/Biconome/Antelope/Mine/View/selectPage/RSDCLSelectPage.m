@@ -29,6 +29,11 @@
     [self initNavigationTitleViewLabelWithTitle:self.titleStr titleColor:kNVABICSYSTEMTitleColor IfBelongTabbar:NO];
     
     if (_selIndex == nil) {
+        if (_currentStr) {
+            if ([self.dateItemArray containsObject:_currentStr]) {
+                _editSelIndex = [self.dateItemArray indexOfObject:_currentStr];
+            }
+        }
         _selIndex = [NSIndexPath indexPathForRow:_editSelIndex inSection:0];
     }
 
@@ -36,6 +41,14 @@
     
     self.view.backgroundColor = kBICMainListBGColor ;
 }
+
+-(void)setCurrentStr:(NSString *)currentStr
+{
+    _currentStr = currentStr ;
+    
+    
+}
+
 
 -(void)setSelectPageType:(SelectPage_Type)selectPageType
 {

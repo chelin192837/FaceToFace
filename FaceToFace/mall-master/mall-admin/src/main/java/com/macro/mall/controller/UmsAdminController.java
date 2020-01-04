@@ -42,11 +42,15 @@ public class UmsAdminController {
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult<UmsAdmin> register(@RequestBody UmsAdminParam umsAdminParam, BindingResult result) {
+
         UmsAdmin umsAdmin = adminService.register(umsAdminParam);
+
         if (umsAdmin == null) {
             CommonResult.failed();
         }
+
         return CommonResult.success(umsAdmin);
+
     }
 
 

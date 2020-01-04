@@ -14,25 +14,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,copy)NSString *tel;
 
+@property(nonatomic,copy)NSString *iphone;
+
 @property(nonatomic,copy)NSString *password;
 
-@property(nonatomic,copy)NSString *internationalCode;
+@property(nonatomic,copy)NSString *token;
 
-@property(nonatomic,copy)NSString *code;
-
-@property(nonatomic,copy)NSString *invitationCode;
-
-
-@property(nonatomic,copy)NSString *oldPassword;
-
-@property(nonatomic,copy)NSString *verifyType;
-
-@property(nonatomic,copy)NSString *googleCode;
-
-@property(nonatomic,copy)NSString *googleKey;
-
-@property(nonatomic,copy)NSString *source;
-
+//student  Or teacher
+@property(nonatomic,strong)NSString* type;
 
 @end
 

@@ -141,9 +141,9 @@
 
 #define WKWebUrl @"https://www.biconomy.com/html/app_identity/"
 
-#define kBaseUrl @"http://192.168.1.6:8080/"
-#define kBaseWebUrl @"http://192.168.1.6:8080/"
-#define kBaseUrl_v4 @"http://192.168.1.6:8080/"
+#define kBaseUrl @"http://192.168.1.144:8080/"
+#define kBaseWebUrl @"http://192.168.1.144:8080/"
+#define kBaseUrl_v4 @"http://192.168.1.144:8080/"
 
     #define IOSMAPPING @"api"
 
@@ -166,9 +166,9 @@
 
 #define WKWebUrl @"http://192.168.1.74/html/app_identity/"
 
-#define kBaseUrl @"http://192.168.1.6:8080/"
-#define kBaseWebUrl @"http://192.168.1.6:8080/"
-#define kBaseUrl_v4 @"http://192.168.1.6:8080/"
+#define kBaseUrl @"http://192.168.1.144:8080/"
+#define kBaseWebUrl @"http://192.168.1.144:8080/"
+#define kBaseUrl_v4 @"http://192.168.1.144:8080/"
 
 #define kBICBaseSockJSUrl @"ws://192.168.1.74/currency/app-websocket/"
 #define kBICCCTBaseSockJSUrl @"ws://192.168.1.74/cct/ios-cct-websocket/"
@@ -251,7 +251,6 @@
 
 //biconome 个人信息
 #define USERID @"USERID" //userid
-#define APPID @"biconomeAppid" //appid
 #define BICMOBILE @"biconomeMobile"//手机号
 #define BICNickName @"biconomeNickName"//昵称
 #define ISNeedUpdateExchangeView @"ISNeedUpdateExchangeView"//是否需要更新资产界面
@@ -259,10 +258,17 @@
 #define BICBindGoogleAuth @"biconomeBindGoogleAuth"//是否谷歌认证
 #define BICInternationalCode @"biconomeInternationalCode"//国际码
 #define BICInvitationCode @"biconomeInvitationCode"//邀请码
-//#define BICBindGoogleAuth @"biconomeBindGoogleAuth"//谷歌验证码
+
 
 #define BICTapGesture @"TapGesture"//手势识别
 #define BICFingerprint @"BICFingerprint"//指纹
+
+
+#define APPID @"faceTofaceAppid"   //appid
+#define FACENAME @"FACENAME"       //username
+#define FACEIPHONE @"FACEIPHONE"   //手机号
+#define FACETYPE @"FACETYPE"       //类型
+
 
 
 ///////////////////////////////////////////////////////////////////////////////////

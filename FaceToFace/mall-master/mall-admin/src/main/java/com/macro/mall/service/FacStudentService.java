@@ -16,4 +16,10 @@ public interface FacStudentService {
 
     FacStudent selectByKey(Long id);
 
+    int insert(FacStudent facStudent);
+
+    int getCount();
+
+
+
 }
