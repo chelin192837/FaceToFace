@@ -159,7 +159,6 @@
     request.iphone = self.userNameTex.text;
     request.password= self.passwordTex.text;
 
-    
     [[BICProfileService sharedInstance] analyticalRegisterData:request serverSuccessResultHandler:^(id response) {
         BICRegisterResponse * responseM = (BICRegisterResponse*)response;
         

@@ -30,9 +30,12 @@ public class CmsSubjectServiceImpl implements CmsSubjectService {
         PageHelper.startPage(pageNum, pageSize);
         CmsSubjectExample example = new CmsSubjectExample();
         CmsSubjectExample.Criteria criteria = example.createCriteria();
+
         if (!StringUtils.isEmpty(keyword)) {
             criteria.andTitleLike("%" + keyword + "%");
         }
+
         return subjectMapper.selectByExample(example);
+
     }
 }
