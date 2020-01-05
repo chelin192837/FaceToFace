@@ -50,36 +50,36 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
 
-//        httpSecurity.csrf().disable()
-//                .authorizeRequests()
-//                .anyRequest().permitAll().and().logout().permitAll();//配置不需要登录验证
-
-        httpSecurity.csrf()// 由于使用的是JWT，我们这里不需要csrf
-                .disable()
-                .sessionManagement()// 基于token，所以不需要session
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and()
+        httpSecurity.csrf().disable()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.GET, // 允许对于网站静态资源的无授权访问
-                        "/",
-                        "/*.html",
-                        "/favicon.ico",
-                        "/**/*.html",
-                        "/**/*.css",
-                        "/**/*.js",
-                        "/swagger-resources/**",
-                        "/v2/api-docs/**",
-                        "/webjars/springfox-swagger-ui/**"
-                )
-                .permitAll()
-                .antMatchers("/admin/login", "/admin/register","/api/loginreg/register","/api/loginreg/login")// 对登录注册要允许匿名访问
-                .permitAll()
-                .antMatchers(HttpMethod.OPTIONS)//跨域请求会先进行一次options请求
-                .permitAll()
-                .antMatchers("/**")//测试时全部运行访问
+                .anyRequest().permitAll().and().logout().permitAll();//配置不需要登录验证
+
+//        httpSecurity.csrf()// 由于使用的是JWT，我们这里不需要csrf
+//                .disable()
+//                .sessionManagement()// 基于token，所以不需要session
+//                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+//                .and()
+//                .authorizeRequests()
+//                .antMatchers(HttpMethod.GET, // 允许对于网站静态资源的无授权访问
+//                        "/",
+//                        "/*.html",
+//                        "/favicon.ico",
+//                        "/**/*.html",
+//                        "/**/*.css",
+//                        "/**/*.js",
+//                        "/swagger-resources/**",
+//                        "/v2/api-docs/**",
+//                        "/webjars/springfox-swagger-ui/**"
+//                )
 //                .permitAll()
-//                .anyRequest()// 除上面外的所有请求全部需要鉴权认证
-                .authenticated();
+//                .antMatchers("/admin/login", "/admin/register","/api/loginreg/register","/api/loginreg/login")// 对登录注册要允许匿名访问
+//                .permitAll()
+//                .antMatchers(HttpMethod.OPTIONS)//跨域请求会先进行一次options请求
+//                .permitAll()
+//                .antMatchers("/**")//测试时全部运行访问
+////                .permitAll()
+////                .anyRequest()// 除上面外的所有请求全部需要鉴权认证
+//                .authenticated();
 
         // 禁用缓存
         httpSecurity.headers().cacheControl();

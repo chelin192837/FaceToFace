@@ -111,7 +111,11 @@ public class UmsAdminServiceImpl implements UmsAdminService {
 
         //密码需要客户端加密后传递
         try {
+
             UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+
+            System.out.println(username+"------usrname");
+
             if (!passwordEncoder.matches(password, userDetails.getPassword())) {
                 throw new BadCredentialsException("密码不正确");
             }
@@ -122,7 +126,6 @@ public class UmsAdminServiceImpl implements UmsAdminService {
 
 
             token = jwtTokenUtil.generateToken(userDetails);
-//            updateLoginTimeByUsername(username);
 
             insertLoginLog(username);
 

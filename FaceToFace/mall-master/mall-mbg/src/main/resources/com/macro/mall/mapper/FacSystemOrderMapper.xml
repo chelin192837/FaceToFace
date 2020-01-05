@@ -10,20 +10,99 @@
     <result column="other_two" property="other_two" jdbcType="VARCHAR" />
     <result column="create_time" property="create_time" jdbcType="TIMESTAMP" />
   </resultMap>
-  <sql id="Base_Column_List" >
+
+    <sql id="Example_Where_Clause">
+      <where>
+        <foreach collection="oredCriteria" item="criteria" separator="or">
+          <if test="criteria.valid">
+            <trim prefix="(" prefixOverrides="and" suffix=")">
+              <foreach collection="criteria.criteria" item="criterion">
+                <choose>
+                  <when test="criterion.noValue">
+                    and ${criterion.condition}
+                  </when>
+                  <when test="criterion.singleValue">
+                    and ${criterion.condition} #{criterion.value}
+                  </when>
+                  <when test="criterion.betweenValue">
+                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                  </when>
+                  <when test="criterion.listValue">
+                    and ${criterion.condition}
+                    <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                      #{listItem}
+                    </foreach>
+                  </when>
+                </choose>
+              </foreach>
+            </trim>
+          </if>
+        </foreach>
+      </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+      <where>
+        <foreach collection="example.oredCriteria" item="criteria" separator="or">
+          <if test="criteria.valid">
+            <trim prefix="(" prefixOverrides="and" suffix=")">
+              <foreach collection="criteria.criteria" item="criterion">
+                <choose>
+                  <when test="criterion.noValue">
+                    and ${criterion.condition}
+                  </when>
+                  <when test="criterion.singleValue">
+                    and ${criterion.condition} #{criterion.value}
+                  </when>
+                  <when test="criterion.betweenValue">
+                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                  </when>
+                  <when test="criterion.listValue">
+                    and ${criterion.condition}
+                    <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                      #{listItem}
+                    </foreach>
+                  </when>
+                </choose>
+              </foreach>
+            </trim>
+          </if>
+        </foreach>
+      </where>
+    </sql>
+    <sql id="Base_Column_List">
     id, user_id, teach_id, status, other_one, other_two, create_time
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
-    select
-    <include refid="Base_Column_List" />
-    from fac_system_order
-    where id = #{id,jdbcType=BIGINT}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    <select id="selectByExample" parameterType="com.macro.mall.model.FacSystemOrderExample" resultMap="BaseResultMap">
+      select
+      <if test="distinct">
+        distinct
+      </if>
+      <include refid="Base_Column_List" />
+      from fac_system_order
+      <if test="_parameter != null">
+        <include refid="Example_Where_Clause" />
+      </if>
+      <if test="orderByClause != null">
+        order by ${orderByClause}
+      </if>
+    </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+      select
+      <include refid="Base_Column_List" />
+      from fac_system_order
+      where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from fac_system_order
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.macro.mall.model.FacSystemOrder" >
+    <delete id="deleteByExample" parameterType="com.macro.mall.model.FacSystemOrderExample">
+      delete from fac_system_order
+      <if test="_parameter != null">
+        <include refid="Example_Where_Clause" />
+      </if>
+    </delete>
+    <insert id="insert" parameterType="com.macro.mall.model.FacSystemOrder">
     insert into fac_system_order (id, user_id, teach_id,
       status, other_one, other_two,
       create_time)
@@ -31,80 +110,128 @@
       #{status,jdbcType=VARCHAR}, #{other_one,jdbcType=VARCHAR}, #{other_two,jdbcType=VARCHAR},
       #{create_time,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.macro.mall.model.FacSystemOrder" >
-    insert into fac_system_order
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        id,
+    <insert id="insertSelective" parameterType="com.macro.mall.model.FacSystemOrder">
+      insert into fac_system_order
+      <trim prefix="(" suffix=")" suffixOverrides=",">
+        <if test="id != null">
+          id,
+        </if>
+        <if test="user_id != null">
+          user_id,
+        </if>
+        <if test="teach_id != null">
+          teach_id,
+        </if>
+        <if test="status != null">
+          status,
+        </if>
+        <if test="other_one != null">
+          other_one,
+        </if>
+        <if test="other_two != null">
+          other_two,
+        </if>
+        <if test="create_time != null">
+          create_time,
+        </if>
+      </trim>
+      <trim prefix="values (" suffix=")" suffixOverrides=",">
+        <if test="id != null">
+          #{id,jdbcType=BIGINT},
+        </if>
+        <if test="user_id != null">
+          #{user_id,jdbcType=BIGINT},
+        </if>
+        <if test="teach_id != null">
+          #{teach_id,jdbcType=BIGINT},
+        </if>
+        <if test="status != null">
+          #{status,jdbcType=VARCHAR},
+        </if>
+        <if test="other_one != null">
+          #{other_one,jdbcType=VARCHAR},
+        </if>
+        <if test="other_two != null">
+          #{other_two,jdbcType=VARCHAR},
+        </if>
+        <if test="create_time != null">
+          #{create_time,jdbcType=TIMESTAMP},
+        </if>
+      </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.macro.mall.model.FacSystemOrderExample" resultType="java.lang.Integer">
+      select count(*) from fac_system_order
+      <if test="_parameter != null">
+        <include refid="Example_Where_Clause" />
       </if>
-      <if test="user_id != null" >
-        user_id,
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+      update fac_system_order
+      <set>
+        <if test="record.id != null">
+          id = #{record.id,jdbcType=BIGINT},
+        </if>
+        <if test="record.user_id != null">
+          user_id = #{record.user_id,jdbcType=BIGINT},
+        </if>
+        <if test="record.teach_id != null">
+          teach_id = #{record.teach_id,jdbcType=BIGINT},
+        </if>
+        <if test="record.status != null">
+          status = #{record.status,jdbcType=VARCHAR},
+        </if>
+        <if test="record.other_one != null">
+          other_one = #{record.other_one,jdbcType=VARCHAR},
+        </if>
+        <if test="record.other_two != null">
+          other_two = #{record.other_two,jdbcType=VARCHAR},
+        </if>
+        <if test="record.create_time != null">
+          create_time = #{record.create_time,jdbcType=TIMESTAMP},
+        </if>
+      </set>
+      <if test="_parameter != null">
+        <include refid="Update_By_Example_Where_Clause" />
       </if>
-      <if test="teach_id != null" >
-        teach_id,
+    </update>
+    <update id="updateByExample" parameterType="map">
+      update fac_system_order
+      set id = #{record.id,jdbcType=BIGINT},
+      user_id = #{record.user_id,jdbcType=BIGINT},
+      teach_id = #{record.teach_id,jdbcType=BIGINT},
+      status = #{record.status,jdbcType=VARCHAR},
+      other_one = #{record.other_one,jdbcType=VARCHAR},
+      other_two = #{record.other_two,jdbcType=VARCHAR},
+      create_time = #{record.create_time,jdbcType=TIMESTAMP}
+      <if test="_parameter != null">
+        <include refid="Update_By_Example_Where_Clause" />
       </if>
-      <if test="status != null" >
-        status,
-      </if>
-      <if test="other_one != null" >
-        other_one,
-      </if>
-      <if test="other_two != null" >
-        other_two,
-      </if>
-      <if test="create_time != null" >
-        create_time,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=BIGINT},
-      </if>
-      <if test="user_id != null" >
-        #{user_id,jdbcType=BIGINT},
-      </if>
-      <if test="teach_id != null" >
-        #{teach_id,jdbcType=BIGINT},
-      </if>
-      <if test="status != null" >
-        #{status,jdbcType=VARCHAR},
-      </if>
-      <if test="other_one != null" >
-        #{other_one,jdbcType=VARCHAR},
-      </if>
-      <if test="other_two != null" >
-        #{other_two,jdbcType=VARCHAR},
-      </if>
-      <if test="create_time != null" >
-        #{create_time,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.macro.mall.model.FacSystemOrder" >
-    update fac_system_order
-    <set >
-      <if test="user_id != null" >
-        user_id = #{user_id,jdbcType=BIGINT},
-      </if>
-      <if test="teach_id != null" >
-        teach_id = #{teach_id,jdbcType=BIGINT},
-      </if>
-      <if test="status != null" >
-        status = #{status,jdbcType=VARCHAR},
-      </if>
-      <if test="other_one != null" >
-        other_one = #{other_one,jdbcType=VARCHAR},
-      </if>
-      <if test="other_two != null" >
-        other_two = #{other_two,jdbcType=VARCHAR},
-      </if>
-      <if test="create_time != null" >
-        create_time = #{create_time,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.macro.mall.model.FacSystemOrder" >
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.macro.mall.model.FacSystemOrder">
+      update fac_system_order
+      <set>
+        <if test="user_id != null">
+          user_id = #{user_id,jdbcType=BIGINT},
+        </if>
+        <if test="teach_id != null">
+          teach_id = #{teach_id,jdbcType=BIGINT},
+        </if>
+        <if test="status != null">
+          status = #{status,jdbcType=VARCHAR},
+        </if>
+        <if test="other_one != null">
+          other_one = #{other_one,jdbcType=VARCHAR},
+        </if>
+        <if test="other_two != null">
+          other_two = #{other_two,jdbcType=VARCHAR},
+        </if>
+        <if test="create_time != null">
+          create_time = #{create_time,jdbcType=TIMESTAMP},
+        </if>
+      </set>
+      where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.macro.mall.model.FacSystemOrder">
     update fac_system_order
     set user_id = #{user_id,jdbcType=BIGINT},
       teach_id = #{teach_id,jdbcType=BIGINT},
@@ -114,4 +241,7 @@
       create_time = #{create_time,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+
+
 </mapper>

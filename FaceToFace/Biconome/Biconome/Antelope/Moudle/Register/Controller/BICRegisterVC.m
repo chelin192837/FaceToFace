@@ -158,18 +158,28 @@
     request.type = self.studentType;
     request.iphone = self.userNameTex.text;
     request.password= self.passwordTex.text;
-    
-    NSUserDefaults *standard = [NSUserDefaults standardUserDefaults];
-    NSString * token = @"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNTUxMDM3Mzk4NSIsImNyZWF0ZWQiOjE1NzgxMzkxNjgyOTMsImV4cCI6MTU3ODc0Mzk2OH0.pvts1HdWPAubWYSZ4vFeAMSb1BaxhuQcmLzDcbfgS1L1vqteaJxLMeFi5_2zfDKZK7m4sJhsCf61WIQ-JJd5_Q";
-    
-    
-    [standard setObject:token forKey:APPID];
+
     
     [[BICProfileService sharedInstance] analyticalRegisterData:request serverSuccessResultHandler:^(id response) {
         BICRegisterResponse * responseM = (BICRegisterResponse*)response;
         
         if (responseM.code==200) {
+            NSUserDefaults *standard = [NSUserDefaults standardUserDefaults];
+            [standard setObject:responseM.data.token forKey:APPID];
+            [standard setObject:responseM.data.name forKey:FACENAME];
+            [standard setObject:responseM.data.iphone forKey:FACEIPHONE];
             
+            [[NSNotificationCenter defaultCenter] postNotificationName:KUpdate_Token object:nil];
+                      
+            kPOSTNSNotificationCenter(NSNotificationCenterProfileHeader, nil);
+                      
+            [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationCenterLoginSucceed object:nil];
+                      
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                     
+                     [self dismissToRootViewController];
+                     
+                 });
             
             [BICDeviceManager AlertShowTip:@"注册成功"];
             
@@ -188,6 +198,14 @@
 
 }
 
+-(void)dismissToRootViewController
+{
+    UIViewController *vc = self;
+    while (vc.presentingViewController) {
+        vc = vc.presentingViewController;
+    }
+    [vc dismissViewControllerAnimated:YES completion:nil];
+}
 
 -(BOOL)validate
 {

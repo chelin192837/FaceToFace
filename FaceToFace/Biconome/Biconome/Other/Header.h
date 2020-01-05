@@ -141,9 +141,9 @@
 
 #define WKWebUrl @"https://www.biconomy.com/html/app_identity/"
 
-#define kBaseUrl @"http://192.168.1.144:8080/"
-#define kBaseWebUrl @"http://192.168.1.144:8080/"
-#define kBaseUrl_v4 @"http://192.168.1.144:8080/"
+#define kBaseUrl @"http://192.168.1.6:8080/"
+#define kBaseWebUrl @"http://192.168.1.6:8080/"
+#define kBaseUrl_v4 @"http://192.168.1.6:8080/"
 
     #define IOSMAPPING @"api"
 
@@ -166,9 +166,9 @@
 
 #define WKWebUrl @"http://192.168.1.74/html/app_identity/"
 
-#define kBaseUrl @"http://192.168.1.144:8080/"
-#define kBaseWebUrl @"http://192.168.1.144:8080/"
-#define kBaseUrl_v4 @"http://192.168.1.144:8080/"
+#define kBaseUrl @"http://192.168.1.6:8080/"
+#define kBaseWebUrl @"http://192.168.1.6:8080/"
+#define kBaseUrl_v4 @"http://192.168.1.6:8080/"
 
 #define kBICBaseSockJSUrl @"ws://192.168.1.74/currency/app-websocket/"
 #define kBICCCTBaseSockJSUrl @"ws://192.168.1.74/cct/ios-cct-websocket/"

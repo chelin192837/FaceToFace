@@ -3956,8 +3956,8 @@
 			isa = PBXGroup;
 			children = (
 				040EE04423B59F2F002C2D23 /* SWViewController.h */,
-				040EE04523B59F2F002C2D23 /* BICAliBaBaRefreshVC.m */,
 				040EE04723B59F2F002C2D23 /* SWViewController.m */,
+				040EE04523B59F2F002C2D23 /* BICAliBaBaRefreshVC.m */,
 				040EE04823B59F2F002C2D23 /* BICAliBaBaRefreshVC.h */,
 			);
 			path = View;

@@ -92,7 +92,6 @@
                 break;
             case HttpRequestTypePost:
             {
-
 //                [ODAlertViewFactory showLoadingViewWithMessage:nil];
                 [ODNetWorkTool postByUrl:url Parameters:[request toDictionary] success:^(NSURLSessionDataTask *task, id responseObject) {
 //                    [ODAlertViewFactory hideAllHud];

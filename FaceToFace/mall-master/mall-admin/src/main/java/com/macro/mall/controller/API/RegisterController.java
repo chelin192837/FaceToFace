@@ -32,7 +32,6 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/api/loginreg")
 public class RegisterController {
 
-
     @Autowired
     private FacStudentService facStudentService;
 
@@ -59,8 +58,11 @@ public class RegisterController {
             facStudent.setIphone(registerParam.getIphone());
 
             String password = registerParam.getPassword();
+
             try {
+
                 password = DigestUtils.md5Hex(registerParam.getPassword().getBytes("UTF-8"));
+
             }catch (Exception e)
             {
 
@@ -72,15 +74,15 @@ public class RegisterController {
 
             int count = facStudentService.getCount();
 
-            facStudent.setName(("学生"+String.valueOf(count)));
+            facStudent.setName(("同学"+String.valueOf(count)));
 
             registerParam.setName(facStudent.getName());
 
             int value = facStudentService.insert(facStudent);
 
-            String username = registerParam.getIphone();
+            int userId = facStudentService.getIdByIphone(registerParam.getIphone());
 
-            String token = jwtTokenUtil.generateTokenBera(username);
+            String token = jwtTokenUtil.generateTokenBera(String.valueOf(userId));
 
             registerParam.setToken(token);
 

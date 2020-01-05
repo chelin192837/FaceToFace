@@ -116,7 +116,7 @@
     NSString* appId = SDUserDefaultsGET(APPID);
     
     if (appId) {  //已经登陆了
-        NSString * str =SDUserDefaultsGET(BICNickName);
+        NSString * str =SDUserDefaultsGET(FACENAME);
         [self.loginBtn setTitle:[BICDeviceManager numberSuitScanf:str] forState:UIControlStateNormal];
         self.loginBtn.userInteractionEnabled = NO;
         self.titleLab.hidden = YES;

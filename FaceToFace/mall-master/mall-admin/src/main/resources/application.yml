@@ -32,3 +32,19 @@ logging:
     com.macro.mall: debug
 #  file: demo_log.log #配置日志生成路径
 #  path: /var/logs #配置日志文件名称
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+      field-strategy: not_empty
+      #驼峰下划线转换
+      column-underline: true
+      #逻辑删除配置
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+      db-type: mysql
+    refresh: false
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false

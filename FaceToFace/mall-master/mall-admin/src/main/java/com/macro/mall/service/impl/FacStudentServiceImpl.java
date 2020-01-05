@@ -17,8 +17,6 @@ public class FacStudentServiceImpl implements FacStudentService {
     @Autowired
     private FacStudentMapper facStudentMapper;
 
-
-
     @Override
     public List<FacStudent> listAll() {
 
@@ -43,6 +41,27 @@ public class FacStudentServiceImpl implements FacStudentService {
     public int getCount()
     {
         return facStudentMapper.getcount();
+    }
+
+    @Override
+    public int getIdByIphone(String iphone)
+    {
+        return facStudentMapper.getcount();
+    }
+
+
+    //判断用户名是否存在
+    @Override
+    public boolean userIsExist(String username)
+    {
+        return true;
+    }
+
+    //根据用户名查找对应密码，判断是否匹配
+    @Override
+    public boolean isValicateCorrect(String username,String password)
+    {
+        return true;
     }
 
 

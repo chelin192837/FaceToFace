@@ -15,8 +15,10 @@ public class FacStudent {
 
     private String grade;
 
+    //other_one -> 变成 fac_teach表的外建
     private String other_one;
 
+    // other_two -> 存储 token
     private String other_two;
 
     private Date create_time;

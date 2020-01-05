@@ -82,7 +82,7 @@
         bottomBtn.backgroundColor = kBICWhiteColor;
         bottomBtn.titleLabel.font = [UIFont systemFontOfSize:16.f weight:UIFontWeightMedium];
         [bottomBtn setTitle:LAN(@"登出") forState:UIControlStateNormal];
-        [bottomBtn addTarget:self action:@selector(logout) forControlEvents:UIControlEventTouchUpInside];
+        [bottomBtn addTarget:self action:@selector(logoutNew) forControlEvents:UIControlEventTouchUpInside];
         [bottomBtn setTitleColor:hexColor(6653FF) forState:UIControlStateNormal];
         bottomBtn.layer.cornerRadius = 8.f;
         bottomBtn.layer.masksToBounds = YES;
@@ -95,7 +95,32 @@
 
     return _tableView;
 }
-
+-(void)logoutNew
+{
+    //    /清空缓存
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:APPID];
+    //            [[NSUserDefaults standardUserDefaults] removeObjectForKey:BICMOBILE];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:FACENAME];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:FACEIPHONE];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    BaseTabBarController *nmTabBarVC = [[BaseTabBarController alloc] init];
+    nmTabBarVC.delegate = nmTabBarVC;
+    
+    ((AppDelegate*)[UIApplication sharedApplication].delegate).mainController = nmTabBarVC;
+    
+    [nmTabBarVC setSelectedIndex:0];
+    
+    ((AppDelegate*)[UIApplication sharedApplication].delegate).window.rootViewController = nmTabBarVC;
+    [((AppDelegate*)[UIApplication sharedApplication].delegate).window makeKeyAndVisible];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:KUpdate_Token object:nil];
+    
+    kPOSTNSNotificationCenter(NSNotificationCenterProfileHeader, nil);
+    kPOSTNSNotificationCenter(NSNotificationCenterLoginOut, nil);
+    
+}
 -(void)logout
 {
     BICRegisterRequest * request = [[BICRegisterRequest alloc] init];
