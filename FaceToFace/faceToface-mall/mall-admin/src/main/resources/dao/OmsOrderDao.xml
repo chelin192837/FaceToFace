@@ -8,6 +8,7 @@
         <collection property="historyList" resultMap="com.macro.mall.mapper.OmsOrderOperateHistoryMapper.BaseResultMap"
                     columnPrefix="history_"/>
     </resultMap>
+
     <select id="getList" resultMap="com.macro.mall.mapper.OmsOrderMapper.BaseResultMap">
         SELECT *
         FROM
