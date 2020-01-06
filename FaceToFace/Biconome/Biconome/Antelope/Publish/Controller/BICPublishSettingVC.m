@@ -22,6 +22,10 @@
 #import "BICMineComCell.h"
 #import "UITextField+Placeholder.h"
 #import "RSDCLSelectPage.h"
+#import "ANTPublishModel.h"
+#import "ANTOtherQuestionVC.h"
+
+#import "ANTPublishService.h"
 
 @interface BICPublishSettingVC ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView*tableView;
@@ -29,8 +33,9 @@
 
 @property(nonatomic,strong)NSArray * titleArrIndex;
 
+@property(nonatomic,strong)UIButton* SetBottomBtn;
 
-@property(nonatomic,strong)UIButton * bottomBtn;
+@property(nonatomic,strong)ANTPublishModel* pushlishModel;
 
 @property(nonatomic,strong)UIView * bottomV;
 
@@ -55,22 +60,21 @@
     [super viewWillAppear:animated];
 
 }
-
+-(ANTPublishModel*)pushlishModel
+{
+    if (!_pushlishModel) {
+        _pushlishModel = [[ANTPublishModel alloc] init];
+    }
+    return _pushlishModel;
+}
 -(void)setupUI
 {
-    NSString * title =@"";
-    NSArray * titleArr = @[];
-    NSArray * titleIndex = @[];
-    if (self.publishType ==KPublish_Type_Student) {
-        title = @"发布需求";
-        titleArr = @[@"姓名",@"年级",@"需要的学生类型",@"困扰问题"];
-        titleIndex = @[@(kComCellType_TextField),@(kComCellType_ArrowImg),@(kComCellType_ArrowImg),@(kComCellType_ArrowImg)];
-    }
-    if (self.publishType ==KPublish_Type_Peking) {
-        title = @"发布资料";
-        titleArr = @[@"姓名",@"大学",@"专业",@"文理科"];
-        titleIndex = @[@(kComCellType_TextField),@(kComCellType_ArrowImg),@(kComCellType_TextField),@(kComCellType_ArrowImg)];
-    }
+    
+    NSString * title = @"发布需求";
+    
+    NSArray * titleArr = @[@"姓名",@"年级",@"困扰问题",@"其他"];
+    NSArray * titleIndex = @[@(kComCellType_TextField),@(kComCellType_ArrowImg),@(kComCellType_ArrowImg),@(kComCellType_ArrowImg)];
+    
     [self initNavigationTitleViewLabelWithTitle:title titleColor:kNVABICSYSTEMTitleColor IfBelongTabbar:NO];
     
     self.titleArr = titleArr;
@@ -102,27 +106,53 @@
         self.bottomV = bottomV;
         [self.bottomV isYY];
         bottomV.backgroundColor = [UIColor clearColor];
-        UIButton * bottomBtn = [[UIButton alloc] initWithFrame:CGRectMake(16,24.f, SCREEN_WIDTH-2*16,56.f)];
-        self.bottomBtn = bottomBtn;
-        bottomBtn.backgroundColor = kBICWhiteColor;
-        bottomBtn.titleLabel.font = [UIFont systemFontOfSize:16.f weight:UIFontWeightMedium];
-        [bottomBtn setTitle:@"确认" forState:UIControlStateNormal];
-        [bottomBtn addTarget:self action:@selector(confirm) forControlEvents:UIControlEventTouchUpInside];
-        [bottomBtn setTitleColor:kANTSystemColor33353B forState:UIControlStateNormal];
-        bottomBtn.layer.cornerRadius = 8.f;
-        bottomBtn.layer.masksToBounds = YES;
-        [bottomV addSubview:bottomBtn];
+        UIButton * bottomButton = [[UIButton alloc] initWithFrame:CGRectMake(16,24.f, SCREEN_WIDTH-2*16,56.f)];
+        self.SetBottomBtn = bottomButton;
+        bottomButton.backgroundColor = kBICWhiteColor;
+        bottomButton.titleLabel.font = [UIFont systemFontOfSize:16.f weight:UIFontWeightMedium];
+        [bottomButton setTitle:@"确认" forState:UIControlStateNormal];
+        [bottomButton addTarget:self action:@selector(confirm) forControlEvents:UIControlEventTouchUpInside];
+        [bottomButton setTitleColor:kANTSystemColor33353B forState:UIControlStateNormal];
+        bottomButton.layer.cornerRadius = 8.f;
+        bottomButton.layer.masksToBounds = YES;
+        [bottomV addSubview:bottomButton];
         _tableView.tableFooterView = bottomV;
         
     }
     
     return _tableView;
 }
-
+-(void)setPublishSchoolType:(KPublish_School_Type)publishSchoolType
+{
+    if (publishSchoolType==KPublish_School_Peking) {
+        self.pushlishModel.teachMajor = @"北京大学";
+    }
+    if (publishSchoolType==KPublish_School_Qinghua) {
+        self.pushlishModel.teachMajor = @"清华大学";
+    }
+}
 -(void)confirm
 {
-    
-    NSLog(@"确认");
+    if (self.pushlishModel.studentName.length == 0) {
+        [BICDeviceManager AlertShowTip:@"姓名必填"];
+        return;
+    }
+    [[ANTPublishService sharedInstance] analyticalPublishRequireData:self.pushlishModel serverSuccessResultHandler:^(id response) {
+        BICBaseResponse * responseM = (BICBaseResponse *)response;
+        
+        if (responseM.code == 200) {
+            
+            [BICDeviceManager AlertShowTip:@"发布成功"];
+            
+        }else{
+            [BICDeviceManager AlertShowTip:responseM.message];
+        }
+        
+    } failedResultHandler:^(id response) {
+        
+    } requestErrorHandler:^(id error) {
+        
+    }];
     
 }
 
@@ -142,6 +172,12 @@
     
     if ([self.titleArrIndex[indexPath.row] integerValue] == kComCellType_TextField) {
         [cell.textField setPlaceHolder:[NSString stringWithFormat:@"请输入%@",self.titleArr[indexPath.row]] placeHoldColor:UIColorWithRGB(0xC6C8CE)];
+        
+        WEAK_SELF
+        cell.textFieldBlock = ^(NSString * _Nonnull str) {
+            weakSelf.pushlishModel.studentName = str ;
+        };
+        
     }
     
     return cell;
@@ -153,7 +189,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    WEAK_SELF
     if (indexPath.row==0) {
+        
         
     }
     
@@ -161,72 +199,73 @@
         
         RSDCLSelectPage * selectPage = [[RSDCLSelectPage alloc] init];
         
-        if(self.publishType == KPublish_Type_Student)
-        {
-            selectPage.dateItemArray = @[@"高一",@"高二",@"高三"];
-            
-        }
-        if(self.publishType == KPublish_Type_Peking)
-        {
-            selectPage.dateItemArray = @[@"清华大学",@"北京大学"];
-            
-        }
+        selectPage.dateItemArray = @[@"高一",@"高二",@"高三",@"初一",@"初二",@"初三"];
+        
+        BICMineComCell * cell = (BICMineComCell*)[tableView cellForRowAtIndexPath:indexPath];
+        
+        selectPage.currentStr = cell.rightLab.text;
+
         selectPage.typeBlock = ^(NSString *str, NSIndexPath *indexPath1) {
-            
-            BICMineComCell * cell = (BICMineComCell*)[tableView cellForRowAtIndexPath:indexPath];
             
             cell.rightLab.hidden = NO ;
 
             cell.rightLab.text = str ;
             
+            weakSelf.pushlishModel.otherOne = str ;
         };
         [self.navigationController pushViewController:selectPage animated:YES];
     }
+    
     if (indexPath.row==2) {
         
         RSDCLSelectPage * selectPage = [[RSDCLSelectPage alloc] init];
-        if(self.publishType == KPublish_Type_Student)
-        {
-            selectPage.dateItemArray = @[@"清华大学",@"北京大学"];
-            selectPage.typeBlock = ^(NSString *str, NSIndexPath *indexPath1) {
-    
-            BICMineComCell * cell = (BICMineComCell*)[tableView cellForRowAtIndexPath:indexPath];
+        
+        selectPage.dateItemArray = @[@"学习方法",@"复习计划",@"课后安排",@"学习心态",@"学习方向"];
+        
+        BICMineComCell * cell = (BICMineComCell*)[tableView cellForRowAtIndexPath:indexPath];
+
+        selectPage.currentStr = cell.rightLab.text;
+        
+        selectPage.typeBlock = ^(NSString *str, NSIndexPath *indexPath1) {
             
             cell.rightLab.hidden = NO ;
-                
+            
             cell.rightLab.text = str ;
             
-            };
-        }
-        if(self.publishType == KPublish_Type_Peking)
-        {
-            return;
-        }
+            weakSelf.pushlishModel.problem = str ;
+            
+        };
+        
         [self.navigationController pushViewController:selectPage animated:YES];
     }
     
     if (indexPath.row==3) {
         
-        RSDCLSelectPage * selectPage = [[RSDCLSelectPage alloc] init];
-        if(self.publishType == KPublish_Type_Student)
-        {
-            selectPage.dateItemArray = @[@"学习方法",@"复习计划",@"课后安排",@"学习心态",@"学习方向"];
-        }
-        if(self.publishType == KPublish_Type_Peking)
-        {
-            selectPage.dateItemArray = @[@"文科",@"理科"];
-        }
-        selectPage.typeBlock = ^(NSString *str, NSIndexPath *indexPath1) {
-            
+        ANTOtherQuestionVC * questVC = [[ANTOtherQuestionVC alloc] initWithNibName:@"ANTOtherQuestionVC" bundle:[NSBundle mainBundle]];
+        
+        questVC.currentStr = self.pushlishModel.other;
+
+        questVC.otherBlock = ^(NSString * _Nonnull str) {
+                       
             BICMineComCell * cell = (BICMineComCell*)[tableView cellForRowAtIndexPath:indexPath];
-            
+
             cell.rightLab.hidden = NO ;
 
-            cell.rightLab.text = str ;
+            weakSelf.pushlishModel.other = str ;
+
+            if (str.length > 10) {
+                cell.rightLab.text = [NSString stringWithFormat:@"%@...",[str substringToIndex:10]];
+            }else{
+                cell.rightLab.text = str ;
+            }
+            
             
         };
-        [self.navigationController pushViewController:selectPage animated:YES];
+        
+        [self.navigationController pushViewController:questVC animated:YES];
+        
     }
+    
 }
 
 

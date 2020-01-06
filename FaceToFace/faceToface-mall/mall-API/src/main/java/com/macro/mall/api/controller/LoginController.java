@@ -27,14 +27,12 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @Api(tags = "LoginController", description = "Face API 接口")
-@RequestMapping("/api/loginreg")
+@RequestMapping("/api")
 public class LoginController {
 
     @Autowired
     private FacStudentService facStudentService;
 
-    @Autowired
-    private FacStudentService facStudentService;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(JwtAuthenticationTokenFilter.class);
     @Autowired
@@ -58,9 +56,6 @@ public class LoginController {
 //        private String password;
 
         String name = registerParam.getName();
-
-
-
 
 
 

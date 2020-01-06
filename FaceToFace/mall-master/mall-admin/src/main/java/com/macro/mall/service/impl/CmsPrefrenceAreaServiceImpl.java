@@ -15,6 +15,7 @@ import java.util.List;
  */
 @Service
 public class CmsPrefrenceAreaServiceImpl implements CmsPrefrenceAreaService {
+
     @Autowired
     private CmsPrefrenceAreaMapper prefrenceAreaMapper;
 
@@ -22,4 +23,5 @@ public class CmsPrefrenceAreaServiceImpl implements CmsPrefrenceAreaService {
     public List<CmsPrefrenceArea> listAll() {
         return prefrenceAreaMapper.selectByExample(new CmsPrefrenceAreaExample());
     }
+
 }

@@ -26,7 +26,7 @@ public interface FacStudentService {
 
     boolean isValicateCorrect(String username, String password);
 
-
+    FacStudent getAdminByUsername(String username);
 
 
 

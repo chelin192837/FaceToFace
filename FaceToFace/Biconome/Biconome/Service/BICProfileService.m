@@ -23,7 +23,7 @@ static id sharedInstance = nil;
 //注册接口
 - (void)analyticalRegisterData:(BICRegisterRequest*)request serverSuccessResultHandler:(ServerResultSuccessHandler)succHandler failedResultHandler:(ServerResultFailedHandler)failedHandler requestErrorHandler:(RequestFailedBlock)requestError
 {
-    NSString *urlStr = @""kBaseUrl""IOSMAPPING"/loginreg/register";
+    NSString *urlStr = @""kBaseUrl""IOSMAPPING"/register";
     [self doServerRequestWithModel:request ResponseName:@"BICRegisterResponse" Url:urlStr requestType:HttpRequestTypePost serverSuccessResultHandler:succHandler failedResultHandler:failedHandler requestErrorHandler:requestError];
 }
 

@@ -109,7 +109,8 @@
     if (self.typeBlock) {
         self.typeBlock(_dateItemArray[indexPath.row],_selIndex);
         
-//        [self.navigationController popViewControllerAnimated:YES];
+        [self.navigationController popViewControllerAnimated:YES];
+        
     }
     
 }

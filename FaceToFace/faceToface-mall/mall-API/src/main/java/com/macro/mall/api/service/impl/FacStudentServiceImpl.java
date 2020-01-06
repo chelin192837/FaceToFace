@@ -3,6 +3,7 @@ package com.macro.mall.api.service.impl;
 import com.macro.mall.api.service.FacStudentService;
 import com.macro.mall.mapper.FacStudentMapper;
 import com.macro.mall.model.FacStudent;
+import com.macro.mall.model.FacStudentExample;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -62,6 +63,20 @@ public class FacStudentServiceImpl implements FacStudentService {
         return true;
     }
 
+    @Override
+    public FacStudent getAdminByUsername(String username)
+    {
+        FacStudentExample example = new FacStudentExample();
+        example.createCriteria().andIphoneEqualTo(username);
+        List<FacStudent> adminList = facStudentMapper.selectByExample(example);
+
+        if (adminList != null && adminList.size() > 0)
+        {
+            return adminList.get(0);
+        }
+
+        return null;
+    }
 
 
 }

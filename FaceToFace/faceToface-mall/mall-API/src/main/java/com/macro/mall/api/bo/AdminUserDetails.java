@@ -1,11 +1,13 @@
 package com.macro.mall.api.bo;
 
+import com.macro.mall.model.FacStudent;
 import com.macro.mall.model.UmsAdmin;
 import com.macro.mall.model.UmsPermission;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -18,28 +20,39 @@ public class AdminUserDetails implements UserDetails {
     private UmsAdmin umsAdmin;
     private List<UmsPermission> permissionList;
 
+    private FacStudent facStudent;
+
     public AdminUserDetails(UmsAdmin umsAdmin, List<UmsPermission> permissionList) {
         this.umsAdmin = umsAdmin;
         this.permissionList = permissionList;
+
     }
+
+    public AdminUserDetails(FacStudent facStudent) {
+        this.facStudent = facStudent;
+
+    }
+
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        //返回当前用户的权限
-        return permissionList.stream()
-                .filter(permission -> permission.getValue() != null)
-                .map(permission -> new SimpleGrantedAuthority(permission.getValue()))
-                .collect(Collectors.toList());
+
+            List<GrantedAuthority> list = new ArrayList<GrantedAuthority>();
+            GrantedAuthority au = new SimpleGrantedAuthority("ROLE_USER");
+            list.add(au);
+            return list;
+
     }
 
     @Override
     public String getPassword() {
-        return umsAdmin.getPassword();
+        return facStudent.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return umsAdmin.getUsername();
+        return facStudent.getIphone();
     }
 
     @Override
@@ -59,6 +72,6 @@ public class AdminUserDetails implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return umsAdmin.getStatus().equals(1);
+        return true;
     }
 }

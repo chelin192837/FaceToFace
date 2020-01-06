@@ -24,22 +24,24 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @Api(tags = "RegisterController", description = "Face API 接口")
-@RequestMapping("/api/loginreg")
+@RequestMapping("/api")
 public class RegisterController {
 
     @Autowired
     private FacStudentService facStudentService;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(JwtAuthenticationTokenFilter.class);
+
     @Autowired
     private UserDetailsService userDetailsService;
+
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
+
     @Value("${jwt.tokenHeader}")
     private String tokenHeader;
     @Value("${jwt.tokenHead}")
     private String tokenHead;
-
 
     @PostMapping(value = "register")
     @ResponseBody
@@ -85,8 +87,6 @@ public class RegisterController {
 
         }else if(registerParam.getType().equals("teacher"))
         {
-
-
             return CommonResult.success(registerParam);
         }
 

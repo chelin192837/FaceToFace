@@ -16,6 +16,8 @@ typedef NS_ENUM(NSInteger,kComCellType)
     kComCellType_TextField
 };
 
+typedef void(^TextFieldBlock)(NSString * str);
+
 @interface BICMineComCell : UITableViewCell
 +(instancetype)exitWithTableView:(UITableView*)tableView;
 
@@ -29,6 +31,8 @@ typedef NS_ENUM(NSInteger,kComCellType)
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @property (nonatomic,assign)kComCellType kcomCellType;
+
+@property(nonatomic,copy)TextFieldBlock textFieldBlock;
 
 
 @end

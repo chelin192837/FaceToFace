@@ -9,8 +9,11 @@
 #import "ANTPublishViewController.h"
 #import "HcdPopMenu.h"
 #import "BICPublishSettingVC.h"
+#import "ANTPublishCell.h"
 
-@interface ANTPublishViewController ()
+@interface ANTPublishViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+@property(nonatomic,strong)UITableView * tableView;
 
 @end
 
@@ -28,14 +31,48 @@
     
     [self openMeu];
 
-    
+    [self setupUI];
+}
+
+-(UITableView*)tableView
+{
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _tableView.dataSource = self;
+        _tableView.delegate = self;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        
+    }
+    return _tableView;
+}
+
+
+-(void)setupUI
+{
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.bottom.equalTo(self.view);
+    }];
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ANTPublishCell * cell = [ANTPublishCell exitWithTableView:tableView];
+    
+    return cell;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 140.f;
 }
 
 //打开菜单
@@ -67,21 +104,19 @@
         
         NSLog(@"-----index---%ld",(long)index);
         
-        if(index==0) //高中生
+        if(index==0) // 清华大学
         {
             BICPublishSettingVC * publishVC = [[BICPublishSettingVC alloc] init];
-            publishVC.publishType = KPublish_Type_Student;
+            publishVC.publishSchoolType = KPublish_School_Qinghua;
             [self.navigationController pushViewController:publishVC animated:YES];
         }
-        if (index==1) { //清北学生
+        
+        if (index==1) { // 北京大学
             BICPublishSettingVC * publishVC = [[BICPublishSettingVC alloc] init];
-            publishVC.publishType = KPublish_Type_Peking;
+            publishVC.publishSchoolType = KPublish_School_Peking;
             [self.navigationController pushViewController:publishVC animated:YES];
         }
-        
-        
-        
-        
+    
     }];
     [menu setTipsLblByTipsStr:@"如果你是高中生，你可以发布自己的需求，如果你是清华北大的学生，你可以发布自己的资源，填写资料务必真是否则会承担相应的法律责任"];
     [menu setExitViewImage:@"center_exit"];

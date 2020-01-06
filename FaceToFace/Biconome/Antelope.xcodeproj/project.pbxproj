@@ -595,6 +595,12 @@
 		0434CAA023A939A500FD85D8 /* ANTMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0434CA9F23A939A500FD85D8 /* ANTMessageViewController.m */; };
 		0470993B2359DE2E007FBBF5 /* UIView+shadowPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 0470993A2359DE2E007FBBF5 /* UIView+shadowPath.m */; };
 		04A5B84F23C0367F00E8D92D /* BICRegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A5B84E23C0367E00E8D92D /* BICRegisterVC.xib */; };
+		04A5B85323C3690200E8D92D /* ANTPublishCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5B85123C3690100E8D92D /* ANTPublishCell.m */; };
+		04A5B85423C3690200E8D92D /* ANTPublishCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A5B85223C3690100E8D92D /* ANTPublishCell.xib */; };
+		04A5B85823C3704D00E8D92D /* ANTOtherQuestionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5B85623C3704D00E8D92D /* ANTOtherQuestionVC.m */; };
+		04A5B85923C3704D00E8D92D /* ANTOtherQuestionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A5B85723C3704D00E8D92D /* ANTOtherQuestionVC.xib */; };
+		04A5B85C23C39C4700E8D92D /* ANTPublishModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5B85B23C39C4500E8D92D /* ANTPublishModel.m */; };
+		04A5B85F23C3A09B00E8D92D /* ANTPublishService.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5B85E23C3A09B00E8D92D /* ANTPublishService.m */; };
 		04B074972359627300D5E704 /* RSDLeftJustifyingFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B074962359627200D5E704 /* RSDLeftJustifyingFlowLayout.m */; };
 		04E834E6235EA81400F12FCC /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 04E834BF235EA81400F12FCC /* LICENSE.md */; };
 		04E834E7235EA81400F12FCC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 04E834C0235EA81400F12FCC /* README.md */; };
@@ -1740,6 +1746,16 @@
 		047099392359DE2E007FBBF5 /* UIView+shadowPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+shadowPath.h"; sourceTree = "<group>"; };
 		0470993A2359DE2E007FBBF5 /* UIView+shadowPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+shadowPath.m"; sourceTree = "<group>"; };
 		04A5B84E23C0367E00E8D92D /* BICRegisterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BICRegisterVC.xib; sourceTree = "<group>"; };
+		04A5B85023C3690100E8D92D /* ANTPublishCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTPublishCell.h; sourceTree = "<group>"; };
+		04A5B85123C3690100E8D92D /* ANTPublishCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTPublishCell.m; sourceTree = "<group>"; };
+		04A5B85223C3690100E8D92D /* ANTPublishCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ANTPublishCell.xib; sourceTree = "<group>"; };
+		04A5B85523C3704D00E8D92D /* ANTOtherQuestionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTOtherQuestionVC.h; sourceTree = "<group>"; };
+		04A5B85623C3704D00E8D92D /* ANTOtherQuestionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTOtherQuestionVC.m; sourceTree = "<group>"; };
+		04A5B85723C3704D00E8D92D /* ANTOtherQuestionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ANTOtherQuestionVC.xib; sourceTree = "<group>"; };
+		04A5B85A23C39C4500E8D92D /* ANTPublishModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTPublishModel.h; sourceTree = "<group>"; };
+		04A5B85B23C39C4500E8D92D /* ANTPublishModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTPublishModel.m; sourceTree = "<group>"; };
+		04A5B85D23C3A09B00E8D92D /* ANTPublishService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTPublishService.h; sourceTree = "<group>"; };
+		04A5B85E23C3A09B00E8D92D /* ANTPublishService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTPublishService.m; sourceTree = "<group>"; };
 		04B074952359627200D5E704 /* RSDLeftJustifyingFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDLeftJustifyingFlowLayout.h; sourceTree = "<group>"; };
 		04B074962359627200D5E704 /* RSDLeftJustifyingFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDLeftJustifyingFlowLayout.m; sourceTree = "<group>"; };
 		04E834BF235EA81400F12FCC /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
@@ -4166,6 +4182,8 @@
 		0429089D23AE398500BAC9BB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04A5B85A23C39C4500E8D92D /* ANTPublishModel.h */,
+				04A5B85B23C39C4500E8D92D /* ANTPublishModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4173,6 +4191,12 @@
 		0429089E23AE398500BAC9BB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04A5B85023C3690100E8D92D /* ANTPublishCell.h */,
+				04A5B85123C3690100E8D92D /* ANTPublishCell.m */,
+				04A5B85223C3690100E8D92D /* ANTPublishCell.xib */,
+				04A5B85523C3704D00E8D92D /* ANTOtherQuestionVC.h */,
+				04A5B85623C3704D00E8D92D /* ANTOtherQuestionVC.m */,
+				04A5B85723C3704D00E8D92D /* ANTOtherQuestionVC.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -5417,6 +5441,8 @@
 			children = (
 				040EE05D23B5A1EF002C2D23 /* BICProfileService.h */,
 				040EE05E23B5A1F0002C2D23 /* BICProfileService.m */,
+				04A5B85D23C3A09B00E8D92D /* ANTPublishService.h */,
+				04A5B85E23C3A09B00E8D92D /* ANTPublishService.m */,
 			);
 			name = Service;
 			path = Biconome/Service;
@@ -5655,6 +5681,7 @@
 				040EDEDE23B51CF9002C2D23 /* animate_00068.png in Resources */,
 				040EDF1123B51CFA002C2D23 /* ring_gray@2x.png in Resources */,
 				62CA0DF823224FE4003F1B48 /* 30.png in Resources */,
+				04A5B85923C3704D00E8D92D /* ANTOtherQuestionVC.xib in Resources */,
 				040EE01223B59EB0002C2D23 /* BICMineDouCell.xib in Resources */,
 				040EDED823B51CF9002C2D23 /* animate_00043.png in Resources */,
 				040EDF0923B51CFA002C2D23 /* recorder_gray@3x.png in Resources */,
@@ -5900,6 +5927,7 @@
 				040EDE5123B51CF9002C2D23 /* chatbar_call@3x.png in Resources */,
 				0429089523AE2B0D00BAC9BB /* toudan_icon_dingxiangtoudan.png in Resources */,
 				040EDF5723B51CFA002C2D23 /* user_avatar_me@3x.png in Resources */,
+				04A5B85423C3690200E8D92D /* ANTPublishCell.xib in Resources */,
 				040EDF0323B51CFA002C2D23 /* kbps_gray@2x.png in Resources */,
 				040EDECB23B51CF9002C2D23 /* animate_00051.png in Resources */,
 				040EDED123B51CF9002C2D23 /* animate_00052.png in Resources */,
@@ -6080,6 +6108,7 @@
 				62F677BA22F540EB00826835 /* UIView+UIBezierPath.m in Sources */,
 				004E4EAA2387E117001AD1EE /* UITableViewCell+Extend.m in Sources */,
 				040EDE9123B51CF9002C2D23 /* EMInviteGroupMemberViewController.m in Sources */,
+				04A5B85C23C39C4700E8D92D /* ANTPublishModel.m in Sources */,
 				00BF41782349E00300FD9D93 /* FileTools.m in Sources */,
 				004E4EA72387E117001AD1EE /* UIImage+Color.m in Sources */,
 				62F6792E22F5666400826835 /* Reachability.m in Sources */,
@@ -6202,6 +6231,7 @@
 				004E4EAE2387E117001AD1EE /* UIDevice+Extend.m in Sources */,
 				0429081E23ACECFC00BAC9BB /* ANTHomeMainCell.m in Sources */,
 				040EDF6C23B51CFA002C2D23 /* PSTCollectionViewCell.m in Sources */,
+				04A5B85323C3690200E8D92D /* ANTPublishCell.m in Sources */,
 				040EDF5F23B51CFA002C2D23 /* amrFileCodec.mm in Sources */,
 				004E4E8C2387E117001AD1EE /* UIView+PBExtend.m in Sources */,
 				62F6791922F55A1100826835 /* RSDBaseResponse.m in Sources */,
@@ -6261,6 +6291,7 @@
 				040EDF5A23B51CFA002C2D23 /* EMBadgeLabel.m in Sources */,
 				040EE02623B59EB1002C2D23 /* BICPhotoViewCell.m in Sources */,
 				040EDF3C23B51CFA002C2D23 /* EMChatroomInfoViewController.m in Sources */,
+				04A5B85F23C3A09B00E8D92D /* ANTPublishService.m in Sources */,
 				62F67A8522FD71E500826835 /* XHVerticalScrollview.m in Sources */,
 				62F678BB22F5441600826835 /* ODNetWorkTool.m in Sources */,
 				040EDEA223B51CF9002C2D23 /* EMNotificationViewController.m in Sources */,
@@ -6408,6 +6439,7 @@
 				62BC0D872306A9E2004BB897 /* UILabel+YQCategory.m in Sources */,
 				004E4EE22387E39C001AD1EE /* YBImageBrowserToolBar.m in Sources */,
 				62F678EB22F5570F00826835 /* NSString+Hash.m in Sources */,
+				04A5B85823C3704D00E8D92D /* ANTOtherQuestionVC.m in Sources */,
 				62BC0DDC2306AA6A004BB897 /* YQValue.m in Sources */,
 				62BC0DDF2306AA6A004BB897 /* YQFunction.m in Sources */,
 				004E4E932387E117001AD1EE /* PBScrollView.m in Sources */,

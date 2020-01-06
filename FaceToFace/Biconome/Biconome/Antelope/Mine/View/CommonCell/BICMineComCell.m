@@ -7,7 +7,7 @@
 //
 
 #import "BICMineComCell.h"
-@interface BICMineComCell()
+@interface BICMineComCell()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIView *bgView;
 
 @end
@@ -23,7 +23,19 @@
     
     self.rightLab.textColor = kANTSystemColor33353B;
     
+    self.textField.delegate = self;
+    
 }
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if (textField.text.length > 0) {
+        if (self.textFieldBlock) {
+            self.textFieldBlock(textField.text);
+        }
+    }
+}
+
 -(void)setKcomCellType:(kComCellType)kcomCellType
 {
     _kcomCellType = kcomCellType ;
@@ -53,5 +65,7 @@
 
     return cell;
 }
+
+
 
 @end

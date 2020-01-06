@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+
 #import "RSDBaseService.h"
 #import "BICBaseRequest.h"
 #import "BICRegisterRequest.h"
+
 #import "BICBindGoogleRequest.h"
 #import "BICAuthInfoRequest.h"
+
 #import "BICPageRequest.h"
 NS_ASSUME_NONNULL_BEGIN
 
