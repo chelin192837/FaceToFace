@@ -10,11 +10,15 @@
 #import "HcdPopMenu.h"
 #import "BICPublishSettingVC.h"
 #import "ANTPublishCell.h"
-
+#import "ANTPageHelperRequest.h"
+#import "ANTPublishResponse.h"
 @interface ANTPublishViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)UITableView * tableView;
 
+@property(nonatomic,strong)ANTPageHelperRequest *request;
+
+@property(nonatomic,strong)NSMutableArray * dataArray;
 @end
 
 @implementation ANTPublishViewController
@@ -32,6 +36,71 @@
     [self openMeu];
 
     [self setupUI];
+        
+    [self addRefresh];
+}
+
+-(NSMutableArray*)dataArray
+{
+    if (!_dataArray) {
+        _dataArray = [NSMutableArray array];
+    }
+    return _dataArray;
+}
+-(void)addRefresh{
+    
+    WEAK_SELF
+    MJRefreshNormalHeader * header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            weakSelf.request.page=1;
+            [weakSelf analyPublishData:self.request];
+
+        });
+
+    }];
+
+    self.tableView.mj_header = header;
+
+    MJRefreshAutoFooter *footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
+       weakSelf.request.page++;
+        [weakSelf analyPublishData:self.request];
+        
+    }];
+    self.tableView.mj_footer = footer;
+}
+
+-(ANTPageHelperRequest*)request
+{
+    if (!_request) {
+        _request = [[ANTPageHelperRequest alloc] init];
+        _request.page = 1 ;
+    }
+    return _request;
+}
+-(void)analyPublishData:(ANTPageHelperRequest*)request
+{
+    WEAK_SELF
+    [[ANTPublishService sharedInstance] analyticalPublishRequireListData:request serverSuccessResultHandler:^(id response) {
+        ANTPublishResponse * responseM = (ANTPublishResponse*)response;
+        if (request.page==1) {
+            [weakSelf.dataArray removeAllObjects];
+        }
+        [weakSelf.dataArray addObjectsFromArray:responseM.data.list];
+        
+        
+        [weakSelf.tableView reloadData];
+        
+        [weakSelf.tableView.mj_header endRefreshing];
+        [weakSelf.tableView.mj_footer endRefreshing];
+    } failedResultHandler:^(id response) {
+        [weakSelf.tableView.mj_header endRefreshing];
+        [weakSelf.tableView.mj_footer endRefreshing];
+    } requestErrorHandler:^(id error) {
+        [weakSelf.tableView.mj_header endRefreshing];
+        [weakSelf.tableView.mj_footer endRefreshing];
+    }];
+    
 }
 
 -(UITableView*)tableView
@@ -62,12 +131,19 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (self.dataArray.count>0) {
+        return self.dataArray.count;
+    }
     return 1;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (self.dataArray.count > 0) {
+        ANTPublishCell * cell = [ANTPublishCell exitWithTableView:tableView];
+        cell.publishModel = self.dataArray[indexPath.row];
+        return cell;
+    }
     ANTPublishCell * cell = [ANTPublishCell exitWithTableView:tableView];
-    
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -107,12 +183,18 @@
         if(index==0) // 清华大学
         {
             BICPublishSettingVC * publishVC = [[BICPublishSettingVC alloc] init];
+            publishVC.refreshBlock = ^{
+                [self.tableView.mj_header beginRefreshing];
+            };
             publishVC.publishSchoolType = KPublish_School_Qinghua;
             [self.navigationController pushViewController:publishVC animated:YES];
         }
         
         if (index==1) { // 北京大学
             BICPublishSettingVC * publishVC = [[BICPublishSettingVC alloc] init];
+            publishVC.refreshBlock = ^{
+                [self.tableView.mj_header beginRefreshing];
+            };
             publishVC.publishSchoolType = KPublish_School_Peking;
             [self.navigationController pushViewController:publishVC animated:YES];
         }

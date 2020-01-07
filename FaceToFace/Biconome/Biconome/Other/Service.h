@@ -9,17 +9,10 @@
 #ifndef Service_h
 #define Service_h
 
-//#import "BICMainService.h"
-
 #import "BICProfileService.h"
-//
-//#import "BICMarketService.h"
-//
-//#import "BICExchangeService.h"
-//
-//#import "BICOrderDelegateService.h"
-//
-//#import "BICWalletService.h"
+
+#import "ANTPublishService.h"
+
 
 
 #endif /* Service_h */

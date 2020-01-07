@@ -11,13 +11,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ANTPublishModel : BICBaseRequest
+
 @property(nonatomic,strong)NSString * studentName;
 @property(nonatomic,strong)NSString * studentIphone;
 @property(nonatomic,strong)NSString * problem;
 @property(nonatomic,strong)NSString * teachMajor;
-
 @property(nonatomic,strong)NSString * other;
-
 //代表年级
 @property(nonatomic,strong)NSString * otherOne;
 

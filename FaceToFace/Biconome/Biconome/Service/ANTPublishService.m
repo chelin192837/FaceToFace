@@ -27,5 +27,14 @@ static id sharedInstance = nil;
     [self doServerRequestWithModel:request ResponseName:@"BICBaseResponse" Url:urlStr requestType:HttpRequestTypePost serverSuccessResultHandler:succHandler failedResultHandler:failedHandler requestErrorHandler:requestError];
 }
 
+//需求列表
+- (void)analyticalPublishRequireListData:(ANTPageHelperRequest*)request serverSuccessResultHandler:(ServerResultSuccessHandler)succHandler failedResultHandler:(ServerResultFailedHandler)failedHandler requestErrorHandler:(RequestFailedBlock)requestError
+{
+    NSString *urlStr = @""kBaseUrl""IOSMAPPING"/publish/requirelist";
+    [self doServerRequestWithModel:request ResponseName:@"ANTPublishResponse" Url:urlStr requestType:HttpRequestTypePost serverSuccessResultHandler:succHandler failedResultHandler:failedHandler requestErrorHandler:requestError];
+}
+
+
+
 
 @end

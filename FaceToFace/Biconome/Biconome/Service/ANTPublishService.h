@@ -12,7 +12,7 @@
 #import "BICRegisterRequest.h"
 
 #import "ANTPublishModel.h"
-
+#import "ANTPageHelperRequest.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ANTPublishService : RSDBaseService
@@ -21,6 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 //发布需求
 - (void)analyticalPublishRequireData:(ANTPublishModel*)request serverSuccessResultHandler:(ServerResultSuccessHandler)succHandler failedResultHandler:(ServerResultFailedHandler)failedHandler requestErrorHandler:(RequestFailedBlock)requestError;
+
+//需求列表
+- (void)analyticalPublishRequireListData:(ANTPageHelperRequest*)request serverSuccessResultHandler:(ServerResultSuccessHandler)succHandler failedResultHandler:(ServerResultFailedHandler)failedHandler requestErrorHandler:(RequestFailedBlock)requestError;
 
 
 @end

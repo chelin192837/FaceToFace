@@ -137,12 +137,19 @@
         [BICDeviceManager AlertShowTip:@"姓名必填"];
         return;
     }
+    [ODAlertViewFactory showLoadingViewWithView:self.view];
     [[ANTPublishService sharedInstance] analyticalPublishRequireData:self.pushlishModel serverSuccessResultHandler:^(id response) {
+        [ODAlertViewFactory hideAllHud:self.view];
         BICBaseResponse * responseM = (BICBaseResponse *)response;
         
         if (responseM.code == 200) {
             
             [BICDeviceManager AlertShowTip:@"发布成功"];
+            
+            if (self.refreshBlock) {
+                self.refreshBlock();
+            }
+            [self.navigationController popViewControllerAnimated:YES];
             
         }else{
             [BICDeviceManager AlertShowTip:responseM.message];

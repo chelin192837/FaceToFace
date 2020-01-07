@@ -21,10 +21,13 @@ public class FacStudentRequirement {
 
     private String problem;
 
+    //备注，其他问题
     private String other;
 
+    //高中生年级
     private String other_one;
 
+    //订单状态
     private String other_two;
 
     private Date create_time;

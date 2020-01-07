@@ -9,6 +9,8 @@
                     columnPrefix="history_"/>
     </resultMap>
 
+
+
     <select id="getList" resultMap="com.macro.mall.mapper.OmsOrderMapper.BaseResultMap">
         SELECT *
         FROM
@@ -37,6 +39,10 @@
             )
         </if>
     </select>
+
+
+
+
     <update id="delivery">
         UPDATE oms_order
         SET

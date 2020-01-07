@@ -601,6 +601,8 @@
 		04A5B85923C3704D00E8D92D /* ANTOtherQuestionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A5B85723C3704D00E8D92D /* ANTOtherQuestionVC.xib */; };
 		04A5B85C23C39C4700E8D92D /* ANTPublishModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5B85B23C39C4500E8D92D /* ANTPublishModel.m */; };
 		04A5B85F23C3A09B00E8D92D /* ANTPublishService.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5B85E23C3A09B00E8D92D /* ANTPublishService.m */; };
+		04A5B86223C45FE500E8D92D /* ANTPublishResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5B86123C45FE300E8D92D /* ANTPublishResponse.m */; };
+		04A5B86523C49E8A00E8D92D /* ANTPageHelperRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5B86423C49E8A00E8D92D /* ANTPageHelperRequest.m */; };
 		04B074972359627300D5E704 /* RSDLeftJustifyingFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B074962359627200D5E704 /* RSDLeftJustifyingFlowLayout.m */; };
 		04E834E6235EA81400F12FCC /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 04E834BF235EA81400F12FCC /* LICENSE.md */; };
 		04E834E7235EA81400F12FCC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 04E834C0235EA81400F12FCC /* README.md */; };
@@ -1756,6 +1758,10 @@
 		04A5B85B23C39C4500E8D92D /* ANTPublishModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTPublishModel.m; sourceTree = "<group>"; };
 		04A5B85D23C3A09B00E8D92D /* ANTPublishService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTPublishService.h; sourceTree = "<group>"; };
 		04A5B85E23C3A09B00E8D92D /* ANTPublishService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTPublishService.m; sourceTree = "<group>"; };
+		04A5B86023C45FE300E8D92D /* ANTPublishResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTPublishResponse.h; sourceTree = "<group>"; };
+		04A5B86123C45FE300E8D92D /* ANTPublishResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTPublishResponse.m; sourceTree = "<group>"; };
+		04A5B86323C49E8A00E8D92D /* ANTPageHelperRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTPageHelperRequest.h; sourceTree = "<group>"; };
+		04A5B86423C49E8A00E8D92D /* ANTPageHelperRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTPageHelperRequest.m; sourceTree = "<group>"; };
 		04B074952359627200D5E704 /* RSDLeftJustifyingFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDLeftJustifyingFlowLayout.h; sourceTree = "<group>"; };
 		04B074962359627200D5E704 /* RSDLeftJustifyingFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDLeftJustifyingFlowLayout.m; sourceTree = "<group>"; };
 		04E834BF235EA81400F12FCC /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
@@ -4184,6 +4190,10 @@
 			children = (
 				04A5B85A23C39C4500E8D92D /* ANTPublishModel.h */,
 				04A5B85B23C39C4500E8D92D /* ANTPublishModel.m */,
+				04A5B86023C45FE300E8D92D /* ANTPublishResponse.h */,
+				04A5B86123C45FE300E8D92D /* ANTPublishResponse.m */,
+				04A5B86323C49E8A00E8D92D /* ANTPageHelperRequest.h */,
+				04A5B86423C49E8A00E8D92D /* ANTPageHelperRequest.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -6231,6 +6241,7 @@
 				004E4EAE2387E117001AD1EE /* UIDevice+Extend.m in Sources */,
 				0429081E23ACECFC00BAC9BB /* ANTHomeMainCell.m in Sources */,
 				040EDF6C23B51CFA002C2D23 /* PSTCollectionViewCell.m in Sources */,
+				04A5B86223C45FE500E8D92D /* ANTPublishResponse.m in Sources */,
 				04A5B85323C3690200E8D92D /* ANTPublishCell.m in Sources */,
 				040EDF5F23B51CFA002C2D23 /* amrFileCodec.mm in Sources */,
 				004E4E8C2387E117001AD1EE /* UIView+PBExtend.m in Sources */,
@@ -6450,6 +6461,7 @@
 				62F6760222F5376D00826835 /* CWCarousel.m in Sources */,
 				62F677F322F540EB00826835 /* UIImage+DJResize.m in Sources */,
 				62BC0D7B2306A9E2004BB897 /* UICollectionViewCell+YQProperty.m in Sources */,
+				04A5B86523C49E8A00E8D92D /* ANTPageHelperRequest.m in Sources */,
 				040EDE9023B51CF9002C2D23 /* EMCreateGroupViewController.m in Sources */,
 				040EE00023B59EB0002C2D23 /* BICSettingVC.m in Sources */,
 				004E4E942387E117001AD1EE /* PhotoImageView.m in Sources */,

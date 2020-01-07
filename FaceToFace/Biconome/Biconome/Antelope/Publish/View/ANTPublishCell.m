@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *gradeLab;
 @property (weak, nonatomic) IBOutlet UILabel *questionLab;
 @property (weak, nonatomic) IBOutlet UILabel *typeLab;
+@property (weak, nonatomic) IBOutlet UILabel *orderLab;
 
 @end
 @implementation ANTPublishCell
@@ -35,7 +36,21 @@
     }
     return cell;
 }
+-(void)setPublishModel:(ANTPublish *)publishModel
+{
+    _publishModel = publishModel ;
+    
+    self.nameLab.text = [NSString stringWithFormat:@"姓名: %@",publishModel.student_name];
+    
+    self.gradeLab.text = [NSString stringWithFormat:@"年级: %@",publishModel.other_one];
 
+    self.questionLab.text = [NSString stringWithFormat:@"困扰问题: %@",publishModel.problem];
+
+    self.typeLab.text = [NSString stringWithFormat:@"需要的学生类型: %@",publishModel.teach_major];
+
+    self.orderLab.text = [NSString stringWithFormat:@"订单状态: %@",publishModel.other_two?:@"待处理"];
+    
+}
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

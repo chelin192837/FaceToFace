@@ -78,6 +78,7 @@
                 <outlet property="gradeLab" destination="BX3-ES-IUc" id="YLh-hL-icr"/>
                 <outlet property="mainBgView" destination="Lah-NX-Ike" id="PXr-S5-S2d"/>
                 <outlet property="nameLab" destination="8Ed-lK-HhG" id="Xjg-hz-nSy"/>
+                <outlet property="orderLab" destination="bDA-cs-SnY" id="6QL-kT-7n5"/>
                 <outlet property="questionLab" destination="2qf-pt-wKN" id="HqL-wg-H3R"/>
                 <outlet property="typeLab" destination="ObS-Ap-Qi8" id="RAj-26-OgF"/>
             </connections>

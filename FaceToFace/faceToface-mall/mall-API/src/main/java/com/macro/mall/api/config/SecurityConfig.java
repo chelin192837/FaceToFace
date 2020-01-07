@@ -7,6 +7,7 @@ import com.macro.mall.api.component.RestAuthenticationEntryPoint;
 
 
 import com.macro.mall.api.service.FacStudentService;
+import com.macro.mall.api.util.HelpUserTool;
 import com.macro.mall.model.FacStudent;
 import com.macro.mall.model.UmsAdmin;
 import com.macro.mall.model.UmsPermission;
@@ -117,6 +118,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //            UmsAdmin admin = adminService.getAdminByUsername(username);
 
             FacStudent admin = facStudentService.getAdminByUsername(username);
+
+            HelpUserTool.getInstance().setFacStudent(admin);
 
             if (admin != null) {
 

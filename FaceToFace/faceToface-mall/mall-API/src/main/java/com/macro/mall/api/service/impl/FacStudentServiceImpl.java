@@ -67,7 +67,8 @@ public class FacStudentServiceImpl implements FacStudentService {
     public FacStudent getAdminByUsername(String username)
     {
         FacStudentExample example = new FacStudentExample();
-        example.createCriteria().andIphoneEqualTo(username);
+
+        example.createCriteria().andIdEqualTo(Long.valueOf(username));
         List<FacStudent> adminList = facStudentMapper.selectByExample(example);
 
         if (adminList != null && adminList.size() > 0)

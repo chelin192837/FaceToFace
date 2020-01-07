@@ -20,12 +20,15 @@ typedef NS_ENUM(NSInteger,KPublish_School_Type)
     KPublish_School_Qinghua
 };
 
+typedef void(^RefreshBlock)();
+
 @interface BICPublishSettingVC : BaseViewController
 
 @property(nonatomic,assign)KPublish_Type publishType;
 
 @property(nonatomic,assign)KPublish_School_Type publishSchoolType;
 
+@property(nonatomic,copy)RefreshBlock refreshBlock;
 
 @end
 

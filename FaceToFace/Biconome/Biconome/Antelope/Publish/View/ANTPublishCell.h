@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ANTPublishResponse.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ANTPublishCell : UITableViewCell
 
 +(instancetype)exitWithTableView:(UITableView*)tableView;
 
+@property(nonatomic,strong)ANTPublish * publishModel;
 
 @end
 
