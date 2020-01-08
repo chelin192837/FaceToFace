@@ -251,6 +251,8 @@
         ANTOtherQuestionVC * questVC = [[ANTOtherQuestionVC alloc] initWithNibName:@"ANTOtherQuestionVC" bundle:[NSBundle mainBundle]];
         
         questVC.currentStr = self.pushlishModel.other;
+        
+        questVC.titleQuestionStr = @"其他问题";
 
         questVC.otherBlock = ^(NSString * _Nonnull str) {
                        

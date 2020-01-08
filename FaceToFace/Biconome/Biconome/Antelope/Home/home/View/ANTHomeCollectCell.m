@@ -21,7 +21,7 @@
     [super awakeFromNib];
     // Initialization code
     
-    [self isYY];
+//    [self isYY];
 }
 -(void)setAntModel:(ANTCollectModel *)antModel
 {

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 //#import "RSDHomeTableVC.h"
+#import "ANTFindListResponse.h"
 
 @interface RSDHomeTableCell : UITableViewCell
 /// 所属类型(0楼盘 1房源 2招聘 3活动 4人才 5装修 6 找房 7 交房楼盘（装修版）)
@@ -17,7 +18,7 @@
 ///
 @property (nonatomic,strong) NSIndexPath *indexPath;
 ///
-//@property (nonatomic,strong) RSDHomeBuildingModel *dataModel;
+@property (nonatomic,strong) ANTFind *dataModel;
 /// 收藏
 @property (nonatomic,weak) IBOutlet UIButton *collectBtn;
 /// 消息数
@@ -34,5 +35,6 @@
 
 
 @property (nonatomic,copy) void(^commentBlock)()  ;
+
 
 @end

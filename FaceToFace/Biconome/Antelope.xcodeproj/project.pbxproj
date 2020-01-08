@@ -603,6 +603,18 @@
 		04A5B85F23C3A09B00E8D92D /* ANTPublishService.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5B85E23C3A09B00E8D92D /* ANTPublishService.m */; };
 		04A5B86223C45FE500E8D92D /* ANTPublishResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5B86123C45FE300E8D92D /* ANTPublishResponse.m */; };
 		04A5B86523C49E8A00E8D92D /* ANTPageHelperRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5B86423C49E8A00E8D92D /* ANTPageHelperRequest.m */; };
+		04A5B87723C576D000E8D92D /* BICAddBasicInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5B86823C576CF00E8D92D /* BICAddBasicInfoViewController.m */; };
+		04A5B87823C576D100E8D92D /* BICVerificationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5B86A23C576CF00E8D92D /* BICVerificationVC.m */; };
+		04A5B87923C576D100E8D92D /* BICPhotoIdentifyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5B86D23C576CF00E8D92D /* BICPhotoIdentifyVC.m */; };
+		04A5B87A23C576D100E8D92D /* BICIdentifyInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5B86F23C576CF00E8D92D /* BICIdentifyInfoViewController.m */; };
+		04A5B87B23C576D100E8D92D /* BICBasicInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5B87123C576CF00E8D92D /* BICBasicInfoViewController.m */; };
+		04A5B87C23C576D100E8D92D /* BICAddressInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5B87323C576CF00E8D92D /* BICAddressInfoViewController.m */; };
+		04A5B87D23C576D100E8D92D /* BICAddAddressInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5B87423C576CF00E8D92D /* BICAddAddressInfoViewController.m */; };
+		04A5B87E23C576D100E8D92D /* BICAddIdentifyInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5B87523C576CF00E8D92D /* BICAddIdentifyInfoViewController.m */; };
+		04A5B88123C5E01700E8D92D /* ANTAuthTeacherRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5B88023C5E01500E8D92D /* ANTAuthTeacherRequest.m */; };
+		04A5B88423C5E11000E8D92D /* ANTMineService.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5B88323C5E11000E8D92D /* ANTMineService.m */; };
+		04A5B88A23C5FFA200E8D92D /* ANTFindListResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5B88923C5FFA100E8D92D /* ANTFindListResponse.m */; };
+		04A5B88D23C6006B00E8D92D /* ANTFindService.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5B88C23C6006B00E8D92D /* ANTFindService.m */; };
 		04B074972359627300D5E704 /* RSDLeftJustifyingFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B074962359627200D5E704 /* RSDLeftJustifyingFlowLayout.m */; };
 		04E834E6235EA81400F12FCC /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 04E834BF235EA81400F12FCC /* LICENSE.md */; };
 		04E834E7235EA81400F12FCC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 04E834C0235EA81400F12FCC /* README.md */; };
@@ -1762,6 +1774,30 @@
 		04A5B86123C45FE300E8D92D /* ANTPublishResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTPublishResponse.m; sourceTree = "<group>"; };
 		04A5B86323C49E8A00E8D92D /* ANTPageHelperRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTPageHelperRequest.h; sourceTree = "<group>"; };
 		04A5B86423C49E8A00E8D92D /* ANTPageHelperRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTPageHelperRequest.m; sourceTree = "<group>"; };
+		04A5B86723C576CF00E8D92D /* BICIdentifyInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BICIdentifyInfoViewController.h; sourceTree = "<group>"; };
+		04A5B86823C576CF00E8D92D /* BICAddBasicInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BICAddBasicInfoViewController.m; sourceTree = "<group>"; };
+		04A5B86923C576CF00E8D92D /* BICBasicInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BICBasicInfoViewController.h; sourceTree = "<group>"; };
+		04A5B86A23C576CF00E8D92D /* BICVerificationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BICVerificationVC.m; sourceTree = "<group>"; };
+		04A5B86B23C576CF00E8D92D /* BICAddAddressInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BICAddAddressInfoViewController.h; sourceTree = "<group>"; };
+		04A5B86C23C576CF00E8D92D /* BICAddressInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BICAddressInfoViewController.h; sourceTree = "<group>"; };
+		04A5B86D23C576CF00E8D92D /* BICPhotoIdentifyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BICPhotoIdentifyVC.m; sourceTree = "<group>"; };
+		04A5B86E23C576CF00E8D92D /* BICAddIdentifyInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BICAddIdentifyInfoViewController.h; sourceTree = "<group>"; };
+		04A5B86F23C576CF00E8D92D /* BICIdentifyInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BICIdentifyInfoViewController.m; sourceTree = "<group>"; };
+		04A5B87023C576CF00E8D92D /* BICVerificationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BICVerificationVC.h; sourceTree = "<group>"; };
+		04A5B87123C576CF00E8D92D /* BICBasicInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BICBasicInfoViewController.m; sourceTree = "<group>"; };
+		04A5B87223C576CF00E8D92D /* BICAddBasicInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BICAddBasicInfoViewController.h; sourceTree = "<group>"; };
+		04A5B87323C576CF00E8D92D /* BICAddressInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BICAddressInfoViewController.m; sourceTree = "<group>"; };
+		04A5B87423C576CF00E8D92D /* BICAddAddressInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BICAddAddressInfoViewController.m; sourceTree = "<group>"; };
+		04A5B87523C576CF00E8D92D /* BICAddIdentifyInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BICAddIdentifyInfoViewController.m; sourceTree = "<group>"; };
+		04A5B87623C576CF00E8D92D /* BICPhotoIdentifyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BICPhotoIdentifyVC.h; sourceTree = "<group>"; };
+		04A5B87F23C5E01500E8D92D /* ANTAuthTeacherRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTAuthTeacherRequest.h; sourceTree = "<group>"; };
+		04A5B88023C5E01500E8D92D /* ANTAuthTeacherRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTAuthTeacherRequest.m; sourceTree = "<group>"; };
+		04A5B88223C5E11000E8D92D /* ANTMineService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANTMineService.h; sourceTree = "<group>"; };
+		04A5B88323C5E11000E8D92D /* ANTMineService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANTMineService.m; sourceTree = "<group>"; };
+		04A5B88823C5FFA100E8D92D /* ANTFindListResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANTFindListResponse.h; sourceTree = "<group>"; };
+		04A5B88923C5FFA100E8D92D /* ANTFindListResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANTFindListResponse.m; sourceTree = "<group>"; };
+		04A5B88B23C6006B00E8D92D /* ANTFindService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANTFindService.h; sourceTree = "<group>"; };
+		04A5B88C23C6006B00E8D92D /* ANTFindService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANTFindService.m; sourceTree = "<group>"; };
 		04B074952359627200D5E704 /* RSDLeftJustifyingFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDLeftJustifyingFlowLayout.h; sourceTree = "<group>"; };
 		04B074962359627200D5E704 /* RSDLeftJustifyingFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDLeftJustifyingFlowLayout.m; sourceTree = "<group>"; };
 		04E834BF235EA81400F12FCC /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
@@ -3755,6 +3791,7 @@
 		040EDFA323B59EB0002C2D23 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				04A5B86623C576CE00E8D92D /* Verification */,
 				040EE06D23B5A28B002C2D23 /* RSDHomeListWebVC.h */,
 				040EE06C23B5A28B002C2D23 /* RSDHomeListWebVC.m */,
 				040EDFA523B59EB0002C2D23 /* ANTMineViewController.h */,
@@ -3790,6 +3827,8 @@
 				040EE06323B5A256002C2D23 /* BICBindGoogleRequest.m */,
 				040EE06723B5A257002C2D23 /* BICBindGoogleResponse.h */,
 				040EE06623B5A257002C2D23 /* BICBindGoogleResponse.m */,
+				04A5B87F23C5E01500E8D92D /* ANTAuthTeacherRequest.h */,
+				04A5B88023C5E01500E8D92D /* ANTAuthTeacherRequest.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4123,6 +4162,8 @@
 		0429082A23AE110F00BAC9BB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04A5B88823C5FFA100E8D92D /* ANTFindListResponse.h */,
+				04A5B88923C5FFA100E8D92D /* ANTFindListResponse.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4260,6 +4301,29 @@
 				0429082523AE10EC00BAC9BB /* Controller */,
 			);
 			path = Find;
+			sourceTree = "<group>";
+		};
+		04A5B86623C576CE00E8D92D /* Verification */ = {
+			isa = PBXGroup;
+			children = (
+				04A5B87023C576CF00E8D92D /* BICVerificationVC.h */,
+				04A5B86A23C576CF00E8D92D /* BICVerificationVC.m */,
+				04A5B86723C576CF00E8D92D /* BICIdentifyInfoViewController.h */,
+				04A5B86F23C576CF00E8D92D /* BICIdentifyInfoViewController.m */,
+				04A5B87223C576CF00E8D92D /* BICAddBasicInfoViewController.h */,
+				04A5B86823C576CF00E8D92D /* BICAddBasicInfoViewController.m */,
+				04A5B86923C576CF00E8D92D /* BICBasicInfoViewController.h */,
+				04A5B87123C576CF00E8D92D /* BICBasicInfoViewController.m */,
+				04A5B86B23C576CF00E8D92D /* BICAddAddressInfoViewController.h */,
+				04A5B87423C576CF00E8D92D /* BICAddAddressInfoViewController.m */,
+				04A5B86C23C576CF00E8D92D /* BICAddressInfoViewController.h */,
+				04A5B87323C576CF00E8D92D /* BICAddressInfoViewController.m */,
+				04A5B87623C576CF00E8D92D /* BICPhotoIdentifyVC.h */,
+				04A5B86D23C576CF00E8D92D /* BICPhotoIdentifyVC.m */,
+				04A5B86E23C576CF00E8D92D /* BICAddIdentifyInfoViewController.h */,
+				04A5B87523C576CF00E8D92D /* BICAddIdentifyInfoViewController.m */,
+			);
+			path = Verification;
 			sourceTree = "<group>";
 		};
 		04B074942359627200D5E704 /* UICollectionDelegate */ = {
@@ -5453,6 +5517,10 @@
 				040EE05E23B5A1F0002C2D23 /* BICProfileService.m */,
 				04A5B85D23C3A09B00E8D92D /* ANTPublishService.h */,
 				04A5B85E23C3A09B00E8D92D /* ANTPublishService.m */,
+				04A5B88223C5E11000E8D92D /* ANTMineService.h */,
+				04A5B88323C5E11000E8D92D /* ANTMineService.m */,
+				04A5B88B23C6006B00E8D92D /* ANTFindService.h */,
+				04A5B88C23C6006B00E8D92D /* ANTFindService.m */,
 			);
 			name = Service;
 			path = Biconome/Service;
@@ -6122,11 +6190,13 @@
 				00BF41782349E00300FD9D93 /* FileTools.m in Sources */,
 				004E4EA72387E117001AD1EE /* UIImage+Color.m in Sources */,
 				62F6792E22F5666400826835 /* Reachability.m in Sources */,
+				04A5B88423C5E11000E8D92D /* ANTMineService.m in Sources */,
 				6250AB4A234DCB3F009186AA /* HLAudioPlayer.m in Sources */,
 				004E4E9F2387E117001AD1EE /* CoreSVP.m in Sources */,
 				62F6791F22F55A1100826835 /* BaseTabBar.m in Sources */,
 				004E4E8F2387E117001AD1EE /* PhotoModel.m in Sources */,
 				62F6781122F5427F00826835 /* UILabel+ChangeLineSpaceAndWordSpace.m in Sources */,
+				04A5B88A23C5FFA200E8D92D /* ANTFindListResponse.m in Sources */,
 				62F6791B22F55A1100826835 /* BaseNavigationController.m in Sources */,
 				62F6765622F5386900826835 /* APAddressBookAccessRoutine.m in Sources */,
 				040EDF3223B51CFA002C2D23 /* EMChatroomsViewController.m in Sources */,
@@ -6154,6 +6224,7 @@
 				040EE06B23B5A257002C2D23 /* BICBindGoogleResponse.m in Sources */,
 				004E4EA52387E117001AD1EE /* UIImage+Cut.m in Sources */,
 				62F677B422F540EB00826835 /* NSUserDefaults+Category.m in Sources */,
+				04A5B87A23C576D100E8D92D /* BICIdentifyInfoViewController.m in Sources */,
 				004E4EE32387E39C001AD1EE /* YBImageBrowser.m in Sources */,
 				62D624E72307DEE8007A28EB /* NSTimer+CQBlockSupport.m in Sources */,
 				040EDF6523B51CFA002C2D23 /* MWPhoto.m in Sources */,
@@ -6178,7 +6249,9 @@
 				040EE02123B59EB1002C2D23 /* VPickView.m in Sources */,
 				040EE07623B5A91D002C2D23 /* BICPageRequest.m in Sources */,
 				040EDE1423B51CF9002C2D23 /* EMChatBarItem.m in Sources */,
+				04A5B88D23C6006B00E8D92D /* ANTFindService.m in Sources */,
 				040EDE8423B51CF9002C2D23 /* EMLocationViewController.m in Sources */,
+				04A5B87C23C576D100E8D92D /* BICAddressInfoViewController.m in Sources */,
 				62BC0D7A2306A9E2004BB897 /* UIView+YQSideline.m in Sources */,
 				040EE01823B59EB1002C2D23 /* BICAddressInfoView.m in Sources */,
 				0429082423ACF20200BAC9BB /* RSDHomeTableCell.m in Sources */,
@@ -6249,6 +6322,7 @@
 				0429080523ACA22400BAC9BB /* ANTCollectModel.m in Sources */,
 				00BF41722349DF7400FD9D93 /* SelectPhotoManager.m in Sources */,
 				040EE02A23B59EB1002C2D23 /* RSDCLSelectPage.m in Sources */,
+				04A5B88123C5E01700E8D92D /* ANTAuthTeacherRequest.m in Sources */,
 				00E687DC233B6C5700ADDADF /* Foundation+Extension.m in Sources */,
 				004E4EE62387E39C001AD1EE /* YBImageBrowserModel.m in Sources */,
 				62F6780C22F5422400826835 /* UILabel+Copy.m in Sources */,
@@ -6275,6 +6349,7 @@
 				040EE15E23B6786F002C2D23 /* YiceSlidelipPickReusableView.m in Sources */,
 				040EDE0423B51CF9002C2D23 /* EMContactsViewController.m in Sources */,
 				0429080123ABB84400BAC9BB /* ANTHomeCollectCell.m in Sources */,
+				04A5B87923C576D100E8D92D /* BICPhotoIdentifyVC.m in Sources */,
 				62F6765A22F5386900826835 /* APThread.m in Sources */,
 				040EDE9B23B51CF9002C2D23 /* EMGroupSettingsViewController.m in Sources */,
 				62F6780822F5422400826835 /* UtilsManager.m in Sources */,
@@ -6327,6 +6402,7 @@
 				040EDE9723B51CF9002C2D23 /* EMJoinGroupViewController.m in Sources */,
 				62BC0D32230691E2004BB897 /* RSDSearchNavigation.m in Sources */,
 				040EDE6423B51CF9002C2D23 /* EMMessageBubbleView.m in Sources */,
+				04A5B87823C576D100E8D92D /* BICVerificationVC.m in Sources */,
 				040EDF5E23B51CFA002C2D23 /* wav.mm in Sources */,
 				040EDEA323B51CF9002C2D23 /* EMDemoHelper.m in Sources */,
 				62F67A8C22FE6C6E00826835 /* XRCarouselView.m in Sources */,
@@ -6337,6 +6413,7 @@
 				00BF414D2348CF7700FD9D93 /* WMDatepicker_DateModel.m in Sources */,
 				040EDF7023B51CFA002C2D23 /* PSTCollectionViewUpdateItem.m in Sources */,
 				62F677B522F540EB00826835 /* UITextField+Placeholder.m in Sources */,
+				04A5B87723C576D000E8D92D /* BICAddBasicInfoViewController.m in Sources */,
 				040EDE5923B51CF9002C2D23 /* EMChatBar.m in Sources */,
 				04E834F3235EA81500F12FCC /* IQUIView+Hierarchy.m in Sources */,
 				62F675FE22F5376D00826835 /* PageControlView.m in Sources */,
@@ -6383,6 +6460,7 @@
 				62BC0D922306A9E2004BB897 /* NSDate+YQCategory.m in Sources */,
 				004E4EE92387E39C001AD1EE /* NSBundle+YBImageBrowser.m in Sources */,
 				00BF414C2348CF7700FD9D93 /* WMCustomDatePicker.m in Sources */,
+				04A5B87E23C576D100E8D92D /* BICAddIdentifyInfoViewController.m in Sources */,
 				04E834EB235EA81400F12FCC /* IQBarButtonItem.m in Sources */,
 				62F6760022F5376D00826835 /* LLSegmentBar.m in Sources */,
 				62F677AE22F540EB00826835 /* UILabel+AlertActionFont.m in Sources */,
@@ -6450,6 +6528,7 @@
 				62BC0D872306A9E2004BB897 /* UILabel+YQCategory.m in Sources */,
 				004E4EE22387E39C001AD1EE /* YBImageBrowserToolBar.m in Sources */,
 				62F678EB22F5570F00826835 /* NSString+Hash.m in Sources */,
+				04A5B87D23C576D100E8D92D /* BICAddAddressInfoViewController.m in Sources */,
 				04A5B85823C3704D00E8D92D /* ANTOtherQuestionVC.m in Sources */,
 				62BC0DDC2306AA6A004BB897 /* YQValue.m in Sources */,
 				62BC0DDF2306AA6A004BB897 /* YQFunction.m in Sources */,
@@ -6485,6 +6564,7 @@
 				040EDEA923B51CF9002C2D23 /* EM1v1CallViewController.m in Sources */,
 				004E4EEA2387E39C001AD1EE /* YBImageBrowserUtilities.m in Sources */,
 				62F677F122F540EB00826835 /* UIImage+ImageScaleSize.m in Sources */,
+				04A5B87B23C576D100E8D92D /* BICBasicInfoViewController.m in Sources */,
 				62F677B722F540EB00826835 /* NSMutableDictionary+Category.m in Sources */,
 				040EDEAA23B51CF9002C2D23 /* EMVideoInfoViewController.m in Sources */,
 				004E4E8E2387E117001AD1EE /* PBConst.m in Sources */,

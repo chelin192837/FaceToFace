@@ -242,7 +242,8 @@
 
 //行情
 #define kBICHistoryTitleColor [UIColor colorFromHexRGB:@"64666C"]
-#define kBICHistoryCellBGColor [UIColor colorFromHexRGB:@"F3F5FB"]
+//#define kBICHistoryCellBGColor [UIColor colorFromHexRGB:@"F3F5FB"]
+#define kBICHistoryCellBGColor [UIColor whiteColor]
 
 #define kBICTitleTextColor [UIColor colorFromHexRGB:@"33353B"]
 

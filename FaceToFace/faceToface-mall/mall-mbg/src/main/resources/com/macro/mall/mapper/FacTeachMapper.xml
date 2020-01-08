@@ -79,6 +79,8 @@
     id, name, iphone, password, sex, major, subject, flag, advantage, active, other_one,
     other_two, create_time
   </sql>
+
+
     <select id="selectByExample" parameterType="com.macro.mall.model.FacTeachExample" resultMap="BaseResultMap">
       select
       <if test="distinct">
@@ -93,12 +95,18 @@
         order by ${orderByClause}
       </if>
     </select>
+
+
+
     <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
       select
       <include refid="Base_Column_List" />
       from fac_teach
       where id = #{id,jdbcType=BIGINT}
     </select>
+
+
+
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from fac_teach
     where id = #{id,jdbcType=BIGINT}

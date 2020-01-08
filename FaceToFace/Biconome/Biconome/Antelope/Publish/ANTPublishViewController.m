@@ -68,6 +68,8 @@
         
     }];
     self.tableView.mj_footer = footer;
+    
+    [self.tableView.mj_header beginRefreshing];
 }
 
 -(ANTPageHelperRequest*)request

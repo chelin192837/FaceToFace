@@ -17,7 +17,7 @@
 #import "RSDHomeListWebVC.h"
 #import "BICMineNewCell.h"
 //#import "BICAccountSafeVC.h"
-//#import "BICVerificationVC.h"
+#import "BICVerificationVC.h"
 //#import "BICInviteReturnVC.h"
 #import "BICAuthInfoResponse.h"
 #import "BICMineDouCell.h"
@@ -115,122 +115,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-//    if(indexPath.row==0){
-//        BICMineNewCell *cell=[BICMineNewCell cellWithTableView:tableView];
-//        cell.titleTexLab.text = self.titleArr[indexPath.row];
-//        cell.titleImg.image = [UIImage imageNamed:self.imageArr[indexPath.row]];
-//        cell.response=self.response;
-//        if (![BICDeviceManager isLogin]) {
-//            cell.detailLabel.text=@"";
-//        }
-//        cell.ishaveTop=YES;
-//        cell.ishaveBottom=NO;
-//
-//
-//        cell.hidden = YES ;
-//        return cell;
-//    }
-    
+
     BICMineCell * cell = [BICMineCell exitWithTableView:tableView];
     cell.titleTexLab.text = self.titleArr[indexPath.row];
     cell.titleImg.image = [UIImage imageNamed:self.imageArr[indexPath.row]];
-//    if(indexPath.row==0){
-//        if(self.response.data.basicRemark){
-//            cell.detlabel.text=LAN(self.response.data.basicRemark);
-//        }else{
-//            cell.detlabel.text=LAN(@"未认证");
-//        }
-//    }
+
     return cell;
     
-//    if(indexPath.row==2)
-//    {
-//        BICMineDouCell * cell = [BICMineDouCell exitWithTableView:tableView];
-//        cell.titleTexLab.text = self.titleArr[3];
-//        cell.titleImg.image = [UIImage imageNamed:self.imageArr[3]];
-//
-//        cell.titleTexLabFir.text = self.titleArr[2];
-//        cell.titleImgFir.image = [UIImage imageNamed:self.imageArr[2]];
-//        cell.backgroundColor=KThemeBGColor;
-//        cell.cellBlock = ^(NSInteger index) {
-//            if (![BICDeviceManager isLogin]) {
-//                     [BICDeviceManager PushToLoginView];
-//                     return;
-//                 }
-//            if (index == 1) { //当前委托
-//                BICMineOrderDeleVC * vc = [[BICMineOrderDeleVC alloc] init];
-//                [self.navigationController pushViewController:vc animated:YES];
-//            }
-//            if (index==2) { //历史委托
-//                BICHistoryDeleVC * vc = [[BICHistoryDeleVC alloc] init];
-//                [self.navigationController pushViewController:vc animated:YES];
-//            }
-//        };
-//
-//        return cell;
-//    }
-//    if(indexPath.row==3)
-//    {
-//          BICMineCell * cell = [BICMineCell exitWithTableView:tableView];
-//           if (indexPath.row==1) {
-//               cell.hidden = YES;
-//           }
-//           cell.titleTexLab.text = self.titleArr[4];
-//           cell.titleImg.image = [UIImage imageNamed:self.imageArr[4]];
-//           return cell;
-//    }
-//    if(indexPath.row==4)
-//    {
-//        BICMineDouCell * cell = [BICMineDouCell exitWithTableView:tableView];
-//        cell.titleTexLab.text = self.titleArr[6];
-//        cell.titleImg.image = [UIImage imageNamed:self.imageArr[6]];
-//
-//        cell.titleTexLabFir.text = self.titleArr[5];
-//        cell.titleImgFir.image = [UIImage imageNamed:self.imageArr[5]];
-//
-//        cell.cellBlock = ^(NSInteger index) {
-//            if (![BICDeviceManager isLogin]) {
-//                     [BICDeviceManager PushToLoginView];
-//                     return;
-//                 }
-//            if (index == 1) { //账户安全
-//                BICAccountSafeVC * safeVC = [[BICAccountSafeVC alloc] init];
-//                [self.navigationController pushViewController:safeVC animated:YES];
-//            }
-//            if (index==2) { //帮助和反馈
-//                RSDHomeListWebVC * webVC = [[RSDHomeListWebVC alloc] init];
-//                webVC.navigationShow = NO;
-//                webVC.naviStr=LAN(@"帮助与反馈");
-//                webVC.listWebStr = @"https://biconomy.zendesk.com/hc/en-us";
-//                [self.navigationController pushViewController:webVC animated:YES];
-//            }
-//        };
-//        return cell;
-//    }
-//    if(indexPath.row==5)
-//     {
-//           BICMineCell * cell = [BICMineCell exitWithTableView:tableView];
-//            if (indexPath.row==1) {
-//                cell.hidden = YES;
-//            }
-//            cell.titleTexLab.text = self.titleArr[7];
-//            cell.titleImg.image = [UIImage imageNamed:self.imageArr[7]];
-//            return cell;
-//     }
 }
-
-//-(void)getAuthStatus{
-//    if([self.response.data.basicRemark){}
-//        self.detailLabel.text=LAN(@"审核中");
-//    }else if([self.response.data.status isEndWithString:@"N"]){
-//        self.detailLabel.text=LAN(@"审核未通过");
-//    }else if([self.response.data.status isEndWithString:@"Y"]){
-//        self.detailLabel.text=LAN(@"已认证");
-//    }else{
-//        self.detailLabel.text=LAN(@"未认证");
-//    }
-//}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -250,53 +142,44 @@
             return;
         }
     }
-//    WEAK_SELF
+    //    WEAK_SELF
     if(indexPath.row==0){
         
-//        BICVerificationVC *vc=[[BICVerificationVC alloc] init];
-//        [self.navigationController pushViewController:vc animated:YES];
+        BICVerificationVC *vc=[[BICVerificationVC alloc] init];
+        
+        [self.navigationController pushViewController:vc animated:YES];
         
     }else if(indexPath.row==1){
-//        BICInviteReturnVC * inviteReturnVC = [[BICInviteReturnVC alloc] init];
-//        [self.navigationController pushViewController:inviteReturnVC animated:YES];
+        //        BICInviteReturnVC * inviteReturnVC = [[BICInviteReturnVC alloc] init];
+        //        [self.navigationController pushViewController:inviteReturnVC animated:YES];
     }else if (indexPath.row==2) {
-//        BICMineOrderDeleVC * vc = [[BICMineOrderDeleVC alloc] init];
-//        [self.navigationController pushViewController:vc animated:YES];
+        //        BICMineOrderDeleVC * vc = [[BICMineOrderDeleVC alloc] init];
+        //        [self.navigationController pushViewController:vc animated:YES];
         
     }else if (indexPath.row==3) {
-
         
-//        BICHistoryDeleVC * vc = [[BICHistoryDeleVC alloc] init];
-//        [self.navigationController pushViewController:vc animated:YES];
+        
+        //        BICHistoryDeleVC * vc = [[BICHistoryDeleVC alloc] init];
+        //        [self.navigationController pushViewController:vc animated:YES];
     }
     else if (indexPath.row==4) {
         //        BICMineOrderDeleVC * vc = [[BICMineOrderDeleVC alloc] init];
         //        [self.navigationController pushViewController:vc animated:YES];
         
-//        BICOrderDealVC * vc = [[BICOrderDealVC alloc] init];
-//        [self.navigationController pushViewController:vc animated:YES];
+        //        BICOrderDealVC * vc = [[BICOrderDealVC alloc] init];
+        //        [self.navigationController pushViewController:vc animated:YES];
         
         RSDHomeListWebVC * webVC = [[RSDHomeListWebVC alloc] init];
-           webVC.navigationShow = NO;
-           webVC.naviStr=LAN(@"帮助与反馈");
-           webVC.listWebStr = @"https://www.baidu.com";
-           [self.navigationController pushViewController:webVC animated:YES];
+        webVC.navigationShow = NO;
+        webVC.naviStr=LAN(@"帮助与反馈");
+        webVC.listWebStr = @"https://www.baidu.com";
+        [self.navigationController pushViewController:webVC animated:YES];
     }else if(indexPath.row==5){
-//        BICOrderDealVC * vc = [[BICOrderDealVC alloc] init];
-//        [self.navigationController pushViewController:vc animated:YES];
         
-        //        BICHistoryDeleVC * vc = [[BICHistoryDeleVC alloc] init];
-        //        [self.navigationController pushViewController:vc animated:YES];
-//       BICAccountSafeVC * safeVC = [[BICAccountSafeVC alloc] init];
-//       [self.navigationController pushViewController:safeVC animated:YES];
+        BICSettingVC * settingVC = [[BICSettingVC alloc] init];
+        [self.navigationController pushViewController:settingVC animated:YES];
         
-                BICSettingVC * settingVC = [[BICSettingVC alloc] init];
-                [self.navigationController pushViewController:settingVC animated:YES];
-                
-        //        BICAccountSafeVC * safeVC = [[BICAccountSafeVC alloc] init];
-        //        [self.navigationController pushViewController:safeVC animated:YES];
     }
-
     
 }
 

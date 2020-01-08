@@ -20,9 +20,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-
     
-    [self initNavigationTitleViewLabelWithTitle:@"其他问题" titleColor:SDColorGray333333 IfBelongTabbar:NO];
+//    [self initNavigationTitleViewLabelWithTitle:self.titleQuestionStr titleColor:SDColorGray333333 IfBelongTabbar:NO];
     
     [self initNavigationLeftBtnWithTitle:nil isNeedImage:YES andImageName:@"fanhuiHei" titleColor:nil];
 
@@ -40,9 +39,12 @@
     
     self.bottomnameLabel.frame=CGRectMake(8, 5, 100, 20);
     
-    if (_currentStr) {
+    if (_currentStr.length > 0) {
+
         self.textView.text = _currentStr ;
+
         self.bottomnameLabel.hidden = YES ;
+
     }
 
 }
@@ -52,7 +54,7 @@
         _bottomnameLabel=[[UILabel alloc] init];
         _bottomnameLabel.font=[UIFont systemFontOfSize:14];
         _bottomnameLabel.textColor=UIColorWithRGB(0x64666C);
-        _bottomnameLabel.text=LAN(@"请输入问题");
+        _bottomnameLabel.text=LAN(@"请输入...");
     }
     return _bottomnameLabel;
 }

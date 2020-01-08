@@ -20,7 +20,7 @@
     // Initialization code
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    [self.bgView isYY];
+//    [self.bgView isYY];
     self.bgView.backgroundColor=KThemeBGColor;
     self.titleTexLab.textColor=KThemeTextColor;
     self.contentView.backgroundColor=KThemeBGColor;
@@ -41,7 +41,7 @@
 {
     _is_YY = is_YY ;
     if (_is_YY) {
-        [self.bgView isYY];
+//        [self.bgView isYY];
     }
 }
 

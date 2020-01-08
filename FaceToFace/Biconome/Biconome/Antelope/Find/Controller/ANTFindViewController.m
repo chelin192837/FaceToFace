@@ -15,6 +15,8 @@
 #import "YiceSlidelipPickerMenu.h"
 #import "YiceSlidelipPickPch.h"
 #import "YiceSlidelipPickCommonModel.h"
+#import "ANTPageHelperRequest.h"
+#import "ANTFindListResponse.h"
 
 @interface ANTFindViewController ()<UITableViewDelegate,UITableViewDataSource,YiceSlidelipPickerMenuDelegate,YiceSlidelipPickerMenuDataSource>
 
@@ -25,6 +27,8 @@
 @property (nonatomic, strong) NSArray *mainKindArray;
 @property (nonatomic, strong) NSArray *subKindArray;
 @property (nonatomic, strong) YiceSlidelipPickerMenu *pickMenu;
+
+@property (nonatomic, strong) ANTPageHelperRequest* request;
 
 @end
 
@@ -41,6 +45,8 @@
 
     [self setupUI];
     
+    [self addRefresh];
+        
     self.mainKindArray = @[[self creatPcikMenuItemModelWithString:@"学校"],
                            [self creatPcikMenuItemModelWithString:@"优势科目"],
                            [self creatPcikMenuItemModelWithString:@"文理科"],
@@ -63,6 +69,69 @@
            [NSMutableArray arrayWithArray:@[[self creatPcikMenuItemModelWithString:@"学习方法"],[self creatPcikMenuItemModelWithString:@"学习习惯"],[self creatPcikMenuItemModelWithString:@"学习心态"],[self creatPcikMenuItemModelWithString:@"情感心理"],[self creatPcikMenuItemModelWithString:@"择校就业"]]]
       ]];
     
+}
+-(ANTPageHelperRequest*)request
+{
+    if (!_request) {
+        _request = [[ANTPageHelperRequest alloc] init];
+        _request.page = 1 ;
+    }
+    return _request;
+}
+-(NSMutableArray*)dataArray
+{
+    if (!_dataArray) {
+        _dataArray = [NSMutableArray array];
+    }
+    return _dataArray;
+}
+-(void)addRefresh{
+    
+    WEAK_SELF
+    MJRefreshNormalHeader * header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            weakSelf.request.page=1;
+            [weakSelf analyData:self.request];
+
+        });
+
+    }];
+
+    self.tableView.mj_header = header;
+
+    MJRefreshAutoFooter *footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
+       weakSelf.request.page++;
+        [weakSelf analyData:self.request];
+        
+    }];
+    self.tableView.mj_footer = footer;
+    
+    [self.tableView.mj_header beginRefreshing];
+}
+
+-(void)analyData:(ANTPageHelperRequest*)request
+{
+    WEAK_SELF
+    [[ANTFindService sharedInstance] analyticalFindListData:request serverSuccessResultHandler:^(id response) {
+        
+        ANTFindListResponse *responseM = (ANTFindListResponse*)response;
+        if (request.page==1) {
+            [weakSelf.dataArray removeAllObjects];
+        }
+        [weakSelf.dataArray addObjectsFromArray:responseM.data.list];
+        
+        [weakSelf.tableView reloadData];
+        
+        [weakSelf.tableView.mj_header endRefreshing];
+        [weakSelf.tableView.mj_footer endRefreshing];
+    } failedResultHandler:^(id response) {
+        [weakSelf.tableView.mj_header endRefreshing];
+        [weakSelf.tableView.mj_footer endRefreshing];
+    } requestErrorHandler:^(id error) {
+        [weakSelf.tableView.mj_header endRefreshing];
+        [weakSelf.tableView.mj_footer endRefreshing];
+    }];
 }
 -(YiceSlidelipPickerMenu *)pickMenu
 {
@@ -107,13 +176,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 30 ;
+    return self.dataArray.count ;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
     RSDHomeTableCell * cell = [RSDHomeTableCell exitWithTableView:tableView];
+    
+    cell.dataModel = self.dataArray[indexPath.row];
+    
     return cell;
 }
 

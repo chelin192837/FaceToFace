@@ -10,8 +10,6 @@
 #import "ANTHomeCollectCell.h"
 #import "ANTCollectModel.h"
 
-
-
 static NSString *kReleaseTitleCollectionCellID = @"kReleaseTitleCollectionCellID";
 static NSString *kReleaseContentCollectionCellID = @"kReleaseContentCollectionCellID";
 static NSString *kbtcKindCollectionView = @"kbtcKindCollectionView";

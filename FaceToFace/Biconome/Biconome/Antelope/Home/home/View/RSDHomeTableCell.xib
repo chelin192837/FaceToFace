@@ -100,6 +100,9 @@
                                     <constraint firstAttribute="height" constant="60" id="TQx-Rb-6Ni"/>
                                 </constraints>
                                 <state key="normal" image="home_tel_new"/>
+                                <connections>
+                                    <action selector="callBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jiX-e8-se0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7JA-fn-mBW">
                                 <rect key="frame" x="35.5" y="128" width="103" height="16"/>
@@ -149,16 +152,15 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="btn_location" destination="7JA-fn-mBW" id="729-ab-c5K"/>
-                <outlet property="buildingImage" destination="oet-04-Psb" id="ZSv-ZW-Xvu"/>
-                <outlet property="buildingNameLabel" destination="ckB-eH-ITQ" id="Tyq-Cf-Xoq"/>
-                <outlet property="commissionLabel" destination="vV2-Pc-Wqe" id="PbI-ea-Wps"/>
+                <outlet property="addressLab" destination="7JA-fn-mBW" id="YX2-w6-2Fu"/>
+                <outlet property="flagLab" destination="PsQ-cz-E8a" id="Wni-gt-d5K"/>
+                <outlet property="iconImage" destination="oet-04-Psb" id="UU6-FX-iaQ"/>
                 <outlet property="icon_location" destination="Wel-0A-bxj" id="DZU-kn-vdv"/>
-                <outlet property="labelsView" destination="DAQ-KF-JPf" id="LlI-0y-r6a"/>
-                <outlet property="leftTopLabel" destination="PsQ-cz-E8a" id="lf1-GR-rp2"/>
-                <outlet property="priceLabel" destination="tfP-b0-TNJ" id="g38-LB-xzF"/>
+                <outlet property="name" destination="ckB-eH-ITQ" id="I4V-dS-gda"/>
+                <outlet property="other_two" destination="vV2-Pc-Wqe" id="xme-en-Jmd"/>
+                <outlet property="priceLab" destination="FOS-XK-63Q" id="xk0-Pd-gH2"/>
+                <outlet property="subjectLab" destination="tfP-b0-TNJ" id="UlV-92-IYt"/>
                 <outlet property="topView" destination="8Yw-GY-ZsM" id="aMb-Vo-Gr6"/>
-                <outlet property="tuijianImg" destination="8L3-a2-kZe" id="U2V-B8-0Yl"/>
             </connections>
             <point key="canvasLocation" x="94.400000000000006" y="144.3778110944528"/>
         </tableViewCell>

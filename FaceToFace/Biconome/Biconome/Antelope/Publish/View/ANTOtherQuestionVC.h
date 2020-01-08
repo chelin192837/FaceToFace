@@ -18,6 +18,9 @@ typedef void(^OtherBlock)(NSString * str);
 
 @property(nonatomic,strong)NSString * currentStr;
 
+@property(nonatomic,strong)NSString * titleQuestionStr;
+
 @end
 
 NS_ASSUME_NONNULL_END
+

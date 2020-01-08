@@ -5,12 +5,13 @@
 //  Created by mac on 2019/12/18.
 //  Copyright © 2019 qsm. All rights reserved.
 //
-
 #import "ANTHomeViewController.h"
 #import "ANTHomeHeadCell.h"
 #import "ANTCollectModel.h"
 #import "XRCarouselView.h"
 #import "RSDHomeTableCell.h"
+
+
 @interface ANTHomeViewController ()<UITableViewDelegate,UITableViewDataSource,XRCarouselViewDelegate>
 
 @property(nonatomic,strong)UITableView * tableView;

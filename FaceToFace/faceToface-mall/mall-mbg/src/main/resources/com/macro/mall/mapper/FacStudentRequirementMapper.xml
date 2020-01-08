@@ -79,7 +79,10 @@
     id, student_name, student_iphone, teach_flag, teach_sex, teach_major, teach_subject,
     teach_advantage, problem, other, other_one, other_two, create_time
   </sql>
-    <select id="selectByExample" parameterType="com.macro.mall.model.FacStudentRequirementExample" resultMap="BaseResultMap">
+
+
+
+  <select id="selectByExample" parameterType="com.macro.mall.model.FacStudentRequirementExample" resultMap="BaseResultMap">
       select
       <if test="distinct">
         distinct
@@ -93,6 +96,9 @@
         order by ${orderByClause}
       </if>
     </select>
+
+
+
     <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
       select
       <include refid="Base_Column_List" />

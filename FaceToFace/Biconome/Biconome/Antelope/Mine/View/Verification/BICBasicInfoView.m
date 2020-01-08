@@ -8,10 +8,13 @@
 
 #import "BICBasicInfoView.h"
 @interface BICBasicInfoView()
+//姓名
 @property (strong, nonatomic)  UILabel *nameLabel;
 @property (strong, nonatomic)  UILabel *nameVLabel;
+//中间名
 @property (strong, nonatomic)  UILabel *middleNameLabel;
 @property (strong, nonatomic)  UILabel *middleNameVLabel;
+
 @property (strong, nonatomic)  UILabel *firstNameLabel;
 @property (strong, nonatomic)  UILabel *firstNameVLabel;
 @property (strong, nonatomic)  UILabel *sexLabel;
@@ -46,7 +49,7 @@
 
 -(void)layoutSubviews{
     [super layoutSubviews];
-    CGFloat w=KScreenWidth-32;
+    CGFloat w = KScreenWidth-32;
     self.nameLabel.frame=CGRectMake(32, 24, w, 20);
     self.nameVLabel.frame=CGRectMake(32, CGRectGetMaxY(self.nameLabel.frame)+8, w, 23);
     self.middleNameLabel.frame=CGRectMake(32, CGRectGetMaxY(self.nameVLabel.frame)+24, w, 20);
@@ -91,7 +94,7 @@
          _middleNameLabel=[[UILabel alloc] init];
          _middleNameLabel.font=[UIFont systemFontOfSize:14];
          _middleNameLabel.textColor=UIColorWithRGB(0x64666C);
-         _middleNameLabel.text=LAN(@"中间名");
+         _middleNameLabel.text=LAN(@"清华大学/北京大学");
      }
      return _middleNameLabel;
  }
@@ -108,7 +111,7 @@
          _firstNameLabel=[[UILabel alloc] init];
          _firstNameLabel.font=[UIFont systemFontOfSize:14];
          _firstNameLabel.textColor=UIColorWithRGB(0x64666C);
-         _firstNameLabel.text=LAN(@"姓氏");
+         _firstNameLabel.text=LAN(@"专业");
      }
      return _firstNameLabel;
  }
@@ -154,6 +157,8 @@
      }
      return _ageVLabel;
  }
+
+
  -(UILabel *)birthLabel{
      if(!_birthLabel){
          _birthLabel=[[UILabel alloc] init];

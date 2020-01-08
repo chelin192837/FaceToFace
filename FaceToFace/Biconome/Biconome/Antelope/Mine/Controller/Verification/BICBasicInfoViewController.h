@@ -1,8 +1,8 @@
 //
-//  BICReasonCell.h
+//  BICBasicInfoViewController.h
 //  Biconome
 //
-//  Created by a on 2019/11/20.
+//  Created by a on 2019/10/5.
 //  Copyright © 2019 qsm. All rights reserved.
 //
 
@@ -10,8 +10,7 @@
 #import "BICAuthInfoResponse.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BICReasonCell : UITableViewCell
-+(instancetype)cellWithTableView:(UITableView *)tableView;
+@interface BICBasicInfoViewController : BaseViewController
 @property(nonatomic,strong)BICAuthInfoResponse *response;
 @end
 

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BICAuthInfoResponse.h"
-//#import "BICPhotoIdentifyVC.h"
+#import "BICPhotoIdentifyVC.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BICPhotoViewCell : UITableViewCell
@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)UIImageView *cameraImgView;
 @property(nonatomic,strong)UIImageView *delImgView;
 @property(nonatomic,strong)BICAuthInfoResponse *response;
-//@property(nonatomic,assign)BICCardType cardType;
+@property(nonatomic,assign)BICCardType cardType;
 //-(void)coverResponseToData:(BICAuthInfoResponse *)response type:(BICCardType)type row:(NSInteger)row cachearray:(NSArray *)cachearray newImage:(NSArray *)newImage;
 @end
 

@@ -19,12 +19,16 @@ public class FacTeach {
 
     private String flag;
 
+    //座右铭
     private String advantage;
 
+    // 价格
     private Integer active;
 
+    // 地址
     private String other_one;
 
+    // 大学时专业
     private String other_two;
 
     private Date create_time;

@@ -13,6 +13,9 @@
 
 #import "ANTPublishService.h"
 
+#import "ANTMineService.h"
+
+#import "ANTFindService.h"
 
 
 #endif /* Service_h */
