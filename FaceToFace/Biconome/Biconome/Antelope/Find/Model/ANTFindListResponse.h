@@ -35,14 +35,28 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ANTFind : BaseModel
 
 @property(nonatomic,strong)NSString * id;
+
 @property(nonatomic,strong)NSString * name;
+
 @property(nonatomic,strong)NSString * iphone;
+
 @property(nonatomic,strong)NSString * sex;
+
+//文理科
 @property(nonatomic,strong)NSString * major;
+//北大/清华
 @property(nonatomic,strong)NSString * subject;
+//特点
 @property(nonatomic,strong)NSString * flag;
+//价格
 @property(nonatomic,strong)NSString * active;
+// 地址
 @property(nonatomic,strong)NSString * other_one;
+//大学时专业
+@property(nonatomic,strong)NSString * other_two;
+//座右铭
+@property(nonatomic,strong)NSString * advantage;
+
 
 @end
 

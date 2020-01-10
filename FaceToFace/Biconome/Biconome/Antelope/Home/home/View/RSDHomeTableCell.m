@@ -24,11 +24,14 @@ static NSString *kDonsultantCellID = @"kDonsultantCellID";
 
 @property (weak, nonatomic) IBOutlet UILabel *name;
 
+
 @property (weak, nonatomic) IBOutlet UILabel *subjectLab;
 
 @property (weak, nonatomic) IBOutlet UILabel *other_two;
 
 @property (weak, nonatomic) IBOutlet UILabel *priceLab;
+
+@property (weak, nonatomic) IBOutlet UILabel *advantageLab;
 
 @property (weak, nonatomic) IBOutlet UIButton *addressLab;
 
@@ -38,6 +41,10 @@ static NSString *kDonsultantCellID = @"kDonsultantCellID";
 @implementation RSDHomeTableCell
 
 - (IBAction)callBtn:(id)sender {
+    
+    if (_dataModel && _dataModel.iphone) {
+        [SDDeviceManager callTelephoneNumber:_dataModel.iphone];
+    }
     
 }
 
@@ -60,9 +67,7 @@ static NSString *kDonsultantCellID = @"kDonsultantCellID";
     
     self.messageNumLabel.superview.layer.cornerRadius = self.messageNumLabel.superview.height * 0.5;
     self.messageNumLabel.superview.layer.masksToBounds = YES;
-    
-//    [self.topView isYY];
-    
+        
     self.topView.layer.cornerRadius = 8.f;
 
 }
@@ -77,11 +82,15 @@ static NSString *kDonsultantCellID = @"kDonsultantCellID";
     
     self.name.text = dataModel.name ;
     
-    self.subjectLab.text = dataModel.subject; //换成major
+    self.subjectLab.text = dataModel.subject; //清华/北大
     
-    self.other_two.text = dataModel.other_one; //换成学校，专业
+    self.other_two.text = dataModel.other_two; //地址
     
-    self.priceLab.text = dataModel.other_one;
+    self.priceLab.text = [NSString stringWithFormat:@"%@ 元/30分钟",dataModel.active];
+    
+    [self.addressLab setTitle:[NSString stringWithFormat:@"     %@",dataModel.other_one] forState:UIControlStateNormal];
+    
+    self.advantageLab.text = dataModel.advantage?:@"只要有梦想，就能实现";
     
 }
 

@@ -1,7 +1,8 @@
-package com.macro.mall.service;
+package com.macro.mall.api.service;
 
-import com.macro.mall.dto.OssCallbackResult;
-import com.macro.mall.dto.OssPolicyResult;
+
+import com.macro.mall.api.dto.OssCallbackResult;
+import com.macro.mall.api.dto.OssPolicyResult;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -19,5 +20,7 @@ public interface OssService {
      * oss上传成功回调
      */
     OssCallbackResult callback(HttpServletRequest request);
+
+
 
 }

@@ -23,6 +23,9 @@ NS_ASSUME_NONNULL_BEGIN
 //student  Or teacher
 @property(nonatomic,strong)NSString* type;
 
+@property(nonatomic,strong)NSString* code;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

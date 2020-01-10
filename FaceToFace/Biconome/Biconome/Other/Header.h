@@ -141,7 +141,7 @@
 
 #define WKWebUrl @"https://www.biconomy.com/html/app_identity/"
 
-#define kBaseUrl @"http://192.168.1.6:8081/"
+#define kBaseUrl @"http://192.168.1.5:8081/"
 #define kBaseWebUrl @"http://192.168.1.6:8081/"
 #define kBaseUrl_v4 @"http://192.168.1.6:8081/"
 
@@ -166,7 +166,7 @@
 
 #define WKWebUrl @"http://192.168.1.74/html/app_identity/"
 
-#define kBaseUrl @"http://192.168.1.6:8081/"
+#define kBaseUrl @"http://192.168.1.5:8081/"
 #define kBaseWebUrl @"http://192.168.1.6:8081/"
 #define kBaseUrl_v4 @"http://192.168.1.6:8081/"
 

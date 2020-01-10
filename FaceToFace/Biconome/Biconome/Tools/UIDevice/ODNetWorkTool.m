@@ -183,7 +183,10 @@
     }else if(code==400){
         failure(HttpStatusVaildFailed);
     }else if(code==404){
+        
+//        failure(HttpStatusPathNotFound);
         failure(HttpStatusPathNotFound);
+
     }else if(code>=400&&code<500){
         failure(HttpStatusRequestFailed);
     }else if(code>=500&&code<=600){

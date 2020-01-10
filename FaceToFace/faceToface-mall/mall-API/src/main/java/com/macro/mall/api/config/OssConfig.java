@@ -21,4 +21,6 @@ public class OssConfig {
     public OSSClient ossClient() {
         return new OSSClient(ALIYUN_OSS_ENDPOINT, ALIYUN_OSS_ACCESSKEYID, ALIYUN_OSS_ACCESSKEYSECRET);
     }
+
+
 }

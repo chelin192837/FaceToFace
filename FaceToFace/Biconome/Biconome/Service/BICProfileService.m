@@ -20,6 +20,18 @@ static id sharedInstance = nil;
     return sharedInstance;
 }
 
+//发送验证码
+- (void)analyticalFacSendCodeData:(BICRegisterRequest*)request serverSuccessResultHandler:(ServerResultSuccessHandler)succHandler failedResultHandler:(ServerResultFailedHandler)failedHandler requestErrorHandler:(RequestFailedBlock)requestError
+{
+    NSString *urlStr = @""kBaseUrl""IOSMAPPING"/sendCode";
+    [self doServerRequestWithModel:request ResponseName:@"BICRegisterResponse" Url:urlStr requestType:HttpRequestTypePost serverSuccessResultHandler:succHandler failedResultHandler:failedHandler requestErrorHandler:requestError];
+}
+
+
+
+
+
+
 //注册接口
 - (void)analyticalRegisterData:(BICRegisterRequest*)request serverSuccessResultHandler:(ServerResultSuccessHandler)succHandler failedResultHandler:(ServerResultFailedHandler)failedHandler requestErrorHandler:(RequestFailedBlock)requestError
 {
@@ -150,7 +162,7 @@ NSString *urlStr = @""kBaseUrl""URL8101"/login/resetPassword";
 //上传基本信息认证4
 - (void)analyticaladdAuthBasicInfo4:(BICAuthInfoRequest*)request serverSuccessResultHandler:(ServerResultSuccessHandler)succHandler failedResultHandler:(ServerResultFailedHandler)failedHandler requestErrorHandler:(RequestFailedBlock)requestError
 {
-    NSString *urlStr = @""kBaseUrl""URL8101"/auth/card";
+    NSString *urlStr = @""kBaseUrl""URL8101"/mine/card";
     NSMutableArray *array=[NSMutableArray array];
      for(int i=0;i<request.files.count;i++){
            [array addObject:[NSString stringWithFormat:@"files%d.jpeg",i]];

@@ -17,5 +17,6 @@ public class FacRegisterParam {
 
     private String token;
 
+    private String code;
 
 }

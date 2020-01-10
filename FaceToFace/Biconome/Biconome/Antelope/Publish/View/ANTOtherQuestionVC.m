@@ -21,7 +21,7 @@
     
     [super viewDidLoad];
     
-//    [self initNavigationTitleViewLabelWithTitle:self.titleQuestionStr titleColor:SDColorGray333333 IfBelongTabbar:NO];
+    [self initNavigationTitleViewLabelWithTitle:self.titleQuestionStr titleColor:SDColorGray333333 IfBelongTabbar:NO];
     
     [self initNavigationLeftBtnWithTitle:nil isNeedImage:YES andImageName:@"fanhuiHei" titleColor:nil];
 

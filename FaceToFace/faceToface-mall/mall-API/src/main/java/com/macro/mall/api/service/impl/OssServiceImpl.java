@@ -1,14 +1,17 @@
-package com.macro.mall.service.impl;
+package com.macro.mall.api.service.impl;
 
 import cn.hutool.json.JSONUtil;
 import com.aliyun.oss.OSSClient;
 import com.aliyun.oss.common.utils.BinaryUtil;
 import com.aliyun.oss.model.MatchMode;
 import com.aliyun.oss.model.PolicyConditions;
-import com.macro.mall.dto.OssCallbackParam;
-import com.macro.mall.dto.OssCallbackResult;
-import com.macro.mall.dto.OssPolicyResult;
-import com.macro.mall.service.OssService;
+
+import com.macro.mall.api.dto.OssCallbackParam;
+import com.macro.mall.api.dto.OssCallbackResult;
+import com.macro.mall.api.dto.OssPolicyResult;
+import com.macro.mall.api.service.OssService;
+
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +52,7 @@ public class OssServiceImpl implements OssService {
      */
     @Override
     public OssPolicyResult policy() {
+
         OssPolicyResult result = new OssPolicyResult();
         // 存储目录
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
@@ -65,6 +69,7 @@ public class OssServiceImpl implements OssService {
         callback.setCallbackBodyType("application/x-www-form-urlencoded");
         // 提交节点
         String action = "http://" + ALIYUN_OSS_BUCKET_NAME + "." + ALIYUN_OSS_ENDPOINT;
+
         try {
             PolicyConditions policyConds = new PolicyConditions();
             policyConds.addConditionItem(PolicyConditions.COND_CONTENT_LENGTH_RANGE, 0, maxSize);
@@ -84,8 +89,11 @@ public class OssServiceImpl implements OssService {
         } catch (Exception e) {
             LOGGER.error("签名生成失败", e);
         }
+
         return result;
+
     }
+
 
     @Override
     public OssCallbackResult callback(HttpServletRequest request) {

@@ -13,8 +13,10 @@ public class FacTeach {
 
     private String sex;
 
+    //文理科
     private String major;
 
+    //北大/清华
     private String subject;
 
     private String flag;

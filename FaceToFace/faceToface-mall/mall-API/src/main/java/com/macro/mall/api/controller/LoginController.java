@@ -3,6 +3,7 @@ package com.macro.mall.api.controller;
 
 import com.macro.mall.api.component.JwtAuthenticationTokenFilter;
 import com.macro.mall.api.dto.FacRegisterParam;
+import com.macro.mall.api.service.FacSendCodeService;
 import com.macro.mall.api.service.FacStudentService;
 import com.macro.mall.api.util.JwtTokenUtil;
 import com.macro.mall.common.api.CommonResult;
@@ -33,29 +34,32 @@ public class LoginController {
     @Autowired
     private FacStudentService facStudentService;
 
+    @Autowired
+    private FacSendCodeService facSendCodeService;
+
 
     private static final Logger LOGGER = LoggerFactory.getLogger(JwtAuthenticationTokenFilter.class);
+
     @Autowired
     private UserDetailsService userDetailsService;
+
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
+
     @Value("${jwt.tokenHeader}")
     private String tokenHeader;
     @Value("${jwt.tokenHead}")
     private String tokenHead;
+
 
     @PostMapping(value = "login")
     @ResponseBody
     public CommonResult<FacRegisterParam> login(@RequestBody FacRegisterParam registerParam, HttpServletRequest request)
     {
 
-        //判断 fac_student 中是否含有用户名和密码
+        String iphone = registerParam.getIphone();
 
-//        private String iphone;
-//
-//        private String password;
-
-        String name = registerParam.getName();
+        String code = registerParam.getCode();
 
 
 
@@ -63,55 +67,27 @@ public class LoginController {
 
 
 
-
-        if (registerParam.getType().equals("student"))
-        {
-            FacStudent facStudent = new FacStudent();
-
-            facStudent.setIphone(registerParam.getIphone());
-
-            String password = registerParam.getPassword();
-
-            try {
-
-                password = DigestUtils.md5DigestAsHex(registerParam.getPassword().getBytes("UTF-8"));
-
-            }catch (Exception e)
-            {
-
-            }
-
-            facStudent.setPassword(password);
-
-            String tokenStr = jwtTokenUtil.getCurrentUserId();
-
-            int count = facStudentService.getCount();
-
-            facStudent.setName(("同学"+String.valueOf(count)));
-
-            registerParam.setName(facStudent.getName());
-
-            int value = facStudentService.insert(facStudent);
-
-            int userId = facStudentService.getIdByIphone(registerParam.getIphone());
-
-            String token = jwtTokenUtil.generateTokenBera(String.valueOf(userId));
-
-            registerParam.setToken(token);
-
-            return CommonResult.success(registerParam);
+        return CommonResult.success(registerParam);
 
 
-        }else if(registerParam.getType().equals("teacher"))
-        {
+//        return CommonResult.failed("登录失败");
 
 
-            return CommonResult.success(registerParam);
-        }
+    }
 
+    @PostMapping(value = "sendCode")
+    @ResponseBody
+    public CommonResult<String> sendCode(@RequestBody FacRegisterParam facRegisterParam)
+    {
 
-        return CommonResult.failed("登录失败");
+       int result =  facSendCodeService.sendCode(facRegisterParam.getIphone());
 
+       if (result > 0)
+       {
+           return CommonResult.success("验证码发送成功");
+       }
+
+       return CommonResult.failed("验证码发送失败");
 
     }
 

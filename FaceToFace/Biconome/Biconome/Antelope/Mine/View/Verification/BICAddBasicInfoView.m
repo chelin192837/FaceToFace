@@ -431,29 +431,41 @@
 }
 
 -(void)requestAddBasicInfo{
+    
     if(self.nametextField.textField.text.length==0){
         [BICDeviceManager AlertShowTip:LAN(@"请输入名字")];
         return;
     }
-    if(self.nametextField.textField.text.length>200){
-        [BICDeviceManager AlertShowTip:LAN(@"请输入正确的名字")];
-        return;
-    }
-    if(self.firstNametextField.textField.text.length==0){
-         [BICDeviceManager AlertShowTip:LAN(@"请输入专业")];
-         return;
-     }
     if(self.middleNametextField.textField.text.length==0){
         [BICDeviceManager AlertShowTip:LAN(@"请输入大学")];
         return;
     }
+    if(self.firstNametextField.textField.text.length==0){
+        [BICDeviceManager AlertShowTip:LAN(@"请输入专业")];
+        return;
+    }
+    
+    if(self.sextextField.textField.text.length==0){
+        [BICDeviceManager AlertShowTip:LAN(@"请输入性别")];
+        return;
+    }
+    if(self.agetextField.textField.text.length==0){
+        [BICDeviceManager AlertShowTip:LAN(@"请输入文理科")];
+        return;
+    }
+    
+    
     if(self.addresstextField.textField.text.length==0){
-          [BICDeviceManager AlertShowTip:LAN(@"请输入地址")];
-          return;
+        [BICDeviceManager AlertShowTip:LAN(@"请输入地址")];
+        return;
     }
     if(self.birthtextField.textField.text.length==0){
-          [BICDeviceManager AlertShowTip:LAN(@"请输入特长优势")];
-          return;
+        [BICDeviceManager AlertShowTip:LAN(@"请输入特长优势")];
+        return;
+    }
+    if(self.advantagetextField.textField.text.length==0){
+        [BICDeviceManager AlertShowTip:LAN(@"请输入座右铭")];
+        return;
     }
     
     [self pushNextVC:self.request];
@@ -467,6 +479,7 @@
         
         if (responseM.code == 200) {
             [BICDeviceManager AlertShowTip:@"提交成功"];
+            [self.viewController.navigationController popViewControllerAnimated:YES];
         }else{
             [BICDeviceManager AlertShowTip:responseM.message];
         }

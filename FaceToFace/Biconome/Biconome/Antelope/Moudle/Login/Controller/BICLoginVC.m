@@ -16,7 +16,7 @@
 #import "BICResetPwdVC.h"
 #import "BICRegisterResponse.h"
 #import "WKWebViewController.h"
-
+#import "CQCountDownButton.h"
 @interface BICLoginVC ()
 @property (weak, nonatomic) IBOutlet UITextField *passwordTex;
 @property (weak, nonatomic) IBOutlet UITextField *userNameTex;
@@ -34,6 +34,8 @@
 
 @property(nonatomic,strong) NSString* googleKey;
 
+@property (nonatomic, strong) CQCountDownButton *countDownButton;
+
 
 @end
 
@@ -43,44 +45,22 @@
 
 - (IBAction)forgetPwdBtn:(id)sender {
     
-    BICResetPwdVC * resetPwdVC = [[BICResetPwdVC alloc] initWithNibName:@"BICResetPwdVC" bundle:nil];
-        UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:resetPwdVC];
-    [self presentViewController:nav animated:YES completion:nil];
+   
     
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-#pragma mark -键盘弹出添加监听事件
-    // 键盘出现的通知
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardWillShowNotification object:nil];
-    // 键盘消失的通知
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHiden:) name:UIKeyboardWillHideNotification object:nil];
     
     [self initNavigationLeftBtnWithTitle:nil isNeedImage:YES andImageName:@"close" titleColor:nil];
-    [self initNavigationRightButtonWithTitle:LAN(@"注册") titileColor:[UIColor whiteColor]];
+//    [self initNavigationRightButtonWithTitle:LAN(@"注册") titileColor:[UIColor whiteColor]];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageFromContextWithColor:[UIColor colorWithHexColorString:@"6653FF"]] forBarMetrics:UIBarMetricsDefault];
 
-    // 开始第三方键盘
-    // 开始第三方键盘
-//    [[IQKeyboardManager sharedManager] setEnable:NO];
-//    [IQKeyboardManager sharedManager].shouldToolbarUsesTextFieldTintColor = NO;
-//    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
-//    // 点击屏幕隐藏键盘
-//    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = NO;
-    
     [self setupUI];
     
 }
--(void)doRightBtnAction
-{
-    BICRegisterVC * registerVC = [[BICRegisterVC alloc] initWithNibName:@"BICRegisterVC" bundle:nil];
-    
-    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:registerVC];
-    
-    [self presentViewController:nav animated:YES completion:nil];
-}
+
 -(void)backTo
 {
     [self dismissViewControllerAnimated:YES completion:^{
@@ -97,7 +77,7 @@
     self.passwordTex.layer.borderColor = [UIColor whiteColor].CGColor;
     self.passwordTex.layer.borderWidth = 1.f;
     
-    [self.passwordTex setPlaceHolder:LAN(@"请输入密码") placeHoldColor:[UIColor colorWithHexColorString:@"FFFFFF" alpha:0.4] off_X:10.f];
+    [self.passwordTex setPlaceHolder:LAN(@"请输入验证码") placeHoldColor:[UIColor colorWithHexColorString:@"FFFFFF" alpha:0.4] off_X:10.f];
     self.passwordTex.layer.cornerRadius = kBICCornerRadius;
     
     self.userNameTex.layer.borderColor = [UIColor whiteColor].CGColor;
@@ -108,28 +88,28 @@
     self.userNameTex.layer.borderWidth = 1.f;
     self.userNameTex.layer.cornerRadius = kBICCornerRadius;
     
-    [self.loginBtn setTitle:LAN(@"登录") forState:UIControlStateNormal];
+    [self.loginBtn setTitle:LAN(@"登录/注册") forState:UIControlStateNormal];
     self.titleLab.text = LAN(@"登录 | 清北面对面");
     self.tipLab.text = LAN(@"在下面输入您的帐户信息");
     self.accountLab.text = LAN(@"手机号");
-    self.passwordNameLab.text = LAN(@"密码");
-    [self.forgetPwdLab setTitle:LAN(@"忘记密码？") forState:UIControlStateNormal];
+    self.passwordNameLab.text = LAN(@"验证码");
+    [self.forgetPwdLab setTitle:LAN(@" ") forState:UIControlStateNormal];
     [self.registerBtn setTitle:LAN(@"注册") forState:UIControlStateNormal];
-   
+    self.registerBtn.hidden = YES ;
     self.loginBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
 
-
     self.loginBtn.zhw_acceptEventInterval = 3.f;
+    
+    [self.forgetPwdLab addSubview:self.countDownButton];
+                  [self.countDownButton mas_makeConstraints:^(MASConstraintMaker *make) {
+                      make.right.left.bottom.top.equalTo(self.forgetPwdLab);
+                  }];
 }
 
 - (IBAction)backTo:(id)sender {
     
     [self dismissViewControllerAnimated:YES completion:^{
-        // 开始第三方键盘
-//        [[IQKeyboardManager sharedManager] setEnable:YES];
-//        [IQKeyboardManager sharedManager].shouldToolbarUsesTextFieldTintColor = YES;
-//        // 点击屏幕隐藏键盘
-//        [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
+
     }];
     
     if(self.cancelNextItemOperationBlock){
@@ -148,7 +128,7 @@
         [BICDeviceManager AlertShowTip:LAN(@"手机号格式错误")];
         return NO;
     }else if (self.passwordTex.text.length==0){
-        [BICDeviceManager AlertShowTip:LAN(@"请输入密码")];
+        [BICDeviceManager AlertShowTip:LAN(@"请输入验证码")];
         return NO;
     }
 //    else if (![BICDeviceManager passwordVertify:self.passwordTex.text])
@@ -157,6 +137,13 @@
 //        return NO;
 //    }
     return YES;
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.countDownButton = nil;
+    [self.countDownButton.timer invalidate];
+    self.countDownButton.timer=nil;
 }
 - (IBAction)nextBtn:(id)sender {
     if (![self validate]) {
@@ -173,7 +160,6 @@
         [ODAlertViewFactory hideAllHud:weakSelf.view];
         if (responseM.code==200) {
             
-//            [BICDeviceManager AlertShowTip:LAN(@"密码验证成功")];
             [weakSelf getCode];
         }else{
             [BICDeviceManager AlertShowTip:responseM.message];
@@ -188,54 +174,74 @@
 
 -(void)getCode
 {
-    WKWebViewController * wkWeb = [[WKWebViewController alloc] init];
-    wkWeb.successBlock = ^{
-//        BICSWViewController * swViewVC = [[BICSWViewController alloc] initWithNibName:NSStringFromClass([BICSWViewController class]) bundle:nil];
-//        swViewVC.loginType = LoginRegType_login;
-//        BICRegisterRequest * requsetModel = [[BICRegisterRequest alloc] init];
-//        requsetModel.tel = self.userNameTex.text;
-//        requsetModel.password = self.passwordTex.text;
-//        requsetModel.googleKey = self.googleKey;
-//        requsetModel.internationalCode =self.internationalCode?:SDUserDefaultsGET(BICInternationalCode);
-//        swViewVC.requsestModel = requsetModel;
-//        [self presentViewController:swViewVC animated:YES
-//                         completion:nil];
-    };
-    
-    [self.navigationController pushViewController:wkWeb animated:YES];
+    BICRegisterRequest *request = [[BICRegisterRequest alloc] init];
+    request.iphone = self.userNameTex.text;
+    [[BICProfileService sharedInstance] analyticalFacSendCodeData:request serverSuccessResultHandler:^(id response) {
+        
+        BICRegisterResponse * responseM = (BICRegisterResponse*)response;
+        
+        if (responseM.code == 200) {
+            
+        }else{
+            
+        }
+        
+    } failedResultHandler:^(id response) {
+        
+    } requestErrorHandler:^(id error) {
+            
+    }];
+   
 
+    
 }
 
-#pragma mark - 监听键盘事件
-- (void)keyboardWasShown:(NSNotification *)notif {
-    
-    CGRect rect = [[notif.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    CGFloat y = rect.size.height ;
-    
-    float animationTime = [[notif.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
-  
-    if(y+CGRectGetMaxY(self.loginBtn.frame)+20+kNavBar_Height > KScreenHeight){
+-(CQCountDownButton *)countDownButton
+{
+    if (!_countDownButton) {
+        _countDownButton = [[CQCountDownButton alloc] init];
         
-        CGFloat off_y = y+CGRectGetMaxY(self.loginBtn.frame)+20+kNavBar_Height-KScreenHeight;
-        if (self.view.y<kNavBar_Height) {
-            return;
-        }
-        [UIView animateWithDuration:animationTime animations:^{
+        
+        [_countDownButton setTitle:LAN(@"获取验证码") forState:UIControlStateNormal];
+        _countDownButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+        
+        _countDownButton.titleLabel.font = [UIFont systemFontOfSize:14.f];
+        [_countDownButton setTitleColor:[UIColor colorWithHexColorString:@"FFFFFF" alpha:1] forState:UIControlStateNormal];
+        [_countDownButton setTitleColor:[UIColor colorWithHexColorString:@"FFFFFF" alpha:0.6] forState:UIControlStateDisabled];
+        
+        //    __weak typeof(self) weakSelf = self;
+        WEAK_SELF
+        [_countDownButton configDuration:120 buttonClicked:^{
             
-            self.view.y=self.view.y-off_y;
+            if (self.userNameTex.text.length==0) {
+                [BICDeviceManager AlertShowTip:LAN(@"请输入手机号")];
+                [weakSelf.countDownButton endCountDown];
+            }else if (![SDDeviceManager isMobileNumber:self.userNameTex.text])
+            {
+                [BICDeviceManager AlertShowTip:LAN(@"手机号格式错误")];
+                [weakSelf.countDownButton endCountDown];
+            }else{
+                //========== 按钮点击 ==========//
+                [weakSelf getCode];
+                
+                [weakSelf.countDownButton startCountDown];
+            }
+            
+        } countDownStart:^{
+            //========== 倒计时开始 ==========//
+            NSLog(@"倒计时开始");
+        } countDownUnderway:^(NSInteger restCountDownNum) {
+            //========== 倒计时进行中 ==========//
+            NSString *title = [NSString stringWithFormat:@"%lds", restCountDownNum];
+            [weakSelf.countDownButton setTitle:title forState:UIControlStateNormal];
+        } countDownCompletion:^{
+            //========== 倒计时结束 ==========//
+            [weakSelf.countDownButton setTitle:LAN(@"获取验证码") forState:UIControlStateNormal];
+            NSLog(@"倒计时结束");
         }];
     }
-
+    return _countDownButton;
 }
-
-- (void)keyboardWillBeHiden:(NSNotification *)notif {
-    [UIView animateWithDuration:0.25 animations:^{
-        
-        self.view.frame = CGRectMake(0, kNavBar_Height, kScreenWidth, kScreenHeight);
-    }];
-    
-}
-
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     [self.view endEditing:YES];

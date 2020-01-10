@@ -21,7 +21,12 @@ public class FacMineAuthParam {
 
     private String flag;
 
+    private String other_one;
+
     private String other_two;
+
+    private String advantage;
+
 
 
 }
