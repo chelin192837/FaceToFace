@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)UIImageView *delImgView;
 @property(nonatomic,strong)BICAuthInfoResponse *response;
 @property(nonatomic,assign)BICCardType cardType;
+
 //-(void)coverResponseToData:(BICAuthInfoResponse *)response type:(BICCardType)type row:(NSInteger)row cachearray:(NSArray *)cachearray newImage:(NSArray *)newImage;
 @end
 

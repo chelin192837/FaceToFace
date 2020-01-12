@@ -7,6 +7,7 @@ import com.macro.mall.api.service.FacTeachService;
 import com.macro.mall.api.util.OssUtil;
 import com.macro.mall.mapper.FacTeachCardMapper;
 import com.macro.mall.model.FacTeachCard;
+import com.macro.mall.model.FacTeachCardExample;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,14 +15,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import com.macro.mall.api.util.FileUploadUtils;
-
-import com.macro.mall.api.util.DateTimeUtils;
-
-
+import java.util.List;
 
 
 @Service
@@ -45,8 +39,6 @@ public class FacTeachCardServiceImpl implements FacTeachCardService {
     public int insert(FacTeachCard facTeachCard,MultipartFile files1, MultipartFile files2, MultipartFile files3)
     {
 
-
-
         String fileUrl1 = ossUtil.uploadImg2Oss(files1);
         String fileUrl2 = ossUtil.uploadImg2Oss(files2);
         String fileUrl3 = ossUtil.uploadImg2Oss(files3);
@@ -58,5 +50,31 @@ public class FacTeachCardServiceImpl implements FacTeachCardService {
         return facTeachCardMapper.insert(facTeachCard);
 
     }
+
+
+   @Override
+   public String getIconByUserid(String userid)
+   {
+
+//       selectByExample
+       FacTeachCardExample example = new FacTeachCardExample();
+
+       example.createCriteria().andUser_idEqualTo(userid);
+
+       List <FacTeachCard> list = facTeachCardMapper.selectByExample(example);
+
+       if (list.size()>0)
+       {
+           FacTeachCard facTeachCard = list.get(0);
+
+           if (facTeachCard != null)
+           {
+               return facTeachCard.getFile_url1();
+           }
+       }
+
+       return "" ;
+   }
+
 
 }

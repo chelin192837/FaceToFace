@@ -25,6 +25,9 @@ NS_ASSUME_NONNULL_BEGIN
 //发送验证码
 - (void)analyticalFacSendCodeData:(BICRegisterRequest*)request serverSuccessResultHandler:(ServerResultSuccessHandler)succHandler failedResultHandler:(ServerResultFailedHandler)failedHandler requestErrorHandler:(RequestFailedBlock)requestError;
 
+//FAC 登录
+- (void)analyticalFacLoginData:(BICRegisterRequest*)request serverSuccessResultHandler:(ServerResultSuccessHandler)succHandler failedResultHandler:(ServerResultFailedHandler)failedHandler requestErrorHandler:(RequestFailedBlock)requestError;
+
 
 
 

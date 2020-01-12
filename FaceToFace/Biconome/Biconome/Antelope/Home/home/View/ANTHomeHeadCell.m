@@ -33,6 +33,8 @@ static NSString *kbtcKindCollectionView = @"kbtcKindCollectionView";
     [self.mainCollection isYY];
     
     [self.mainCollection addSubview:self.contentCollectionView];
+    
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 
 }
 
@@ -94,9 +96,9 @@ static NSString *kbtcKindCollectionView = @"kbtcKindCollectionView";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-   
-
-    
+    if (self.didSelectedBlock) {
+        self.didSelectedBlock();
+    }
     
 }
 @end

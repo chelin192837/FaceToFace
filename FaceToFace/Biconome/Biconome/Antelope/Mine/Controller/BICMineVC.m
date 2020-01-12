@@ -21,7 +21,9 @@
 //#import "BICInviteReturnVC.h"
 #import "BICAuthInfoResponse.h"
 #import "BICMineDouCell.h"
-
+#import "BICMainWalletVC.h"
+#import "ANTDelegateVC.h"
+#import "ANTCompledVC.h"
 @interface BICMineVC ()<UITableViewDelegate,UITableViewDataSource,UINavigationControllerDelegate>
 @property(nonatomic,strong)UITableView*tableView;
 @property(nonatomic,strong)NSArray * titleArr;
@@ -150,17 +152,20 @@
         [self.navigationController pushViewController:vc animated:YES];
         
     }else if(indexPath.row==1){
-        //        BICInviteReturnVC * inviteReturnVC = [[BICInviteReturnVC alloc] init];
-        //        [self.navigationController pushViewController:inviteReturnVC animated:YES];
+        
+        BICMainWalletVC * wallectVC = [[BICMainWalletVC alloc] init];
+        
+        [self.navigationController pushViewController:wallectVC animated:YES];
+        
     }else if (indexPath.row==2) {
-        //        BICMineOrderDeleVC * vc = [[BICMineOrderDeleVC alloc] init];
-        //        [self.navigationController pushViewController:vc animated:YES];
+                ANTDelegateVC * vc = [[ANTDelegateVC alloc] init];
+                [self.navigationController pushViewController:vc animated:YES];
         
     }else if (indexPath.row==3) {
         
         
-        //        BICHistoryDeleVC * vc = [[BICHistoryDeleVC alloc] init];
-        //        [self.navigationController pushViewController:vc animated:YES];
+                ANTCompledVC * vc = [[ANTCompledVC alloc] init];
+                [self.navigationController pushViewController:vc animated:YES];
     }
     else if (indexPath.row==4) {
         //        BICMineOrderDeleVC * vc = [[BICMineOrderDeleVC alloc] init];

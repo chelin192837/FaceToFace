@@ -1,6 +1,7 @@
 package com.macro.mall.api.service.impl;
 
 import com.github.pagehelper.PageHelper;
+import com.macro.mall.api.service.FacTeachCardService;
 import com.macro.mall.api.service.FacTeachService;
 import com.macro.mall.mapper.FacTeachMapper;
 import com.macro.mall.model.FacStudent;
@@ -17,6 +18,9 @@ public class FacTeachServiceImpl implements FacTeachService {
     @Autowired
     private FacTeachMapper facTeachMapper ;
 
+    @Autowired
+    private FacTeachCardService facTeachCardService;
+
     @Override
     public int insert(FacTeach facTeach)
     {
@@ -29,10 +33,23 @@ public class FacTeachServiceImpl implements FacTeachService {
     public List<FacTeach> list(FacStudent facStudent, Integer pageSize, Integer pageNum)
     {
         PageHelper.startPage(pageNum,pageSize);
+
         FacTeachExample example = new FacTeachExample();
         example.setOrderByClause("create_time desc");
 
-        return facTeachMapper.selectByExample(example);
+        List<FacTeach> list = facTeachMapper.selectByExample(example);
+
+        for (FacTeach facTeach : list)
+        {
+
+            facTeach.setIcon(facTeachCardService.getIconByUserid(facTeach.getPassword()));
+
+        }
+
+        return list;
+
+
+
     }
 
 

@@ -78,7 +78,7 @@ static NSString *kDonsultantCellID = @"kDonsultantCellID";
     
     self.flagLab.text = dataModel.flag;
     
-//    self.iconImage sd_setImageWithURL:<#(nullable NSURL *)#> placeholderImage:<#(nullable UIImage *)#>
+    [self.iconImage sd_setImageWithURL:[NSURL URLWithString:dataModel.icon] placeholderImage:[UIImage imageNamed:@"gaozhong"]];
     
     self.name.text = dataModel.name ;
     

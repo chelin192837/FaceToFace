@@ -142,7 +142,6 @@ if (![SDDeviceManager showLoginSwitchAuthenView:isNeedLogin]) {\
 //Color
 + (UIColor *) getColor: (NSString *) hexColor alpha:(CGFloat)alpha;
 
-
 + (float)getTextHeight:(NSString *)text fontSize:(CGFloat)fontSize width:(float)width;
 
 + (float)getTextHeight:(NSString *)text fontSize:(CGFloat)fontSize width:(float)width lineSpace:(CGFloat)linespace;
@@ -200,5 +199,8 @@ if (![SDDeviceManager showLoginSwitchAuthenView:isNeedLogin]) {\
 
 //附近经纪人广告点击统计
 + (void)nearAdvertClick;
+
+// 普通的获取UUID的方法
++ (NSString *)getUUID;
 
 @end

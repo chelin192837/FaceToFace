@@ -24,10 +24,15 @@ static id sharedInstance = nil;
 - (void)analyticalFacSendCodeData:(BICRegisterRequest*)request serverSuccessResultHandler:(ServerResultSuccessHandler)succHandler failedResultHandler:(ServerResultFailedHandler)failedHandler requestErrorHandler:(RequestFailedBlock)requestError
 {
     NSString *urlStr = @""kBaseUrl""IOSMAPPING"/sendCode";
-    [self doServerRequestWithModel:request ResponseName:@"BICRegisterResponse" Url:urlStr requestType:HttpRequestTypePost serverSuccessResultHandler:succHandler failedResultHandler:failedHandler requestErrorHandler:requestError];
+    [self doServerRequestWithModel:request ResponseName:@"BICBaseResponse" Url:urlStr requestType:HttpRequestTypePost serverSuccessResultHandler:succHandler failedResultHandler:failedHandler requestErrorHandler:requestError];
 }
 
-
+//FAC 登录
+- (void)analyticalFacLoginData:(BICRegisterRequest*)request serverSuccessResultHandler:(ServerResultSuccessHandler)succHandler failedResultHandler:(ServerResultFailedHandler)failedHandler requestErrorHandler:(RequestFailedBlock)requestError
+{
+    NSString *urlStr = @""kBaseUrl""IOSMAPPING"/login";
+    [self doServerRequestWithModel:request ResponseName:@"BICRegisterResponse" Url:urlStr requestType:HttpRequestTypePost serverSuccessResultHandler:succHandler failedResultHandler:failedHandler requestErrorHandler:requestError];
+}
 
 
 

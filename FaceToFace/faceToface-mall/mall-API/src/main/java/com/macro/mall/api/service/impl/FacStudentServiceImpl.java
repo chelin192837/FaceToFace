@@ -30,11 +30,26 @@ public class FacStudentServiceImpl implements FacStudentService {
         return facStudentMapper.selectByPrimaryKey(id);
     }
 
+    public FacStudent selectByIphone(String iphone)
+    {
+        FacStudentExample example = new FacStudentExample();
+        example.createCriteria().andIphoneEqualTo(iphone);
+        example.setOrderByClause("create_time desc");
+        if (facStudentMapper.selectByExample(example).size()>0)
+        {
+            return facStudentMapper.selectByExample(example).get(0);
+        }
+        return null;
+    }
+
+
     @Override
     public int insert(FacStudent facStudent)
     {
         return facStudentMapper.insert(facStudent);
     }
+
+
 
     @Override
     public int getCount()
@@ -45,7 +60,7 @@ public class FacStudentServiceImpl implements FacStudentService {
     @Override
     public int getIdByIphone(String iphone)
     {
-        return facStudentMapper.getcount();
+        return 1;
     }
 
 

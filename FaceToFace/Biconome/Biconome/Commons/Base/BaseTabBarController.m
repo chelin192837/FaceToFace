@@ -73,6 +73,10 @@
     
     [self setUpChildVc:[[ANTPublishViewController alloc] init] title:[self.titleArr objectAtIndex:2] image:@"tab_trade_default" selectImage:@"tab_trade_selected"];
     
+    
+    // 进入会话页面
+//    HDMessageViewController *chatVC = [[HDMessageViewController alloc] initWithConversationChatter:@"kefuchannelimid_623907"]; // 获取地址：kefu.easemob.com，“管理员模式 > 渠道管理 > 手机APP”页面的关联的“IM服务号”
+    
     [self setUpChildVc:[[ANTMessageViewController alloc] init] title:[self.titleArr objectAtIndex:3] image:@"tab_wallet_default" selectImage:@"tab_wallet_selected"];
   
     [self setUpChildVc:[[ANTMineViewController alloc] init] title:[self.titleArr objectAtIndex:4] image:@"tab_profile_default" selectImage:@"tab_profile_selected"];

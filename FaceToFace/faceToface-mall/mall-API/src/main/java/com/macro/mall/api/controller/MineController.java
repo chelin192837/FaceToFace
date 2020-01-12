@@ -38,6 +38,7 @@ public class MineController {
     @ResponseBody
     public CommonResult<String> teachAuth(@RequestBody FacMineAuthParam facMineAuthParam)
     {
+        FacStudent facStudent = HelpUserTool.getInstance().getFacStudent();
 
         System.out.println(facMineAuthParam);
 
@@ -54,6 +55,9 @@ public class MineController {
         facTeach.setAdvantage(facMineAuthParam.getAdvantage());
         facTeach.setOther_two(facMineAuthParam.getOther_two());
         facTeach.setOther_one(facMineAuthParam.getOther_one());
+
+        // password字段变为 facstudent 关联 facteach 的字段
+        facTeach.setPassword(facStudent.getId().toString());
 
         facTeach.setActive(Integer.valueOf(price));
 

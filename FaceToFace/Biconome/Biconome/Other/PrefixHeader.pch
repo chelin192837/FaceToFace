@@ -68,5 +68,8 @@
 #import <Hyphenate/Hyphenate.h>
 #import "EMHeaders.h"
 
+#import <HelpDesk/HelpDesk.h>
+#import "HelpDeskUI.h"
+
 #import "UIView+Extend.h"
 #endif /* PrefixHeader_pch */

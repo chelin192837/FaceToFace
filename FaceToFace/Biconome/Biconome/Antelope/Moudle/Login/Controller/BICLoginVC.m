@@ -131,11 +131,7 @@
         [BICDeviceManager AlertShowTip:LAN(@"请输入验证码")];
         return NO;
     }
-//    else if (![BICDeviceManager passwordVertify:self.passwordTex.text])
-//    {
-//        [BICDeviceManager AlertShowTip:[BICDeviceManager isOrNoPasswordStyle:self.passwordTex.text]];
-//        return NO;
-//    }
+
     return YES;
 }
 -(void)viewWillDisappear:(BOOL)animated
@@ -152,23 +148,46 @@
     [self.view endEditing:YES];
     [ODAlertViewFactory showLoadingViewWithView:self.view];
     BICRegisterRequest *request = [[BICRegisterRequest alloc] init];
-    request.tel = self.userNameTex.text;
-    request.password = self.passwordTex.text;
-    WEAK_SELF
-    [[BICProfileService sharedInstance] analyticalPasswordData:request serverSuccessResultHandler:^(id response) {
+    request.iphone = self.userNameTex.text;
+    request.code = self.passwordTex.text;
+    
+    
+    [[BICProfileService sharedInstance] analyticalFacLoginData:request serverSuccessResultHandler:^(id response) {
         BICRegisterResponse * responseM = (BICRegisterResponse*)response;
-        [ODAlertViewFactory hideAllHud:weakSelf.view];
+        
         if (responseM.code==200) {
+            NSUserDefaults *standard = [NSUserDefaults standardUserDefaults];
+            [standard setObject:responseM.data.token forKey:APPID];
+            [standard setObject:responseM.data.name forKey:FACENAME];
+            [standard setObject:responseM.data.iphone forKey:FACEIPHONE];
             
-            [weakSelf getCode];
+            [[NSNotificationCenter defaultCenter] postNotificationName:KUpdate_Token object:nil];
+                      
+            kPOSTNSNotificationCenter(NSNotificationCenterProfileHeader, nil);
+                      
+            [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationCenterLoginSucceed object:nil];
+                      
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                     
+                     [self dismissToRootViewController];
+                     
+                 });
+            
+            [BICDeviceManager AlertShowTip:@"登录成功"];
+            
+            
         }else{
-            [BICDeviceManager AlertShowTip:responseM.message];
+            
+             [BICDeviceManager AlertShowTip:responseM.message];
+            
         }
+        
     } failedResultHandler:^(id response) {
-        [ODAlertViewFactory hideAllHud:weakSelf.view];
+        
     } requestErrorHandler:^(id error) {
-        [ODAlertViewFactory hideAllHud:weakSelf.view];
+        
     }];
+    
 
 }
 
@@ -178,12 +197,12 @@
     request.iphone = self.userNameTex.text;
     [[BICProfileService sharedInstance] analyticalFacSendCodeData:request serverSuccessResultHandler:^(id response) {
         
-        BICRegisterResponse * responseM = (BICRegisterResponse*)response;
+        BICBaseResponse * responseM = (BICBaseResponse*)response;
         
         if (responseM.code == 200) {
-            
+            [BICDeviceManager AlertShowTip:@"验证码发送成功"];
         }else{
-            
+            [BICDeviceManager AlertShowTip:responseM.message];
         }
         
     } failedResultHandler:^(id response) {
@@ -192,8 +211,6 @@
             
     }];
    
-
-    
 }
 
 -(CQCountDownButton *)countDownButton

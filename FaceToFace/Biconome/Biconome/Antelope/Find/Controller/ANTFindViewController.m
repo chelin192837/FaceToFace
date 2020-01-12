@@ -258,6 +258,8 @@
 
 - (void)menu:(YiceSlidelipPickerMenu *)menu submmitSelectedIndexPaths:(NSArray<NSIndexPath *> *)indexpaths{
     //同步数据
+    [self.tableView.mj_header beginRefreshing];
+    
 }
 
 

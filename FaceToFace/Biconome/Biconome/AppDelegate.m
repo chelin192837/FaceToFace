@@ -34,52 +34,55 @@
     [FIRApp configure];
 
      // 初始化SDK
-    EMOptions *options = [EMOptions optionsWithAppkey:@"1102180820146114#antelope"];
+//    EMOptions *options = [EMOptions optionsWithAppkey:@"1102180820146114#antelope"];
+//
+//    options.enableConsoleLog = YES;
+//    options.apnsCertName = nil;
+//    [[EMClient sharedClient] initializeSDKWithOptions:options];
+//
+//    // 建议在初始化SDK成功之后调用
+//    // 如果想使用1v1实时通话功能，需要初始化这个单例
+//    [DemoCallManager sharedManager];
+//
+//    // 如果想使用多人会议实时通话功能，需要初始化这个单例
+//    [DemoConfManager sharedManager];
+//
+//    // 会话列表中点击会话，好友列表中点击好友以及群组，聊天室点击群组聊天室push到对应的页面都是发的通知，监听这个通知做的跳转，此做法为了降低各个功能模块的耦合度，防止集成添加文件时报找不到头文件的错，监听push到页面的方法统一放到了EMDemoHelper这个单例中，如果想直接使用demo中的会话列表，好友，群组，聊天室的模块，建议添加EMDemoHelper类，如果不添加请自己到didSelectRowAtIndexPath方法中，引入头文件进行push页面的操作
+//    // 初始化此单例（此单例中还监听了好友，群组，聊天室相关事件的回调）
+//    [EMDemoHelper shareHelper];
+//
+//    // 退出登录，在切换账号时要先调用退出登录，在调用登录方法
+//    [[EMClient sharedClient] logout:NO];
+//
+//    // 登录  测试账号密码: demoid1/123   demoid2/123
+//    EMError *aError = [[EMClient sharedClient] loginWithUsername:@"user2" password:@"192837abc"];
+//
+//    if (!aError) {
+//        [[EMClient sharedClient].options setIsAutoLogin:YES];
+//        NSLog(@"登录成功-----");
+//    } else {
+//
+//        NSLog(@"登录失败----%@", aError.errorDescription);
+//    }
+    
 
-    options.enableConsoleLog = YES;
-    options.apnsCertName = nil;
-    [[EMClient sharedClient] initializeSDKWithOptions:options];
+    //环信云客服
+    HDOptions *option = [[HDOptions alloc] init];
+    option.appkey = @"1468200111068464#kefuchannelapp77333"; // 必填项，appkey获取地址：kefu.easemob.com，“管理员模式 > 渠道管理 > 手机APP”页面的关联的“AppKey”
+    option.tenantId = @"77333";// 必填项，tenantId获取地址：kefu.easemob.com，“管理员模式 > 设置 > 企业信息”页面的“租户ID”
     
-    // 建议在初始化SDK成功之后调用
-    // 如果想使用1v1实时通话功能，需要初始化这个单例
-    [DemoCallManager sharedManager];
+    //推送证书名字
+//    option.apnsCertName = @"your apnsCerName";//(集成离线推送必填)
     
+    //Kefu SDK 初始化,初始化失败后将不能使用Kefu SDK
     
-    // 如果想使用多人会议实时通话功能，需要初始化这个单例
-    [DemoConfManager sharedManager];
-    
-    // 会话列表中点击会话，好友列表中点击好友以及群组，聊天室点击群组聊天室push到对应的页面都是发的通知，监听这个通知做的跳转，此做法为了降低各个功能模块的耦合度，防止集成添加文件时报找不到头文件的错，监听push到页面的方法统一放到了EMDemoHelper这个单例中，如果想直接使用demo中的会话列表，好友，群组，聊天室的模块，建议添加EMDemoHelper类，如果不添加请自己到didSelectRowAtIndexPath方法中，引入头文件进行push页面的操作
-    // 初始化此单例（此单例中还监听了好友，群组，聊天室相关事件的回调）
-    [EMDemoHelper shareHelper];
+    HDError *initError = [[HDClient sharedClient] initializeSDKWithOptions:option];
+    if (initError) { // 初始化错误
         
-    // 退出登录，在切换账号时要先调用退出登录，在调用登录方法
-    [[EMClient sharedClient] logout:NO];
-    
-    // 登录  测试账号密码: demoid1/123   demoid2/123
-    EMError *aError = [[EMClient sharedClient] loginWithUsername:@"user2" password:@"192837abc"];
-    
-    
-    if (!aError) {
-        [[EMClient sharedClient].options setIsAutoLogin:YES];
-        NSLog(@"登录成功-----");
-    } else {
-        
-        NSLog(@"登录失败----%@", aError.errorDescription);
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        
+    HDError *error = [[HDClient sharedClient] registerWithUsername:[SDDeviceManager getUUID] password:[SDDeviceManager getUUID]];
+
     //开启IQKeyBoard
     // 开始第三方键盘
     [[IQKeyboardManager sharedManager] setEnable:YES];
@@ -88,17 +91,34 @@
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
 
     [self.window makeKeyAndVisible];
+    
     // 加载动态图片
     [self setUpLaunchScreen];
     
     return YES;
+    
+    
 }
+
+
+
+
+// 将得到的deviceToken传给SDK
+//- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+//     [[HDClient sharedClient] bindDeviceToken:deviceToken];
+//}
+//
+//// 注册deviceToken失败
+//- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+//    NSLog(@"error -- %@",error);
+//}
 
 
 //添加启动图
 - (void)setUpLaunchScreen{
  
     NSURL *fileUrl;
+    
     if (SCREENSIZE_IS_35) {// 屏幕的高度为480
         fileUrl = [[NSBundle mainBundle] URLForResource:@"640x1136" withExtension:@"gif"]; // 加载GIF图片
     }else if(SCREENSIZE_IS_40) {// 屏幕的高度为568

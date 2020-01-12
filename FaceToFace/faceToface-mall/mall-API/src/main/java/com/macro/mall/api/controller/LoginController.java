@@ -61,17 +61,53 @@ public class LoginController {
 
         String code = registerParam.getCode();
 
+        int result = facSendCodeService.getCodeByIphone(iphone,code);
 
+        if (result == 1)
+        {
+            return CommonResult.failed("验证码不存在");
+        }else if (result == 2)
+        {
+            return CommonResult.failed("验证码已经过期");
+        }else if (result == 3)
+        {
+            return CommonResult.failed("验证码不正确");
+        }else if (result == 4) //手机号对应验证码正确 ， 存在就登录 ， 不存在就注册
+        {
+            FacStudent facStudent = facStudentService.selectByIphone(iphone);
 
+            if (facStudent == null) //注册
+            {
+                FacStudent facStudentReg = new FacStudent();
+                int count = facStudentService.getCount();
+                String nickName = "同学"+String.valueOf(count);
+                facStudentReg.setIphone(iphone);
+                facStudentReg.setName(nickName);
+                int reg =  facStudentService.insert(facStudentReg);
+                if (reg > 0)
+                {
+                    FacStudent facStudent1 = facStudentService.selectByIphone(iphone);
+                    String token = jwtTokenUtil.generateTokenBera(String.valueOf(facStudent1.getId()));
+                    registerParam.setToken(token);
+                    registerParam.setName(nickName);
 
+                }else {
+                    return CommonResult.failed("登录失败");
+                }
 
+            }else { //查出userid 返回给前端
 
+                registerParam.setName(facStudent.getName());
+                String token = jwtTokenUtil.generateTokenBera(String.valueOf(facStudent.getId()));
+                registerParam.setToken(token);
+            }
+
+//            facSendCodeService.setCodeStatus(iphone);
+
+            return CommonResult.success(registerParam);
+        }
 
         return CommonResult.success(registerParam);
-
-
-//        return CommonResult.failed("登录失败");
-
 
     }
 
@@ -90,9 +126,6 @@ public class LoginController {
        return CommonResult.failed("验证码发送失败");
 
     }
-
-
-
 
 
 }

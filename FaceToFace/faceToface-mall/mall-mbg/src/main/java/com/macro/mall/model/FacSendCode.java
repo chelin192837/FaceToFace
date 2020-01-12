@@ -3,6 +3,19 @@ package com.macro.mall.model;
 import java.util.Date;
 
 public class FacSendCode {
+
+
+    public static Integer STATUS_YES  = 2 ;
+
+    public static Integer STATUS_NO  = 1 ;
+
+    //币种数据库id
+//    public static int COIN_TYPE_LTC = 1;
+//
+//    public static int COIN_TYPE_BTC = 2;
+//
+//    public static int COIN_TYPE_ETH = 3;
+
     private Long id;
 
     private String user_id;

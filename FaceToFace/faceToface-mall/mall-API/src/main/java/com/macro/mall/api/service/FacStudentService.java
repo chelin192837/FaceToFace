@@ -14,6 +14,8 @@ public interface FacStudentService {
 
     FacStudent selectByKey(Long id);
 
+    FacStudent selectByIphone(String iphone);
+
     int insert(FacStudent facStudent);
 
     int getCount();

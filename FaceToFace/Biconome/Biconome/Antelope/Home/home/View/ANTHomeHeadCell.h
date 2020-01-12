@@ -10,6 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void(^DidSelectedBlock)();
+
 @interface ANTHomeHeadCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIView *mainCollection;
@@ -19,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 +(instancetype)exitWithTableView:(UITableView*)tableView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *titleImage;
+
+@property(nonatomic,copy)DidSelectedBlock didSelectedBlock;
 
 
 @end

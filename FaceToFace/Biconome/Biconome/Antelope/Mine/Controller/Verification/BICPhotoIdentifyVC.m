@@ -21,6 +21,10 @@
 @property(nonatomic,strong)NSMutableArray *dataArray;
 @property (nonatomic,strong)SelectPhotoManager *photoManager;
 @property(nonatomic,strong)NSMutableArray *cacheDataArray;
+
+
+@property(nonatomic,strong)NSArray *titleArray;
+
 @end
 
 @implementation BICPhotoIdentifyVC
@@ -45,9 +49,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = kBICHistoryCellBGColor;
+    
+    self.titleArray = @[@"请上传头像自拍",@"请上传学生证照片",@"请上传手持学生证照片"];
+    
     [self initNavigationLeftBtnWithTitle:nil isNeedImage:YES andImageName:@"fanhuiHei" titleColor:nil];
     [self initNavigationTitleViewLabelWithTitle:LAN(@"证件照片") titleColor:kNVABICSYSTEMTitleColor IfBelongTabbar:NO];
     [self.view addSubview:self.tableView];
+    
+    
     //已经上传图片，为防止图片链接过期，重新请求一次
 //    if(self.response.data.fileUrl1){
 //        [self requestAuthInfo];
@@ -133,122 +142,38 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     WEAK_SELF
-    if(self.cardType==BICCardType_IdentifyCard){
-        if([self.response.data.status isEqualToString:@"N"]){
-                if(indexPath.row==0){
-                    BICReasonCell *cell=[BICReasonCell cellWithTableView:tableView];
-                    cell.response=self.response;
-                    return cell;
-                }
-                if(indexPath.row==4){
-                     BICPhotoButtonCell *cell=[BICPhotoButtonCell cellWithTableView:tableView];
-                     return cell;
-                }
-            
-                BICPhotoViewCell *cell=[BICPhotoViewCell cellWithTableView:tableView];
-//                [cell coverResponseToData:self.response type:self.cardType row:indexPath.row cachearray:self.cacheDataArray newImage:self.dataArray];
-                cell.delClickItemOperationBlock = ^{
-                    [weakSelf.dataArray replaceObjectAtIndex:indexPath.row withObject:@""];
-                };
-                return cell;
-        }else{
-                if(indexPath.row==3){
-                     BICPhotoButtonCell *cell=[BICPhotoButtonCell cellWithTableView:tableView];
-                     return cell;
-                }
-            
-                BICPhotoViewCell *cell=[BICPhotoViewCell cellWithTableView:tableView];
-//                [cell coverResponseToData:self.response type:self.cardType row:indexPath.row cachearray:self.cacheDataArray newImage:self.dataArray];
-                cell.delClickItemOperationBlock = ^{
-                    [weakSelf.dataArray replaceObjectAtIndex:indexPath.row withObject:@""];
-                };
-                return cell;
-        }
-        
-    }else{
-        if([self.response.data.status isEqualToString:@"N"]){
-                if(indexPath.row==0){
-                    BICReasonCell *cell=[BICReasonCell cellWithTableView:tableView];
-                    cell.response=self.response;
-                    return cell;
-                }
-                if(indexPath.row==3){
-                     BICPhotoButtonCell *cell=[BICPhotoButtonCell cellWithTableView:tableView];
-                     return cell;
-                }
-            
-                BICPhotoViewCell *cell=[BICPhotoViewCell cellWithTableView:tableView];
-//                [cell coverResponseToData:self.response type:self.cardType row:indexPath.row cachearray:self.cacheDataArray newImage:self.dataArray];
-                cell.delClickItemOperationBlock = ^{
-                    [weakSelf.dataArray replaceObjectAtIndex:indexPath.row withObject:@""];
-                };
-                return cell;
-        }else{
-                if(indexPath.row==2){
-                     BICPhotoButtonCell *cell=[BICPhotoButtonCell cellWithTableView:tableView];
-                     return cell;
-                }
-            
-                BICPhotoViewCell *cell=[BICPhotoViewCell cellWithTableView:tableView];
-//                [cell coverResponseToData:self.response type:self.cardType row:indexPath.row cachearray:self.cacheDataArray newImage:self.dataArray];
-                cell.delClickItemOperationBlock = ^{
-                    [weakSelf.dataArray replaceObjectAtIndex:indexPath.row withObject:@""];
-                };
-                return cell;
-        }
+    
+    if(indexPath.row==3){
+        BICPhotoButtonCell *cell=[BICPhotoButtonCell cellWithTableView:tableView];
+        return cell;
     }
-
+    
+    BICPhotoViewCell *cell=[BICPhotoViewCell cellWithTableView:tableView];
+    
+    cell.titleLabel.text = self.titleArray[indexPath.row];
+    cell.delClickItemOperationBlock = ^{
+        cell.cameraImgView.hidden = NO;
+        [weakSelf.dataArray replaceObjectAtIndex:indexPath.row withObject:@""];
+    };
+    
+    
+    
+    return cell;
+    
 }
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    if(self.cardType==BICCardType_IdentifyCard){
-        if([self.response.data.status isEqualToString:@"N"]){
-              if(indexPath.row==4){
-                  //提交逻辑
-                  [self requestAddCardInfo];
-              }else if(indexPath.row==1 || indexPath.row==2 || indexPath.row==3){
-                  [self selectPhoto:indexPath];
-              }
-        }else{
+
             if(indexPath.row==3){
                 //提交逻辑
                 [self requestAddCardInfo];
             }else if(indexPath.row==1 || indexPath.row==2 || indexPath.row==0){
                 [self selectPhoto:indexPath];
             }
-        }
-        
-    }else{
-        
-        if([self.response.data.status isEqualToString:@"N"]){
-              if(indexPath.row==3){
-                  //提交逻辑
-                  [self requestAddCardInfo];
-              }else if(indexPath.row==1 || indexPath.row==2 ){
-                  [self selectPhoto:indexPath];
-              }
-        }else{
-            if(indexPath.row==2){
-                //提交逻辑
-                [self requestAddCardInfo];
-            }else if(indexPath.row==1 || indexPath.row==0){
-                [self selectPhoto:indexPath];
-            }
-        }
         
         
-//        if(indexPath.row==2){
-//            //提交逻辑
-//            [self requestAddCardInfo];
-//        }else{
-//            if(!self.response.data.fileUrl1 || [self.response.data.status isEqualToString:@"N"]){
-//                //图片上传
-//                [self selectPhoto:indexPath];
-//            }
-//        }
-    }
+    
 }
 
 -(void)requestAddCardInfo{
@@ -259,15 +184,15 @@
     if(self.cardType==BICCardType_IdentifyCard){
         
         if([[self.dataArray objectAtIndex:0+c] isKindOfClass:[NSString class]]){
-            [BICDeviceManager AlertShowTip:LAN(@"请上传身份证正面照片")];
+            [BICDeviceManager AlertShowTip:self.titleArray[0]];
             return;
         }
         if([[self.dataArray objectAtIndex:1+c] isKindOfClass:[NSString class]]){
-            [BICDeviceManager AlertShowTip:LAN(@"请上传身份证反面照片")];
+            [BICDeviceManager AlertShowTip:self.titleArray[1]];
             return;
         }
         if([[self.dataArray objectAtIndex:2+c] isKindOfClass:[NSString class]]){
-            [BICDeviceManager AlertShowTip:LAN(@"请上传您的手持证件照")];
+            [BICDeviceManager AlertShowTip:self.titleArray[2]];
             return;
         }
     }
@@ -358,6 +283,7 @@
     [browser show];
 }
 -(void)selectPhoto:(NSIndexPath *)indexPath{
+    
     if([[self.dataArray objectAtIndex: indexPath.row] isKindOfClass:[UIImage class]]){
 //        BICPhotoViewCell *cell=[self.tableView cellForRowAtIndexPath:indexPath];
         [self A_showWithTouchIndexPath:indexPath];
@@ -381,6 +307,7 @@
                    BICPhotoViewCell *cell=[weakSelf.tableView cellForRowAtIndexPath:indexPath];
                    cell.bgImgView.image=image;
                    cell.delImgView.hidden=NO;
+                   cell.cameraImgView.hidden = YES;
                    cell.isdel=NO;
                }else{
                    [BICDeviceManager AlertShowTip:LAN(@"照片仅限JPG、JPEG或PNG格式")];
@@ -389,6 +316,7 @@
            }
     //       [weakSelf.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
        };
+        
 //        NSString *requiredMediaType1 = ( NSString *)kUTTypeImage;
 //        NSArray *array=[NSArray arrayWithObjects:requiredMediaType1,nil];
 //        self.photoManager.mediaTypeArray=array;
@@ -405,24 +333,9 @@
     return _photoManager;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
-    if(self.cardType==BICCardType_IdentifyCard){
-        //驳回
-        if([self.response.data.status isEqualToString:@"N"]){
-            return 5;
-        }else{
-         //新增
-            return 4;
-        }
-    }else{
-        //驳回
-        if([self.response.data.status isEqualToString:@"N"]){
-            return 4;
-        }else{
-         //新增
-            return 3;
-        }
-    }
+   
+    return self.titleArray.count + 1 ;
+   
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(self.cardType==BICCardType_IdentifyCard){

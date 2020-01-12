@@ -605,6 +605,14 @@
 //    }
 }
 
+// 普通的获取UUID的方法
++ (NSString *)getUUID {
+    CFUUIDRef puuid = CFUUIDCreate( nil );
+    CFStringRef uuidString = CFUUIDCreateString(nil, puuid);
+    NSString *result = (NSString *)CFBridgingRelease(CFStringCreateCopy( NULL, uuidString));
+    return result;
+}
+
 @end
 
 

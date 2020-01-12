@@ -11,6 +11,32 @@ public interface FacTeachCardService {
     int insert(FacTeachCard facTeachCard,MultipartFile files1, MultipartFile files2, MultipartFile files3);
 
 
+    String getIconByUserid(String userid);
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
