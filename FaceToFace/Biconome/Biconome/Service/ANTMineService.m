@@ -20,10 +20,24 @@ static id sharedInstance = nil;
     return sharedInstance;
 }
 
-//注册接口
+//
 - (void)analyticalAuthTeacherData:(ANTAuthTeacherRequest*)request serverSuccessResultHandler:(ServerResultSuccessHandler)succHandler failedResultHandler:(ServerResultFailedHandler)failedHandler requestErrorHandler:(RequestFailedBlock)requestError
 {
     NSString *urlStr = @""kBaseUrl""IOSMAPPING"/mine/auth";
     [self doServerRequestWithModel:request ResponseName:@"BICBaseResponse" Url:urlStr requestType:HttpRequestTypePost serverSuccessResultHandler:succHandler failedResultHandler:failedHandler requestErrorHandler:requestError];
+}
+
+//咨询
+- (void)analyticalConsultationData:(ANTConsultationRequest*)request serverSuccessResultHandler:(ServerResultSuccessHandler)succHandler failedResultHandler:(ServerResultFailedHandler)failedHandler requestErrorHandler:(RequestFailedBlock)requestError
+{
+    NSString *urlStr = @""kBaseUrl""IOSMAPPING"/mine/consultation";
+      [self doServerRequestWithModel:request ResponseName:@"BICBaseResponse" Url:urlStr requestType:HttpRequestTypePost serverSuccessResultHandler:succHandler failedResultHandler:failedHandler requestErrorHandler:requestError];
+}
+
+//咨询列表
+- (void)analyticalConsultationListData:(ANTConsultationRequest*)request serverSuccessResultHandler:(ServerResultSuccessHandler)succHandler failedResultHandler:(ServerResultFailedHandler)failedHandler requestErrorHandler:(RequestFailedBlock)requestError
+{
+    NSString *urlStr = @""kBaseUrl""IOSMAPPING"/mine/consultationlist";
+      [self doServerRequestWithModel:request ResponseName:@"ANTConsultationResponse" Url:urlStr requestType:HttpRequestTypePost serverSuccessResultHandler:succHandler failedResultHandler:failedHandler requestErrorHandler:requestError];
 }
 @end

@@ -1,24 +1,31 @@
 //
-//  ANTOtherQuestionVC.m
+//  ANTMineQuestionVC.m
 //  Antelope
 //
 //  Created by mac on 2020/1/6.
 //  Copyright © 2020 qsm. All rights reserved.
 //
 
-#import "ANTOtherQuestionVC.h"
+#import "ANTMineQuestionVC.h"
 
-@interface ANTOtherQuestionVC ()<UITextViewDelegate>
+#import "ANTConsultationRequest.h"
+
+
+@interface ANTMineQuestionVC ()<UITextViewDelegate>
+
+
 @property (weak, nonatomic) IBOutlet UIButton *confirmBtn;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 
-
-
 @property (nonatomic,strong)UILabel* bottomnameLabel;
+
+@property (weak, nonatomic) IBOutlet UITextField *iphoneTextField;
+
+@property (nonatomic,strong) ANTConsultationRequest * request;
 
 @end
 
-@implementation ANTOtherQuestionVC
+@implementation ANTMineQuestionVC
 
 - (void)viewDidLoad {
     
@@ -49,9 +56,16 @@
         self.bottomnameLabel.hidden = YES ;
 
     }
+    
 
 }
-
+-(ANTConsultationRequest*)request
+{
+    if (!_request) {
+        _request = [[ANTConsultationRequest alloc] init];
+    }
+    return _request;
+}
 -(UILabel *)bottomnameLabel{
     if(!_bottomnameLabel){
         _bottomnameLabel=[[UILabel alloc] init];
@@ -64,6 +78,43 @@
 
 
 - (IBAction)confirmClick:(id)sender {
+
+    self.request.Device_id = [UIDevice currentDevice].identifierForVendor.UUIDString;
+    
+    if (self.iphoneTextField.text.length==0) {
+        [BICDeviceManager AlertShowTip:LAN(@"请输入手机号")];
+        return ;
+    }else if (![SDDeviceManager isMobileNumber:self.iphoneTextField.text])
+    {
+        [BICDeviceManager AlertShowTip:LAN(@"手机号格式错误")];
+        return ;
+    }else if (self.textView.text.length==0)
+    {
+        [BICDeviceManager AlertShowTip:LAN(@"请输入咨询内容")];
+        return ;
+    }
+    
+    self.request.iphone = self.iphoneTextField.text;
+    
+    self.request.consultation = self.textView.text;
+    
+    [[ANTMineService sharedInstance] analyticalConsultationData:self.request serverSuccessResultHandler:^(id response) {
+        BICBaseResponse *responseM = (BICBaseResponse*)response;
+        
+        if (responseM.code == 200) {
+            
+            [BICDeviceManager AlertShowTip:@"提交成功"];
+
+        }else{
+            [BICDeviceManager AlertShowTip:responseM.message];
+        }
+        
+    } failedResultHandler:^(id response) {
+        
+    } requestErrorHandler:^(id error) {
+        
+    }];
+    
     
     if (self.otherBlock) {
         self.otherBlock(self.textView.text);
@@ -86,7 +137,6 @@
     
     return YES;
 }
-
 
 
 

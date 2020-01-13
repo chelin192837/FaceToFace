@@ -13,12 +13,17 @@ typedef NS_ENUM(NSInteger,BICCardType)
 {
     BICCardType_IdentifyCard=1,//身份证
     BICCardType_Passport=2, //护照
-    BICCardType_DriverLicense=3 //驾照
+    BICCardType_DriverLicense=3, //驾照
+    
+    BICCardType_IdentifyCard_Show
 };
 @interface BICPhotoIdentifyVC : BaseViewController
 @property(nonatomic,assign)BICCardType cardType;
 @property(nonatomic,strong)BICAuthInfoResponse *response;
 @property (nonatomic, copy) void (^backReloadOperationBlock)(void);
+
+@property(nonatomic,strong)NSArray *imgArr;
+
 @end
 
 NS_ASSUME_NONNULL_END

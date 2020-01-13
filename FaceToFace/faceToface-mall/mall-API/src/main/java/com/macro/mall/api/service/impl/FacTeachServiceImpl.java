@@ -6,6 +6,7 @@ import com.macro.mall.api.service.FacTeachService;
 import com.macro.mall.mapper.FacTeachMapper;
 import com.macro.mall.model.FacStudent;
 import com.macro.mall.model.FacTeach;
+import com.macro.mall.model.FacTeachCard;
 import com.macro.mall.model.FacTeachExample;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,10 +42,17 @@ public class FacTeachServiceImpl implements FacTeachService {
 
         for (FacTeach facTeach : list)
         {
+            FacTeachCard facTeachCard = facTeachCardService.getTeachCardBy(facTeach.getPassword());
 
-            facTeach.setIcon(facTeachCardService.getIconByUserid(facTeach.getPassword()));
+            facTeach.setIcon(facTeachCard.getIcon());
+            facTeach.setFile_url1(facTeachCard.getFile_url1());
+            facTeach.setFile_url2(facTeachCard.getFile_url2());
+            facTeach.setFile_url3(facTeachCard.getFile_url3());
 
         }
+
+
+
 
         return list;
 

@@ -18,6 +18,10 @@
 
 #import "BICPageRequest.h"
 #import "ANTAuthTeacherRequest.h"
+
+#import "ANTConsultationRequest.h"
+
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ANTMineService : RSDBaseService
@@ -26,6 +30,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 //teacher认证
 - (void)analyticalAuthTeacherData:(ANTAuthTeacherRequest*)request serverSuccessResultHandler:(ServerResultSuccessHandler)succHandler failedResultHandler:(ServerResultFailedHandler)failedHandler requestErrorHandler:(RequestFailedBlock)requestError;
+
+//咨询
+- (void)analyticalConsultationData:(ANTConsultationRequest*)request serverSuccessResultHandler:(ServerResultSuccessHandler)succHandler failedResultHandler:(ServerResultFailedHandler)failedHandler requestErrorHandler:(RequestFailedBlock)requestError;
+
+//咨询列表
+- (void)analyticalConsultationListData:(ANTConsultationRequest*)request serverSuccessResultHandler:(ServerResultSuccessHandler)succHandler failedResultHandler:(ServerResultFailedHandler)failedHandler requestErrorHandler:(RequestFailedBlock)requestError;
 
 @end
 

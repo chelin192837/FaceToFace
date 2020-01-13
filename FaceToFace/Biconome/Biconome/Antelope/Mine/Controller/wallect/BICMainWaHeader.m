@@ -63,7 +63,7 @@
     self.bitValueLab.text = [NSString stringWithFormat:@"%@%@",LAN(@"估值"),@"(BTC)"];
     
     [self.rechargeBtn setTitle:LAN(@"充值") forState:UIControlStateNormal];
-    [self.extraBtn setTitle:LAN(@"提币") forState:UIControlStateNormal];
+    [self.extraBtn setTitle:LAN(@"提现") forState:UIControlStateNormal];
 
     if (![BICDeviceManager isLogin]) {
         self.loginRegisterBtn.hidden = NO;

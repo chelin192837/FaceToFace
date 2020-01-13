@@ -13,7 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSInteger,kComCellType)
 {
     kComCellType_ArrowImg = 99,
-    kComCellType_TextField
+    kComCellType_TextField,
+    kComCellType_Text
 };
 
 typedef void(^TextFieldBlock)(NSString * str);

@@ -24,6 +24,7 @@
 #import "BICMainWalletVC.h"
 #import "ANTDelegateVC.h"
 #import "ANTCompledVC.h"
+#import "ANTMessageViewController.h"
 @interface BICMineVC ()<UITableViewDelegate,UITableViewDataSource,UINavigationControllerDelegate>
 @property(nonatomic,strong)UITableView*tableView;
 @property(nonatomic,strong)NSArray * titleArr;
@@ -66,7 +67,7 @@
 }
 -(void)setupUI
 {
-    NSArray * titleArr=@[LAN(@"身份认证"),LAN(@"我的钱包"),LAN(@"当前委托"),LAN(@"成交记录"),LAN(@"帮助与反馈"),LAN(@"设置")];
+    NSArray * titleArr=@[LAN(@"身份认证"),LAN(@"咨询问题"),LAN(@"当前委托"),LAN(@"成交记录"),LAN(@"帮助与反馈"),LAN(@"设置")];
     NSArray *imageArr =@[@"profile-identity-black",@"profile-referral-black",@"profile_open_orders",  @"profile_identity_verify",@"profile_support",@"profile_setting"];
     
     self.imageArr = imageArr;
@@ -153,7 +154,7 @@
         
     }else if(indexPath.row==1){
         
-        BICMainWalletVC * wallectVC = [[BICMainWalletVC alloc] init];
+        ANTMessageViewController * wallectVC = [[ANTMessageViewController alloc] init];
         
         [self.navigationController pushViewController:wallectVC animated:YES];
         

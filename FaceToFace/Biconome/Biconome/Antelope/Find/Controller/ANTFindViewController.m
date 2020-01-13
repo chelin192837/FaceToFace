@@ -17,7 +17,7 @@
 #import "YiceSlidelipPickCommonModel.h"
 #import "ANTPageHelperRequest.h"
 #import "ANTFindListResponse.h"
-
+#import "ANTTeacherDetailVC.h"
 @interface ANTFindViewController ()<UITableViewDelegate,UITableViewDataSource,YiceSlidelipPickerMenuDelegate,YiceSlidelipPickerMenuDataSource>
 
 @property(nonatomic,strong)UITableView * tableView;
@@ -154,6 +154,7 @@
     self.pickMenu.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     [UIView commitAnimations];
 }
+
 -(void)setupUI
 {
     [self.view addSubview:self.tableView];
@@ -193,7 +194,15 @@
 
     return 155;
 }
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ANTTeacherDetailVC * teachDetailVC = [[ANTTeacherDetailVC alloc] init];
+    
+    ANTFind * dataModel = self.dataArray[indexPath.row];
 
+    teachDetailVC.model = dataModel;
+    [self.navigationController pushViewController:teachDetailVC animated:YES];
+}
 
 #pragma mark ---- pickDatasource
 - (NSInteger)menu:(YiceSlidelipPickerMenu *)menu numberOfRowsInSection:(NSInteger)section{
@@ -231,7 +240,6 @@
     model.isSelected = @"";
 }
 
-
 - (void)menu:(YiceSlidelipPickerMenu *)menu clickHeaderAtIndexPath:(NSIndexPath *)indexPath{
     YiceSlidelipPickCommonModel *model = self.mainKindArray[indexPath.section];
     if (model.isSelected.length>0) {
@@ -261,7 +269,6 @@
     [self.tableView.mj_header beginRefreshing];
     
 }
-
 
 -(YiceSlidelipPickCommonModel*)creatPcikMenuItemModelWithString:(NSString*)str{
     

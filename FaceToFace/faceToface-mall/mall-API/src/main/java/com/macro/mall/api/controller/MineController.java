@@ -1,11 +1,14 @@
 package com.macro.mall.api.controller;
 
 
+import com.macro.mall.api.dto.FacConsultationParam;
 import com.macro.mall.api.dto.FacMineAuthParam;
+import com.macro.mall.api.service.FacConsultationService;
 import com.macro.mall.api.service.FacTeachCardService;
 import com.macro.mall.api.service.FacTeachService;
 import com.macro.mall.api.util.HelpUserTool;
 import com.macro.mall.common.api.CommonResult;
+import com.macro.mall.model.FacConsultation;
 import com.macro.mall.model.FacStudent;
 import com.macro.mall.model.FacTeach;
 import com.macro.mall.model.FacTeachCard;
@@ -20,6 +23,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
+import java.util.List;
 
 @Controller
 @RequestMapping(value = "/api/mine")
@@ -30,6 +34,9 @@ public class MineController {
 
     @Autowired
     private FacTeachCardService facTeachCardService;
+
+    @Autowired
+    private FacConsultationService facConsultationService;
 
     @Value("${student.price}")
     private String price;
@@ -95,6 +102,38 @@ public class MineController {
         return CommonResult.success("认证已经提交");
 
     }
+
+    @PostMapping(value = "consultation")
+    @ResponseBody
+    public CommonResult<String> consultation(@RequestBody FacConsultationParam facConsultationParam)
+    {
+        FacConsultation facConsultation = new FacConsultation();
+        facConsultation.setDevice_id(facConsultationParam.getDevice_id());
+        facConsultation.setIphone(facConsultationParam.getIphone());
+        facConsultation.setOther_one(facConsultationParam.getConsultation());
+        facConsultation.setCreate_time(new Date());
+        int result = facConsultationService.insert(facConsultation);
+
+        if (result > 0)
+        {
+         return CommonResult.success("发布成功");
+        }
+
+         return CommonResult.failed("发布失败");
+
+    }
+
+    @PostMapping(value = "consultationlist")
+    @ResponseBody
+    public CommonResult<List<FacConsultation>> consultationlist(@RequestBody FacConsultationParam facConsultationParam)
+    {
+
+        List<FacConsultation> list = facConsultationService.getConsultationByDeviceId(facConsultationParam.getDevice_id());
+
+        return CommonResult.success(list);
+
+    }
+
 
 
 

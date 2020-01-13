@@ -145,7 +145,28 @@
     
     if(indexPath.row==3){
         BICPhotoButtonCell *cell=[BICPhotoButtonCell cellWithTableView:tableView];
+        if (self.cardType == BICCardType_IdentifyCard_Show) {
+            cell.hidden = YES;
+        }
         return cell;
+    }
+    
+    if (self.cardType == BICCardType_IdentifyCard_Show) {
+        BICPhotoViewCell *cell=[BICPhotoViewCell cellWithTableView:tableView];
+        
+        NSArray * arr = @[@"头像自拍",@"学生证照片",@"手持学生证照片"];
+
+        cell.titleLabel.text = arr[indexPath.row];
+        
+        if (self.imgArr && (self.imgArr.count==3)) {
+            
+            [cell.bgImgView sd_setImageWithURL:[NSURL URLWithString:self.imgArr[indexPath.row]]];
+            cell.bgImgView.hidden = NO;
+            cell.cameraImgView.hidden = YES;
+        }
+      
+        return cell;
+
     }
     
     BICPhotoViewCell *cell=[BICPhotoViewCell cellWithTableView:tableView];
@@ -165,6 +186,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
+    if (self.cardType == BICCardType_IdentifyCard_Show) {
+        return;
+    }
             if(indexPath.row==3){
                 //提交逻辑
                 [self requestAddCardInfo];

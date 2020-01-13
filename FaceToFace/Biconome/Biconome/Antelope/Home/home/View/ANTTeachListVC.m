@@ -15,6 +15,7 @@
 #import "ANTPageHelperRequest.h"
 
 #import "ANTFindListResponse.h"
+#import "ANTTeacherDetailVC.h"
 
 @interface ANTTeachListVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -142,7 +143,17 @@
 
     return 155;
 }
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    ANTTeacherDetailVC * teachDetailVC = [[ANTTeacherDetailVC alloc] init];
+//    teachDetailVC.model = dataModel;
+//    [self.navigationController pushViewController:teachDetailVC animated:YES];
 
+    ANTFind * dataModel = self.dataArray[indexPath.row];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"teachDetial" object:dataModel];
+    
+}
 
 
 @end

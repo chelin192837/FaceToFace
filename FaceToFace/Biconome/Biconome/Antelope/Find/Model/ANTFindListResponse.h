@@ -59,6 +59,12 @@ NS_ASSUME_NONNULL_BEGIN
 //座右铭
 @property(nonatomic,strong)NSString * advantage;
 
+@property(nonatomic,strong)NSString * file_url1;
+
+@property(nonatomic,strong)NSString * file_url2;
+
+@property(nonatomic,strong)NSString * file_url3;
+
 
 @end
 

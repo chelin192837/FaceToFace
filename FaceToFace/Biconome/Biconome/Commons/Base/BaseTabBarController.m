@@ -12,11 +12,7 @@
 #import "BaseTabBar.h"
 
 #import "SDDeviceManager.h"
-
-
-
-
-
+#import "BICMainWalletVC.h"
 #import "UIView+shadowPath.h"
 
 #import "ANTHomeViewController.h"
@@ -65,7 +61,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
         
-    self.titleArr = @[@"首页",@"发现",@"发布",@"消息",@"个人中心"];
+    self.titleArr = @[@"首页",@"发现",@"发布",@"钱包",@"个人中心"];
 
     [self setUpChildVc:[[ANTHomeViewController alloc] init] title:[self.titleArr objectAtIndex:0] image:@"tab_home_default" selectImage:@"tab_home_selected"];
   
@@ -76,8 +72,9 @@
     
     // 进入会话页面
 //    HDMessageViewController *chatVC = [[HDMessageViewController alloc] initWithConversationChatter:@"kefuchannelimid_623907"]; // 获取地址：kefu.easemob.com，“管理员模式 > 渠道管理 > 手机APP”页面的关联的“IM服务号”
-    
-    [self setUpChildVc:[[ANTMessageViewController alloc] init] title:[self.titleArr objectAtIndex:3] image:@"tab_wallet_default" selectImage:@"tab_wallet_selected"];
+//    
+
+    [self setUpChildVc:[[BICMainWalletVC alloc] init] title:[self.titleArr objectAtIndex:3] image:@"tab_wallet_default" selectImage:@"tab_wallet_selected"];
   
     [self setUpChildVc:[[ANTMineViewController alloc] init] title:[self.titleArr objectAtIndex:4] image:@"tab_profile_default" selectImage:@"tab_profile_selected"];
 

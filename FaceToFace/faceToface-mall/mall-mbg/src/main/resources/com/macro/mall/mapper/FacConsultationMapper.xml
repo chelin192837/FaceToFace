@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.macro.mall.mapper.FacConsultationMapper" >
+  <resultMap id="BaseResultMap" type="com.macro.mall.model.FacConsultation" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="device_id" property="device_id" jdbcType="VARCHAR" />
+    <result column="iphone" property="iphone" jdbcType="VARCHAR" />
+    <result column="other_one" property="other_one" jdbcType="VARCHAR" />
+    <result column="other_two" property="other_two" jdbcType="VARCHAR" />
+    <result column="create_time" property="create_time" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, device_id, iphone, other_one, other_two, create_time
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.macro.mall.model.FacConsultationExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from fac_consultation
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from fac_consultation
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from fac_consultation
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.macro.mall.model.FacConsultationExample" >
+    delete from fac_consultation
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.macro.mall.model.FacConsultation" >
+    insert into fac_consultation (id, device_id, iphone,
+      other_one, other_two, create_time
+      )
+    values (#{id,jdbcType=BIGINT}, #{device_id,jdbcType=VARCHAR}, #{iphone,jdbcType=VARCHAR},
+      #{other_one,jdbcType=VARCHAR}, #{other_two,jdbcType=VARCHAR}, #{create_time,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.macro.mall.model.FacConsultation" >
+    insert into fac_consultation
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="device_id != null" >
+        device_id,
+      </if>
+      <if test="iphone != null" >
+        iphone,
+      </if>
+      <if test="other_one != null" >
+        other_one,
+      </if>
+      <if test="other_two != null" >
+        other_two,
+      </if>
+      <if test="create_time != null" >
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="device_id != null" >
+        #{device_id,jdbcType=VARCHAR},
+      </if>
+      <if test="iphone != null" >
+        #{iphone,jdbcType=VARCHAR},
+      </if>
+      <if test="other_one != null" >
+        #{other_one,jdbcType=VARCHAR},
+      </if>
+      <if test="other_two != null" >
+        #{other_two,jdbcType=VARCHAR},
+      </if>
+      <if test="create_time != null" >
+        #{create_time,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.macro.mall.model.FacConsultationExample" resultType="java.lang.Integer" >
+    select count(*) from fac_consultation
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update fac_consultation
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.device_id != null" >
+        device_id = #{record.device_id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.iphone != null" >
+        iphone = #{record.iphone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.other_one != null" >
+        other_one = #{record.other_one,jdbcType=VARCHAR},
+      </if>
+      <if test="record.other_two != null" >
+        other_two = #{record.other_two,jdbcType=VARCHAR},
+      </if>
+      <if test="record.create_time != null" >
+        create_time = #{record.create_time,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update fac_consultation
+    set id = #{record.id,jdbcType=BIGINT},
+      device_id = #{record.device_id,jdbcType=VARCHAR},
+      iphone = #{record.iphone,jdbcType=VARCHAR},
+      other_one = #{record.other_one,jdbcType=VARCHAR},
+      other_two = #{record.other_two,jdbcType=VARCHAR},
+      create_time = #{record.create_time,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.macro.mall.model.FacConsultation" >
+    update fac_consultation
+    <set >
+      <if test="device_id != null" >
+        device_id = #{device_id,jdbcType=VARCHAR},
+      </if>
+      <if test="iphone != null" >
+        iphone = #{iphone,jdbcType=VARCHAR},
+      </if>
+      <if test="other_one != null" >
+        other_one = #{other_one,jdbcType=VARCHAR},
+      </if>
+      <if test="other_two != null" >
+        other_two = #{other_two,jdbcType=VARCHAR},
+      </if>
+      <if test="create_time != null" >
+        create_time = #{create_time,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.macro.mall.model.FacConsultation" >
+    update fac_consultation
+    set device_id = #{device_id,jdbcType=VARCHAR},
+      iphone = #{iphone,jdbcType=VARCHAR},
+      other_one = #{other_one,jdbcType=VARCHAR},
+      other_two = #{other_two,jdbcType=VARCHAR},
+      create_time = #{create_time,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

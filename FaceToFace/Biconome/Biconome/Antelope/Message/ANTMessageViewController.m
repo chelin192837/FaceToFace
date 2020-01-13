@@ -8,7 +8,7 @@
 
 #import "ANTMessageViewController.h"
 #import "HcdPopMenu.h"
-
+#import "ANTMineQuestionVC.h"
 
 @interface ANTMessageViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -87,10 +87,8 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // 进入会话页面
-    HDMessageViewController *chatVC = [[HDMessageViewController alloc] initWithConversationChatter:@"kefuchannelimid_623907"]; // 获取地址：kefu.easemob.com，“管理员模式 > 渠道管理 > 手机APP”页面的关联的“IM服务号”
-    
-    [self.navigationController pushViewController:chatVC animated:YES];
-    
+    ANTMineQuestionVC * vc = [[ANTMineQuestionVC alloc] initWithNibName:@"ANTMineQuestionVC" bundle:[NSBundle mainBundle]];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

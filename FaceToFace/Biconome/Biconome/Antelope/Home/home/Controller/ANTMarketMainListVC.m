@@ -8,6 +8,7 @@
 
 #import "ANTMarketMainListVC.h"
 #import "BICMarketListView.h"
+#import "ANTTeacherDetailVC.h"
 @interface ANTMarketMainListVC ()
 
 @end
@@ -21,6 +22,8 @@
      
      [self initNavigationLeftBtnWithTitle:nil isNeedImage:YES andImageName:@"fanhuiHei" titleColor:nil];
 
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushTo:) name:@"teachDetial" object:nil];
+    
     [self setupUI];
     
 }
@@ -37,4 +40,13 @@
     [marketAll setUITitleList:self.array];
     
 }
+-(void)pushTo:(NSNotification*)noti
+{
+    ANTFind * dataModel = noti.object;
+    ANTTeacherDetailVC * teachDetailVC = [[ANTTeacherDetailVC alloc] init];
+    teachDetailVC.model = dataModel;
+    [self.navigationController pushViewController:teachDetailVC animated:YES];
+
+}
+
 @end

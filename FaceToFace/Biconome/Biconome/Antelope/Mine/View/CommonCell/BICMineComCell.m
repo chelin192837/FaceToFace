@@ -51,6 +51,14 @@
         
         self.textField.hidden = NO ;
     }
+    if (_kcomCellType==kComCellType_Text) {
+          self.arrowMoreImg.hidden = YES ;
+          self.rightLab.hidden = YES ;
+          self.textField.hidden = NO ;
+        self.textField.userInteractionEnabled = NO;
+      }
+    
+    
 }
 
 +(instancetype)exitWithTableView:(UITableView*)tableView

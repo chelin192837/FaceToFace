@@ -57,7 +57,7 @@
     [self.bgView addSubview:self.cameraImgView];
     [self.cameraImgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self.bgView);
-//        make.width.height.equalTo(@75);
+        make.width.height.equalTo(@120);
     }];
     [self.bgView addSubview:self.delImgView];
     [self.bgView addSubview:self.detailTitleLabel];

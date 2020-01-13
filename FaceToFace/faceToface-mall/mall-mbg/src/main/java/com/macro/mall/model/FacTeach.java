@@ -35,6 +35,8 @@ public class FacTeach {
 
     private Date create_time;
 
+
+
     private String icon;
 
     public String getIcon() {
@@ -43,6 +45,36 @@ public class FacTeach {
 
     public void setIcon(String icon) {
         this.icon = icon;
+    }
+
+    private String file_url1;
+
+    private String file_url2;
+
+    private String file_url3;
+
+    public void setFile_url1(String file_url1) {
+        this.file_url1 = file_url1;
+    }
+
+    public void setFile_url2(String file_url2) {
+        this.file_url2 = file_url2;
+    }
+
+    public void setFile_url3(String file_url3) {
+        this.file_url3 = file_url3;
+    }
+
+    public String getFile_url1() {
+        return file_url1;
+    }
+
+    public String getFile_url2() {
+        return file_url2;
+    }
+
+    public String getFile_url3() {
+        return file_url3;
     }
 
     public Long getId() {

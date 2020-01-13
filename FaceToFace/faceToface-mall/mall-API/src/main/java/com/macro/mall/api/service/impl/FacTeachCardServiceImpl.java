@@ -76,5 +76,25 @@ public class FacTeachCardServiceImpl implements FacTeachCardService {
        return "" ;
    }
 
+    @Override
+    public FacTeachCard getTeachCardBy(String userid)
+    {
+        FacTeachCardExample example = new FacTeachCardExample();
+
+        example.createCriteria().andUser_idEqualTo(userid);
+
+        List <FacTeachCard> list = facTeachCardMapper.selectByExample(example);
+
+        if (list.size()>0)
+        {
+            FacTeachCard facTeachCard = list.get(0);
+
+            return  facTeachCard;
+        }
+
+        return null ;
+    }
+
+
 
 }

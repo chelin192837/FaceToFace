@@ -13,6 +13,8 @@ public interface FacTeachCardService {
 
     String getIconByUserid(String userid);
 
+    FacTeachCard getTeachCardBy(String userid);
+
 
 }
 
