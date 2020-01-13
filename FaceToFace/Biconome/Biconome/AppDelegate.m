@@ -67,21 +67,21 @@
     
 
     //环信云客服
-    HDOptions *option = [[HDOptions alloc] init];
-    option.appkey = @"1468200111068464#kefuchannelapp77333"; // 必填项，appkey获取地址：kefu.easemob.com，“管理员模式 > 渠道管理 > 手机APP”页面的关联的“AppKey”
-    option.tenantId = @"77333";// 必填项，tenantId获取地址：kefu.easemob.com，“管理员模式 > 设置 > 企业信息”页面的“租户ID”
-    
-    //推送证书名字
-//    option.apnsCertName = @"your apnsCerName";//(集成离线推送必填)
-    
-    //Kefu SDK 初始化,初始化失败后将不能使用Kefu SDK
-    
-    HDError *initError = [[HDClient sharedClient] initializeSDKWithOptions:option];
-    if (initError) { // 初始化错误
-        
-    }
-        
-    HDError *error = [[HDClient sharedClient] registerWithUsername:[SDDeviceManager getUUID] password:[SDDeviceManager getUUID]];
+//    HDOptions *option = [[HDOptions alloc] init];
+//    option.appkey = @"1468200111068464#kefuchannelapp77333"; // 必填项，appkey获取地址：kefu.easemob.com，“管理员模式 > 渠道管理 > 手机APP”页面的关联的“AppKey”
+//    option.tenantId = @"77333";// 必填项，tenantId获取地址：kefu.easemob.com，“管理员模式 > 设置 > 企业信息”页面的“租户ID”
+//    
+//    //推送证书名字
+////    option.apnsCertName = @"your apnsCerName";//(集成离线推送必填)
+//    
+//    //Kefu SDK 初始化,初始化失败后将不能使用Kefu SDK
+//    
+//    HDError *initError = [[HDClient sharedClient] initializeSDKWithOptions:option];
+//    if (initError) { // 初始化错误
+//        
+//    }
+//        
+//    HDError *error = [[HDClient sharedClient] registerWithUsername:[SDDeviceManager getUUID] password:[SDDeviceManager getUUID]];
 
     //开启IQKeyBoard
     // 开始第三方键盘

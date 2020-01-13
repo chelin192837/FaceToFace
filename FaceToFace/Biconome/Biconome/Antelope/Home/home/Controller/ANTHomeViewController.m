@@ -41,15 +41,15 @@
     [self analyData];
     
     //环信客服云登录
-    HDClient *client = [HDClient sharedClient];
-    if (client.isLoggedInBefore != YES) {
-        HDError *error = [client loginWithUsername:[SDDeviceManager getUUID] password:[SDDeviceManager getUUID]];
-        if (!error) { //登录成功
-        } else { //登录失败
-            return;
-        }
-    }
-    
+//    HDClient *client = [HDClient sharedClient];
+//    if (client.isLoggedInBefore != YES) {
+//        HDError *error = [client loginWithUsername:[SDDeviceManager getUUID] password:[SDDeviceManager getUUID]];
+//        if (!error) { //登录成功
+//        } else { //登录失败
+//            return;
+//        }
+//    }
+//    
     
 
 }
@@ -57,6 +57,7 @@
 {
     NSArray * imageArr = @[@"face1",@"face2",@"face3",@"face4",@"face5"];
     NSArray * titleArr = @[@"学习方法",@"学习习惯",@"学习心态",@"情感心理",@"择校就业"];
+    
     self.titleArr= titleArr;
     for (int i=0; i<imageArr.count; i++) {
         ANTCollectModel * model = [[ANTCollectModel alloc] init];
@@ -162,7 +163,9 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  
+    if (indexPath.row > 1) {
+        
+    }
 }
 #pragma mark -- 点击图片回调
 - (void)carouselView:(XRCarouselView *)carouselView clickImageAtIndex:(NSInteger)index
