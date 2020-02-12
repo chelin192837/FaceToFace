@@ -9,7 +9,7 @@ public class FacTeach {
 
     private String iphone;
 
-    private String password;
+    private String user_id;
 
     private String sex;
 
@@ -34,7 +34,6 @@ public class FacTeach {
     private String other_two;
 
     private Date create_time;
-
 
 
     private String icon;
@@ -101,12 +100,13 @@ public class FacTeach {
         this.iphone = iphone == null ? null : iphone.trim();
     }
 
-    public String getPassword() {
-        return password;
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
     }
 
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
+    public String getUser_id() {
+        return user_id;
     }
 
     public String getSex() {

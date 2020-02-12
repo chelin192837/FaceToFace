@@ -10,6 +10,18 @@ public class FacPageHelpParam {
 
    private Integer page;
 
+   private String searchName;
+
+
+   private String sex;
+
+   private String major;
+
+   private String subject;
+
+   private String flag;
+
+
 
 
 }

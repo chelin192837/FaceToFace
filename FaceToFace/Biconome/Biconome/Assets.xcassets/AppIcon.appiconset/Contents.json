@@ -33,13 +33,13 @@
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "Antelope120.jpg",
+      "filename" : "1024x10243.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "Antelope180.jpg",
+      "filename" : "1024x10242.png",
       "scale" : "3x"
     },
     {
@@ -90,7 +90,7 @@
     {
       "size" : "1024x1024",
       "idiom" : "ios-marketing",
-      "filename" : "Antelope.jpg",
+      "filename" : "1024x1024.png",
       "scale" : "1x"
     }
   ],

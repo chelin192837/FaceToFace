@@ -53,7 +53,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
 
-
         httpSecurity.csrf().disable()
                 .authorizeRequests()
                 .anyRequest().permitAll().and().logout().permitAll();//配置不需要登录验证
@@ -77,7 +76,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                        "/webjars/springfox-swagger-ui/**"
 //                )
 //                .permitAll()
-//                .antMatchers("/admin/login", "/admin/register")// 对登录注册要允许匿名访问
+//                .antMatchers("/api/login", "/api/sendCode","/api/discover/teacherlist")// 对登录注册要允许匿名访问
 //                .permitAll()
 //                .antMatchers(HttpMethod.OPTIONS)//跨域请求会先进行一次options请求
 //                .permitAll()
@@ -110,8 +109,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
+
     @Bean
     public UserDetailsService userDetailsService() {
+
         //获取登录用户信息
         return username -> {
 

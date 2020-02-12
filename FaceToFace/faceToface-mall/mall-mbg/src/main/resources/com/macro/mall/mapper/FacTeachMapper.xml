@@ -5,7 +5,7 @@
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="iphone" jdbcType="VARCHAR" property="iphone" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="user_id" jdbcType="VARCHAR" property="user_id" />
     <result column="sex" jdbcType="VARCHAR" property="sex" />
     <result column="major" jdbcType="VARCHAR" property="major" />
     <result column="subject" jdbcType="VARCHAR" property="subject" />
@@ -76,7 +76,7 @@
       </where>
     </sql>
     <sql id="Base_Column_List">
-    id, name, iphone, password, sex, major, subject, flag, advantage, active, other_one,
+    id, name, iphone, user_id, sex, major, subject, flag, advantage, active, other_one,
     other_two, create_time
   </sql>
 
@@ -119,12 +119,12 @@
     </delete>
     <insert id="insert" parameterType="com.macro.mall.model.FacTeach">
     insert into fac_teach (id, name, iphone,
-      password, sex, major,
+      user_id, sex, major,
       subject, flag, advantage,
       active, other_one, other_two,
       create_time)
     values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{iphone,jdbcType=VARCHAR},
-      #{password,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, #{major,jdbcType=VARCHAR},
+      #{user_id,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, #{major,jdbcType=VARCHAR},
       #{subject,jdbcType=VARCHAR}, #{flag,jdbcType=VARCHAR}, #{advantage,jdbcType=VARCHAR},
       #{active,jdbcType=INTEGER}, #{other_one,jdbcType=VARCHAR}, #{other_two,jdbcType=VARCHAR},
       #{create_time,jdbcType=TIMESTAMP})
@@ -141,8 +141,8 @@
         <if test="iphone != null">
           iphone,
         </if>
-        <if test="password != null">
-          password,
+        <if test="user_id != null">
+          user_id,
         </if>
         <if test="sex != null">
           sex,
@@ -182,8 +182,8 @@
         <if test="iphone != null">
           #{iphone,jdbcType=VARCHAR},
         </if>
-        <if test="password != null">
-          #{password,jdbcType=VARCHAR},
+        <if test="user_id != null">
+          #{user_id,jdbcType=VARCHAR},
         </if>
         <if test="sex != null">
           #{sex,jdbcType=VARCHAR},
@@ -232,8 +232,8 @@
         <if test="record.iphone != null">
           iphone = #{record.iphone,jdbcType=VARCHAR},
         </if>
-        <if test="record.password != null">
-          password = #{record.password,jdbcType=VARCHAR},
+        <if test="record.user_id != null">
+          user_id = #{record.user_id,jdbcType=VARCHAR},
         </if>
         <if test="record.sex != null">
           sex = #{record.sex,jdbcType=VARCHAR},
@@ -272,7 +272,7 @@
       set id = #{record.id,jdbcType=BIGINT},
       name = #{record.name,jdbcType=VARCHAR},
       iphone = #{record.iphone,jdbcType=VARCHAR},
-      password = #{record.password,jdbcType=VARCHAR},
+      user_id = #{record.user_id,jdbcType=VARCHAR},
       sex = #{record.sex,jdbcType=VARCHAR},
       major = #{record.major,jdbcType=VARCHAR},
       subject = #{record.subject,jdbcType=VARCHAR},
@@ -295,8 +295,8 @@
         <if test="iphone != null">
           iphone = #{iphone,jdbcType=VARCHAR},
         </if>
-        <if test="password != null">
-          password = #{password,jdbcType=VARCHAR},
+        <if test="user_id != null">
+          user_id = #{user_id,jdbcType=VARCHAR},
         </if>
         <if test="sex != null">
           sex = #{sex,jdbcType=VARCHAR},
@@ -332,7 +332,7 @@
     update fac_teach
     set name = #{name,jdbcType=VARCHAR},
       iphone = #{iphone,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
+      user_id = #{user_id,jdbcType=VARCHAR},
       sex = #{sex,jdbcType=VARCHAR},
       major = #{major,jdbcType=VARCHAR},
       subject = #{subject,jdbcType=VARCHAR},

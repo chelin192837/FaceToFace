@@ -3,20 +3,27 @@
 
 <mapper namespace="com.macro.mall.dao.OmsOrderDao">
 
+
+    <!-- 继承的运用 -->
     <resultMap id="orderDetailResultMap" type="com.macro.mall.dto.OmsOrderDetail"
                extends="com.macro.mall.mapper.OmsOrderMapper.BaseResultMap">
 
+        <!-- 添加前置字段 item_   -->
         <collection property="orderItemList" resultMap="com.macro.mall.mapper.OmsOrderItemMapper.BaseResultMap"
                     columnPrefix="item_"/>
 
+
         <collection property="historyList" resultMap="com.macro.mall.mapper.OmsOrderOperateHistoryMapper.BaseResultMap"
                     columnPrefix="history_"/>
+
 
     </resultMap>
 
 
 
+
     <select id="getList" resultMap="com.macro.mall.mapper.OmsOrderMapper.BaseResultMap">
+
         SELECT *
         FROM
         oms_order
@@ -43,6 +50,7 @@
             OR receiver_phone LIKE concat("%",#{queryParam.receiverKeyword},"%")
             )
         </if>
+
 
     </select>
 
@@ -81,7 +89,11 @@
     </update>
 
 
+
+    <!--  -->
     <select id="getDetail" resultMap="orderDetailResultMap">
+
+
         SELECT o.*,
         oi.id item_id,
         oi.product_id item_product_id,
@@ -107,7 +119,10 @@
         WHERE
         o.id = #{id}
         ORDER BY oi.id ASC,oh.create_time DESC
+
+
     </select>
+
 
 
 

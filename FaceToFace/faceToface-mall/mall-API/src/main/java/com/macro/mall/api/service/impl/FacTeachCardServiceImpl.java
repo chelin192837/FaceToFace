@@ -43,6 +43,7 @@ public class FacTeachCardServiceImpl implements FacTeachCardService {
         String fileUrl2 = ossUtil.uploadImg2Oss(files2);
         String fileUrl3 = ossUtil.uploadImg2Oss(files3);
 
+        facTeachCard.setIcon(fileUrl1);
         facTeachCard.setFile_url1(fileUrl1);
         facTeachCard.setFile_url2(fileUrl2);
         facTeachCard.setFile_url3(fileUrl3);

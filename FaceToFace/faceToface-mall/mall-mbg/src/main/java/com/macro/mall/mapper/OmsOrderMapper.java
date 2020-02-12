@@ -8,6 +8,8 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface OmsOrderMapper {
+
+
     long countByExample(OmsOrderExample example);
 
     int deleteByExample(OmsOrderExample example);

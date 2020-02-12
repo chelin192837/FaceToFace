@@ -1,0 +1,5 @@
+接口文档说明
+
+fac_Student表的password字段对应fac_teach表的主建
+
+

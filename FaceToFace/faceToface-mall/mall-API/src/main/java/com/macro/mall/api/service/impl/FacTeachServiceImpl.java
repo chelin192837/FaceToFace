@@ -31,32 +31,54 @@ public class FacTeachServiceImpl implements FacTeachService {
 
 
     @Override
-    public List<FacTeach> list(FacStudent facStudent, Integer pageSize, Integer pageNum)
+    public List<FacTeach> list(FacStudent facStudent, FacTeach facTeachParam,Integer pageSize, Integer pageNum)
     {
         PageHelper.startPage(pageNum,pageSize);
 
         FacTeachExample example = new FacTeachExample();
+
+        FacTeachExample.Criteria criteria = example.createCriteria();
+
+
+        if (facTeachParam.getSex() != null)
+        {
+            criteria.andSexEqualTo(facTeachParam.getSex());
+        }
+        if (facTeachParam.getMajor() != null)
+        {
+            criteria.andMajorEqualTo(facTeachParam.getMajor());
+        }
+        if (facTeachParam.getSubject() != null)
+        {
+            criteria.andSubjectEqualTo(facTeachParam.getSubject());
+        }
+        if (facTeachParam.getFlag() != null)
+        {
+            criteria.andFlagEqualTo(facTeachParam.getFlag());
+        }
+
         example.setOrderByClause("create_time desc");
+
 
         List<FacTeach> list = facTeachMapper.selectByExample(example);
 
+
         for (FacTeach facTeach : list)
         {
-            FacTeachCard facTeachCard = facTeachCardService.getTeachCardBy(facTeach.getPassword());
+            FacTeachCard facTeachCard = facTeachCardService.getTeachCardBy(facTeach.getUser_id());
 
-            facTeach.setIcon(facTeachCard.getIcon());
-            facTeach.setFile_url1(facTeachCard.getFile_url1());
-            facTeach.setFile_url2(facTeachCard.getFile_url2());
-            facTeach.setFile_url3(facTeachCard.getFile_url3());
+            if (facTeachCard != null)
+            {
+                facTeach.setIcon(facTeachCard.getIcon());
+                facTeach.setFile_url1(facTeachCard.getFile_url1());
+                facTeach.setFile_url2(facTeachCard.getFile_url2());
+                facTeach.setFile_url3(facTeachCard.getFile_url3());
+            }
 
         }
 
 
-
-
         return list;
-
-
 
     }
 

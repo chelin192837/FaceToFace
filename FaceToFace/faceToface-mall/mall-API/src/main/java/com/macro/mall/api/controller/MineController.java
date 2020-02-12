@@ -63,8 +63,7 @@ public class MineController {
         facTeach.setOther_two(facMineAuthParam.getOther_two());
         facTeach.setOther_one(facMineAuthParam.getOther_one());
 
-        // password字段变为 facstudent 关联 facteach 的字段
-        facTeach.setPassword(facStudent.getId().toString());
+        facTeach.setUser_id(facStudent.getId().toString());
 
         facTeach.setActive(Integer.valueOf(price));
 

@@ -10,4 +10,5 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @MapperScan({"com.macro.mall.mapper", "com.macro.mall.api.dao"})
 public class MyBatisConfig {
+
 }

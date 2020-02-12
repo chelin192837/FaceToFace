@@ -13,7 +13,7 @@ public interface FacTeachService {
     /**
      * 教师资源查询
      */
-    List<FacTeach> list(FacStudent facStudent, Integer pageSize, Integer pageNum);
+    List<FacTeach> list(FacStudent facStudent, FacTeach facTeachParam,Integer pageSize, Integer pageNum);
 
 
 
