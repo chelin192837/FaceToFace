@@ -24,7 +24,7 @@ student:
 aliyun:
   oss:
     endpoint: oss-cn-beijing.aliyuncs.com    # oss对外服务的访问域名
-    accessKeyId: LTAIQDYu8xITN76T  # 访问身份验证中用到用户标识
+    accessKeyId:   # 访问身份验证中用到用户标识
     accessKeySecret:  # 用户用于加密签名字符串和oss用来验证签名字符串的密钥
     bucketName: liuying192837 # oss的存储空间
     policy:

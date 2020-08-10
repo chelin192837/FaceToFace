@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class MallApiApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(MallApiApplication.class, args);
+
     }
 }
