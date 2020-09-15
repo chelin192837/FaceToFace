@@ -1,0 +1,4 @@
+[INFO][2020-09-01T13:37:34.054][log.go:58] _com_request_in||uri=/api/user/listpage?page=1&name=||method=GET||body=map[]||args=map[]||from=127.0.0.1||traceid=c0a8019e5f4dde1e4c381082c21163b0||cspanid=||spanid=9fe5df806d7beb49
+[INFO][2020-09-01T13:37:34.054][log.go:58] _com_request_in||uri=/api/user/listpage?page=1&name=||body=map[]||spanid=9fe5df8068505b0d||method=GET||args=map[]||from=127.0.0.1||traceid=c0a8019e5f4dde1e943810827f05f5b0||cspanid=
+[INFO][2020-09-01T13:37:40.065][log.go:58] _com_request_in||uri=/api/user/listpage?page=1&name=||args=map[]||traceid=c0a8019e5f4dde2489581082ab6691b0||spanid=9fe5dfba129d285d||method=GET||body=map[]||from=127.0.0.1||cspanid=
+[INFO][2020-09-01T13:37:40.065][log.go:58] _com_request_in||method=GET||from=127.0.0.1||spanid=9fe5dfba149723b0||uri=/api/user/listpage?page=1&name=||args=map[]||body=map[]||traceid=c0a8019e5f4dde24ba2810820cf7f4b0||cspanid=

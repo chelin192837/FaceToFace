@@ -1,0 +1,2 @@
+[INFO][2020-08-26T15:09:20.678][log.go:58] _com_request_in||body=map[page:]||from=127.0.0.1||cspanid=||spanid=9fee0abd00010cd7||uri=/app/publish/requirelist||method=POST||args=map[]||traceid=c0a8001d5f460aa0952014fea8e5ebb0
+[INFO][2020-08-26T15:09:21.634][log.go:58] _com_request_in||uri=/app/discover/teacherlist||method=POST||args=map[]||cspanid=||spanid=9fee0abc03b1cec5||body=map[page:]||from=127.0.0.1||traceid=c0a8001d5f460aa16ce014febf5e55b0

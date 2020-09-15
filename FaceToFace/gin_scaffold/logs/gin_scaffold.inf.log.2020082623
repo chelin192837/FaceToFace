@@ -1,0 +1,4 @@
+[INFO][2020-08-26T23:26:58.348][log.go:58] _com_request_in||spanid=9fee7e47758bdd1d||uri=/app/discover/teacherlist||args=map[]||body=map[page:]||from=127.0.0.1||method=POST||traceid=c0a801055f467f427dd04862418b3db0||cspanid=
+[INFO][2020-08-26T23:26:59.688][log.go:58] _com_request_in||method=POST||body=map[page:]||traceid=c0a801055f467f4324984862a9c70fb0||spanid=9fee7e461c677b4f||uri=/app/discover/teacherlist||args=map[]||from=127.0.0.1||cspanid=
+[INFO][2020-08-26T23:26:59.688][log.go:58] _com_request_in||method=POST||body=map[]||from=127.0.0.1||traceid=c0a801055f467f4321e84862166a95b0||cspanid=||uri=/demo/video||args=map[]||spanid=9fee7e4670419319
+[INFO][2020-08-26T23:27:03.377][log.go:58] _com_request_in||body=map[page:]||traceid=c0a801055f467f47bbc848629c21a9b0||uri=/app/publish/requirelist||method=POST||args=map[]||from=127.0.0.1||cspanid=||spanid=9fee7e423fb4484d
