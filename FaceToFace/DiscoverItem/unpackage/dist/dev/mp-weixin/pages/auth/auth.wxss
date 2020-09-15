@@ -1,0 +1,53 @@
+
+.auth-name{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	
+	padding: 20rpx 20rpx;
+}
+.auth-name-title{
+	font-size: 18px;
+	color: #333333;
+}
+.auth-name-input{
+	border:1px solid #C6C8CE;
+	background-color:transparent;
+	height: 70rpx;
+	margin-top: 10rpx;
+	border-radius: 6px;
+}
+.auth-name-radio{
+	margin-top: 10rpx;
+}
+.auth-name-radio-item{
+	margin-left: 10rpx;
+}
+.auth-name-radio-colum{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+            flex-direction: column;
+}
+.auth-name-radio-item-colum{
+	margin-top: 15rpx;
+}
+.auth-submit-button{
+
+    width: 80%;
+	background-color: #007AFF;
+	color: #FFFFFF;
+	margin-top: 40rpx;
+}
+.auth-submit{
+	height: 200px;
+}
+
+

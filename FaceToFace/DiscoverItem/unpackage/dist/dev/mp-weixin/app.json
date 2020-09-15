@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/search/search",
+    "pages/me/me",
+    "pages/newspages/newspages",
+    "pages/movie/movie",
+    "pages/wallet/wallet",
+    "pages/cover/cover",
+    "pages/registLogin/registLogin",
+    "pages/meInfo/meInfo",
+    "pages/auth/auth"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "NEXT超英预告",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#515151",
+    "borderStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/facetoface/tab_home_default.png",
+        "selectedIconPath": "static/facetoface/tab_home_selected.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "寻找",
+        "iconPath": "static/facetoface/tab_market_default.png",
+        "selectedIconPath": "static/facetoface/tab_market_selected.png"
+      },
+      {
+        "pagePath": "pages/newspages/newspages",
+        "text": "发布",
+        "iconPath": "static/facetoface/tab_trade_default.png",
+        "selectedIconPath": "static/facetoface/tab_trade_selected.png"
+      },
+      {
+        "pagePath": "pages/wallet/wallet",
+        "text": "卡包",
+        "iconPath": "static/facetoface/tab_wallet_default.png",
+        "selectedIconPath": "static/facetoface/tab_wallet_selected.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "static/facetoface/tab_profile_default.png",
+        "selectedIconPath": "static/facetoface/tab_profile_selected.png"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

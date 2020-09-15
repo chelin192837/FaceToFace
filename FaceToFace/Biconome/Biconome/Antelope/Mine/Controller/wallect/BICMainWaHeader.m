@@ -42,7 +42,6 @@
     self.rightBlock = rightBlock;
     
     self.bgView.layer.cornerRadius = 8.f;
-//    self.bgView.layer.masksToBounds = YES;
     
     if([[BICDeviceManager getCurrentTheme] isEqualToString:@"white"]){
         [self.bgView isYY];
@@ -50,20 +49,10 @@
         self.bgView.layer.masksToBounds = YES;
     }
 
-//    [self.walletBGImage isYY];
-//    [self.bgView isYY];
-//    self.backgroundColor = kBICWhiteColor;
-//    self.bgView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"wallet_bg"]];
-//    self.rechargeBtn.layer.borderColor =kBICWhiteColor.CGColor;
-//    self.rechargeBtn.layer.borderWidth = 0.5f;
-//    
-//    self.extraBtn.layer.borderColor =kBICWhiteColor.CGColor;
-//    self.extraBtn.layer.borderWidth = 0.5f;
+    self.bitValueLab.text = [NSString stringWithFormat:@"%@%@",LAN(@"卡片数量"),@"(张数)"];
     
-    self.bitValueLab.text = [NSString stringWithFormat:@"%@%@",LAN(@"估值"),@"(BTC)"];
-    
-    [self.rechargeBtn setTitle:LAN(@"充值") forState:UIControlStateNormal];
-    [self.extraBtn setTitle:LAN(@"提现") forState:UIControlStateNormal];
+    [self.rechargeBtn setTitle:LAN(@"充卡") forState:UIControlStateNormal];
+    [self.extraBtn setTitle:LAN(@"提卡") forState:UIControlStateNormal];
 
     if (![BICDeviceManager isLogin]) {
         self.loginRegisterBtn.hidden = NO;
@@ -80,8 +69,12 @@
     self.index = YES;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateUI:) name:NSNotificationCenterUpdateUI object:nil];
+   
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSucceed:) name:NSNotificationCenterLoginSucceed object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginOut:) name:NSNotificationCenterLoginOut object:nil];
+    
+    
     [self.walletBGImage removeFromSuperview];
     self.backgroundColor=KTheme2BGColor;
     self.bgView.backgroundColor=KTheme2BGColor;
@@ -102,19 +95,21 @@
     self.extraBtn.layer.borderWidth=0.5;
     self.extraBtn.layer.borderColor=((UIColor *)KThemeText2Color).CGColor;
     
-    if([[BICDeviceManager getCurrentTheme] isEqualToString:@"white"]){
         [self.eyeBtn setImage:[UIImage imageNamed:@"visibility_on_dark"] forState:UIControlStateNormal];
 
         [self.rechargeBtn setImage:[UIImage imageNamed:@"deposit_dark"] forState:UIControlStateNormal];
         
         [self.extraBtn setImage:[UIImage imageNamed:@"withdraw_dark"] forState:UIControlStateNormal];
-    }else{
-        [self.eyeBtn setImage:[UIImage imageNamed:@"visibility_on_light"] forState:UIControlStateNormal];
-        
-        [self.rechargeBtn setImage:[UIImage imageNamed:@"deposit_light"] forState:UIControlStateNormal];
-        
-        [self.extraBtn setImage:[UIImage imageNamed:@"withdraw_light"] forState:UIControlStateNormal];
-    }
+
+    
+    self.rechargeBtn.hidden=YES;
+    self.extraBtn.hidden=YES;
+    
+    if ([SDUserDefaultsGET(FACEIPHONE) isEqualToString:@"15510373985"]) {
+             self.BTCLab.text = @"2";
+         }else{
+             self.BTCLab.text = @"0";
+         }
     
     return self;
 }
@@ -124,7 +119,7 @@
     if (!_loginRegisterBtn) {
         _loginRegisterBtn = [[UIButton alloc] init];
         _loginRegisterBtn.backgroundColor = KTheme2BGColor;
-    
+        [_loginRegisterBtn addTarget:self action:@selector(loginRegisterClick) forControlEvents:UIControlEventTouchUpInside];
         [_loginRegisterBtn setTitle:LAN(@"登录/注册") forState:UIControlStateNormal];
         [_loginRegisterBtn setTitleColor:KThemeText2Color forState:UIControlStateNormal];
         _loginRegisterBtn.layer.cornerRadius = 4;
@@ -144,18 +139,48 @@
     }
     return _loginRegisterBtn;
 }
-
+-(void)loginRegisterClick
+{
+    BICLoginVC * loginVC = [[BICLoginVC alloc] initWithNibName:@"BICLoginVC" bundle:nil];
+    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+    
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:nav animated:YES completion:^{
+        
+    }];
+}
 -(void)loginSucceed:(NSNotification*)notify
 {
     self.loginRegisterBtn.hidden = YES;
     self.eyeBtn.hidden = NO;
+
+    self.rechargeBtn.hidden=YES;
+    self.extraBtn.hidden=YES;
+    
+    if ([SDUserDefaultsGET(FACEIPHONE) isEqualToString:@"15510373985"]) {
+        
+        self.BTCLab.text = @"2";
+        
+    }else{
+        
+        self.BTCLab.text = @"0";
+
+    }
+
 }
+
 -(void)loginOut:(NSNotification*)notify
 {
     self.loginRegisterBtn.hidden = NO;
     self.eyeBtn.hidden = YES;
+    
+    self.rechargeBtn.hidden=YES;
+    self.extraBtn.hidden=YES;
+
+    self.BTCLab.text = @"0";
 
 }
+
+
 -(void)updateTopUI
 {
     if (![BICDeviceManager isLogin]) {
@@ -170,8 +195,9 @@
 -(void)updateUI:(NSNotification*)notify
 {
     self.bitValueLab.text = [NSString stringWithFormat:@"%@%@",LAN(@"余额"),@"(¥)"];
-    [self.rechargeBtn setTitle:LAN(@"充值") forState:UIControlStateNormal];
-    [self.extraBtn setTitle:LAN(@"提现") forState:UIControlStateNormal];
+    
+    [self.rechargeBtn setTitle:LAN(@"充卡") forState:UIControlStateNormal];
+    [self.extraBtn setTitle:LAN(@"提卡") forState:UIControlStateNormal];
     
     [self.loginRegisterBtn setTitle:LAN(@"登录/注册") forState:UIControlStateNormal];
 
@@ -179,6 +205,9 @@
 }
 
 - (IBAction)leftBtn:(id)sender {
+    
+
+    
     if (self.leftBlock) {
         self.leftBlock();
     }
@@ -189,40 +218,20 @@
 // 8,828.00
 - (IBAction)eyeClick:(id)sender {
     
-    
     if (self.index) {
-        if([[BICDeviceManager getCurrentTheme] isEqualToString:@"white"]){
-            [self.eyeBtn setImage:[UIImage imageNamed:@"visibility_off"] forState:UIControlStateNormal];
-        }else{
-            [self.eyeBtn setImage:[UIImage imageNamed:@"visibility_off_light"] forState:UIControlStateNormal];
-        }
+        [self.eyeBtn setImage:[UIImage imageNamed:@"visibility_off"] forState:UIControlStateNormal];
         
         self.BTCLab.text = [NSString stringWithFormat:@"%@",[self getEyeStr:self.BTCLab.text.length]];
-
-        self.USDTLab.text =[NSString stringWithFormat:@"%@",[self getEyeStr:self.USDTLab.text.length]];
-    }else{
-        if([[BICDeviceManager getCurrentTheme] isEqualToString:@"white"]){
-            [self.eyeBtn setImage:[UIImage imageNamed:@"visibility_on_dark"] forState:UIControlStateNormal];
-        }else{
-            [self.eyeBtn setImage:[UIImage imageNamed:@"visibility_on_light"] forState:UIControlStateNormal];
-        }
         
-        if (_arrValue.count>0) {
-            self.BTCLab.text = [NSString stringWithFormat:@"%@",[BICDeviceManager changeNumberFormatter:_arrValue[0]]];
-            
-            if ([[BICDeviceManager getCurrentRate] isEqualToString:@"CNY"]) {
-                
-                self.USDTLab.text =[NSString stringWithFormat:@"¥%@",[BICDeviceManager changeNumberFormatter:_arrValue[1]]];
-            }else{
-                self.USDTLab.text =[NSString stringWithFormat:@"$%@",[BICDeviceManager changeNumberFormatter:_arrValue[1]]];
-            }
-            
+    }else{
+        [self.eyeBtn setImage:[UIImage imageNamed:@"visibility_on_dark"] forState:UIControlStateNormal];
+        
+        if ([SDUserDefaultsGET(FACEIPHONE) isEqualToString:@"15510373985"]) {
+            self.BTCLab.text = @"2";
         }else{
-            self.BTCLab.text = @"0.00";
-            self.USDTLab.text =@"0.00";
-
+            self.BTCLab.text = @"0";
         }
- 
+    
     }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:NSNotificationCenterBICWalletHideBalance object:@(self.index)];
@@ -252,6 +261,8 @@
 }
 
 - (IBAction)rightBTn:(id)sender {
+    
+    
     if (self.rightBlock) {
         self.rightBlock();
     }

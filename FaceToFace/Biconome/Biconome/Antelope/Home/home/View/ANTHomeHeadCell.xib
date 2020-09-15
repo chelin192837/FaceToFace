@@ -58,6 +58,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="cellTitle" destination="ewm-XM-2FU" id="o1x-78-j7P"/>
                 <outlet property="mainCollection" destination="7Yo-35-7oC" id="i8F-1X-6Kk"/>
                 <outlet property="titleImage" destination="JiT-hi-p06" id="QeN-7C-Lxl"/>
             </connections>

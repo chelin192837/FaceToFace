@@ -23,6 +23,7 @@ typedef void(^DidSelectedBlock)();
 @property (weak, nonatomic) IBOutlet UIImageView *titleImage;
 
 @property(nonatomic,copy)DidSelectedBlock didSelectedBlock;
+@property (weak, nonatomic) IBOutlet UILabel *cellTitle;
 
 
 @end

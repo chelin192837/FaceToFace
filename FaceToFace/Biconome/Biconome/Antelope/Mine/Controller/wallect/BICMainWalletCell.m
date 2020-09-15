@@ -11,7 +11,6 @@
 @property (weak, nonatomic) IBOutlet UIView *bgView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *logImage;
-@property (weak, nonatomic) IBOutlet UILabel *tokenSymbolLab;
 
 
 @end
@@ -27,6 +26,14 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hide:) name:NSNotificationCenterBICWalletHideBalance object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSucceed) name:NSNotificationCenterLoginSucceed object:nil];
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginOut) name:NSNotificationCenterLoginOut object:nil];
+    
+    if ([SDUserDefaultsGET(FACEIPHONE) isEqualToString:@"15510373985"]) {
+          self.balanceLab.text = @"1张";
+      }else{
+          self.balanceLab.text = @"0张";
+      }
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
@@ -41,6 +48,20 @@
     }
 }
 
+-(void)loginSucceed
+{
+    if ([SDUserDefaultsGET(FACEIPHONE) isEqualToString:@"15510373985"]) {
+        self.balanceLab.text = @"1张";
+    }else{
+        self.balanceLab.text = @"0张";
+    }
+}
+-(void)loginOut
+{
+    self.balanceLab.text = @"0张";
+}
+
+
 -(void)hide:(NSNotification*)notify
 {
     NSNumber * obj =notify.object;
@@ -48,8 +69,11 @@
     if (obj.boolValue) {  // hide = yes
         self.balanceLab.text = @"********";
     }else{
-        
-        self.balanceLab.text = [NSString stringWithFormat:@"%@",NumFormat(@"1张")];
+        if ([SDUserDefaultsGET(FACEIPHONE) isEqualToString:@"15510373985"]) {
+               self.balanceLab.text = @"1张";
+           }else{
+               self.balanceLab.text = @"0张";
+           }
     }
 }
 

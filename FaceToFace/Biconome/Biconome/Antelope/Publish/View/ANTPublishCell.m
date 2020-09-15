@@ -42,13 +42,17 @@
     
     self.nameLab.text = [NSString stringWithFormat:@"姓名: %@",publishModel.student_name];
     
-    self.gradeLab.text = [NSString stringWithFormat:@"年级: %@",publishModel.other_one];
+    self.gradeLab.text = [NSString stringWithFormat:@"年级: %@",publishModel.classType];
 
     self.questionLab.text = [NSString stringWithFormat:@"困扰问题: %@",publishModel.problem];
 
     self.typeLab.text = [NSString stringWithFormat:@"需要的学生类型: %@",publishModel.teach_major];
 
-    self.orderLab.text = [NSString stringWithFormat:@"订单状态: %@",publishModel.other_two?:@"待处理"];
+    if (publishModel.other_two.length>1) {
+        self.orderLab.text = [NSString stringWithFormat:@"订单状态: %@",publishModel.other_two];
+    }else{
+        self.orderLab.text = [NSString stringWithFormat:@"订单状态: %@",@"待处理"];
+    }
     
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

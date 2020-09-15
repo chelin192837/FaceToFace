@@ -24,7 +24,6 @@
 #import <MJRefresh.h>
 #import <Masonry.h>
 #import <YYModel.h>
-#import <Hyphenate/Hyphenate.h>
 #import "JSONModel.h"
 
 #import "SDAutoLayout.h"
@@ -58,18 +57,12 @@
 
 #import "BICBaseRequest.h"
 
-#import "AAGlobalMacro.h"
 #import "BaseViewController.h"
 #import "BICBaseTableViewCell.h"
 
 #import "CustomGifHeader.h"
 
 //3.5.4
-#import <Hyphenate/Hyphenate.h>
-#import "EMHeaders.h"
-
-#import <HelpDesk/HelpDesk.h>
-#import "HelpDeskUI.h"
 
 #import "UIView+Extend.h"
 #endif /* PrefixHeader_pch */

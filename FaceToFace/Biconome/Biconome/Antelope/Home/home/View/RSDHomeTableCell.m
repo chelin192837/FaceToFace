@@ -9,8 +9,8 @@
 //#import "RSDonsultantCell.h"
 //#import "RSDLabelsCell.h"
 #import "UIImage+GIF.h"
-
-
+#import "BICMainWalletVC.h"
+#import "BICLoginVC.h"
 
 static NSString *kLabelsCellID = @"kLabelsCellID";
 static NSString *kDonsultantCellID = @"kDonsultantCellID";
@@ -41,11 +41,28 @@ static NSString *kDonsultantCellID = @"kDonsultantCellID";
 @implementation RSDHomeTableCell
 
 - (IBAction)callBtn:(id)sender {
-    
-    if (_dataModel && _dataModel.iphone) {
-        [SDDeviceManager callTelephoneNumber:_dataModel.iphone];
+
+    if([BICDeviceManager isLogin])
+    {
+        if ([SDUserDefaultsGET(FACEIPHONE) isEqualToString:@"15510373985"]) {
+            [SDDeviceManager callTelephoneNumber:_dataModel.iphone];
+        }else{
+            [[ODAlertViewFactory createAS2_Title:@"卡片数量不足" message:@"亲！目前请联系客服" confirmButtonTitle:@"确认" confirmAction:^(AKAlertDialogItem *item) {
+                [SDDeviceManager callTelephoneNumber:@"15510373985"];
+            } cancelButtonTitle:@"取消" cancelAction:^(AKAlertDialogItem *item) {
+                
+            }] show];
+        }
+    }else{
+        BICLoginVC * loginVC = [[BICLoginVC alloc] initWithNibName:@"BICLoginVC" bundle:nil];
+        
+          UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+          
+          [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:nav animated:YES completion:^{
+              
+          }];
+        
     }
-    
 }
 
 +(instancetype)exitWithTableView:(UITableView*)tableView
@@ -78,17 +95,17 @@ static NSString *kDonsultantCellID = @"kDonsultantCellID";
     
     self.flagLab.text = dataModel.flag;
     
-    [self.iconImage sd_setImageWithURL:[NSURL URLWithString:dataModel.icon] placeholderImage:[UIImage imageNamed:@"gaozhong"]];
+    [self.iconImage sd_setImageWithURL:[NSURL URLWithString:dataModel.file_url1] placeholderImage:[UIImage imageNamed:@"gaozhong"]];
     
     self.name.text = dataModel.name ;
     
     self.subjectLab.text = dataModel.subject; //清华/北大
     
-    self.other_two.text = dataModel.other_two; //地址
+    self.other_two.text = dataModel.address; //地址
     
-    self.priceLab.text = [NSString stringWithFormat:@"%@ 元/30分钟",dataModel.active];
+    self.priceLab.text = [NSString stringWithFormat:@"%@ 元/30分钟",dataModel.price];
     
-    [self.addressLab setTitle:[NSString stringWithFormat:@"     %@",dataModel.other_one] forState:UIControlStateNormal];
+    [self.addressLab setTitle:[NSString stringWithFormat:@"     %@",dataModel.technology] forState:UIControlStateNormal];
     
     self.advantageLab.text = dataModel.advantage?:@"只要有梦想，就能实现";
     

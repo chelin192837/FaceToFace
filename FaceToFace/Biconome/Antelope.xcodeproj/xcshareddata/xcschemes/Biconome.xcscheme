@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "62F675A522F5280900826835"
-               BuildableName = "Antelope.app"
+               BuildableName = "&#x6e05;&#x5317;&#x9762;&#x5bf9;&#x9762;.app"
                BlueprintName = "Antelope"
                ReferencedContainer = "container:Antelope.xcodeproj">
             </BuildableReference>
@@ -23,7 +23,7 @@
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
@@ -31,7 +31,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "62F675A522F5280900826835"
-            BuildableName = "Antelope.app"
+            BuildableName = "&#x6e05;&#x5317;&#x9762;&#x5bf9;&#x9762;.app"
             BlueprintName = "Antelope"
             ReferencedContainer = "container:Antelope.xcodeproj">
          </BuildableReference>
@@ -74,14 +74,14 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "62F675A522F5280900826835"
-            BuildableName = "Antelope.app"
+            BuildableName = "&#x6e05;&#x5317;&#x9762;&#x5bf9;&#x9762;.app"
             BlueprintName = "Antelope"
             ReferencedContainer = "container:Antelope.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
@@ -91,14 +91,14 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "62F675A522F5280900826835"
-            BuildableName = "Antelope.app"
+            BuildableName = "&#x6e05;&#x5317;&#x9762;&#x5bf9;&#x9762;.app"
             BlueprintName = "Antelope"
             ReferencedContainer = "container:Antelope.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Debug">
+      buildConfiguration = "Release">
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"

@@ -187,11 +187,11 @@
     }
     
     if (textField==self.firstNametextField.textField){
-        self.request.other_two = textField.text ;
+        self.request.technology = textField.text ;
     }
     
     if (textField==self.addresstextField.textField){
-        self.request.other_one = textField.text ;
+        self.request.address = textField.text ;
     }
 
 }

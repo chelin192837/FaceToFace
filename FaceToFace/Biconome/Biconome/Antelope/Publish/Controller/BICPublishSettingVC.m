@@ -218,7 +218,7 @@
 
             cell.rightLab.text = str ;
             
-            weakSelf.pushlishModel.otherOne = str ;
+            weakSelf.pushlishModel.classType = str ;
         };
         [self.navigationController pushViewController:selectPage animated:YES];
     }
@@ -250,7 +250,7 @@
         
         ANTOtherQuestionVC * questVC = [[ANTOtherQuestionVC alloc] initWithNibName:@"ANTOtherQuestionVC" bundle:[NSBundle mainBundle]];
         
-        questVC.currentStr = self.pushlishModel.other;
+        questVC.currentStr = self.pushlishModel.note;
         
         questVC.titleQuestionStr = @"其他问题";
 
@@ -260,7 +260,7 @@
 
             cell.rightLab.hidden = NO ;
 
-            weakSelf.pushlishModel.other = str ;
+            weakSelf.pushlishModel.note = str ;
 
             if (str.length > 10) {
                 cell.rightLab.text = [NSString stringWithFormat:@"%@...",[str substringToIndex:10]];

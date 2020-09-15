@@ -155,7 +155,7 @@
     [[BICProfileService sharedInstance] analyticalFacLoginData:request serverSuccessResultHandler:^(id response) {
         BICRegisterResponse * responseM = (BICRegisterResponse*)response;
         
-        if (responseM.code==200) {
+        if ((responseM.code==200)&&(responseM.data)) {
             NSUserDefaults *standard = [NSUserDefaults standardUserDefaults];
             [standard setObject:responseM.data.token forKey:APPID];
             [standard setObject:responseM.data.name forKey:FACENAME];

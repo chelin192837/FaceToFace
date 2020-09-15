@@ -10,7 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSInteger,WALLECT_TYPE_PUSH)
+{
+    WALLECT_TYPE_PUSH_YES=99,
+    WALLECT_TYPE_PUSH_NO,
+};
+
 @interface BICMainWalletVC : BaseViewController
+
+@property(nonatomic,assign)WALLECT_TYPE_PUSH wallectType;
 
 @end
 

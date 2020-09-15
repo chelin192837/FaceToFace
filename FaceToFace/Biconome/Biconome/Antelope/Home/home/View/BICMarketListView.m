@@ -85,6 +85,7 @@ static NSString *kbtcKindCollectionView = @"kbtcKindCollectionView";
     [self.dealVCArray removeAllObjects];
     for (int i=0; i<self.titleArray.count; i++) {
         ANTTeachListVC * vc = [[ANTTeachListVC alloc] init];
+        vc.searchName = self.titleArray[i];
         [self.dealVCArray addObject:vc];
     }
 }

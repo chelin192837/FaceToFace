@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 //备注，其他问题
 @property(nonatomic,strong)NSString * other;
 //高中生年级
-@property(nonatomic,strong)NSString * other_one;
+@property(nonatomic,strong)NSString * classType;
 //订单状态
 @property(nonatomic,strong)NSString * other_two;
 

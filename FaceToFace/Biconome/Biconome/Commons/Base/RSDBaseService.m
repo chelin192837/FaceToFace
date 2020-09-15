@@ -95,8 +95,8 @@
 //                [ODAlertViewFactory showLoadingViewWithMessage:nil];
                 [ODNetWorkTool postByUrl:url Parameters:[request toDictionary] success:^(NSURLSessionDataTask *task, id responseObject) {
 //                    [ODAlertViewFactory hideAllHud];
-//                    id json = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
-//                    NSLog(@"json--%@",json);
+                    id json = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+                    NSLog(@"json--%@",json);
                     
                     id any=[[NSClassFromString(res)  alloc] initWithData:responseObject error:nil];
                     

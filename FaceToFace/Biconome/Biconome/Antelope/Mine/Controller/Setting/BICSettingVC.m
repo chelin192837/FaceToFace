@@ -48,7 +48,7 @@
 {
     [self initNavigationTitleViewLabelWithTitle:LAN(@"设置") titleColor:kNVABICSYSTEMTitleColor IfBelongTabbar:NO];
     
-    NSArray * titleArr = @[LAN(@"通用设置"),LAN(@"关于清北面对面")];
+    NSArray * titleArr = @[LAN(@"关于清北面对面")];
     self.titleArr = titleArr;
     
     [self.view addSubview:self.tableView];
@@ -174,7 +174,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -195,9 +195,13 @@
 {
     if (indexPath.row==0) {
         
-        BICCommonSetVC * commonSet = [[BICCommonSetVC alloc] init];
+        BICAboutUSVC * usVC = [[BICAboutUSVC alloc] init];
+              [self.navigationController pushViewController:usVC animated:YES];
+              
         
-        [self.navigationController pushViewController:commonSet animated:YES];
+//        BICCommonSetVC * commonSet = [[BICCommonSetVC alloc] init];
+//        
+//        [self.navigationController pushViewController:commonSet animated:YES];
     }
     
     if (indexPath.row==1) {

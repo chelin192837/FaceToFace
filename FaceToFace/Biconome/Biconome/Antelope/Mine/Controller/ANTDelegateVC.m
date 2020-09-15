@@ -68,6 +68,7 @@
     self.tableView.mj_footer = footer;
     
     [self.tableView.mj_header beginRefreshing];
+    
 }
 
 -(ANTPageHelperRequest*)request
@@ -80,6 +81,7 @@
 }
 -(void)analyPublishData:(ANTPageHelperRequest*)request
 {
+    request.iphone = SDUserDefaultsGET(FACEIPHONE);
     WEAK_SELF
     [[ANTPublishService sharedInstance] analyticalPublishRequireListData:request serverSuccessResultHandler:^(id response) {
         ANTPublishResponse * responseM = (ANTPublishResponse*)response;
@@ -87,7 +89,6 @@
             [weakSelf.dataArray removeAllObjects];
         }
         [weakSelf.dataArray addObjectsFromArray:responseM.data.list];
-        
         
         [weakSelf.tableView reloadData];
         

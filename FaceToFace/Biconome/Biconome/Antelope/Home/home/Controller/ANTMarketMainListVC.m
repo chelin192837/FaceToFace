@@ -9,6 +9,7 @@
 #import "ANTMarketMainListVC.h"
 #import "BICMarketListView.h"
 #import "ANTTeacherDetailVC.h"
+#import "BICMainWalletVC.h"
 @interface ANTMarketMainListVC ()
 
 @end
@@ -22,8 +23,10 @@
      
      [self initNavigationLeftBtnWithTitle:nil isNeedImage:YES andImageName:@"fanhuiHei" titleColor:nil];
 
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushTo:) name:@"teachDetial" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushTo:) name:kNSNotificationCenterPushToTeachDetail object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushToWallect:) name:kNSNotificationCenterPushToWallect object:nil];
+
     [self setupUI];
     
 }
@@ -40,12 +43,22 @@
     [marketAll setUITitleList:self.array];
     
 }
+
 -(void)pushTo:(NSNotification*)noti
 {
     ANTFind * dataModel = noti.object;
     ANTTeacherDetailVC * teachDetailVC = [[ANTTeacherDetailVC alloc] init];
     teachDetailVC.model = dataModel;
     [self.navigationController pushViewController:teachDetailVC animated:YES];
+
+}
+
+
+-(void)pushToWallect:(NSNotification*)noti
+{
+    BICMainWalletVC * wallectVC = [[BICMainWalletVC alloc] init];
+    wallectVC.wallectType = WALLECT_TYPE_PUSH_YES;
+    [self.navigationController pushViewController:wallectVC animated:YES];
 
 }
 

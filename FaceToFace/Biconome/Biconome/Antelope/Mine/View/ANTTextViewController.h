@@ -10,7 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ANTTextViewController : UIViewController
+@interface ANTTextViewController : BaseViewController
+
+@property(nonatomic,strong)NSString * contentString;
+
+@property(nonatomic,strong)NSString * titleString;
 
 @end
 

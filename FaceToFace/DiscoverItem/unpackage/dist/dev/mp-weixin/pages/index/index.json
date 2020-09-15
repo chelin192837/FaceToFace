@@ -1,0 +1,8 @@
+{
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "hellocomp": "/components/hellocomp",
+    "tailer-starts": "/components/tailerStarts"
+  }
+}

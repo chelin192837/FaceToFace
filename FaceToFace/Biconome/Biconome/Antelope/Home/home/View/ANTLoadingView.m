@@ -10,12 +10,9 @@
 
 @implementation ANTLoadingView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
++(instancetype)initWithNib
+{
+    return [[NSBundle mainBundle] loadNibNamed:@"ANTLoadingView" owner:nil options:nil][0];
 }
-*/
 
 @end

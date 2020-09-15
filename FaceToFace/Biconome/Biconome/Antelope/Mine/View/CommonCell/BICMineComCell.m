@@ -17,7 +17,7 @@
     [super awakeFromNib];
     // Initialization code
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    [self.bgView isYY];
+//    [self.bgView isYY];
     self.contentView.backgroundColor = KThemeBGColor;
     self.backgroundColor = KThemeBGColor;
     
@@ -25,6 +25,8 @@
     
     self.textField.delegate = self;
     
+    self.textField.hidden = YES ;
+
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField

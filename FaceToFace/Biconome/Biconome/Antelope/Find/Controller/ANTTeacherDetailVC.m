@@ -93,7 +93,7 @@
         case 2:
         {
             cell.titleTexLab.text = @"专业";
-            cell.textField.text = _model.other_two ;
+            cell.textField.text = _model.technology ;
 
         }
             break;
@@ -121,7 +121,7 @@
         case 6:
         {
             cell.titleTexLab.text = @"高考时省市";
-            cell.textField.text = _model.other_one ;
+            cell.textField.text = _model.address ;
 
         }
             break;
@@ -162,15 +162,17 @@
     
     if (indexPath.row == 8) {
         
-        BICPhotoIdentifyVC *vc=[[BICPhotoIdentifyVC alloc] init];
-        
-        vc.imgArr = @[_model.file_url1,_model.file_url2,_model.file_url3];
-        
-        
-        vc.cardType=BICCardType_IdentifyCard_Show;
-        
-        [self.navigationController pushViewController:vc animated:YES];
-        
+        if (_model.file_url1 && _model.file_url2 && _model.file_url3) {
+            
+            BICPhotoIdentifyVC *vc=[[BICPhotoIdentifyVC alloc] init];
+              
+              vc.imgArr = @[_model.file_url1,_model.file_url2,_model.file_url3];
+              
+              vc.cardType=BICCardType_IdentifyCard_Show;
+              
+              [self.navigationController pushViewController:vc animated:YES];
+        }
+
     }
     
 }

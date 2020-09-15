@@ -118,6 +118,13 @@ typedef void(^TouchBlock)(NSString*str);
 
 + (NSString *)converStrEmoji:(NSString *)emojiStr;
 
++(NSString *)getHelpAndContactString;
+
++(NSString *)getAboutUsFaceString;
++(NSString *)getPrivatetString;
++(NSString *)getServiceItemString;
++(NSString *)getCompanytString;
+
 @end
 
 NS_ASSUME_NONNULL_END

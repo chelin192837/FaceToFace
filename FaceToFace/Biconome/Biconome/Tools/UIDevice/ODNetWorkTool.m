@@ -28,8 +28,10 @@
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
     
-    NSString *finalyToken = [[NSString alloc]initWithFormat:@"Bearer %@",[[NSUserDefaults standardUserDefaults] objectForKey:APPID]];
-    [manager.requestSerializer setValue:finalyToken forHTTPHeaderField:@"Authorization"];
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:APPID]) {
+          NSString *finalyToken = [[NSString alloc]initWithFormat:@"Bearer %@",[[NSUserDefaults standardUserDefaults] objectForKey:APPID]];
+         [manager.requestSerializer setValue:finalyToken forHTTPHeaderField:@"Authorization"];
+     }
     
     NSString *finalyToken1 = [[NSString alloc]initWithFormat:@"%@",[[NSUserDefaults standardUserDefaults] objectForKey:APPID]];
     

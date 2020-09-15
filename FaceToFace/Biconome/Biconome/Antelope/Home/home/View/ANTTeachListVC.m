@@ -40,6 +40,7 @@
         
  
 }
+
 -(ANTPageHelperRequest*)request
 {
     if (!_request) {
@@ -82,6 +83,7 @@
 
 -(void)analyData:(ANTPageHelperRequest*)request
 {
+    request.searchName = self.searchName;
     WEAK_SELF
     [[ANTFindService sharedInstance] analyticalFindListData:request serverSuccessResultHandler:^(id response) {
         
@@ -90,6 +92,12 @@
             [weakSelf.dataArray removeAllObjects];
         }
         [weakSelf.dataArray addObjectsFromArray:responseM.data.list];
+        
+        if (weakSelf.dataArray.count == 0) {
+            [weakSelf setupNoDataOfSearchBiconome:self.tableView With:120.f];
+        }else{
+            [weakSelf hideNoDataOfSearchBiconome];
+        }
         
         [weakSelf.tableView reloadData];
         
@@ -145,13 +153,10 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    ANTTeacherDetailVC * teachDetailVC = [[ANTTeacherDetailVC alloc] init];
-//    teachDetailVC.model = dataModel;
-//    [self.navigationController pushViewController:teachDetailVC animated:YES];
 
     ANTFind * dataModel = self.dataArray[indexPath.row];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"teachDetial" object:dataModel];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenterPushToTeachDetail object:dataModel];
     
 }
 

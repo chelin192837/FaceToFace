@@ -1,0 +1,47 @@
+
+.auth-name{
+	display: flex;
+	flex-direction: column;
+	
+	padding: 20upx 20upx;
+}
+.auth-name-title{
+	font-size: 18px;
+	color: #333333;
+}
+.auth-name-input{
+	border:1px solid #C6C8CE;
+	background-color:transparent;
+	height: 70upx;
+	margin-top: 10upx;
+	border-radius: 6px;
+}
+
+.auth-name-radio{
+	margin-top: 10upx;
+}
+
+.auth-name-radio-item{
+	margin-left: 10upx;
+}
+
+.auth-name-radio-colum{
+	display: flex;
+    flex-direction: column;
+}
+.auth-name-radio-item-colum{
+	margin-top: 15upx;
+}
+.auth-submit-button{
+
+    width: 80%;
+	background-color: #007AFF;
+	color: #FFFFFF;
+	margin-top: 40upx;
+    	
+}
+
+.auth-submit{
+	height: 200px;
+  	
+}

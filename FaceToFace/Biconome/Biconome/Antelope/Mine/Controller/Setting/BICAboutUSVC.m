@@ -10,7 +10,7 @@
 #import "RSDHomeListWebVC.h"
 #import "BICMineComCell.h"
 #import "BICAboutUsCell.h"
-
+#import "ANTTextViewController.h"
 @interface BICAboutUSVC ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView*tableView;
 @property(nonatomic,strong)NSArray * titleArr;
@@ -28,7 +28,7 @@
     
     [self initNavigationTitleViewLabelWithTitle:LAN(@"关于") titleColor:kNVABICSYSTEMTitleColor IfBelongTabbar:NO];
     
-    NSArray * titleArr = @[LAN(@"关于清北面对面"),LAN(@"服务条款"),LAN(@"隐私政策"),LAN(@"费率")];
+    NSArray * titleArr = @[LAN(@"关于清北面对面"),LAN(@"服务条款"),LAN(@"隐私政策"),LAN(@"公司简介")];
     self.titleArr = titleArr;
     
     [self.view addSubview:self.tableView];
@@ -87,52 +87,30 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    ANTTextViewController * textVC = [[ANTTextViewController alloc] init];
+
     if (indexPath.row==1) {
-           RSDHomeListWebVC * webVC = [[RSDHomeListWebVC alloc] init];
-           if([BICDeviceManager languageIsChinese]) //中文
-           {
-               webVC.listWebStr = AboutBiconomyChinese;
-           }else{
-               webVC.listWebStr = AboutBiconomyEnglish;
-           }
-           [self.navigationController pushViewController:webVC animated:YES];
-           
-       }
+        textVC.contentString = [BICDeviceManager getAboutUsFaceString];
+        textVC.titleString=LAN(@"帮助与反馈");
+        
+    }
     if (indexPath.row==2) {
-        RSDHomeListWebVC * webVC = [[RSDHomeListWebVC alloc] init];
-        if([BICDeviceManager languageIsChinese]) //中文
-        {
-            webVC.listWebStr = TermsofserviceChinese;
-        }else{
-            webVC.listWebStr = TermsofserviceEnglish;
-        }
-        [self.navigationController pushViewController:webVC animated:YES];
+        textVC.contentString = [BICDeviceManager getHelpAndContactString];
+        textVC.titleString=LAN(@"服务条款");
         
     }
     if (indexPath.row==3) {
-        RSDHomeListWebVC * webVC = [[RSDHomeListWebVC alloc] init];
-        if([BICDeviceManager languageIsChinese]) //中文
-        {
-            webVC.listWebStr = PrivacypolicyChinese;
-        }else{
-            webVC.listWebStr = PrivacypolicyEnglish;
-        }
-        [self.navigationController pushViewController:webVC animated:YES];
+        textVC.contentString = [BICDeviceManager getPrivatetString];
+        textVC.titleString=LAN(@"隐私政策");
         
     }
     if (indexPath.row==4) {
-        RSDHomeListWebVC * webVC = [[RSDHomeListWebVC alloc] init];
-        if([BICDeviceManager languageIsChinese]) //中文
-        {
-            webVC.listWebStr = FeeChinese;
-        }else{
-            webVC.listWebStr = FeeEnglish;
-        }
-        [self.navigationController pushViewController:webVC animated:YES];
-        
+        textVC.contentString = [BICDeviceManager getCompanytString];
+        textVC.titleString=LAN(@"公司简介");
     }
-   
     
+    [self.navigationController pushViewController:textVC animated:YES];
+
 }
 
 

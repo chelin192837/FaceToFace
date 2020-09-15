@@ -16,7 +16,7 @@
     NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
     NSString *currentVersion = infoDic[@"CFBundleShortVersionString"];
     //Biconomy V
-    self.versionLabel.text=[NSString stringWithFormat:@"Biconomy V%@",currentVersion];
+    self.versionLabel.text=[NSString stringWithFormat:@"清北面对面 V%@",currentVersion];
 }
 
 +(instancetype)exitWithTableView:(UITableView*)tableView

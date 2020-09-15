@@ -25,6 +25,8 @@
 #import "ANTDelegateVC.h"
 #import "ANTCompledVC.h"
 #import "ANTMessageViewController.h"
+#import "ANTTextViewController.h"
+#import "ANTMineQuestionVC.h"
 @interface BICMineVC ()<UITableViewDelegate,UITableViewDataSource,UINavigationControllerDelegate>
 @property(nonatomic,strong)UITableView*tableView;
 @property(nonatomic,strong)NSArray * titleArr;
@@ -67,8 +69,8 @@
 }
 -(void)setupUI
 {
-    NSArray * titleArr=@[LAN(@"身份认证"),LAN(@"咨询问题"),LAN(@"当前委托"),LAN(@"成交记录"),LAN(@"帮助与反馈"),LAN(@"设置")];
-    NSArray *imageArr =@[@"profile-identity-black",@"profile-referral-black",@"profile_open_orders",  @"profile_identity_verify",@"profile_support",@"profile_setting"];
+    NSArray * titleArr=@[LAN(@"身份认证"),LAN(@"咨询问题"),LAN(@"当前委托"),LAN(@"成交记录"),LAN(@"帮助与反馈"),LAN(@"客服电话"),LAN(@"设置")];
+    NSArray *imageArr =@[@"profile-identity-black",@"profile-referral-black",@"profile_open_orders",  @"profile_identity_verify",@"profile_support",@"profile_security",@"profile_setting"];
     
     self.imageArr = imageArr;
     
@@ -135,13 +137,18 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row==0 ||
-        indexPath.row==1 ||
         indexPath.row==2 ||
-        indexPath.row==3 ||
-        indexPath.row==4 )
+        indexPath.row==3
+      )
     {
         if (![BICDeviceManager isLogin]) {
-            [BICDeviceManager PushToLoginView];
+            
+            BICLoginVC * loginVC = [[BICLoginVC alloc] initWithNibName:@"BICLoginVC" bundle:nil];
+            UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:nav animated:YES completion:^{
+                
+            }];
+            
             return;
         }
     }
@@ -154,33 +161,33 @@
         
     }else if(indexPath.row==1){
         
-        ANTMessageViewController * wallectVC = [[ANTMessageViewController alloc] init];
+            // 进入会话页面
+        ANTMineQuestionVC * vc = [[ANTMineQuestionVC alloc] initWithNibName:@"ANTMineQuestionVC" bundle:[NSBundle mainBundle]];
         
-        [self.navigationController pushViewController:wallectVC animated:YES];
+        vc.titleQuestionStr = @"联系我们";
+        
+        [self.navigationController pushViewController:vc animated:YES];
         
     }else if (indexPath.row==2) {
-                ANTDelegateVC * vc = [[ANTDelegateVC alloc] init];
-                [self.navigationController pushViewController:vc animated:YES];
+        ANTDelegateVC * vc = [[ANTDelegateVC alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
         
     }else if (indexPath.row==3) {
         
-        
-                ANTCompledVC * vc = [[ANTCompledVC alloc] init];
-                [self.navigationController pushViewController:vc animated:YES];
+        ANTCompledVC * vc = [[ANTCompledVC alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
     else if (indexPath.row==4) {
-        //        BICMineOrderDeleVC * vc = [[BICMineOrderDeleVC alloc] init];
-        //        [self.navigationController pushViewController:vc animated:YES];
-        
-        //        BICOrderDealVC * vc = [[BICOrderDealVC alloc] init];
-        //        [self.navigationController pushViewController:vc animated:YES];
-        
-        RSDHomeListWebVC * webVC = [[RSDHomeListWebVC alloc] init];
-        webVC.navigationShow = NO;
-        webVC.naviStr=LAN(@"帮助与反馈");
-        webVC.listWebStr = @"https://www.baidu.com";
-        [self.navigationController pushViewController:webVC animated:YES];
+
+        ANTTextViewController * textVC = [[ANTTextViewController alloc] init];
+        textVC.contentString = [BICDeviceManager getHelpAndContactString];
+        textVC.titleString=LAN(@"帮助与反馈");
+        [self.navigationController pushViewController:textVC animated:YES];
     }else if(indexPath.row==5){
+        
+        [SDDeviceManager callTelephoneNumber:@"15510373985"];
+        
+    }else if(indexPath.row==6){
         
         BICSettingVC * settingVC = [[BICSettingVC alloc] init];
         [self.navigationController pushViewController:settingVC animated:YES];
@@ -188,6 +195,8 @@
     }
     
 }
+
+
 
 -(void)requestAuthInfo{
     WEAK_SELF

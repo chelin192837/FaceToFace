@@ -51,11 +51,11 @@ NS_ASSUME_NONNULL_BEGIN
 //特点
 @property(nonatomic,strong)NSString * flag;
 //价格
-@property(nonatomic,strong)NSString * active;
+@property(nonatomic,strong)NSString * price;
 // 地址
-@property(nonatomic,strong)NSString * other_one;
+@property(nonatomic,strong)NSString * address;
 //大学时专业
-@property(nonatomic,strong)NSString * other_two;
+@property(nonatomic,strong)NSString * technology;
 //座右铭
 @property(nonatomic,strong)NSString * advantage;
 

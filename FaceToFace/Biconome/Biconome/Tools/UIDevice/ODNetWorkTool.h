@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AFNetworking.h"
-#define HttpStatusVaildFailed       LAN(@"验证失败！")
+#define HttpStatusVaildFailed       LAN(@"请求失败！")
 #define HttpStatusRequestFailed     LAN(@"请求失败！")
 #define HttpStatusServerBlock       LAN(@"服务器异常")
 #define HttpStatusConncetionTimeOut LAN(@"网络超时，请重试")

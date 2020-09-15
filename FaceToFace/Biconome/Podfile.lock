@@ -1,5 +1,4 @@
 PODS:
-  - AAChartKit (3.0.2)
   - AFNetworking (3.2.1):
     - AFNetworking/NSURLSession (= 3.2.1)
     - AFNetworking/Reachability (= 3.2.1)
@@ -87,7 +86,6 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.3.1):
     - GoogleUtilities/Logger
-  - Hyphenate (3.5.5)
   - jetfire (0.1.2)
   - JSONModel (1.8.0)
   - Masonry (1.1.0)
@@ -138,7 +136,6 @@ PODS:
     - YYImage
 
 DEPENDENCIES:
-  - AAChartKit (from `https://github.com/AAChartModel/AAChartKit.git`)
   - AFNetworking
   - BaiduMapKit (~> 2.10.0)
   - Bugly
@@ -148,7 +145,6 @@ DEPENDENCIES:
   - Firebase/Analytics
   - FLAnimatedImage (~> 1.0)
   - FMDB
-  - Hyphenate
   - JSONModel
   - Masonry
   - MBProgressHUD
@@ -189,7 +185,6 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
-    - Hyphenate
     - jetfire
     - JSONModel
     - Masonry
@@ -211,21 +206,15 @@ SPEC REPOS:
     - YYWebImage
 
 EXTERNAL SOURCES:
-  AAChartKit:
-    :git: https://github.com/AAChartModel/AAChartKit.git
   WebsocketStompKit:
     :git: https://github.com/rguldener/WebsocketStompKit.git
 
 CHECKOUT OPTIONS:
-  AAChartKit:
-    :commit: 089ed3fca2380f8d67a172d17862b463362312cc
-    :git: https://github.com/AAChartModel/AAChartKit.git
   WebsocketStompKit:
     :commit: ea57d8722e8bc1dd318c1de9328e882983a69d2c
     :git: https://github.com/rguldener/WebsocketStompKit.git
 
 SPEC CHECKSUMS:
-  AAChartKit: c2133dde14a07c8d537001964646d8636a06e846
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   BaiduMapKit: b1706a062597c70ec62a0cca93212cba1d3017e1
   Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
@@ -244,7 +233,6 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 166f9b9f82cbf60a204e8fe2daa9db3e3ec1fb15
   GoogleDataTransportCCTSupport: f6ab1962e9dc05ab1fb938b795e5b310209edeec
   GoogleUtilities: f895fde57977df4e0233edda0dbeac490e3703b6
-  Hyphenate: 396b936de5b3d68ec266c4bb9078e3ec95a45f31
   jetfire: 5e823aa9248d3de1fac2b7b6d9c6e31ab7d90f0c
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -266,6 +254,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 5ed8014fa5c78241d584a0bfbfeef7e1e5140a4a
+PODFILE CHECKSUM: cd424aec9642cbf73baa133bbb0f6a9acc30b2b5
 
 COCOAPODS: 1.8.4

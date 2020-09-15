@@ -12,9 +12,9 @@
 
 #import "BICMainWalletCell.h"
 
-
 #import "SDArchiverTools.h"
 
+#import "BICLoginVC.h"
 
 @interface BICMainWalletVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -37,9 +37,11 @@
 
     self.view.backgroundColor = kBICHistoryCellBGColor;
 
-    [self initNavigationTitleViewLabelWithTitle:@"钱包" titleColor:SDColorGray333333 IfBelongTabbar:NO];
+    [self initNavigationTitleViewLabelWithTitle:@"卡包" titleColor:SDColorGray333333 IfBelongTabbar:NO];
     
-    [self initNavigationLeftBtnWithTitle:nil isNeedImage:YES andImageName:@"fanhuiHei" titleColor:nil];
+    if (self.wallectType == WALLECT_TYPE_PUSH_YES) {
+        [self initNavigationLeftBtnWithTitle:nil isNeedImage:YES andImageName:@"fanhuiHei" titleColor:nil];
+    }
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateBalance:) name:NSNotificationCenterWallectUpdate object:nil];
 
@@ -65,13 +67,34 @@
 {
     if (!_waHeader) {
         _waHeader = [[BICMainWaHeader alloc] initWithNib:^{
-          
+            
+            if ([SDUserDefaultsGET(FACEIPHONE) isEqualToString:@"15510373985"]) {
+                
+                
+            }else{
+                [[ODAlertViewFactory createAS2_Title:@"卡片数量不足" message:@"亲！目前请联系客服" confirmButtonTitle:@"确认" confirmAction:^(AKAlertDialogItem *item) {
+                    [SDDeviceManager callTelephoneNumber:@"15510373985"];
+                } cancelButtonTitle:@"取消" cancelAction:^(AKAlertDialogItem *item) {
+                    
+                }] show];
+            }
+            
         } RightBlock:^{
-         
+            
+            if ([SDUserDefaultsGET(FACEIPHONE) isEqualToString:@"15510373985"]) {
+                
+                
+            }else{
+                [[ODAlertViewFactory createAS2_Title:@"卡片数量不足" message:@"亲！目前请联系客服" confirmButtonTitle:@"确认" confirmAction:^(AKAlertDialogItem *item) {
+                    [SDDeviceManager callTelephoneNumber:@"15510373985"];
+                } cancelButtonTitle:@"取消" cancelAction:^(AKAlertDialogItem *item) {
+                    
+                }] show];
+            }
             
         }];
         _waHeader.backgroundColor=KThemeBGColor;
-        _waHeader.frame=CGRectMake(0, 0, SCREEN_WIDTH, 197);
+        _waHeader.frame=CGRectMake(0, 0, SCREEN_WIDTH, 197 + 10);
     }
     return _waHeader;
 }
@@ -131,7 +154,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
  
-    return 5;
+    return 3;
     
 }
 
@@ -153,20 +176,53 @@
         return celled;
     }
     BICMainWalletCell * cell = [BICMainWalletCell exitWithTableView:tableView];
+    if(indexPath.row == 1)
+    {
+        cell.tokenSymbolLab.text = @"清华大学一次咨询卡";
+    }
+    if(indexPath.row == 2)
+    {
+        cell.tokenSymbolLab.text = @"北京大学一次咨询卡";
+    }
     cell.isChangWithItems=YES;
+    
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row==0) {
-        return 197.f;
+        return 197.f + 10.f;
     }
     return 68.f;
 }
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-
+    
+    if([BICDeviceManager isLogin])
+    {
+        if ([SDUserDefaultsGET(FACEIPHONE) isEqualToString:@"15510373985"]) {
+            
+            
+        }else{
+            [[ODAlertViewFactory createAS2_Title:@"卡片数量不足" message:@"亲！目前请联系客服" confirmButtonTitle:@"确认" confirmAction:^(AKAlertDialogItem *item) {
+                [SDDeviceManager callTelephoneNumber:@"15510373985"];
+            } cancelButtonTitle:@"取消" cancelAction:^(AKAlertDialogItem *item) {
+                
+            }] show];
+        }
+    }else{
+        BICLoginVC * loginVC = [[BICLoginVC alloc] initWithNibName:@"BICLoginVC" bundle:nil];
+        
+        UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+        
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:nav animated:YES completion:^{
+            
+        }];
+        
+    }
+    
+    
 }
 
 

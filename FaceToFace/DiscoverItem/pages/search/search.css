@@ -1,0 +1,81 @@
+
+.search-icon{
+	width: 40upx;
+	height: 40upx;
+	margin-top: 30upx;
+}
+
+.search-text{
+	font-size: 14px;
+	background-color: #eaeaea;
+	height: 60upx;
+	width: 650upx;
+	margin-left: 20upx;
+	margin-top: 20upx;
+	background-color: #F8F8F8;
+}
+.search-icon-warpper{
+	display: flex;
+    flex-direction: row;
+	
+}
+
+.search-block{
+	display: flex;
+	flex-direction: row;
+	padding: 0upx 20upx 20upx 20upx;
+	/* 固定搜索栏 */
+	position: fixed;
+	top: 100;
+	z-index: 2000;
+	background-color: #EAEAEA;
+}
+
+.moive-list{
+	display: flex;
+    flex-direction: row;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	padding: 120upx 10upx 0upx 20upx;
+}
+
+.poster{
+	width: 200upx;
+	height: 270upx;
+}
+
+.moive-wapper{
+	padding: 10upx 20upx;
+}
+
+.poster-wapper{
+	display: flex;
+	flex-direction: column;
+}
+
+.move-name{
+	margin-top: 10upx;
+	text-align: center;
+	font-size: 14px;
+}
+
+.move-subject{
+	text-align: center;
+	color: #4CD964;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -349,8 +349,8 @@
         NSURL *url = [NSURL URLWithString:urlStr];
         [[UIApplication sharedApplication] openURL:url];
     } else {
-        UIAlertView *Notpermitted=[[UIAlertView alloc] initWithTitle:@"提示" message:@"设备不支持此功能" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [Notpermitted show];
+//        UIAlertView *Notpermitted=[[UIAlertView alloc] initWithTitle:@"提示" message:@"设备不支持此功能" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//        [Notpermitted show];
     }
 }
 

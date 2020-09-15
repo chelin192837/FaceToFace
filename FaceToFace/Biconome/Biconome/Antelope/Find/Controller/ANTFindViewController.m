@@ -15,9 +15,12 @@
 #import "YiceSlidelipPickerMenu.h"
 #import "YiceSlidelipPickPch.h"
 #import "YiceSlidelipPickCommonModel.h"
+
 #import "ANTPageHelperRequest.h"
 #import "ANTFindListResponse.h"
 #import "ANTTeacherDetailVC.h"
+
+
 @interface ANTFindViewController ()<UITableViewDelegate,UITableViewDataSource,YiceSlidelipPickerMenuDelegate,YiceSlidelipPickerMenuDataSource>
 
 @property(nonatomic,strong)UITableView * tableView;
@@ -120,6 +123,12 @@
             [weakSelf.dataArray removeAllObjects];
         }
         [weakSelf.dataArray addObjectsFromArray:responseM.data.list];
+        
+        if (weakSelf.dataArray.count == 0) {
+            [weakSelf setupNoDataOfSearchBiconome:self.tableView With:120.f];
+        }else{
+            [weakSelf hideNoDataOfSearchBiconome];
+        }
         
         [weakSelf.tableView reloadData];
         
@@ -265,6 +274,48 @@
 }
 
 - (void)menu:(YiceSlidelipPickerMenu *)menu submmitSelectedIndexPaths:(NSArray<NSIndexPath *> *)indexpaths{
+   
+    self.request.sex = @"";
+    self.request.major = @"";
+    self.request.subject = @"";
+    self.request.flag = @"";
+
+    //构造数据
+    for (NSIndexPath * indexPath in indexpaths) {
+        
+        if (indexPath.section ==0 ) { //清华，北大
+            if (indexPath.row==0) {
+                self.request.subject = @"清华大学";
+            }
+            if (indexPath.row==1) {
+                self.request.subject = @"北京大学";
+            }
+        }
+        if (indexPath.section ==1 ) {//优势科目 ...
+            
+        }
+        if (indexPath.section ==2 ) { //理科，文科
+            if (indexPath.row==0) {
+                self.request.major = @"理科";
+            }
+            if (indexPath.row==1) {
+                self.request.major = @"文科";
+            }
+        }
+        if (indexPath.section ==3 ) {//性别，男 ， 女
+            if (indexPath.row==0) {
+                self.request.sex = @"男";
+            }
+            if (indexPath.row==1) {
+                self.request.sex = @"女";
+            }
+        }
+        if (indexPath.section ==4 ) { //擅长 ...
+            
+        }
+        
+    }
+
     //同步数据
     [self.tableView.mj_header beginRefreshing];
     

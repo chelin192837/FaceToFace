@@ -29,29 +29,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 // 大学时专业
-@property(nonatomic,copy)NSString* other_two;
+@property(nonatomic,copy)NSString* technology;
 
 // 地址
-@property(nonatomic,copy)NSString* other_one;
+@property(nonatomic,copy)NSString* address;
 
 // 价格
 //@property(nonatomic,copy)NSString* active;
 
 //座右铭
 @property(nonatomic,copy)NSString* advantage;
-
-
-////座右铭
-//  private String advantage;
-//
-//  // 价格
-//  private Integer active;
-//
-//  // 地址
-//  private String other_one;
-//
-//  // 大学时专业
-//  private String other_two;
 
 
 @end

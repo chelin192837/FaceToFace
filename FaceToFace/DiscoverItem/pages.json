@@ -1,0 +1,134 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"app-plus": {
+					"titleNView": false //禁用原生导航栏
+				},
+				"enablePullDownRefresh":true,
+				"onReachBottomDistance":50
+				
+			}
+		}, {
+			"path": "pages/search/search",
+			"style": {	
+				"navigationBarTitleText": "清北人才库"
+			},
+			"enablePullDownRefresh":true,
+			"onReachBottomDistance":50
+		}, {
+			"path": "pages/me/me",
+			"style": {
+				"app-plus": {
+					"titleNView": false //禁用原生导航栏
+				}
+			}
+		}
+	    ,{
+            "path" : "pages/newspages/newspages",
+            "style" : {
+				"navigationBarTitleText": "发布"
+			},
+			"enablePullDownRefresh":true,
+			"onReachBottomDistance":50
+        }
+        ,{
+            "path" : "pages/movie/movie",
+            "style" : {
+				"navigationBarTitleText": "详情",
+				"app-plus":{
+					"titleNView":{
+						"type":"transparent"
+						// "buttons":[
+						// 	{
+						// 		"type":"share"
+						// 	},
+						// 	{
+						// 		"type":"back"
+						// 	},
+						// 	{
+						// 		"type":"forward"
+						// 	}
+						// ]
+					}
+				}
+			}
+        }
+        ,{
+            "path" : "pages/wallet/wallet",
+            "style" : {
+				"navigationBarTitleText": "卡包"
+			}
+        }
+        ,{
+            "path" : "pages/cover/cover",
+            "style" : {}
+        },
+		{
+            "path" : "pages/registLogin/registLogin",
+            "style" : {}
+        },
+        {
+            "path" : "pages/meInfo/meInfo",
+            "style" : {
+                "navigationBarTextStyle" : "white",
+                "navigationBarTitleText" : "我的",
+                "navigationBarBackgroundColor" : "#ffd655"
+				
+            }
+        }
+        ,{
+            "path" : "pages/auth/auth",
+            "style" : {
+				"navigationBarTitleText": "身份认证"
+				
+			}
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black", //全局的标题颜色
+		"navigationBarTitleText": "清北面对面",
+		"navigationBarBackgroundColor": "#F8F8F8", //导航栏背景色
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#bfbfbf", //一般时的颜色
+		"selectedColor": "#515151", //选中时的文字颜色
+		"borderStyle": "black", // 字体颜色
+		"backgroundColor": "#FFFFFF", //背景颜色
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"iconPath": "static/facetoface/tab_home_default.png", // 图片路径
+				"selectedIconPath": "static/facetoface/tab_home_selected.png"
+			},
+			{
+				"pagePath": "pages/search/search",
+				"text": "寻找",
+				"iconPath": "static/facetoface/tab_market_default.png",
+				"selectedIconPath": "static/facetoface/tab_market_selected.png"
+			},
+			{
+				"pagePath": "pages/newspages/newspages",
+				"text": "发布",
+				"iconPath": "static/facetoface/tab_trade_default.png",
+				"selectedIconPath": "static/facetoface/tab_trade_selected.png"
+			},
+			{
+				"pagePath": "pages/wallet/wallet",
+				"text": "卡包",
+				"iconPath": "static/facetoface/tab_wallet_default.png",
+				"selectedIconPath": "static/facetoface/tab_wallet_selected.png"
+			},
+			{
+				"pagePath": "pages/me/me",
+				"text": "我的",
+				"iconPath": "static/facetoface/tab_profile_default.png",
+				"selectedIconPath": "static/facetoface/tab_profile_selected.png"
+			}
+		]
+	}
+
+
+}

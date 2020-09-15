@@ -13,9 +13,7 @@
 #import "FLAnimatedImage.h"
 #import "FLAnimatedImageView+WebCache.h"
 
-#import "DemoCallManager.h"
-#import "DemoConfManager.h"
-#import "EMDemoHelper.h"
+#import "ANTLoadingView.h"
 
 @import Firebase;
 
@@ -64,7 +62,6 @@
 //
 //        NSLog(@"登录失败----%@", aError.errorDescription);
 //    }
-    
 
     //环信云客服
 //    HDOptions *option = [[HDOptions alloc] init];
@@ -92,8 +89,48 @@
 
     [self.window makeKeyAndVisible];
     
+    
+    BaseTabBarController *nmTabBarVC = [[BaseTabBarController alloc] init];
+    [nmTabBarVC setSelectedIndex:0];
+    nmTabBarVC.selSelect = 0 ;
+    self.mainController = nmTabBarVC;
+    self.window.rootViewController = self.mainController;
+    
+    
+    
+    ANTLoadingView * loadView = [ANTLoadingView initWithNib];
+    [self.window addSubview:loadView];
+    [loadView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.window);
+    }];
+    
+    
+    loadView.qing.y = 0.f;
+    loadView.beijing.x = 0.f;
+    loadView.dui.x = SCREEN_WIDTH;
+    loadView.mian.y = SCREEN_HEIGHT;
+    [UIView animateWithDuration:1 animations:^{
+        
+        loadView.qing.y = 200.f;
+        loadView.beijing.x = SCREEN_WIDTH/2-55.f;
+        loadView.dui.x = SCREEN_WIDTH/2+22;
+        loadView.mian.y = 200.f;
+        
+    } completion:^(BOOL finished) {
+        
+        loadView.alpha = 1.f;
+        [UIView animateWithDuration:3 animations:^{
+            loadView.alpha = 0.f;
+        } completion:^(BOOL finished) {
+            [loadView removeFromSuperview];
+        }];
+        
+    }];
+    
+  
+    
     // 加载动态图片
-    [self setUpLaunchScreen];
+//    [self setUpLaunchScreen];
     
     return YES;
     
@@ -156,6 +193,7 @@
 //    }
     
     self.customLaunchImageView = [[FLAnimatedImageView  alloc]initWithFrame:self.window.bounds];
+    
 //    self.customLaunchImageView.contentMode = UIViewContentModeScaleAspectFill;
 //    self.customLaunchImageView.clipsToBounds=YES;
     NSLog(@"宽高为%lf %lf",self.window.bounds.size.width,self.window.bounds.size.height);
@@ -184,11 +222,14 @@
         } completion:^(BOOL finished) {
             [self.customLaunchImageView removeFromSuperview];
             self.customLaunchImageView = nil;
+            
+            
             BaseTabBarController *nmTabBarVC = [[BaseTabBarController alloc] init];
             [nmTabBarVC setSelectedIndex:0];
             nmTabBarVC.selSelect = 0 ;
             self.mainController = nmTabBarVC;
             self.window.rootViewController = self.mainController;
+            
             
         }];
     }
@@ -248,16 +289,16 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
     WEAK_SELF
-    [[NSNotificationCenter defaultCenter] postNotificationName:AppdelegateEnterForeground object:nil];
-//    [[BICSockJSRouter shareInstance] SockJSGlobeReStart];
-    [weakSelf.myTimer invalidate];// 停止定时器
-    weakSelf.myTimer=nil;
-    //超过时限进行安全认证
-    if([[NSUserDefaults standardUserDefaults] boolForKey:@"backForegroundValid"]){
-        [[NSNotificationCenter defaultCenter] postNotificationName:BICHomeSafeValidate object:nil];
-        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"backForegroundValid"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }
+//    [[NSNotificationCenter defaultCenter] postNotificationName:AppdelegateEnterForeground object:nil];
+////    [[BICSockJSRouter shareInstance] SockJSGlobeReStart];
+//    [weakSelf.myTimer invalidate];// 停止定时器
+//    weakSelf.myTimer=nil;
+//    //超过时限进行安全认证
+//    if([[NSUserDefaults standardUserDefaults] boolForKey:@"backForegroundValid"]){
+//        [[NSNotificationCenter defaultCenter] postNotificationName:BICHomeSafeValidate object:nil];
+//        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"backForegroundValid"];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
+//    }
 }
 
 

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "清北人才库",
+  "usingComponents": {
+    "tailer-starts": "/components/tailerStarts"
+  }
+}

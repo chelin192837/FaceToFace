@@ -1,0 +1,71 @@
+
+.wallet-card-wapper{
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	margin: 20upx 20upx;
+	padding: 30upx 20upx;
+	/* 追加阴影效果 */
+	box-shadow: 3px 2px 10px #dedede;
+	
+}
+
+.wallet-card-num-title{
+	margin-top: 10upx;
+	font-size: 20px;
+	color: #666666;
+}
+
+.wallet-card-num{
+	margin-top: 10upx;
+	font-size: 30px;
+	color: #333333;
+}
+
+.wallet-card-num-desc{
+	margin-top: 10upx;
+	font-size: 18px;
+	color: #666666;
+}
+
+.card-image-content{
+	width: 600upx;
+	height: 100upx;
+	display: flex;
+    flex-direction: row;
+	align-items: center;
+}
+.card-image{
+	width: 80upx;
+	height: 80upx;
+	margin-left: 20upx;
+}
+
+.card-content{
+	margin-left: 10upx;
+	
+}
+
+.card-arrow{
+	width: 40upx;
+	height: 40upx;
+}
+.card-Num-arrow{
+	display: flex;
+	flex-direction: row;
+	padding: 0upx 20upx;
+	align-items: center;
+}
+.card-Num{
+    margin-right: 10upx;
+	
+}
+.card-type{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #FFFFFF;
+	margin-top: 20upx;
+	/* margin: 20upx 20upx 0upx 20upx; */
+}

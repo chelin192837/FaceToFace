@@ -16,9 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSString * studentIphone;
 @property(nonatomic,strong)NSString * problem;
 @property(nonatomic,strong)NSString * teachMajor;
-@property(nonatomic,strong)NSString * other;
+
+@property(nonatomic,strong)NSString * note;
 //代表年级
-@property(nonatomic,strong)NSString * otherOne;
+@property(nonatomic,strong)NSString * classType;
 
 @end
 

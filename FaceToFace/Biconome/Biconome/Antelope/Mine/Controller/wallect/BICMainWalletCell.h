@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign)BOOL isChangWithItems;
 @property (weak, nonatomic) IBOutlet UILabel *balanceLab;
 
+@property (weak, nonatomic) IBOutlet UILabel *tokenSymbolLab;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -93,6 +93,12 @@
 
 /// 默认圆角大小
 #define kLayer_CornerRadius 4
+
+// Notify --
+#define kNSNotificationCenterPushToWallect @"pushToWallect"
+#define kNSNotificationCenterPushToTeachDetail @"teachDetial"
+
+
 // 默认头像
 
 #define DefaultProImage [UIImage imageNamed:@"myMorentouxiangIcon"]
@@ -120,108 +126,33 @@
 //#define kBaseUrl [[NSUserDefaults standardUserDefaults]objectForKey:@"domainUrlStr"]
 #define kLogFunction NSLog(@"%s", __FUNCTION__);
 
-//ifndef --- release
-#ifndef DEBUG
-
-//#define WKWebUrl @"http://192.168.1.74/html/app_identity/"
-//#define kBaseUrl @"http://192.168.1.74/"
-//#define kBaseWebUrl @"http://192.168.1.74/"
-//#define kBaseUrl_v4 @"http://192.168.1.74/"
-//#define kBICBaseSockJSUrl @"ws://192.168.1.74/currency/app-websocket/"
-//#define kBICCCTBaseSockJSUrl @"ws://192.168.1.74/cct/ios-cct-websocket/"
 
 
-//#define WKWebUrl @"http://39.100.122.157/html/app_identity/"
-//#define kBaseUrl @"http://39.100.122.157/"
-//#define kBaseWebUrl @"http://39.100.122.157/"
-//#define kBaseUrl_v4 @"http://39.100.122.157/"
-//#define kBICBaseSockJSUrl @"ws://39.100.122.157/currency/app-websocket/"
-//#define kBICCCTBaseSockJSUrl @"ws://39.100.122.157/cct/ios-cct-websocket/"
+//#define kBaseUrl @"http://172.20.10.5:8081/"
+
+//#define kBaseUrl @"http://39.100.127.77:8081/"
+
+//#define kBaseUrl @"http://192.168.1.5:9001/"
+
+#define kBaseUrl @"http://39.100.127.77:9001/"
+
+#define IOSMAPPING @"app"
 
 
-#define WKWebUrl @"https://www.biconomy.com/html/app_identity/"
+#define URL8101 @"9001"
 
-#define kBaseUrl @"http://192.168.1.144:8081/"
-#define kBaseWebUrl @"http://192.168.1.6:8081/"
-#define kBaseUrl_v4 @"http://192.168.1.6:8081/"
-
-    #define IOSMAPPING @"api"
-
-    #define URL8901 @"bch"
-    #define URL8902 @"ltc"
-    #define URL8301 @"btc"
-    #define URL8501 @"cct"
-    #define URL8601 @"currency"
-    #define URL8401 @"eos"
-    #define URL8201 @"eth"
-    #define URL8801 @"files"
-    #define URL8701 @"otc"
-    #define URL8121 @"sysconf"
-    #define URL8101 @"api"
-    #define URL8001 @"eureka"
-    #define URL8002 @"config"
-    #define URL7000 @"tx-manager"
- 
-#else
-
-#define WKWebUrl @"http://192.168.1.74/html/app_identity/"
-
-#define kBaseUrl @"http://192.168.1.144:8081/"
-#define kBaseWebUrl @"http://192.168.1.6:8081/"
-#define kBaseUrl_v4 @"http://192.168.1.6:8081/"
-
-#define kBICBaseSockJSUrl @"ws://192.168.1.74/currency/app-websocket/"
-#define kBICCCTBaseSockJSUrl @"ws://192.168.1.74/cct/ios-cct-websocket/"
-
-
-//#define WKWebUrl @"http://39.100.122.157/html/app_identity/"
-//#define kBaseUrl @"http://39.100.122.157/"
-//#define kBaseWebUrl @"http://39.100.122.157/"
-//#define kBaseUrl_v4 @"http://39.100.122.157/"
-//#define kBICBaseSockJSUrl @"ws://39.100.122.157/currency/app-websocket/"
-//#define kBICCCTBaseSockJSUrl @"ws://39.100.122.157/cct/ios-cct-websocket/"
-
-
-
-//#define WKWebUrl @"https://www.biconomy.com/html/app_identity/"
-//#define kBaseUrl @"https://www.biconomy.com/"
-//#define kBaseWebUrl @"https://www.biconomy.com/"
-//#define kBaseUrl_v4 @"https://www.biconomy.com/"
-//#define kBICBaseSockJSUrl @"wss://www.biconomy.com/currency/app-websocket/"
-//#define kBICCCTBaseSockJSUrl @"wss://www.biconomy.com/cct/ios-cct-websocket/"
-
-
-    #define URL8901 @"bch"
-    #define URL8902 @"ltc"
-    #define URL8301 @"btc"
-    #define URL8501 @"cct"
-    #define URL8601 @"currency"
-    #define URL8401 @"eos"
-    #define URL8201 @"eth"
-    #define URL8801 @"files"
-    #define URL8701 @"otc"
-    #define URL8121 @"sysconf"
-    #define URL8101 @"api"
-    #define URL8001 @"eureka"
-    #define URL8002 @"config"
-    #define URL7000 @"tx-manager"
-
-    #define IOSMAPPING @"api"
-
-
-
-#endif
-
-
+#define WKWebUrl @"WKWebUrl"
 
 
 //block弱引用 ， WEAK_SELF ， weakSelf
 #define WEAK_SELF __weak typeof(self)weakSelf = self;
 #define SFDNotice [NSNotificationCenter defaultCenter]
+
 ///////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
+
 //服务条款
 #define TermsofserviceEnglish @"https://biconomy.zendesk.com/hc/en-us/articles/360033230651-Terms-of-service"
 #define TermsofserviceChinese @"https://biconomy.zendesk.com/hc/zh-cn/articles/360033230671-服务条款"
@@ -262,6 +193,7 @@
 
 #define BICTapGesture @"TapGesture"//手势识别
 #define BICFingerprint @"BICFingerprint"//指纹
+
 
 
 #define APPID @"faceTofaceAppid"   //appid

@@ -14,6 +14,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,assign)NSInteger page;
 
+@property(nonatomic,assign)NSString *searchName;
+
+@property(nonatomic,assign)NSString *sex;
+
+@property(nonatomic,assign)NSString *major;
+
+@property(nonatomic,assign)NSString *subject;
+
+@property(nonatomic,assign)NSString *flag;
+
+@property(nonatomic,assign)NSString *iphone;
+
 @end
+
+
 
 NS_ASSUME_NONNULL_END

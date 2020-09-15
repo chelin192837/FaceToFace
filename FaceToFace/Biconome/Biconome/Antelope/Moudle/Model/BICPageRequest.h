@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BICPageRequest : BICBaseRequest
+
 @property(nonatomic,assign)int pageNum;
 
 @end

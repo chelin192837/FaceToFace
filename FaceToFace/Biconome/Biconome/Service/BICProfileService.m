@@ -34,9 +34,6 @@ static id sharedInstance = nil;
     [self doServerRequestWithModel:request ResponseName:@"BICRegisterResponse" Url:urlStr requestType:HttpRequestTypePost serverSuccessResultHandler:succHandler failedResultHandler:failedHandler requestErrorHandler:requestError];
 }
 
-
-
-
 //注册接口
 - (void)analyticalRegisterData:(BICRegisterRequest*)request serverSuccessResultHandler:(ServerResultSuccessHandler)succHandler failedResultHandler:(ServerResultFailedHandler)failedHandler requestErrorHandler:(RequestFailedBlock)requestError
 {
@@ -167,7 +164,7 @@ NSString *urlStr = @""kBaseUrl""URL8101"/login/resetPassword";
 //上传基本信息认证4
 - (void)analyticaladdAuthBasicInfo4:(BICAuthInfoRequest*)request serverSuccessResultHandler:(ServerResultSuccessHandler)succHandler failedResultHandler:(ServerResultFailedHandler)failedHandler requestErrorHandler:(RequestFailedBlock)requestError
 {
-    NSString *urlStr = @""kBaseUrl""URL8101"/mine/card";
+    NSString *urlStr = @""kBaseUrl""IOSMAPPING"/mine/card";
     NSMutableArray *array=[NSMutableArray array];
      for(int i=0;i<request.files.count;i++){
            [array addObject:[NSString stringWithFormat:@"files%d.jpeg",i]];
@@ -224,7 +221,7 @@ NSString *urlStr = @""kBaseUrl""URL8101"/login/resetPassword";
 //邀请返佣配置信息 /cct/config/invitationConfig
 - (void)analytiCalinvitationConfigInfo:(BICBaseRequest*)request serverSuccessResultHandler:(ServerResultSuccessHandler)succHandler failedResultHandler:(ServerResultFailedHandler)failedHandler requestErrorHandler:(RequestFailedBlock)requestError
 {
-    NSString *urlStr = @""kBaseUrl""URL8501"/config/invitationReturnConfig";
+    NSString *urlStr = @""kBaseUrl""URL8101"/config/invitationReturnConfig";
     [self doServerRequestWithModel:request ResponseName:@"BICInvitationConfigResponse" Url:urlStr requestType:HttpRequestTypeGet serverSuccessResultHandler:succHandler failedResultHandler:failedHandler requestErrorHandler:requestError];
 }
 //获取用户返佣金额，直接、间接邀请人数
@@ -252,7 +249,7 @@ NSString *urlStr = @""kBaseUrl""URL8101"/login/resetPassword";
 //btc/walletTransfer/invitationReturnList
 - (void)analytiInvitationReturnList:(BICPageRequest*)request serverSuccessResultHandler:(ServerResultSuccessHandler)succHandler failedResultHandler:(ServerResultFailedHandler)failedHandler requestErrorHandler:(RequestFailedBlock)requestError
 {
-    NSString *urlStr = @""kBaseUrl""URL8301"/walletTransfer/invitationReturnList";
+    NSString *urlStr = @""kBaseUrl""URL8101"/walletTransfer/invitationReturnList";
     [self doServerRequestWithModel:request ResponseName:@"BICInvitationInfoResponse" Url:urlStr requestType:HttpRequestTypeGet serverSuccessResultHandler:succHandler failedResultHandler:failedHandler requestErrorHandler:requestError];
 }
 @end

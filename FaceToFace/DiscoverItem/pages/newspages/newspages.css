@@ -1,0 +1,19 @@
+
+.publish-wapper{
+	
+	background-color: #007AFF;
+    padding: 20upx 20upx;
+	margin: 20upx 20upx;
+
+}
+
+.publish-require-wapper{
+	display: flex;
+	flex-direction: column;
+}
+
+.publish-require{
+	color: white;
+	font-size: 16px;
+	margin-top: 10uxp;
+}

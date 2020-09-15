@@ -12,6 +12,7 @@
 #import "ANTPublishCell.h"
 #import "ANTPageHelperRequest.h"
 #import "ANTPublishResponse.h"
+#import "BICLoginVC.h"
 @interface ANTPublishViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)UITableView * tableView;
@@ -82,6 +83,21 @@
 }
 -(void)analyPublishData:(ANTPageHelperRequest*)request
 {
+    
+    if (![BICDeviceManager isLogin]) {
+        
+//        BICLoginVC * loginVC = [[BICLoginVC alloc] initWithNibName:@"BICLoginVC" bundle:nil];
+//         UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+//
+//         [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:nav animated:YES completion:^{
+//
+//         }];
+        
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
+        return;
+    }
+    request.iphone = @"";
     WEAK_SELF
     [[ANTPublishService sharedInstance] analyticalPublishRequireListData:request serverSuccessResultHandler:^(id response) {
         ANTPublishResponse * responseM = (ANTPublishResponse*)response;
@@ -90,6 +106,11 @@
         }
         [weakSelf.dataArray addObjectsFromArray:responseM.data.list];
         
+//        if (weakSelf.dataArray.count == 0) {
+//            [weakSelf setupNoDataOfSearchBiconome:self.tableView With:120.f];
+//        }else{
+//            [weakSelf hideNoDataOfSearchBiconome];
+//        }
         
         [weakSelf.tableView reloadData];
         
